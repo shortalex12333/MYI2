@@ -27,42 +27,50 @@ export default function HomePage() {
 
       {/* Features Section */}
       <section className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-        <Card>
-          <CardHeader>
-            <MessageSquare className="h-10 w-10 text-primary mb-2" />
-            <CardTitle>Community Forum</CardTitle>
-            <CardDescription>
-              Share experiences and get answers from fellow yacht owners
-            </CardDescription>
-          </CardHeader>
-        </Card>
-        <Card>
-          <CardHeader>
-            <TrendingUp className="h-10 w-10 text-primary mb-2" />
-            <CardTitle>Insurance Insights</CardTitle>
-            <CardDescription>
-              Access real-world claims data and premium trends
-            </CardDescription>
-          </CardHeader>
-        </Card>
-        <Card>
-          <CardHeader>
-            <Shield className="h-10 w-10 text-primary mb-2" />
-            <CardTitle>Verified Providers</CardTitle>
-            <CardDescription>
-              Connect with verified insurers and brokers
-            </CardDescription>
-          </CardHeader>
-        </Card>
-        <Card>
-          <CardHeader>
-            <Users className="h-10 w-10 text-primary mb-2" />
-            <CardTitle>Expert Network</CardTitle>
-            <CardDescription>
-              Learn from experienced captains and yacht owners
-            </CardDescription>
-          </CardHeader>
-        </Card>
+        <Link href="/posts">
+          <Card className="hover:border-primary transition-colors cursor-pointer h-full">
+            <CardHeader>
+              <MessageSquare className="h-10 w-10 text-primary mb-2" />
+              <CardTitle>Community Forum</CardTitle>
+              <CardDescription>
+                Share experiences and get answers from fellow yacht owners
+              </CardDescription>
+            </CardHeader>
+          </Card>
+        </Link>
+        <Link href="/insights">
+          <Card className="hover:border-primary transition-colors cursor-pointer h-full">
+            <CardHeader>
+              <TrendingUp className="h-10 w-10 text-primary mb-2" />
+              <CardTitle>Insurance Insights</CardTitle>
+              <CardDescription>
+                Access real-world claims data and premium trends
+              </CardDescription>
+            </CardHeader>
+          </Card>
+        </Link>
+        <Link href="/providers">
+          <Card className="hover:border-primary transition-colors cursor-pointer h-full">
+            <CardHeader>
+              <Shield className="h-10 w-10 text-primary mb-2" />
+              <CardTitle>Verified Providers</CardTitle>
+              <CardDescription>
+                Connect with verified insurers and brokers
+              </CardDescription>
+            </CardHeader>
+          </Card>
+        </Link>
+        <Link href="/experts">
+          <Card className="hover:border-primary transition-colors cursor-pointer h-full">
+            <CardHeader>
+              <Users className="h-10 w-10 text-primary mb-2" />
+              <CardTitle>Expert Network</CardTitle>
+              <CardDescription>
+                Learn from experienced captains and yacht owners
+              </CardDescription>
+            </CardHeader>
+          </Card>
+        </Link>
       </section>
 
       {/* Popular Categories */}

@@ -5,6 +5,7 @@ import ReactMarkdown from 'react-markdown'
 export default async function FAQPage() {
   const supabase = await createClient()
 
+  // @ts-ignore - Supabase type inference issue
   const { data: faqs } = await supabase
     .from('faqs')
     .select(`
@@ -32,25 +33,33 @@ export default async function FAQPage() {
         </p>
 
         <div className="space-y-8">
-          {faqsByCategory && Object.entries(faqsByCategory).map(([category, categoryFaqs]: [string, any]) => (
-            <div key={category}>
-              <h2 className="text-2xl font-semibold mb-4">{category}</h2>
-              <div className="space-y-4">
-                {categoryFaqs.map((faq: any) => (
-                  <Card key={faq.id}>
-                    <CardHeader>
-                      <CardTitle className="text-lg">{faq.question}</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="prose prose-sm max-w-none">
-                        <ReactMarkdown>{faq.answer}</ReactMarkdown>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
+          {!faqs || faqs.length === 0 ? (
+            <div className="text-center p-12 border-2 border-dashed rounded-lg">
+              <p className="text-muted-foreground">
+                No FAQs available yet. Check back soon or ask the community!
+              </p>
             </div>
-          ))}
+          ) : (
+            faqsByCategory && Object.entries(faqsByCategory).map(([category, categoryFaqs]: [string, any]) => (
+              <div key={category}>
+                <h2 className="text-2xl font-semibold mb-4">{category}</h2>
+                <div className="space-y-4">
+                  {categoryFaqs.map((faq: any) => (
+                    <Card key={faq.id}>
+                      <CardHeader>
+                        <CardTitle className="text-lg">{faq.question}</CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="prose prose-sm max-w-none">
+                          <ReactMarkdown>{faq.answer}</ReactMarkdown>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+            ))
+          )}
         </div>
 
         <div className="mt-12 text-center p-8 bg-muted rounded-lg">
