@@ -18,11 +18,7 @@ export async function POST(request: NextRequest) {
     const { data: authData, error: authError } = await supabase.auth.signUp({
       email,
       password,
-      options: {
-        data: {
-          username,
-        },
-      },
+      options: { data: { username } },
     })
 
     if (authError) {
@@ -35,12 +31,14 @@ export async function POST(request: NextRequest) {
         // @ts-ignore - Supabase type inference issue with profiles table
         await supabase
           .from('profiles')
-          .insert({
-            id: authData.user.id,
-            username,
-            email,
-            role: 'user',
-          } as any)
+          .insert([
+            {
+              id: authData.user.id,
+              username,
+              email,
+              role: 'user',
+            },
+          ])
       } catch (profileError) {
         console.error('Profile creation error:', profileError)
       }
