@@ -31,15 +31,17 @@ export async function POST(request: NextRequest) {
 
     // Create profile
     if (authData.user) {
+      // @ts-ignore - Supabase types not properly generated for profiles table
       const { error: profileError } = await supabase
         .from('profiles')
-        // @ts-expect-error - Supabase types not properly generated for profiles table
-        .insert({
-          id: authData.user.id,
-          username,
-          email,
-          role: 'user',
-        })
+        .insert([
+          {
+            id: authData.user.id,
+            username,
+            email,
+            role: 'user',
+          }
+        ])
 
       if (profileError) {
         console.error('Profile creation error:', profileError)
