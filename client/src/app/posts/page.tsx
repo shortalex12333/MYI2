@@ -3,6 +3,8 @@ import { createClient } from '@/lib/supabase/server'
 import { PostCard } from '@/components/posts/PostCard'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { TrendingUp, Users, MessageCircle, Clock } from 'lucide-react'
 
 export default async function PostsPage() {
   const supabase = await createClient()
@@ -28,76 +30,64 @@ export default async function PostsPage() {
     reactions_count: { like: 0, dislike: 0, share: 0, bookmark: 0 }
   })) || []
 
-  // Fetch categories for filter sidebar
+  // Fetch categories
   const { data: categories } = await supabase
     .from('categories')
     .select('*')
     .order('display_order', { ascending: true })
 
+  // Fetch top tags
+  const { data: tags } = await supabase
+    .from('tags')
+    .select('*')
+    .limit(10)
+
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="flex flex-col md:flex-row gap-8">
-        {/* Sidebar */}
-        <aside className="w-full md:w-64 shrink-0">
-          <div className="sticky top-20 space-y-6">
-            <div>
-              <h3 className="font-semibold mb-3">Categories</h3>
-              <div className="space-y-2">
-                <Link
-                  href="/posts"
-                  className="block px-3 py-2 rounded-md hover:bg-accent transition-colors"
-                >
-                  All Posts
-                </Link>
-                {categories?.map((category) => (
-                  <Link
-                    key={category.id}
-                    href={`/category/${category.slug}`}
-                    className="block px-3 py-2 rounded-md hover:bg-accent transition-colors"
-                  >
-                    {category.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <h3 className="font-semibold mb-3">Quick Links</h3>
-              <div className="space-y-2">
-                <Link
-                  href="/companies"
-                  className="block px-3 py-2 rounded-md hover:bg-accent transition-colors"
-                >
-                  Companies
-                </Link>
-                <Link
-                  href="/faq"
-                  className="block px-3 py-2 rounded-md hover:bg-accent transition-colors"
-                >
-                  FAQ
-                </Link>
-              </div>
-            </div>
-          </div>
-        </aside>
-
+    <div className="container mx-auto px-4 py-6">
+      <div className="flex gap-6">
         {/* Main Content */}
-        <main className="flex-1">
+        <main className="flex-1 min-w-0">
+          {/* Header */}
           <div className="flex justify-between items-center mb-6">
-            <h1 className="text-3xl font-bold">All Posts</h1>
+            <h1 className="text-3xl font-bold">All Questions</h1>
             <Button asChild>
-              <Link href="/posts/new">Create Post</Link>
+              <Link href="/posts/new">Ask Question</Link>
             </Button>
           </div>
 
-          <div className="space-y-4">
+          {/* Filter Bar */}
+          <div className="flex items-center justify-between mb-4 pb-4 border-b">
+            <span className="text-sm text-muted-foreground">
+              {posts.length} questions
+            </span>
+            <div className="flex gap-2">
+              <Button variant="ghost" size="sm">
+                <Clock className="h-4 w-4 mr-1" />
+                Newest
+              </Button>
+              <Button variant="ghost" size="sm">
+                <TrendingUp className="h-4 w-4 mr-1" />
+                Hot
+              </Button>
+              <Button variant="ghost" size="sm">
+                <MessageCircle className="h-4 w-4 mr-1" />
+                Active
+              </Button>
+              <Button variant="ghost" size="sm">
+                Unanswered
+              </Button>
+            </div>
+          </div>
+
+          {/* Posts List */}
+          <div className="border rounded-lg bg-card">
             {posts.length === 0 ? (
               <div className="text-center py-12">
                 <p className="text-muted-foreground mb-4">
-                  No posts yet. Be the first to share!
+                  No questions yet. Be the first to ask!
                 </p>
                 <Button asChild>
-                  <Link href="/posts/new">Create the first post</Link>
+                  <Link href="/posts/new">Ask the first question</Link>
                 </Button>
               </div>
             ) : (
@@ -105,6 +95,86 @@ export default async function PostsPage() {
             )}
           </div>
         </main>
+
+        {/* Sidebar */}
+        <aside className="hidden lg:block w-80 shrink-0">
+          <div className="sticky top-20 space-y-4">
+            {/* Community Stats */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-sm">Community Stats</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-2 text-sm">
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Total Questions</span>
+                  <span className="font-semibold">{posts.length}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Active Users</span>
+                  <span className="font-semibold">234</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Total Answers</span>
+                  <span className="font-semibold">1.2k</span>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Popular Tags */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-sm">Popular Tags</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-2">
+                  {tags?.map((tag) => (
+                    <Badge key={tag.id} variant="secondary" className="cursor-pointer hover:bg-secondary/80">
+                      {tag.name}
+                    </Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Categories */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-sm">Categories</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-1">
+                  {categories?.map((category) => (
+                    <Link
+                      key={category.id}
+                      href={`/category/${category.slug}`}
+                      className="block px-2 py-1.5 rounded-md hover:bg-accent transition-colors text-sm"
+                    >
+                      {category.name}
+                    </Link>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Helpful Resources */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-sm">Helpful Resources</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-2 text-sm">
+                <Link href="/faq" className="block text-primary hover:underline">
+                  FAQ
+                </Link>
+                <Link href="/companies" className="block text-primary hover:underline">
+                  Verified Companies
+                </Link>
+                <Link href="/contact" className="block text-primary hover:underline">
+                  Contact Support
+                </Link>
+              </CardContent>
+            </Card>
+          </div>
+        </aside>
       </div>
     </div>
   )

@@ -4,11 +4,13 @@ import { createClient } from '@/lib/supabase/server'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { Card } from '@/components/ui/card'
 import { formatDate, formatNumber } from '@/lib/utils'
-import { ThumbsUp, ThumbsDown, Eye, Share2, MessageSquare } from 'lucide-react'
+import { Eye, Share2, Clock, Award } from 'lucide-react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { CommentThread } from '@/components/posts/CommentThread'
+import { VotingButtons } from '@/components/posts/VotingButtons'
 
 export default async function PostDetailPage({ params }: { params: { id: string } }) {
   const supabase = await createClient()
@@ -73,112 +75,161 @@ export default async function PostDetailPage({ params }: { params: { id: string 
     .toUpperCase() || 'U'
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="max-w-4xl mx-auto">
-        {/* Post Header */}
-        <div className="mb-6">
+    <div className="container mx-auto px-4 py-6">
+      <div className="max-w-5xl mx-auto">
+        {/* Breadcrumb */}
+        <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
+          <Link href="/posts" className="hover:text-primary">Questions</Link>
+          <span>/</span>
           {post.category && (
-            <Badge variant="outline" className="mb-4">
-              {post.category.name}
-            </Badge>
+            <>
+              <Link href={`/category/${post.category.slug}`} className="hover:text-primary">
+                {post.category.name}
+              </Link>
+              <span>/</span>
+            </>
           )}
-          <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
+          <span className="text-foreground truncate">{post.title}</span>
+        </div>
 
-          {/* Author Info */}
-          <div className="flex items-center gap-3 mb-4">
-            <Avatar className="h-12 w-12">
-              <AvatarImage src={post.author?.avatar_url} />
-              <AvatarFallback>{initials}</AvatarFallback>
-            </Avatar>
-            <div>
-              <div className="flex items-center gap-2">
-                <Link
-                  href={`/profile/${post.author_id}`}
-                  className="font-semibold hover:underline"
-                >
-                  {post.author?.username || 'Unknown'}
-                </Link>
-                {post.author?.role && post.author.role !== 'user' && (
-                  <Badge variant="secondary" className="text-xs">
-                    {post.author.role.replace('_', ' ')}
-                  </Badge>
-                )}
-              </div>
-              <p className="text-sm text-muted-foreground">
-                Posted {formatDate(post.created_at)}
-              </p>
+        {/* Header */}
+        <div className="mb-6">
+          <h1 className="text-3xl font-bold mb-4">{post.title}</h1>
+          <div className="flex items-center gap-4 text-sm text-muted-foreground">
+            <div className="flex items-center gap-1">
+              <Clock className="h-4 w-4" />
+              <span>Asked {formatDate(post.created_at)}</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <Eye className="h-4 w-4" />
+              <span>{formatNumber(post.views)} views</span>
             </div>
           </div>
+        </div>
 
-          {/* Tags */}
-          {post.tags && post.tags.length > 0 && (
-            <div className="flex flex-wrap gap-2 mb-4">
-              {post.tags.map((tag: any) => (
+        {/* Question Section */}
+        <div className="flex gap-6 mb-8">
+          {/* Voting Column */}
+          <div className="shrink-0">
+            <VotingButtons initialScore={post.score} postId={post.id} />
+          </div>
+
+          {/* Content Column */}
+          <div className="flex-1 min-w-0">
+            {/* Question Body */}
+            <div className="prose prose-slate max-w-none mb-6">
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                {post.body}
+              </ReactMarkdown>
+            </div>
+
+            {/* Tags */}
+            <div className="flex flex-wrap gap-2 mb-6">
+              {post.category && (
+                <Badge variant="default">
+                  {post.category.name}
+                </Badge>
+              )}
+              {post.tags && post.tags.map((tag: any) => (
                 <Badge key={tag.id} variant="secondary">
                   {tag.name}
                 </Badge>
               ))}
             </div>
-          )}
 
-          {/* Metadata */}
-          <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground border-y py-3">
-            <div className="flex items-center gap-1">
-              <Eye className="h-4 w-4" />
-              <span>{formatNumber(post.views)} views</span>
-            </div>
-            <div className="flex items-center gap-1">
-              <MessageSquare className="h-4 w-4" />
-              <span>{commentsData?.length || 0} comments</span>
+            {/* Actions & Author Info */}
+            <div className="flex items-start justify-between">
+              <div className="flex gap-2">
+                <Button variant="ghost" size="sm">
+                  <Share2 className="h-4 w-4 mr-1" />
+                  Share
+                </Button>
+                <Button variant="ghost" size="sm">
+                  Edit
+                </Button>
+                <Button variant="ghost" size="sm">
+                  Follow
+                </Button>
+              </div>
+
+              {/* Author Card */}
+              <Card className="p-4 w-64">
+                <div className="text-xs text-muted-foreground mb-2">
+                  asked {formatDate(post.created_at)}
+                </div>
+                <Link href={`/profile/${post.author_id}`} className="flex items-start gap-2 group">
+                  <Avatar className="h-8 w-8">
+                    <AvatarImage src={post.author?.avatar_url} />
+                    <AvatarFallback>{initials}</AvatarFallback>
+                  </Avatar>
+                  <div className="flex-1 min-w-0">
+                    <div className="font-semibold group-hover:text-primary transition-colors">
+                      {post.author?.username || 'Unknown'}
+                    </div>
+                    <div className="flex items-center gap-1 text-xs text-muted-foreground">
+                      <Award className="h-3 w-3" />
+                      <span>{formatNumber(post.author?.reputation || 0)}</span>
+                    </div>
+                    {post.author?.role && post.author.role !== 'user' && (
+                      <Badge variant="secondary" className="text-[10px] mt-1">
+                        {post.author.role.replace('_', ' ')}
+                      </Badge>
+                    )}
+                  </div>
+                </Link>
+              </Card>
             </div>
           </div>
         </div>
 
-        {/* Post Content */}
-        <div className="prose prose-slate max-w-none mb-8">
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>
-            {post.body}
-          </ReactMarkdown>
-        </div>
-
-        {/* Post Actions */}
-        <div className="flex gap-2 mb-8 pb-8 border-b">
-          <Button variant="outline" size="sm">
-            <ThumbsUp className="h-4 w-4 mr-1" />
-            Upvote ({formatNumber(post.score)})
-          </Button>
-          <Button variant="outline" size="sm">
-            <ThumbsDown className="h-4 w-4 mr-1" />
-            Downvote
-          </Button>
-          <Button variant="outline" size="sm">
-            <Share2 className="h-4 w-4 mr-1" />
-            Share
-          </Button>
-        </div>
-
-        {/* Comments Section */}
-        <div>
+        {/* Answers Section */}
+        <div className="border-t pt-6">
           <h2 className="text-2xl font-bold mb-6">
-            Comments ({commentsData?.length || 0})
+            {commentsData?.length || 0} {(commentsData?.length || 0) === 1 ? 'Answer' : 'Answers'}
           </h2>
 
           {/* Comment Form */}
-          <div className="mb-8">
-            <p className="text-sm text-muted-foreground mb-4">
-              <Link href="/login" className="text-primary hover:underline">
+          <div className="mb-6 p-4 bg-muted/50 rounded-lg">
+            <p className="text-sm text-muted-foreground">
+              <Link href="/login" className="text-primary hover:underline font-medium">
                 Log in
               </Link>{' '}
-              to comment
+              to post an answer
             </p>
           </div>
 
           {/* Comments Thread */}
           {rootComments.length > 0 ? (
-            <CommentThread comments={rootComments} postId={params.id} />
+            <div className="space-y-6">
+              {rootComments.map((comment) => (
+                <div key={comment.id} className="flex gap-6 pb-6 border-b last:border-b-0">
+                  <div className="shrink-0">
+                    <VotingButtons initialScore={comment.score || 0} postId={comment.id} />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="prose prose-sm max-w-none mb-4">
+                      {comment.body}
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <div className="flex gap-2 text-sm">
+                        <Button variant="ghost" size="sm">Share</Button>
+                        <Button variant="ghost" size="sm">Edit</Button>
+                        <Button variant="ghost" size="sm">Follow</Button>
+                      </div>
+                      <div className="text-xs text-muted-foreground">
+                        answered {formatDate(comment.created_at)} by{' '}
+                        <Link href={`/profile/${comment.author_id}`} className="text-primary hover:underline">
+                          {comment.author?.username}
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           ) : (
-            <p className="text-center text-muted-foreground py-8">
-              No comments yet. Be the first to comment!
+            <p className="text-center text-muted-foreground py-12">
+              No answers yet. Be the first to answer!
             </p>
           )}
         </div>
