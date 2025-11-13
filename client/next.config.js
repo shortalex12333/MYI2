@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  reactCompiler: true,
   images: {
     remotePatterns: [
       {
@@ -9,7 +10,6 @@ const nextConfig = {
     ],
   },
   experimental: {
-    reactCompiler: true,
     serverActions: {
       bodySizeLimit: '2mb',
     },
