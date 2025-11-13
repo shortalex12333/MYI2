@@ -98,6 +98,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Create post
+    // @ts-ignore - Supabase type inference issue
     const { data: post, error: postError } = await supabase
       .from('posts')
       .insert({

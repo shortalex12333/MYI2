@@ -52,6 +52,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ action: 'removed' })
     } else {
       // Add new reaction
+      // @ts-ignore - Supabase type inference issue
       const { data: reaction, error } = await supabase
         .from('reactions')
         .insert({
