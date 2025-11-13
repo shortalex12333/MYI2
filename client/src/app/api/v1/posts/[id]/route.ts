@@ -4,10 +4,9 @@ import { createClient } from '@/lib/supabase/server'
 // GET /api/v1/posts/[id] - Get a specific post
 export async function GET(
   request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
+  { params }: { params: { id: string } }
 ) {
   try {
-    const { id } = await params
     const supabase = await createClient()
 
     const { data: post, error } = await supabase
@@ -20,7 +19,7 @@ export async function GET(
         company:companies(*),
         location:locations(*)
       `)
-      .eq('id', id)
+      .eq('id', params.id)
       .single()
 
     if (error) {
@@ -34,7 +33,7 @@ export async function GET(
     }
 
     // Increment view count
-    await supabase.rpc('increment_post_views', { post_uuid: id })
+    await supabase.rpc('increment_post_views', { post_uuid: params.id })
 
     return NextResponse.json({ post: postWithTags })
   } catch (error) {
@@ -49,10 +48,9 @@ export async function GET(
 // PUT /api/v1/posts/[id] - Update own post
 export async function PUT(
   request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
+  { params }: { params: { id: string } }
 ) {
   try {
-    const { id } = await params
     const supabase = await createClient()
 
     const {
@@ -79,7 +77,7 @@ export async function PUT(
         location_id,
         status,
       })
-      .eq('id', id)
+      .eq('id', params.id)
       .eq('author_id', user.id)
       .select()
       .single()
@@ -91,12 +89,12 @@ export async function PUT(
     // Update tags if provided
     if (tags !== undefined) {
       // Remove old tags
-      await supabase.from('post_tags').delete().eq('post_id', id)
+      await supabase.from('post_tags').delete().eq('post_id', params.id)
 
       // Add new tags
       if (tags.length > 0) {
         const tagInserts = tags.map((tagId: string) => ({
-          post_id: id,
+          post_id: params.id,
           tag_id: tagId,
         }))
         await supabase.from('post_tags').insert(tagInserts)
@@ -116,10 +114,9 @@ export async function PUT(
 // DELETE /api/v1/posts/[id] - Delete own post
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
+  { params }: { params: { id: string } }
 ) {
   try {
-    const { id } = await params
     const supabase = await createClient()
 
     const {
@@ -133,7 +130,7 @@ export async function DELETE(
     const { error } = await supabase
       .from('posts')
       .delete()
-      .eq('id', id)
+      .eq('id', params.id)
       .eq('author_id', user.id)
 
     if (error) {
