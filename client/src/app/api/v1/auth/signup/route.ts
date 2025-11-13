@@ -32,7 +32,7 @@ export async function POST(request: NextRequest) {
     // Create profile
     if (authData.user) {
       try {
-        // @ts-expect-error - Supabase type inference issue with profiles table
+        // @ts-ignore - Supabase type inference issue with profiles table - Supabase type inference issue with profiles table
         await supabase
           .from('profiles')
           .insert({
