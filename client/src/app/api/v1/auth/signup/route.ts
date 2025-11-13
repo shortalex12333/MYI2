@@ -40,7 +40,7 @@ export async function POST(request: NextRequest) {
             username,
             email,
             role: 'user',
-          } as any)
+          })
       } catch (profileError) {
         console.error('Profile creation error:', profileError)
       }
