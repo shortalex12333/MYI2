@@ -2,9 +2,33 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { MessageSquare, TrendingUp, Shield, Users } from 'lucide-react'
+import { MessageSquare, Shield, Users } from 'lucide-react'
+import { createClient } from '@/lib/supabase/server'
 
-export default function HomePage() {
+export default async function HomePage() {
+  const supabase = await createClient()
+
+  // Fetch categories with post counts
+  // @ts-ignore - Supabase type inference issue
+  const { data: categories } = await supabase
+    .from('categories')
+    .select('id, name, slug, description')
+    .order('display_order', { ascending: true })
+
+  // Get post counts for each category
+  const categoriesWithCounts = await Promise.all(
+    (categories || []).map(async (cat: any) => {
+      // @ts-ignore - Supabase type inference issue
+      const { count } = await supabase
+        .from('posts')
+        .select('*', { count: 'exact', head: true })
+        .eq('category_id', cat.id)
+        .eq('status', 'published')
+
+      return { ...cat, count: count || 0 }
+    })
+  )
+
   return (
     <div className="container mx-auto px-4 py-8">
       {/* Hero Section */}
@@ -26,7 +50,7 @@ export default function HomePage() {
       </section>
 
       {/* Features Section */}
-      <section className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+      <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
         <Link href="/posts">
           <Card className="hover:border-primary transition-colors cursor-pointer h-full">
             <CardHeader>
@@ -38,35 +62,24 @@ export default function HomePage() {
             </CardHeader>
           </Card>
         </Link>
-        <Link href="/insights">
-          <Card className="hover:border-primary transition-colors cursor-pointer h-full">
-            <CardHeader>
-              <TrendingUp className="h-10 w-10 text-primary mb-2" />
-              <CardTitle>Insurance Insights</CardTitle>
-              <CardDescription>
-                Access real-world claims data and premium trends
-              </CardDescription>
-            </CardHeader>
-          </Card>
-        </Link>
-        <Link href="/providers">
+        <Link href="/companies">
           <Card className="hover:border-primary transition-colors cursor-pointer h-full">
             <CardHeader>
               <Shield className="h-10 w-10 text-primary mb-2" />
-              <CardTitle>Verified Providers</CardTitle>
+              <CardTitle>Insurance Providers</CardTitle>
               <CardDescription>
-                Connect with verified insurers and brokers
+                Browse verified insurers and brokers
               </CardDescription>
             </CardHeader>
           </Card>
         </Link>
-        <Link href="/experts">
+        <Link href="/faq">
           <Card className="hover:border-primary transition-colors cursor-pointer h-full">
             <CardHeader>
               <Users className="h-10 w-10 text-primary mb-2" />
-              <CardTitle>Expert Network</CardTitle>
+              <CardTitle>FAQ</CardTitle>
               <CardDescription>
-                Learn from experienced captains and yacht owners
+                Get answers to common yacht insurance questions
               </CardDescription>
             </CardHeader>
           </Card>
@@ -77,15 +90,8 @@ export default function HomePage() {
       <section className="mb-12">
         <h2 className="text-3xl font-bold mb-6">Popular Topics</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[
-            { name: 'Claims', slug: 'claims', count: '1,234', description: 'Insurance claims discussions and experiences' },
-            { name: 'Policies', slug: 'policies', count: '892', description: 'Policy coverage and recommendations' },
-            { name: 'Regulations', slug: 'regulations', count: '567', description: 'Maritime regulations and compliance' },
-            { name: 'Maintenance', slug: 'maintenance', count: '445', description: 'Yacht maintenance best practices' },
-            { name: 'Safety', slug: 'safety', count: '389', description: 'Safety equipment and procedures' },
-            { name: 'General', slug: 'general', count: '678', description: 'General yacht insurance discussions' },
-          ].map((category) => (
-            <Link href={`/category/${category.slug}`} key={category.slug}>
+          {categoriesWithCounts.map((category) => (
+            <Link href={`/posts?category=${category.id}`} key={category.slug}>
               <Card className="hover:border-primary transition-colors cursor-pointer">
                 <CardHeader>
                   <div className="flex justify-between items-start mb-2">

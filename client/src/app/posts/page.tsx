@@ -42,6 +42,17 @@ export default async function PostsPage() {
     .select('*')
     .limit(10)
 
+  // Get total stats
+  // @ts-ignore - Supabase type inference issue
+  const { count: totalComments } = await supabase
+    .from('comments')
+    .select('*', { count: 'exact', head: true })
+
+  // @ts-ignore - Supabase type inference issue
+  const { count: totalUsers } = await supabase
+    .from('profiles')
+    .select('*', { count: 'exact', head: true })
+
   return (
     <div className="container mx-auto px-4 py-6">
       <div className="flex gap-6">
@@ -110,12 +121,12 @@ export default async function PostsPage() {
                   <span className="font-semibold">{posts.length}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">Active Users</span>
-                  <span className="font-semibold">234</span>
+                  <span className="text-muted-foreground">Total Users</span>
+                  <span className="font-semibold">{totalUsers || 0}</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">Total Answers</span>
-                  <span className="font-semibold">1.2k</span>
+                  <span className="font-semibold">{totalComments || 0}</span>
                 </div>
               </CardContent>
             </Card>
