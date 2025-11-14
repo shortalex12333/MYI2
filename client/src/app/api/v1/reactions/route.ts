@@ -24,6 +24,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Check if reaction already exists
+    // @ts-ignore - Supabase type inference issue
     let query = supabase
       .from('reactions')
       .select()
@@ -36,6 +37,7 @@ export async function POST(request: NextRequest) {
       query = query.eq('comment_id', comment_id)
     }
 
+    // @ts-ignore - Supabase type inference issue
     const { data: existing } = await query.single()
 
     if (existing) {
@@ -52,6 +54,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ action: 'removed' })
     } else {
       // Add new reaction
+      // @ts-ignore - Supabase type inference issue
       const { data: reaction, error } = await supabase
         .from('reactions')
         .insert({

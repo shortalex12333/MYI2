@@ -6,11 +6,9 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { formatDate, formatNumber } from '@/lib/utils'
-import { Eye, Share2, Clock, Award } from 'lucide-react'
+import { Eye, Share2, Clock } from 'lucide-react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
-import { CommentThread } from '@/components/posts/CommentThread'
-import { VotingButtons } from '@/components/posts/VotingButtons'
 
 export default async function PostDetailPage({ params }: { params: { id: string } }) {
   const supabase = await createClient()
@@ -102,17 +100,14 @@ export default async function PostDetailPage({ params }: { params: { id: string 
             </div>
             <div className="flex items-center gap-1">
               <Eye className="h-4 w-4" />
-              <span>{formatNumber(post.views)} views</span>
+              <span>{formatNumber(post.view_count || 0)} views</span>
             </div>
           </div>
         </div>
 
         {/* Question Section */}
         <div className="flex gap-6 mb-8">
-          {/* Voting Column */}
-          <div className="shrink-0">
-            <VotingButtons initialScore={post.score} postId={post.id} />
-          </div>
+          {/* Voting Column - Removed until voting system is implemented */}
 
           {/* Content Column */}
           <div className="flex-1 min-w-0">
@@ -166,10 +161,6 @@ export default async function PostDetailPage({ params }: { params: { id: string 
                     <div className="font-semibold group-hover:text-primary transition-colors">
                       {post.author?.username || 'Unknown'}
                     </div>
-                    <div className="flex items-center gap-1 text-xs text-muted-foreground">
-                      <Award className="h-3 w-3" />
-                      <span>{formatNumber(post.author?.reputation || 0)}</span>
-                    </div>
                     {post.author?.role && post.author.role !== 'user' && (
                       <Badge variant="secondary" className="text-[10px] mt-1">
                         {post.author.role.replace('_', ' ')}
@@ -203,9 +194,6 @@ export default async function PostDetailPage({ params }: { params: { id: string 
             <div className="space-y-6">
               {rootComments.map((comment) => (
                 <div key={comment.id} className="flex gap-6 pb-6 border-b last:border-b-0">
-                  <div className="shrink-0">
-                    <VotingButtons initialScore={comment.score || 0} postId={comment.id} />
-                  </div>
                   <div className="flex-1 min-w-0">
                     <div className="prose prose-sm max-w-none mb-4">
                       {comment.body}

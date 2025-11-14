@@ -1,5 +1,7 @@
 import { createClient } from '@/lib/supabase/server'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import Link from 'next/link'
 import ReactMarkdown from 'react-markdown'
 
 export default async function FAQPage() {
@@ -68,18 +70,12 @@ export default async function FAQPage() {
             Ask the community or browse existing discussions
           </p>
           <div className="flex gap-4 justify-center">
-            <a
-              href="/posts/new"
-              className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring h-10 px-4 py-2 bg-primary text-primary-foreground hover:bg-primary/90"
-            >
-              Ask a Question
-            </a>
-            <a
-              href="/posts"
-              className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring h-10 px-4 py-2 border border-input bg-background hover:bg-accent hover:text-accent-foreground"
-            >
-              Browse Posts
-            </a>
+            <Button asChild>
+              <Link href="/posts/new">Ask a Question</Link>
+            </Button>
+            <Button variant="outline" asChild>
+              <Link href="/posts">Browse Posts</Link>
+            </Button>
           </div>
         </div>
       </div>

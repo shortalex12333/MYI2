@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { Header } from '@/components/layout/Header'
+import Link from 'next/link'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -29,15 +30,15 @@ export default function RootLayout({
                 © 2024 MyYachtsInsurance. All rights reserved.
               </p>
               <nav className="flex gap-4 text-sm">
-                <a href="/terms" className="text-muted-foreground hover:text-foreground">
+                <Link href="/terms" className="text-muted-foreground hover:text-foreground">
                   Terms
-                </a>
-                <a href="/privacy" className="text-muted-foreground hover:text-foreground">
+                </Link>
+                <Link href="/privacy" className="text-muted-foreground hover:text-foreground">
                   Privacy
-                </a>
-                <a href="/contact" className="text-muted-foreground hover:text-foreground">
+                </Link>
+                <Link href="/contact" className="text-muted-foreground hover:text-foreground">
                   Contact
-                </a>
+                </Link>
               </nav>
             </div>
           </div>

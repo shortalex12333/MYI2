@@ -6,6 +6,7 @@ export async function GET(request: NextRequest) {
   try {
     const supabase = await createClient()
 
+    // @ts-ignore - Supabase type inference issue
     const { data: categories, error } = await supabase
       .from('categories')
       .select('*')
