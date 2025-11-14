@@ -2,11 +2,25 @@
 -- MyYachtsInsurance MVP Database Schema
 -- ============================================
 
+-- DROP EXISTING TABLES (in reverse dependency order)
+-- ============================================
+
+DROP TABLE IF EXISTS post_tags CASCADE;
+DROP TABLE IF EXISTS reactions CASCADE;
+DROP TABLE IF EXISTS comments CASCADE;
+DROP TABLE IF EXISTS posts CASCADE;
+DROP TABLE IF EXISTS faqs CASCADE;
+DROP TABLE IF EXISTS tags CASCADE;
+DROP TABLE IF EXISTS locations CASCADE;
+DROP TABLE IF EXISTS companies CASCADE;
+DROP TABLE IF EXISTS categories CASCADE;
+DROP TABLE IF EXISTS profiles CASCADE;
+
 -- 1. CREATE TABLES
 -- ============================================
 
 -- Profiles table (extends auth.users)
-CREATE TABLE IF NOT EXISTS profiles (
+CREATE TABLE profiles (
   id UUID PRIMARY KEY REFERENCES auth.users(id) ON DELETE CASCADE,
   username TEXT UNIQUE NOT NULL,
   email TEXT NOT NULL,
@@ -18,7 +32,7 @@ CREATE TABLE IF NOT EXISTS profiles (
 );
 
 -- Categories table
-CREATE TABLE IF NOT EXISTS categories (
+CREATE TABLE categories (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   name TEXT UNIQUE NOT NULL,
   slug TEXT UNIQUE NOT NULL,
@@ -29,7 +43,7 @@ CREATE TABLE IF NOT EXISTS categories (
 );
 
 -- Companies table
-CREATE TABLE IF NOT EXISTS companies (
+CREATE TABLE companies (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   name TEXT NOT NULL,
   slug TEXT UNIQUE,
@@ -41,7 +55,7 @@ CREATE TABLE IF NOT EXISTS companies (
 );
 
 -- Locations table
-CREATE TABLE IF NOT EXISTS locations (
+CREATE TABLE locations (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   name TEXT NOT NULL,
   country TEXT,
@@ -50,7 +64,7 @@ CREATE TABLE IF NOT EXISTS locations (
 );
 
 -- Posts table
-CREATE TABLE IF NOT EXISTS posts (
+CREATE TABLE posts (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   author_id UUID NOT NULL REFERENCES profiles(id) ON DELETE CASCADE,
   title TEXT NOT NULL,
@@ -67,7 +81,7 @@ CREATE TABLE IF NOT EXISTS posts (
 );
 
 -- Comments table
-CREATE TABLE IF NOT EXISTS comments (
+CREATE TABLE comments (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   post_id UUID NOT NULL REFERENCES posts(id) ON DELETE CASCADE,
   parent_id UUID REFERENCES comments(id) ON DELETE CASCADE,
@@ -78,7 +92,7 @@ CREATE TABLE IF NOT EXISTS comments (
 );
 
 -- Tags table
-CREATE TABLE IF NOT EXISTS tags (
+CREATE TABLE tags (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   name TEXT UNIQUE NOT NULL,
   slug TEXT UNIQUE NOT NULL,
@@ -86,7 +100,7 @@ CREATE TABLE IF NOT EXISTS tags (
 );
 
 -- Post tags junction table
-CREATE TABLE IF NOT EXISTS post_tags (
+CREATE TABLE post_tags (
   post_id UUID NOT NULL REFERENCES posts(id) ON DELETE CASCADE,
   tag_id UUID NOT NULL REFERENCES tags(id) ON DELETE CASCADE,
   created_at TIMESTAMPTZ DEFAULT NOW(),
@@ -94,7 +108,7 @@ CREATE TABLE IF NOT EXISTS post_tags (
 );
 
 -- Reactions table
-CREATE TABLE IF NOT EXISTS reactions (
+CREATE TABLE reactions (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   user_id UUID NOT NULL REFERENCES profiles(id) ON DELETE CASCADE,
   post_id UUID REFERENCES posts(id) ON DELETE CASCADE,
@@ -110,7 +124,7 @@ CREATE TABLE IF NOT EXISTS reactions (
 );
 
 -- FAQs table
-CREATE TABLE IF NOT EXISTS faqs (
+CREATE TABLE faqs (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   question TEXT NOT NULL,
   answer TEXT NOT NULL,
@@ -124,34 +138,34 @@ CREATE TABLE IF NOT EXISTS faqs (
 -- ============================================
 
 -- Posts indexes
-CREATE INDEX IF NOT EXISTS idx_posts_author_id ON posts(author_id);
-CREATE INDEX IF NOT EXISTS idx_posts_category_id ON posts(category_id);
-CREATE INDEX IF NOT EXISTS idx_posts_company_id ON posts(company_id);
-CREATE INDEX IF NOT EXISTS idx_posts_location_id ON posts(location_id);
-CREATE INDEX IF NOT EXISTS idx_posts_status ON posts(status);
-CREATE INDEX IF NOT EXISTS idx_posts_created_at ON posts(created_at DESC);
+CREATE INDEX idx_posts_author_id ON posts(author_id);
+CREATE INDEX idx_posts_category_id ON posts(category_id);
+CREATE INDEX idx_posts_company_id ON posts(company_id);
+CREATE INDEX idx_posts_location_id ON posts(location_id);
+CREATE INDEX idx_posts_status ON posts(status);
+CREATE INDEX idx_posts_created_at ON posts(created_at DESC);
 
 -- Comments indexes
-CREATE INDEX IF NOT EXISTS idx_comments_post_id ON comments(post_id);
-CREATE INDEX IF NOT EXISTS idx_comments_parent_id ON comments(parent_id);
-CREATE INDEX IF NOT EXISTS idx_comments_author_id ON comments(author_id);
-CREATE INDEX IF NOT EXISTS idx_comments_created_at ON comments(created_at);
+CREATE INDEX idx_comments_post_id ON comments(post_id);
+CREATE INDEX idx_comments_parent_id ON comments(parent_id);
+CREATE INDEX idx_comments_author_id ON comments(author_id);
+CREATE INDEX idx_comments_created_at ON comments(created_at);
 
 -- Reactions indexes
-CREATE INDEX IF NOT EXISTS idx_reactions_user_id ON reactions(user_id);
-CREATE INDEX IF NOT EXISTS idx_reactions_post_id ON reactions(post_id);
-CREATE INDEX IF NOT EXISTS idx_reactions_comment_id ON reactions(comment_id);
+CREATE INDEX idx_reactions_user_id ON reactions(user_id);
+CREATE INDEX idx_reactions_post_id ON reactions(post_id);
+CREATE INDEX idx_reactions_comment_id ON reactions(comment_id);
 
 -- Post tags indexes
-CREATE INDEX IF NOT EXISTS idx_post_tags_post_id ON post_tags(post_id);
-CREATE INDEX IF NOT EXISTS idx_post_tags_tag_id ON post_tags(tag_id);
+CREATE INDEX idx_post_tags_post_id ON post_tags(post_id);
+CREATE INDEX idx_post_tags_tag_id ON post_tags(tag_id);
 
 -- Categories index
-CREATE INDEX IF NOT EXISTS idx_categories_display_order ON categories(display_order);
+CREATE INDEX idx_categories_display_order ON categories(display_order);
 
 -- FAQs indexes
-CREATE INDEX IF NOT EXISTS idx_faqs_display_order ON faqs(display_order);
-CREATE INDEX IF NOT EXISTS idx_faqs_category_id ON faqs(category_id);
+CREATE INDEX idx_faqs_display_order ON faqs(display_order);
+CREATE INDEX idx_faqs_category_id ON faqs(category_id);
 
 -- 3. CREATE FUNCTIONS
 -- ============================================
