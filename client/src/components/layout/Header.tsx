@@ -1,14 +1,25 @@
 'use client'
 
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import { Anchor, Search, Bell, Menu, Award } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { useState } from 'react'
 
 export function Header() {
+  const router = useRouter()
   const [isAuthenticated, setIsAuthenticated] = useState(false)
+  const [searchQuery, setSearchQuery] = useState('')
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const userReputation = 1247 // This would come from auth context
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (searchQuery.trim()) {
+      router.push(`/posts?search=${encodeURIComponent(searchQuery.trim())}`)
+    }
+  }
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -47,14 +58,16 @@ export function Header() {
 
           {/* Search Bar */}
           <div className="flex-1 max-w-2xl">
-            <div className="relative">
+            <form onSubmit={handleSearch} className="relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
                 type="search"
                 placeholder="Search questions..."
                 className="pl-10 w-full"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
               />
-            </div>
+            </form>
           </div>
 
           {/* Right Side Actions */}
@@ -64,7 +77,13 @@ export function Header() {
                 <Button variant="default" size="sm" asChild className="hidden sm:flex">
                   <Link href="/posts/new">Ask Question</Link>
                 </Button>
-                <Button variant="ghost" size="icon" className="relative">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="relative"
+                  onClick={() => router.push('/notifications')}
+                  title="Notifications"
+                >
                   <Bell className="h-5 w-5" />
                   <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-primary text-[10px] font-bold text-primary-foreground flex items-center justify-center">
                     3
@@ -95,11 +114,50 @@ export function Header() {
             )}
 
             {/* Mobile menu */}
-            <Button variant="ghost" size="icon" className="md:hidden">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="md:hidden"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              title="Menu"
+            >
               <Menu className="h-5 w-5" />
             </Button>
           </div>
         </div>
+
+        {/* Mobile Navigation Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden border-t py-4 space-y-2">
+            <Link href="/posts" onClick={() => setMobileMenuOpen(false)}>
+              <Button variant="ghost" className="w-full justify-start">
+                Questions
+              </Button>
+            </Link>
+            <Link href="/categories" onClick={() => setMobileMenuOpen(false)}>
+              <Button variant="ghost" className="w-full justify-start">
+                Categories
+              </Button>
+            </Link>
+            <Link href="/companies" onClick={() => setMobileMenuOpen(false)}>
+              <Button variant="ghost" className="w-full justify-start">
+                Companies
+              </Button>
+            </Link>
+            <Link href="/faq" onClick={() => setMobileMenuOpen(false)}>
+              <Button variant="ghost" className="w-full justify-start">
+                FAQ
+              </Button>
+            </Link>
+            {isAuthenticated && (
+              <Link href="/posts/new" onClick={() => setMobileMenuOpen(false)}>
+                <Button variant="default" className="w-full">
+                  Ask Question
+                </Button>
+              </Link>
+            )}
+          </div>
+        )}
       </div>
     </header>
   )

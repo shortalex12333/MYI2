@@ -3,17 +3,19 @@ import Link from 'next/link'
 import { createClient } from '@/lib/supabase/server'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { formatDate, formatNumber } from '@/lib/utils'
-import { Eye, Share2, Clock, Award } from 'lucide-react'
+import { Eye, Clock, Award } from 'lucide-react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
-import { CommentThread } from '@/components/posts/CommentThread'
 import { VotingButtons } from '@/components/posts/VotingButtons'
+import { PostActions } from '@/components/posts/PostActions'
 
 export default async function PostDetailPage({ params }: { params: { id: string } }) {
   const supabase = await createClient()
+
+  // Get current user
+  const { data: { user } } = await supabase.auth.getUser()
 
   // Fetch post
   const { data: postData, error } = await supabase
@@ -139,18 +141,11 @@ export default async function PostDetailPage({ params }: { params: { id: string 
 
             {/* Actions & Author Info */}
             <div className="flex items-start justify-between">
-              <div className="flex gap-2">
-                <Button variant="ghost" size="sm">
-                  <Share2 className="h-4 w-4 mr-1" />
-                  Share
-                </Button>
-                <Button variant="ghost" size="sm">
-                  Edit
-                </Button>
-                <Button variant="ghost" size="sm">
-                  Follow
-                </Button>
-              </div>
+              <PostActions
+                postId={post.id}
+                authorId={post.author_id}
+                currentUserId={user?.id}
+              />
 
               {/* Author Card */}
               <Card className="p-4 w-64">
@@ -211,11 +206,11 @@ export default async function PostDetailPage({ params }: { params: { id: string 
                       {comment.body}
                     </div>
                     <div className="flex items-center justify-between">
-                      <div className="flex gap-2 text-sm">
-                        <Button variant="ghost" size="sm">Share</Button>
-                        <Button variant="ghost" size="sm">Edit</Button>
-                        <Button variant="ghost" size="sm">Follow</Button>
-                      </div>
+                      <PostActions
+                        postId={comment.id}
+                        authorId={comment.author_id}
+                        currentUserId={user?.id}
+                      />
                       <div className="text-xs text-muted-foreground">
                         answered {formatDate(comment.created_at)} by{' '}
                         <Link href={`/profile/${comment.author_id}`} className="text-primary hover:underline">

@@ -9,7 +9,7 @@ import { TrendingUp, Users, MessageCircle, Clock } from 'lucide-react'
 export default async function PostsPage({
   searchParams,
 }: {
-  searchParams: { category?: string; tag?: string; sort?: string }
+  searchParams: { category?: string; tag?: string; sort?: string; search?: string }
 }) {
   const supabase = await createClient()
 
@@ -27,6 +27,11 @@ export default async function PostsPage({
   // Filter by category if provided
   if (searchParams.category) {
     query = query.eq('category_id', searchParams.category)
+  }
+
+  // Search filter
+  if (searchParams.search) {
+    query = query.or(`title.ilike.%${searchParams.search}%,body.ilike.%${searchParams.search}%`)
   }
 
   // Sort based on parameter
