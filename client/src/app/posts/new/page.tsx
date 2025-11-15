@@ -11,6 +11,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 export default function NewPostPage() {
   const router = useRouter()
   const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
   const [categories, setCategories] = useState<any[]>([])
   const [formData, setFormData] = useState({
     title: '',
@@ -29,6 +30,7 @@ export default function NewPostPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsLoading(true)
+    setError(null)
 
     try {
       const response = await fetch('/api/v1/posts', {
@@ -46,7 +48,8 @@ export default function NewPostPage() {
       router.push(`/posts/${data.post.id}`)
     } catch (error) {
       console.error('Failed to create post:', error)
-      alert('Failed to create post. Please try again.')
+      const errorMessage = error instanceof Error ? error.message : 'Failed to create post. Please try again.'
+      setError(errorMessage)
     } finally {
       setIsLoading(false)
     }
@@ -109,6 +112,12 @@ export default function NewPostPage() {
                   Markdown is supported. Use **bold**, *italic*, [links](url), etc.
                 </p>
               </div>
+
+              {error && (
+                <div className="bg-destructive/10 text-destructive text-sm p-3 rounded-md">
+                  {error}
+                </div>
+              )}
 
               <div className="flex gap-2">
                 <Button type="submit" disabled={isLoading}>

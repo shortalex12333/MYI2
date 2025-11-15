@@ -97,24 +97,25 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Create post
+    // Create post - handle empty category_id
     const { data: post, error: postError } = await supabase
       .from('posts')
       .insert({
         author_id: user.id,
         title,
         body: content,
-        category_id,
-        yacht_type,
-        yacht_length,
-        company_id,
-        location_id,
+        category_id: category_id || null,
+        yacht_type: yacht_type || null,
+        yacht_length: yacht_length || null,
+        company_id: company_id || null,
+        location_id: location_id || null,
         status: 'published',
       })
       .select()
       .single()
 
     if (postError) {
+      console.error('Post creation error:', postError)
       return NextResponse.json({ error: postError.message }, { status: 400 })
     }
 
