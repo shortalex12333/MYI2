@@ -54,6 +54,7 @@ export async function POST(request: NextRequest) {
       // Add new reaction
       const { data: reaction, error } = await supabase
         .from('reactions')
+        // @ts-ignore - Supabase type inference issue
         .insert({
           user_id: user.id,
           post_id,

@@ -82,6 +82,7 @@ export async function POST(request: NextRequest) {
 
     const { data: comment, error } = await supabase
       .from('comments')
+      // @ts-ignore - Supabase type inference issue
       .insert({
         post_id,
         parent_id,
