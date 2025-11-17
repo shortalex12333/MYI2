@@ -1,9 +1,13 @@
 import { createClient } from '@/lib/supabase/server'
-import Link from 'next/link'
+import { CategoryHero } from '@/components/categories/CategoryHero'
+import { CategoryStatsBar } from '@/components/categories/CategoryStatsBar'
+import { CategoryGrid } from '@/components/categories/CategoryGrid'
+import { CategoryCTA } from '@/components/categories/CategoryCTA'
 
 export default async function CategoriesPage() {
   const supabase = await createClient()
 
+  // Fetch categories with post counts
   // @ts-ignore - Supabase type inference issue
   const { data: categories, error } = await supabase
     .from('categories')
@@ -14,33 +18,40 @@ export default async function CategoriesPage() {
     console.error('Error fetching categories:', error)
   }
 
-  return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-8">Categories</h1>
+  // Calculate total questions across all categories
+  const totalQuestions = categories?.reduce((sum, cat) => {
+    const count = cat.posts?.[0]?.count || 0
+    return sum + count
+  }, 0) || 0
 
+  return (
+    <div className="min-h-screen bg-maritime-navy text-maritime-cream">
+      {/* Hero Header Section */}
+      <CategoryHero />
+
+      {/* Maritime Stats Bar */}
+      <CategoryStatsBar
+        totalCategories={categories?.length || 0}
+        totalQuestions={totalQuestions}
+      />
+
+      {/* Main Category Grid */}
       {!categories || categories.length === 0 ? (
-        <p className="text-muted-foreground">No categories available yet.</p>
-      ) : (
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {categories.map((category: any) => (
-            <Link
-              key={category.id}
-              href={`/posts?category=${category.id}`}
-              className="border rounded-lg p-6 hover:border-primary transition-colors"
-            >
-              <h2 className="text-xl font-semibold mb-2">{category.name}</h2>
-              {category.description && (
-                <p className="text-sm text-muted-foreground mb-4">
-                  {category.description}
-                </p>
-              )}
-              <p className="text-sm text-primary">
-                {category.posts?.[0]?.count || 0} posts
+        <section className="py-20">
+          <div className="container mx-auto px-4 text-center">
+            <div className="inline-block p-8 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
+              <p className="text-xl text-maritime-cream/70">
+                No categories available yet.
               </p>
-            </Link>
-          ))}
-        </div>
+            </div>
+          </div>
+        </section>
+      ) : (
+        <CategoryGrid categories={categories} />
       )}
+
+      {/* Bottom CTA Section */}
+      <CategoryCTA />
     </div>
   )
 }
