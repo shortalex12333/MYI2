@@ -41,7 +41,7 @@ export function CategoryCard({ category, index = 0 }: CategoryCardProps) {
   const postCount = category.posts?.[0]?.count || 0
 
   return (
-    <Link href={`/posts?category=${category.id}`}>
+    <Link href={`/category/${category.slug}`}>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
