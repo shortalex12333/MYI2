@@ -47,7 +47,7 @@ export default async function FAQPage() {
           <div className="max-w-4xl mx-auto">
             {!faqs || faqs.length === 0 ? (
               <div className="text-center py-16">
-                <div className="inline-block p-12 rounded-2xl bg-gray-100  border border-gray-200">
+                <div className="inline-block p-12 rounded-lg bg-gray-100  border border-gray-200">
                   <p className="text-lg text-gray-900/70 mb-2">
                     No FAQs available yet.
                   </p>

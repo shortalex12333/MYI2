@@ -41,7 +41,7 @@ export function CompaniesGrid({
         {/* Companies Grid */}
         {companies.length === 0 ? (
           <div className="py-16 text-center">
-            <div className="inline-block p-12 rounded-2xl bg-gray-100  border border-gray-200">
+            <div className="inline-block p-12 rounded-lg bg-gray-100  border border-gray-200">
               <p className="text-lg text-gray-900/70 mb-2">
                 No companies listed yet.
               </p>

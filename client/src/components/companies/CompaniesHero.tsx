@@ -22,7 +22,6 @@ export function CompaniesHero() {
           transition={{ duration: 0.2 }}
           className="flex items-center justify-center gap-4 mb-8"
         >
-          {['🛡', '⚓', '📄', '💼'].map((emoji, idx) => (
             <motion.span
               key={idx}
               initial={{ opacity: 0, y: 20 }}
@@ -72,7 +71,7 @@ export function CompaniesHero() {
               transition={{ duration: 0.2, delay: 0.5 + idx * 0.1 }}
               className="flex flex-col items-center gap-2 group"
             >
-              <div className="p-4 rounded-xl bg-gray-100  border border-gray-200 group-hover:border-brand-blue/50 transition-all">
+              <div className="p-4 rounded-lg bg-gray-100  border border-gray-200 group-hover:border-brand-blue/50 transition-all">
                 <item.Icon className="h-6 w-6 text-brand-blue group-hover:scale-110 transition-transform" />
               </div>
               <span className="text-xs text-gray-900/60 group-hover:text-brand-blue transition-colors">

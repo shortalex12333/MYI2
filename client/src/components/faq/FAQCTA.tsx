@@ -57,7 +57,7 @@ export function FAQCTA() {
             <Button
               size="lg"
               asChild
-              className="bg-brand-blue hover:bg-brand-blue-light text-maritime-navy font-semibold h-14 px-10 text-lg shadow-2xl shadow-brand-blue/30 transition-all duration-200 hover:scale-105"
+              className="bg-brand-blue hover:bg-brand-blue-light text-maritime-navy font-semibold h-14 px-10 text-lg  shadow-brand-blue/30 transition-all duration-200 hover:scale-105"
             >
               <Link href="/posts/new">
                 <MessageSquare className="mr-2 h-5 w-5" />

@@ -36,7 +36,7 @@ export function CompanyCard({ company, index = 0 }: CompanyCardProps) {
       className="group h-full"
     >
       <Link href={`/companies/${company.id}`}>
-        <div className="relative h-full rounded-xl bg-gray-100  border border-gray-200 hover:border-brand-blue/50 transition-all duration-200 hover:shadow-lg hover:shadow-brand-blue/10 p-6 flex flex-col">
+        <div className="relative h-full rounded-lg bg-gray-100  border border-gray-200 hover:border-brand-blue/50 transition-all duration-200 hover: hover:shadow-brand-blue/10 p-6 flex flex-col">
           {/* Company Logo & Header */}
           <div className="flex items-start gap-4 mb-4">
             {/* Logo */}

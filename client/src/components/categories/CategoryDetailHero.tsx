@@ -16,13 +16,6 @@ interface CategoryDetailHeroProps {
 
 // Maritime emoji mapping (reusing from CategoryCard)
 const categoryEmojis: Record<string, string> = {
-  claims: '⚖️',
-  policies: '📋',
-  regulations: '⚖️',
-  maintenance: '🔧',
-  safety: '🦺',
-  general: '💬',
-  engines: '⚓',
   repairs: '🛠',
   navigation: '🧭',
   insurance: '🛡',
@@ -34,7 +27,6 @@ const categoryEmojis: Record<string, string> = {
 }
 
 export function CategoryDetailHero({ category }: CategoryDetailHeroProps) {
-  const emoji = categoryEmojis[category.slug] || category.icon || '📌'
 
   return (
     <AuroraBackground className="relative min-h-[50vh] flex items-center justify-center">

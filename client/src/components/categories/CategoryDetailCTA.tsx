@@ -49,7 +49,7 @@ export function CategoryDetailCTA({ categoryName, categorySlug }: CategoryDetail
             transition={{ duration: 0.2 }}
             className="mb-6"
           >
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-brand-blue/10 border border-brand-blue/30">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-lg bg-brand-blue/10 border border-brand-blue/30">
               <MessageSquare className="h-8 w-8 text-brand-blue" />
             </div>
           </motion.div>
@@ -69,7 +69,7 @@ export function CategoryDetailCTA({ categoryName, categorySlug }: CategoryDetail
           <Button
             size="lg"
             asChild
-            className="bg-brand-blue hover:bg-brand-blue-light text-maritime-navy font-semibold h-14 px-10 text-lg shadow-2xl shadow-brand-blue/30 transition-all duration-200 hover:scale-105"
+            className="bg-brand-blue hover:bg-brand-blue-light text-maritime-navy font-semibold h-14 px-10 text-lg  shadow-brand-blue/30 transition-all duration-200 hover:scale-105"
           >
             <Link href={`/posts/new?category=${categorySlug}`}>
               <Plus className="mr-2 h-5 w-5" />

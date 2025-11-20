@@ -32,7 +32,7 @@ export function ContactForm() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.2, delay: 0.1 }}
-            className="rounded-2xl bg-gray-100  border border-gray-200 p-8"
+            className="rounded-lg bg-gray-100  border border-gray-200 p-8"
           >
             <form className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
@@ -89,7 +89,7 @@ export function ContactForm() {
               <Button
                 type="submit"
                 size="lg"
-                className="w-full bg-brand-blue hover:bg-brand-blue-light text-maritime-navy font-semibold shadow-xl shadow-brand-blue/20 transition-all hover:scale-105"
+                className="w-full bg-brand-blue hover:bg-brand-blue-light text-maritime-navy font-semibold  shadow-brand-blue/20 transition-all hover:scale-105"
               >
                 <Send className="mr-2 h-5 w-5" />
                 Send Message

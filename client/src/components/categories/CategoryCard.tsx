@@ -18,13 +18,6 @@ interface CategoryCardProps {
 
 // Maritime emoji mapping
 const categoryEmojis: Record<string, string> = {
-  claims: '⚖️',
-  policies: '📋',
-  regulations: '⚖️',
-  maintenance: '🔧',
-  safety: '🦺',
-  general: '💬',
-  engines: '⚓',
   repairs: '🛠',
   navigation: '🧭',
   insurance: '🛡',
@@ -36,7 +29,6 @@ const categoryEmojis: Record<string, string> = {
 }
 
 export function CategoryCard({ category, index = 0 }: CategoryCardProps) {
-  const emoji = categoryEmojis[category.slug] || category.icon || '📌'
   const postCount = category.posts?.[0]?.count || 0
 
   return (
@@ -46,11 +38,11 @@ export function CategoryCard({ category, index = 0 }: CategoryCardProps) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.2, delay: index * 0.06, ease: 'easeOut' }}
-        whileHover={{ y: -4, scale: 1.02 }}
+        whileHover={{ y: -2 }}
         className="group relative h-full"
       >
         {/* Glassmorphism Card */}
-        <div className="h-full p-6 md:p-8 rounded-xl bg-gray-100  border border-gray-200 hover:border-brand-blue/50 transition-all duration-200 hover:shadow-lg hover:shadow-brand-blue/10">
+        <div className="h-full p-6 md:p-8 rounded-lg bg-gray-100  border border-gray-200 hover:border-brand-blue/50 transition-all duration-200 hover: hover:shadow-brand-blue/10">
           {/* Animated Gold Bar on Hover */}
           <div className="absolute top-0 left-0 right-0 h-1 bg-brand-blue rounded-t-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
 

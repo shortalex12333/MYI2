@@ -48,9 +48,9 @@ export function CompanyDetailHero({ company }: CompanyDetailHeroProps) {
           >
             <div className="relative inline-block">
               {/* Gold glow */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-brand-blue/30 to-brand-blue-light/20 blur-2xl" />
+              <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-brand-blue/30 to-brand-blue-light/20 blur-2xl" />
 
-              <div className="relative w-32 h-32 rounded-2xl bg-white-light border-2 border-brand-blue/30 flex items-center justify-center overflow-hidden">
+              <div className="relative w-32 h-32 rounded-lg bg-white-light border-2 border-brand-blue/30 flex items-center justify-center overflow-hidden">
                 {company.logo_url ? (
                   <Image
                     src={company.logo_url}
@@ -119,7 +119,7 @@ export function CompanyDetailHero({ company }: CompanyDetailHeroProps) {
               <Button
                 size="lg"
                 asChild
-                className="bg-brand-blue hover:bg-brand-blue-light text-maritime-navy font-semibold shadow-xl shadow-brand-blue/20"
+                className="bg-brand-blue hover:bg-brand-blue-light text-maritime-navy font-semibold  shadow-brand-blue/20"
               >
                 <a href={company.website} target="_blank" rel="noopener noreferrer">
                   <ExternalLink className="mr-2 h-5 w-5" />

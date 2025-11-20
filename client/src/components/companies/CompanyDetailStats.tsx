@@ -50,10 +50,10 @@ export function CompanyDetailStats({ verified, type }: CompanyDetailStatsProps) 
               className="text-center group"
             >
               <div className="flex flex-col items-center">
-                <div className="mb-3 p-3 rounded-xl bg-gray-100  border border-gray-200 group-hover:border-brand-blue/30 transition-all">
+                <div className="mb-3 p-3 rounded-lg bg-gray-100  border border-gray-200 group-hover:border-brand-blue/30 transition-all">
                   <stat.icon className={`h-6 w-6 ${stat.color} group-hover:scale-110 transition-transform`} />
                 </div>
-                <div className={`text-2xl md:text-3xl font-bold mb-1 ${stat.color}`}>
+                <div className={`text-2xl md:text-3xl font-display font-semibold mb-1 ${stat.color}`}>
                   {stat.value}
                 </div>
                 <div className="text-xs md:text-sm text-gray-900/60">

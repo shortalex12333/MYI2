@@ -24,7 +24,7 @@ export function CategoryDetailPostsGrid({ posts, categoryName }: CategoryDetailP
       {/* Posts Grid */}
       {posts.length === 0 ? (
         <div className="py-16 text-center">
-          <div className="inline-block p-8 rounded-2xl bg-gray-100  border border-gray-200">
+          <div className="inline-block p-8 rounded-lg bg-gray-100  border border-gray-200">
             <p className="text-lg text-gray-900/70">
               No questions in this category yet.
             </p>

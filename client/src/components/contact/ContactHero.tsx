@@ -22,7 +22,7 @@ export function ContactHero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.2, delay: idx * 0.1 }}
-                className="p-4 rounded-xl bg-gray-100  border border-gray-200"
+                className="p-4 rounded-lg bg-gray-100  border border-gray-200"
               >
                 <Icon className="h-8 w-8 text-brand-blue" />
               </motion.div>

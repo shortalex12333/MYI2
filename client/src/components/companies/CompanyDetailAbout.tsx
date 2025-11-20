@@ -42,7 +42,7 @@ export function CompanyDetailAbout({ company }: CompanyDetailAboutProps) {
               <span className="text-brand-blue">About {company.name}</span>
             </h2>
 
-            <div className="rounded-2xl bg-gray-100  border border-gray-200 p-8">
+            <div className="rounded-lg bg-gray-100  border border-gray-200 p-8">
               <p className="text-lg text-gray-900/80 leading-relaxed mb-6">
                 {company.description || typeDescriptions[company.type]}
               </p>

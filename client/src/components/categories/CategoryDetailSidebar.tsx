@@ -25,13 +25,6 @@ interface CategoryDetailSidebarProps {
 
 // Maritime emoji mapping (reusing from CategoryCard)
 const categoryEmojis: Record<string, string> = {
-  claims: '⚖️',
-  policies: '📋',
-  regulations: '⚖️',
-  maintenance: '🔧',
-  safety: '🦺',
-  general: '💬',
-  engines: '⚓',
   repairs: '🛠',
   navigation: '🧭',
   insurance: '🛡',
@@ -54,7 +47,7 @@ export function CategoryDetailSidebar({
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.2 }}
-        className="rounded-xl bg-gray-100  border border-gray-200 p-6"
+        className="rounded-lg bg-gray-100  border border-gray-200 p-6"
       >
         <div className="flex items-center gap-2 mb-4">
           <Info className="h-5 w-5 text-brand-blue" />
@@ -73,7 +66,7 @@ export function CategoryDetailSidebar({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.2, delay: 0.1 }}
-          className="rounded-xl bg-gray-100  border border-gray-200 p-6"
+          className="rounded-lg bg-gray-100  border border-gray-200 p-6"
         >
           <div className="flex items-center gap-2 mb-4">
             <Tag className="h-5 w-5 text-brand-blue" />
@@ -108,7 +101,7 @@ export function CategoryDetailSidebar({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.2, delay: 0.2 }}
-          className="rounded-xl bg-gray-100  border border-gray-200 p-6"
+          className="rounded-lg bg-gray-100  border border-gray-200 p-6"
         >
           <div className="flex items-center gap-2 mb-4">
             <Folder className="h-5 w-5 text-brand-blue" />
@@ -118,7 +111,6 @@ export function CategoryDetailSidebar({
           </div>
           <div className="space-y-2">
             {relatedCategories.map((relatedCat) => {
-              const emoji = categoryEmojis[relatedCat.slug] || relatedCat.icon || '📌'
               return (
                 <Link
                   key={relatedCat.id}

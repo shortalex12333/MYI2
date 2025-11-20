@@ -15,19 +15,17 @@ export const PremiumCard = ({
   children,
   className,
   hover = true,
-  glassmorphism = true
+  glassmorphism = false
 }: PremiumCardProps) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.2, ease: 'easeOut' }}
-      whileHover={hover ? { y: -4, scale: 1.01 } : {}}
       className={cn(
-        'rounded-xl border transition-all duration-200',
-        glassmorphism && 'bg-gray-100  border-gray-200',
-        hover && 'hover:border-brand-blue/50 hover:shadow-lg hover:shadow-brand-blue/10',
+        'rounded-lg border border-gray-200 bg-white transition-all duration-200',
+        hover && 'hover:border-brand-blue',
         className
       )}
     >

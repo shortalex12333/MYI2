@@ -135,7 +135,7 @@ export default async function PostDetailPage({ params }: { params: { id: string 
                 {/* Content Column */}
                 <div className="flex-1 min-w-0">
                   {/* Question Body - Premium Styling */}
-                  <div className="p-6 md:p-8 rounded-xl bg-gray-100  border border-gray-200 mb-6">
+                  <div className="p-6 md:p-8 rounded-lg bg-gray-100  border border-gray-200 mb-6">
                     <div className="prose prose-invert prose-maritime max-w-none">
                       <ReactMarkdown
                         remarkPlugins={[remarkGfm]}
@@ -214,7 +214,7 @@ export default async function PostDetailPage({ params }: { params: { id: string 
 
               {/* Answer Form Prompt */}
               {user ? (
-                <div className="mb-8 p-6 rounded-xl bg-brand-blue/10 border border-brand-blue/30 ">
+                <div className="mb-8 p-6 rounded-lg bg-brand-blue/10 border border-brand-blue/30 ">
                   <p className="text-gray-900/80 mb-4">
                     Share your expertise with the community
                   </p>
@@ -227,7 +227,7 @@ export default async function PostDetailPage({ params }: { params: { id: string 
                   </Button>
                 </div>
               ) : (
-                <div className="mb-8 p-6 rounded-xl bg-gray-100  border border-gray-200">
+                <div className="mb-8 p-6 rounded-lg bg-gray-100  border border-gray-200">
                   <p className="text-gray-900/70">
                     <Link href="/login" className="text-brand-blue hover:text-brand-blue-light font-semibold underline">
                       Log in
@@ -252,7 +252,7 @@ export default async function PostDetailPage({ params }: { params: { id: string 
                 </div>
               ) : (
                 <div className="text-center py-20">
-                  <div className="inline-block p-8 rounded-2xl bg-gray-100  border border-gray-200">
+                  <div className="inline-block p-8 rounded-lg bg-gray-100  border border-gray-200">
                     <p className="text-xl text-gray-900/70 mb-4">
                       No answers yet. Be the first to answer!
                     </p>
