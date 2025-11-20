@@ -67,7 +67,7 @@ export default function HomePage() {
             >
               <Link href="/signup">
                 Get Started Free
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="h-5 w-5" />
               </Link>
             </Button>
             <Button
@@ -277,7 +277,7 @@ export default function HomePage() {
                 className="border-gray-300 text-gray-900 hover:bg-gray-50 transition-colors duration-200"
               >
                 View All
-                <ArrowRight className="ml-2 h-4 w-4" />
+                <ArrowRight className="h-4 w-4" />
               </Button>
             </Link>
           </div>
@@ -370,7 +370,7 @@ export default function HomePage() {
             >
               <Link href="/signup">
                 Create Your Account
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="h-5 w-5" />
               </Link>
             </Button>
           </motion.div>

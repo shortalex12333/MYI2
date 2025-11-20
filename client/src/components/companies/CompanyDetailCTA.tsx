@@ -75,7 +75,7 @@ export function CompanyDetailCTA({ companyName }: CompanyDetailCTAProps) {
               className="bg-brand-blue hover:bg-brand-blue/90 text-white font-semibold h-14 px-10 text-lg  shadow-brand-blue/30 transition-all duration-200 "
             >
               <Link href="/posts/new?category=claims">
-                <MessageSquare className="mr-2 h-5 w-5" />
+                <MessageSquare className="h-5 w-5" />
                 Ask a Question
               </Link>
             </Button>

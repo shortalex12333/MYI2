@@ -85,7 +85,7 @@ export default async function PostsPage({
               className="bg-brand-blue hover:bg-brand-blue/90 text-white font-medium transition-colors duration-200"
             >
               <Link href="/posts/new">
-                <Plus className="mr-2 h-5 w-5" />
+                <Plus className="h-5 w-5" />
                 Ask Question
               </Link>
             </Button>
@@ -129,7 +129,7 @@ export default async function PostsPage({
                       className="bg-brand-blue hover:bg-brand-blue/90 text-white font-medium"
                     >
                       <Link href="/posts/new">
-                        <Plus className="mr-2 h-5 w-5" />
+                        <Plus className="h-5 w-5" />
                         Ask the First Question
                       </Link>
                     </Button>

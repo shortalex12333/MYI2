@@ -222,7 +222,7 @@ export default async function PostDetailPage({ params }: { params: { id: string 
                     size="lg"
                     className="bg-brand-blue hover:bg-brand-blue/90 text-white font-semibold"
                   >
-                    <Plus className="mr-2 h-5 w-5" />
+                    <Plus className="h-5 w-5" />
                     Write an Answer
                   </Button>
                 </div>
@@ -261,7 +261,7 @@ export default async function PostDetailPage({ params }: { params: { id: string 
                         size="lg"
                         className="bg-brand-blue hover:bg-brand-blue/90 text-white font-semibold"
                       >
-                        <Plus className="mr-2 h-5 w-5" />
+                        <Plus className="h-5 w-5" />
                         Write an Answer
                       </Button>
                     )}
