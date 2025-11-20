@@ -89,7 +89,7 @@ export function ContactForm() {
               <Button
                 type="submit"
                 size="lg"
-                className="w-full bg-brand-blue hover:bg-brand-blue-light text-maritime-navy font-semibold  shadow-brand-blue/20 transition-all hover:scale-105"
+                className="w-full bg-brand-blue hover:bg-brand-blue/90 text-white font-semibold  shadow-brand-blue/20 transition-all "
               >
                 <Send className="mr-2 h-5 w-5" />
                 Send Message

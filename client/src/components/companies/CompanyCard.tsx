@@ -21,8 +21,8 @@ const typeLabels: Record<Company['type'], string> = {
 // Type colors mapping
 const typeColors: Record<Company['type'], string> = {
   insurer: 'text-brand-blue border-brand-blue/30 bg-brand-blue/5',
-  broker: 'text-gray-600 border-maritime-teal/30 bg-maritime-teal/5',
-  provider: 'text-gray-900 border-maritime-cream/30 bg-maritime-cream/5',
+  broker: 'text-gray-600 border-gray-200 bg-gray-50',
+  provider: 'text-gray-900 border-gray-200 bg-gray-50',
 }
 
 export function CompanyCard({ company, index = 0 }: CompanyCardProps) {

@@ -220,7 +220,7 @@ export default async function PostDetailPage({ params }: { params: { id: string 
                   </p>
                   <Button
                     size="lg"
-                    className="bg-brand-blue hover:bg-brand-blue-light text-maritime-navy font-semibold"
+                    className="bg-brand-blue hover:bg-brand-blue/90 text-white font-semibold"
                   >
                     <Plus className="mr-2 h-5 w-5" />
                     Write an Answer
@@ -259,7 +259,7 @@ export default async function PostDetailPage({ params }: { params: { id: string 
                     {user && (
                       <Button
                         size="lg"
-                        className="bg-brand-blue hover:bg-brand-blue-light text-maritime-navy font-semibold"
+                        className="bg-brand-blue hover:bg-brand-blue/90 text-white font-semibold"
                       >
                         <Plus className="mr-2 h-5 w-5" />
                         Write an Answer

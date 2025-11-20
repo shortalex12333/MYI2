@@ -9,8 +9,6 @@ export function CategoryCTA() {
   return (
     <section className="py-24 md:py-32 bg-white-light relative overflow-hidden">
       {/* Decorative Gradient Orbs */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-brand-blue/20 rounded-full blur-3xl opacity-30" />
-      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-maritime-teal/20 rounded-full blur-3xl opacity-30" />
 
       {/* Soft Wave Pattern */}
       <div className="absolute inset-0 opacity-5">
@@ -45,7 +43,7 @@ export function CategoryCTA() {
           <Button
             size="lg"
             asChild
-            className="bg-brand-blue hover:bg-brand-blue-light text-maritime-navy font-semibold h-14 px-10 text-lg  shadow-brand-blue/30 transition-all duration-200 hover:scale-105"
+            className="bg-brand-blue hover:bg-brand-blue/90 text-white font-semibold h-14 px-10 text-lg  shadow-brand-blue/30 transition-all duration-200 "
           >
             <Link href="/posts/new">
               <Plus className="mr-2 h-5 w-5" />

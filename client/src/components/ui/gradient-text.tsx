@@ -13,7 +13,7 @@ interface GradientTextProps {
 export const GradientText = ({
   children,
   className,
-  from = 'from-maritime-cream',
+  from = 'from-gray-900',
   to = 'to-brand-blue'
 }: GradientTextProps) => {
   return (
