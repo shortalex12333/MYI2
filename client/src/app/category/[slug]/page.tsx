@@ -91,7 +91,7 @@ export default async function CategoryDetailPage({ params }: CategoryDetailPageP
   const engagementLevel = totalQuestions > 50 ? 'High' : totalQuestions > 20 ? 'Medium' : 'Growing'
 
   return (
-    <div className="min-h-screen bg-maritime-navy text-maritime-cream">
+    <div className="min-h-screen bg-white text-gray-900">
       {/* Hero Header */}
       <CategoryDetailHero category={category} />
 
@@ -104,7 +104,7 @@ export default async function CategoryDetailPage({ params }: CategoryDetailPageP
       />
 
       {/* Main Content: Sidebar + Posts Grid */}
-      <section className="py-16 md:py-24 bg-maritime-navy relative">
+      <section className="py-16 md:py-24 bg-white relative">
         {/* Subtle Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div

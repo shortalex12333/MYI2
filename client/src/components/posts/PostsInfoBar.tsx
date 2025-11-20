@@ -40,17 +40,17 @@ export function PostsInfoBar({
   ]
 
   return (
-    <div className="border-t border-maritime-gold/10 bg-maritime-navy-light/30 backdrop-blur-sm">
+    <div className="border-t border-brand-blue/10 bg-white-light/30 backdrop-blur-sm">
       <div className="py-4 px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           {stats.map((stat, idx) => (
             <div key={idx} className="flex flex-col items-center gap-2">
-              <stat.icon className="h-4 w-4 text-maritime-gold/70" />
+              <stat.icon className="h-4 w-4 text-brand-blue/70" />
               <div className="flex flex-col">
-                <span className="text-lg font-semibold text-maritime-gold">
+                <span className="text-lg font-semibold text-brand-blue">
                   {stat.value}
                 </span>
-                <span className="text-xs text-maritime-cream/50">
+                <span className="text-xs text-gray-900/50">
                   {stat.label}
                 </span>
               </div>

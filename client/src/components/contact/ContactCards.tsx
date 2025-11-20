@@ -10,7 +10,7 @@ const contactMethods = [
     description: 'Reach out to our team directly',
     value: 'support@myyachtsinsurance.com',
     link: 'mailto:support@myyachtsinsurance.com',
-    color: 'text-maritime-gold',
+    color: 'text-brand-blue',
   },
   {
     icon: MessageSquare,
@@ -18,7 +18,7 @@ const contactMethods = [
     description: 'Join the discussion',
     value: 'Browse Forum',
     link: '/posts',
-    color: 'text-maritime-teal',
+    color: 'text-gray-600',
   },
   {
     icon: Users,
@@ -26,20 +26,20 @@ const contactMethods = [
     description: 'For insurers and brokers',
     value: 'partners@myyachtsinsurance.com',
     link: 'mailto:partners@myyachtsinsurance.com',
-    color: 'text-maritime-gold',
+    color: 'text-brand-blue',
   },
   {
     icon: Clock,
     title: 'Response Time',
     description: 'Average response time',
     value: '< 24 hours',
-    color: 'text-maritime-teal',
+    color: 'text-gray-600',
   },
 ]
 
 export function ContactCards() {
   return (
-    <section className="py-16 md:py-20 bg-maritime-navy relative">
+    <section className="py-16 md:py-20 bg-white relative">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div
@@ -59,21 +59,21 @@ export function ContactCards() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: idx * 0.1 }}
+              transition={{ duration: 0.2, delay: idx * 0.1 }}
               className="group"
             >
-              <div className="h-full rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-maritime-gold/50 transition-all p-6">
+              <div className="h-full rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-brand-blue/50 transition-all p-6">
                 <method.icon className={`h-10 w-10 ${method.color} mb-4 group-hover:scale-110 transition-transform`} />
-                <h3 className="text-xl font-semibold text-maritime-cream mb-2">
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">
                   {method.title}
                 </h3>
-                <p className="text-sm text-maritime-cream/60 mb-4">
+                <p className="text-sm text-gray-900/60 mb-4">
                   {method.description}
                 </p>
                 {method.link ? (
                   <a
                     href={method.link}
-                    className={`${method.color} hover:text-maritime-gold-light transition-colors text-sm font-medium`}
+                    className={`${method.color} hover:text-brand-blue-light transition-colors text-sm font-medium`}
                   >
                     {method.value}
                   </a>

@@ -46,21 +46,21 @@ export function CategoryCard({ category, index = 0 }: CategoryCardProps) {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.4, delay: index * 0.06, ease: 'easeOut' }}
+        transition={{ duration: 0.2, delay: index * 0.06, ease: 'easeOut' }}
         whileHover={{ y: -4, scale: 1.02 }}
         className="group relative h-full"
       >
         {/* Glassmorphism Card */}
-        <div className="h-full p-6 md:p-8 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-maritime-gold/50 transition-all duration-300 hover:shadow-lg hover:shadow-maritime-gold/10">
+        <div className="h-full p-6 md:p-8 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-brand-blue/50 transition-all duration-200 hover:shadow-lg hover:shadow-brand-blue/10">
           {/* Animated Gold Bar on Hover */}
-          <div className="absolute top-0 left-0 right-0 h-1 bg-maritime-gold rounded-t-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <div className="absolute top-0 left-0 right-0 h-1 bg-brand-blue rounded-t-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
 
           {/* Top Section: Emoji + Arrow */}
           <div className="flex items-start justify-between mb-4">
             <span className="text-4xl" role="img" aria-label={category.name}>
               {emoji}
             </span>
-            <ArrowRight className="h-5 w-5 text-maritime-gold/50 group-hover:text-maritime-gold group-hover:translate-x-1 transition-all" />
+            <ArrowRight className="h-5 w-5 text-brand-blue/50 group-hover:text-brand-blue group-hover:translate-x-1 transition-all" />
           </div>
 
           {/* Category Name */}
@@ -70,15 +70,15 @@ export function CategoryCard({ category, index = 0 }: CategoryCardProps) {
 
           {/* Description */}
           {category.description && (
-            <p className="text-sm md:text-base text-maritime-cream/60 leading-relaxed mb-4 line-clamp-2">
+            <p className="text-sm md:text-base text-gray-900/60 leading-relaxed mb-4 line-clamp-2">
               {category.description}
             </p>
           )}
 
           {/* Post Count Badge */}
           <div className="flex items-center gap-2 pt-4 border-t border-white/10">
-            <div className="px-3 py-1 rounded-full bg-maritime-gold/10 border border-maritime-gold/30">
-              <span className="text-sm font-medium text-maritime-gold">
+            <div className="px-3 py-1 rounded-full bg-brand-blue/10 border border-brand-blue/30">
+              <span className="text-sm font-medium text-brand-blue">
                 {postCount} {postCount === 1 ? 'post' : 'posts'}
               </span>
             </div>

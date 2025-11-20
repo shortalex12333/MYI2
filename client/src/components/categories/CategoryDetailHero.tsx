@@ -44,12 +44,12 @@ export function CategoryDetailHero({ category }: CategoryDetailHeroProps) {
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.4 }}
+          transition={{ duration: 0.2 }}
           className="mb-8"
         >
           <Link
             href="/categories"
-            className="inline-flex items-center gap-2 text-maritime-cream/70 hover:text-maritime-gold transition-colors group"
+            className="inline-flex items-center gap-2 text-gray-900/70 hover:text-brand-blue transition-colors group"
           >
             <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform" />
             <span className="text-sm">Back to Categories</span>
@@ -60,7 +60,7 @@ export function CategoryDetailHero({ category }: CategoryDetailHeroProps) {
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
+          transition={{ duration: 0.2, delay: 0.1 }}
           className="text-center mb-6"
         >
           <span className="text-7xl md:text-8xl" role="img" aria-label={category.name}>
@@ -72,7 +72,7 @@ export function CategoryDetailHero({ category }: CategoryDetailHeroProps) {
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          transition={{ duration: 0.2, delay: 0.2 }}
           className="text-4xl md:text-6xl lg:text-7xl font-bold text-center mb-6 leading-tight"
         >
           <GradientText>{category.name}</GradientText>
@@ -83,8 +83,8 @@ export function CategoryDetailHero({ category }: CategoryDetailHeroProps) {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-lg md:text-xl text-maritime-cream/70 text-center max-w-3xl mx-auto leading-relaxed"
+            transition={{ duration: 0.2, delay: 0.3 }}
+            className="text-lg md:text-xl text-gray-900/70 text-center max-w-3xl mx-auto leading-relaxed"
           >
             {category.description}
           </motion.p>

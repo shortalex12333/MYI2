@@ -20,7 +20,7 @@ export default async function CompanyPage({ params }: { params: { id: string } }
   }
 
   return (
-    <div className="min-h-screen bg-maritime-navy text-maritime-cream">
+    <div className="min-h-screen bg-white text-gray-900">
       {/* Premium Hero Header */}
       <CompanyDetailHero company={company} />
 

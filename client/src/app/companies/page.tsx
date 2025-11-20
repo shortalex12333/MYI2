@@ -18,7 +18,7 @@ export default async function CompaniesPage() {
   }
 
   return (
-    <div className="min-h-screen bg-maritime-navy text-maritime-cream">
+    <div className="min-h-screen bg-white text-gray-900">
       {/* Premium Hero Header */}
       <CompaniesHero />
 

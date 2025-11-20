@@ -17,7 +17,7 @@ export function CategoryDetailPostsGrid({ posts, categoryName }: CategoryDetailP
         <h2 className="text-2xl md:text-3xl font-semibold">
           <GradientText>Questions in {categoryName}</GradientText>
         </h2>
-        <p className="text-sm text-maritime-cream/60 mt-2">
+        <p className="text-sm text-gray-900/60 mt-2">
           {posts.length} {posts.length === 1 ? 'question' : 'questions'} in this category
         </p>
       </div>
@@ -26,10 +26,10 @@ export function CategoryDetailPostsGrid({ posts, categoryName }: CategoryDetailP
       {posts.length === 0 ? (
         <div className="py-16 text-center">
           <div className="inline-block p-8 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
-            <p className="text-lg text-maritime-cream/70">
+            <p className="text-lg text-gray-900/70">
               No questions in this category yet.
             </p>
-            <p className="text-sm text-maritime-cream/50 mt-2">
+            <p className="text-sm text-gray-900/50 mt-2">
               Be the first to ask a question!
             </p>
           </div>

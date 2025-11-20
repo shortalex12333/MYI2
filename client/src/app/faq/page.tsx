@@ -27,12 +27,12 @@ export default async function FAQPage() {
   }, {})
 
   return (
-    <div className="min-h-screen bg-maritime-navy text-maritime-cream">
+    <div className="min-h-screen bg-white text-gray-900">
       {/* Premium Hero Header */}
       <FAQHero />
 
       {/* FAQ Content */}
-      <section className="py-16 md:py-24 bg-maritime-navy relative">
+      <section className="py-16 md:py-24 bg-white relative">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div
@@ -49,10 +49,10 @@ export default async function FAQPage() {
             {!faqs || faqs.length === 0 ? (
               <div className="text-center py-16">
                 <div className="inline-block p-12 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
-                  <p className="text-lg text-maritime-cream/70 mb-2">
+                  <p className="text-lg text-gray-900/70 mb-2">
                     No FAQs available yet.
                   </p>
-                  <p className="text-sm text-maritime-cream/50">
+                  <p className="text-sm text-gray-900/50">
                     Check back soon or ask the community!
                   </p>
                 </div>

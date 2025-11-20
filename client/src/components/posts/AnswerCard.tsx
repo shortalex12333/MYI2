@@ -19,18 +19,18 @@ export function AnswerCard({ answer, index = 0, currentUserId, isAccepted = fals
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4, delay: index * 0.08 }}
+      transition={{ duration: 0.2, delay: index * 0.08 }}
       className="relative"
     >
       {/* Accepted Answer Gold Border */}
       {isAccepted && (
-        <div className="absolute -left-2 top-0 bottom-0 w-1 bg-maritime-gold rounded-full" />
+        <div className="absolute -left-2 top-0 bottom-0 w-1 bg-brand-blue rounded-full" />
       )}
 
-      <div className={`p-6 md:p-8 rounded-xl bg-white/5 backdrop-blur-sm border transition-all duration-300 ${
+      <div className={`p-6 md:p-8 rounded-xl bg-white/5 backdrop-blur-sm border transition-all duration-200 ${
         isAccepted
-          ? 'border-maritime-gold/50 shadow-lg shadow-maritime-gold/10'
-          : 'border-white/10 hover:border-maritime-gold/30'
+          ? 'border-brand-blue/50 shadow-lg shadow-brand-blue/10'
+          : 'border-white/10 hover:border-brand-blue/30'
       }`}>
         <div className="flex gap-6">
           {/* Voting Column */}
@@ -45,25 +45,25 @@ export function AnswerCard({ answer, index = 0, currentUserId, isAccepted = fals
               <ReactMarkdown
                 remarkPlugins={[remarkGfm]}
                 components={{
-                  p: ({ children }) => <p className="text-maritime-cream/80 leading-relaxed mb-4">{children}</p>,
-                  h1: ({ children }) => <h1 className="text-maritime-cream font-bold mb-4">{children}</h1>,
-                  h2: ({ children }) => <h2 className="text-maritime-cream font-bold mb-3">{children}</h2>,
-                  h3: ({ children }) => <h3 className="text-maritime-cream font-semibold mb-2">{children}</h3>,
-                  ul: ({ children }) => <ul className="text-maritime-cream/80 list-disc pl-6 mb-4">{children}</ul>,
-                  ol: ({ children }) => <ol className="text-maritime-cream/80 list-decimal pl-6 mb-4">{children}</ol>,
+                  p: ({ children }) => <p className="text-gray-900/80 leading-relaxed mb-4">{children}</p>,
+                  h1: ({ children }) => <h1 className="text-gray-900 font-bold mb-4">{children}</h1>,
+                  h2: ({ children }) => <h2 className="text-gray-900 font-bold mb-3">{children}</h2>,
+                  h3: ({ children }) => <h3 className="text-gray-900 font-semibold mb-2">{children}</h3>,
+                  ul: ({ children }) => <ul className="text-gray-900/80 list-disc pl-6 mb-4">{children}</ul>,
+                  ol: ({ children }) => <ol className="text-gray-900/80 list-decimal pl-6 mb-4">{children}</ol>,
                   li: ({ children }) => <li className="mb-1">{children}</li>,
                   a: ({ href, children }) => (
-                    <a href={href} className="text-maritime-gold hover:text-maritime-gold-light underline">
+                    <a href={href} className="text-brand-blue hover:text-brand-blue-light underline">
                       {children}
                     </a>
                   ),
                   code: ({ children }) => (
-                    <code className="px-2 py-1 rounded bg-maritime-navy-light text-maritime-gold text-sm">
+                    <code className="px-2 py-1 rounded bg-white-light text-brand-blue text-sm">
                       {children}
                     </code>
                   ),
                   pre: ({ children }) => (
-                    <pre className="p-4 rounded-lg bg-maritime-navy-light border border-maritime-gold/20 overflow-x-auto mb-4">
+                    <pre className="p-4 rounded-lg bg-white-light border border-brand-blue/20 overflow-x-auto mb-4">
                       {children}
                     </pre>
                   ),

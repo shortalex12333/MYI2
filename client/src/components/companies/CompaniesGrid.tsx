@@ -16,7 +16,7 @@ export function CompaniesGrid({
   description = 'Trusted by yacht owners worldwide',
 }: CompaniesGridProps) {
   return (
-    <section className="py-16 md:py-24 bg-maritime-navy relative">
+    <section className="py-16 md:py-24 bg-white relative">
       {/* Subtle Background Grid Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div
@@ -34,7 +34,7 @@ export function CompaniesGrid({
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
             <GradientText>{title}</GradientText>
           </h2>
-          <p className="text-lg text-maritime-cream/70 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-900/70 max-w-2xl mx-auto">
             {description}
           </p>
         </div>
@@ -43,10 +43,10 @@ export function CompaniesGrid({
         {companies.length === 0 ? (
           <div className="py-16 text-center">
             <div className="inline-block p-12 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
-              <p className="text-lg text-maritime-cream/70 mb-2">
+              <p className="text-lg text-gray-900/70 mb-2">
                 No companies listed yet.
               </p>
-              <p className="text-sm text-maritime-cream/50">
+              <p className="text-sm text-gray-900/50">
                 Check back soon for verified insurance providers.
               </p>
             </div>
@@ -62,7 +62,7 @@ export function CompaniesGrid({
 
             {/* Results Count */}
             <div className="mt-12 text-center">
-              <p className="text-sm text-maritime-cream/50">
+              <p className="text-sm text-gray-900/50">
                 Showing {companies.length} verified{' '}
                 {companies.length === 1 ? 'provider' : 'providers'}
               </p>

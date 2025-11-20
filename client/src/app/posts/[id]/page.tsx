@@ -72,12 +72,12 @@ export default async function PostDetailPage({ params }: { params: { id: string 
   })
 
   return (
-    <div className="min-h-screen bg-maritime-navy text-maritime-cream">
+    <div className="min-h-screen bg-white text-gray-900">
       {/* Premium Breadcrumb Section */}
-      <section className="border-b border-maritime-gold/10 bg-maritime-navy-light/20">
+      <section className="border-b border-brand-blue/10 bg-white-light/20">
         <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center gap-2 text-sm text-maritime-cream/60">
-            <Link href="/posts" className="hover:text-maritime-gold transition-colors">
+          <div className="flex items-center gap-2 text-sm text-gray-900/60">
+            <Link href="/posts" className="hover:text-brand-blue transition-colors">
               Questions
             </Link>
             <ChevronRight className="h-4 w-4" />
@@ -85,14 +85,14 @@ export default async function PostDetailPage({ params }: { params: { id: string 
               <>
                 <Link
                   href={`/category/${post.category.slug}`}
-                  className="hover:text-maritime-gold transition-colors"
+                  className="hover:text-brand-blue transition-colors"
                 >
                   {post.category.name}
                 </Link>
                 <ChevronRight className="h-4 w-4" />
               </>
             )}
-            <span className="text-maritime-cream/80 truncate max-w-xs md:max-w-md">
+            <span className="text-gray-900/80 truncate max-w-xs md:max-w-md">
               {post.title}
             </span>
           </div>
@@ -141,25 +141,25 @@ export default async function PostDetailPage({ params }: { params: { id: string 
                       <ReactMarkdown
                         remarkPlugins={[remarkGfm]}
                         components={{
-                          p: ({ children }) => <p className="text-maritime-cream/80 leading-relaxed mb-4">{children}</p>,
-                          h1: ({ children }) => <h1 className="text-maritime-cream font-bold mb-4">{children}</h1>,
-                          h2: ({ children }) => <h2 className="text-maritime-cream font-bold mb-3">{children}</h2>,
-                          h3: ({ children }) => <h3 className="text-maritime-cream font-semibold mb-2">{children}</h3>,
-                          ul: ({ children }) => <ul className="text-maritime-cream/80 list-disc pl-6 mb-4">{children}</ul>,
-                          ol: ({ children }) => <ol className="text-maritime-cream/80 list-decimal pl-6 mb-4">{children}</ol>,
+                          p: ({ children }) => <p className="text-gray-900/80 leading-relaxed mb-4">{children}</p>,
+                          h1: ({ children }) => <h1 className="text-gray-900 font-bold mb-4">{children}</h1>,
+                          h2: ({ children }) => <h2 className="text-gray-900 font-bold mb-3">{children}</h2>,
+                          h3: ({ children }) => <h3 className="text-gray-900 font-semibold mb-2">{children}</h3>,
+                          ul: ({ children }) => <ul className="text-gray-900/80 list-disc pl-6 mb-4">{children}</ul>,
+                          ol: ({ children }) => <ol className="text-gray-900/80 list-decimal pl-6 mb-4">{children}</ol>,
                           li: ({ children }) => <li className="mb-1">{children}</li>,
                           a: ({ href, children }) => (
-                            <a href={href} className="text-maritime-gold hover:text-maritime-gold-light underline">
+                            <a href={href} className="text-brand-blue hover:text-brand-blue-light underline">
                               {children}
                             </a>
                           ),
                           code: ({ children }) => (
-                            <code className="px-2 py-1 rounded bg-maritime-navy-light text-maritime-gold text-sm">
+                            <code className="px-2 py-1 rounded bg-white-light text-brand-blue text-sm">
                               {children}
                             </code>
                           ),
                           pre: ({ children }) => (
-                            <pre className="p-4 rounded-lg bg-maritime-navy-light border border-maritime-gold/20 overflow-x-auto mb-4">
+                            <pre className="p-4 rounded-lg bg-white-light border border-brand-blue/20 overflow-x-auto mb-4">
                               {children}
                             </pre>
                           ),
@@ -194,7 +194,7 @@ export default async function PostDetailPage({ params }: { params: { id: string 
             </div>
 
             {/* Decorative Divider */}
-            <div className="h-px bg-gradient-to-r from-transparent via-maritime-gold/30 to-transparent mb-12" />
+            <div className="h-px bg-gradient-to-r from-transparent via-brand-blue/30 to-transparent mb-12" />
 
             {/* Answers Section */}
             <div>
@@ -208,20 +208,20 @@ export default async function PostDetailPage({ params }: { params: { id: string 
                 </h2>
 
                 {/* Sort Options - Future Enhancement */}
-                {/* <div className="text-sm text-maritime-cream/60">
+                {/* <div className="text-sm text-gray-900/60">
                   Sort: Newest | Votes | Active
                 </div> */}
               </div>
 
               {/* Answer Form Prompt */}
               {user ? (
-                <div className="mb-8 p-6 rounded-xl bg-maritime-gold/10 border border-maritime-gold/30 backdrop-blur-sm">
-                  <p className="text-maritime-cream/80 mb-4">
+                <div className="mb-8 p-6 rounded-xl bg-brand-blue/10 border border-brand-blue/30 backdrop-blur-sm">
+                  <p className="text-gray-900/80 mb-4">
                     Share your expertise with the community
                   </p>
                   <Button
                     size="lg"
-                    className="bg-maritime-gold hover:bg-maritime-gold-light text-maritime-navy font-semibold"
+                    className="bg-brand-blue hover:bg-brand-blue-light text-maritime-navy font-semibold"
                   >
                     <Plus className="mr-2 h-5 w-5" />
                     Write an Answer
@@ -229,8 +229,8 @@ export default async function PostDetailPage({ params }: { params: { id: string 
                 </div>
               ) : (
                 <div className="mb-8 p-6 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10">
-                  <p className="text-maritime-cream/70">
-                    <Link href="/login" className="text-maritime-gold hover:text-maritime-gold-light font-semibold underline">
+                  <p className="text-gray-900/70">
+                    <Link href="/login" className="text-brand-blue hover:text-brand-blue-light font-semibold underline">
                       Log in
                     </Link>{' '}
                     to post an answer
@@ -254,13 +254,13 @@ export default async function PostDetailPage({ params }: { params: { id: string 
               ) : (
                 <div className="text-center py-20">
                   <div className="inline-block p-8 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
-                    <p className="text-xl text-maritime-cream/70 mb-4">
+                    <p className="text-xl text-gray-900/70 mb-4">
                       No answers yet. Be the first to answer!
                     </p>
                     {user && (
                       <Button
                         size="lg"
-                        className="bg-maritime-gold hover:bg-maritime-gold-light text-maritime-navy font-semibold"
+                        className="bg-brand-blue hover:bg-brand-blue-light text-maritime-navy font-semibold"
                       >
                         <Plus className="mr-2 h-5 w-5" />
                         Write an Answer

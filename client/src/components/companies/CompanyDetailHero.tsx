@@ -27,12 +27,12 @@ export function CompanyDetailHero({ company }: CompanyDetailHeroProps) {
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.4 }}
+          transition={{ duration: 0.2 }}
           className="mb-8"
         >
           <Link
             href="/companies"
-            className="inline-flex items-center gap-2 text-maritime-cream/70 hover:text-maritime-gold transition-colors group"
+            className="inline-flex items-center gap-2 text-gray-900/70 hover:text-brand-blue transition-colors group"
           >
             <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform" />
             <span className="text-sm">Back to Providers</span>
@@ -44,14 +44,14 @@ export function CompanyDetailHero({ company }: CompanyDetailHeroProps) {
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.2 }}
             className="mb-8"
           >
             <div className="relative inline-block">
               {/* Gold glow */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-maritime-gold/30 to-maritime-gold-light/20 blur-2xl" />
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-brand-blue/30 to-brand-blue-light/20 blur-2xl" />
 
-              <div className="relative w-32 h-32 rounded-2xl bg-maritime-navy-light border-2 border-maritime-gold/30 flex items-center justify-center overflow-hidden">
+              <div className="relative w-32 h-32 rounded-2xl bg-white-light border-2 border-brand-blue/30 flex items-center justify-center overflow-hidden">
                 {company.logo_url ? (
                   <Image
                     src={company.logo_url}
@@ -61,7 +61,7 @@ export function CompanyDetailHero({ company }: CompanyDetailHeroProps) {
                     className="object-contain p-4"
                   />
                 ) : (
-                  <Building2 className="h-16 w-16 text-maritime-gold/50" />
+                  <Building2 className="h-16 w-16 text-brand-blue/50" />
                 )}
               </div>
             </div>
@@ -71,7 +71,7 @@ export function CompanyDetailHero({ company }: CompanyDetailHeroProps) {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            transition={{ duration: 0.2, delay: 0.1 }}
             className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4"
           >
             <GradientText>{company.name}</GradientText>
@@ -81,17 +81,17 @@ export function CompanyDetailHero({ company }: CompanyDetailHeroProps) {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.2, delay: 0.2 }}
             className="flex flex-wrap items-center justify-center gap-3 mb-6"
           >
-            <span className="px-4 py-2 rounded-full border border-maritime-gold/30 text-maritime-gold bg-maritime-gold/5 text-sm font-medium">
+            <span className="px-4 py-2 rounded-full border border-brand-blue/30 text-brand-blue bg-brand-blue/5 text-sm font-medium">
               {typeLabels[company.type]}
             </span>
 
             {company.verified && (
-              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-maritime-gold/10 border border-maritime-gold/30">
-                <ShieldCheck className="h-4 w-4 text-maritime-gold" />
-                <span className="text-sm text-maritime-gold font-medium uppercase tracking-wide">
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-brand-blue/10 border border-brand-blue/30">
+                <ShieldCheck className="h-4 w-4 text-brand-blue" />
+                <span className="text-sm text-brand-blue font-medium uppercase tracking-wide">
                   Verified Provider
                 </span>
               </div>
@@ -103,8 +103,8 @@ export function CompanyDetailHero({ company }: CompanyDetailHeroProps) {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="text-lg md:text-xl text-maritime-cream/70 max-w-3xl mx-auto leading-relaxed mb-8"
+              transition={{ duration: 0.2, delay: 0.3 }}
+              className="text-lg md:text-xl text-gray-900/70 max-w-3xl mx-auto leading-relaxed mb-8"
             >
               {company.description}
             </motion.p>
@@ -115,12 +115,12 @@ export function CompanyDetailHero({ company }: CompanyDetailHeroProps) {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
+              transition={{ duration: 0.2, delay: 0.4 }}
             >
               <Button
                 size="lg"
                 asChild
-                className="bg-maritime-gold hover:bg-maritime-gold-light text-maritime-navy font-semibold shadow-xl shadow-maritime-gold/20"
+                className="bg-brand-blue hover:bg-brand-blue-light text-maritime-navy font-semibold shadow-xl shadow-brand-blue/20"
               >
                 <a href={company.website} target="_blank" rel="noopener noreferrer">
                   <ExternalLink className="mr-2 h-5 w-5" />

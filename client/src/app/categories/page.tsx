@@ -25,7 +25,7 @@ export default async function CategoriesPage() {
   }, 0) || 0
 
   return (
-    <div className="min-h-screen bg-maritime-navy text-maritime-cream">
+    <div className="min-h-screen bg-white text-gray-900">
       {/* Hero Header Section */}
       <CategoryHero />
 
@@ -40,7 +40,7 @@ export default async function CategoriesPage() {
         <section className="py-20">
           <div className="container mx-auto px-4 text-center">
             <div className="inline-block p-8 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
-              <p className="text-xl text-maritime-cream/70">
+              <p className="text-xl text-gray-900/70">
                 No categories available yet.
               </p>
             </div>

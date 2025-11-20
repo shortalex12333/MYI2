@@ -8,9 +8,9 @@ import { MessageSquare, Search } from 'lucide-react'
 
 export function FAQCTA() {
   return (
-    <section className="py-20 md:py-28 bg-maritime-navy-light relative overflow-hidden">
+    <section className="py-20 md:py-28 bg-white-light relative overflow-hidden">
       {/* Decorative Gradient Orbs */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-maritime-gold/20 rounded-full blur-3xl opacity-30" />
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-brand-blue/20 rounded-full blur-3xl opacity-30" />
       <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-maritime-teal/20 rounded-full blur-3xl opacity-30" />
 
       {/* Wave Pattern */}
@@ -34,7 +34,7 @@ export function FAQCTA() {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.2 }}
           className="max-w-3xl mx-auto"
         >
           {/* Heading */}
@@ -44,12 +44,12 @@ export function FAQCTA() {
           </h2>
 
           {/* Description */}
-          <p className="text-lg md:text-xl text-maritime-cream/70 mb-4 leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-900/70 mb-4 leading-relaxed">
             Ask the community or browse existing discussions from experienced yacht owners
             and insurance professionals.
           </p>
 
-          <p className="text-sm text-maritime-cream/50 mb-10">
+          <p className="text-sm text-gray-900/50 mb-10">
             Get answers from people who know yacht insurance inside and out
           </p>
 
@@ -58,7 +58,7 @@ export function FAQCTA() {
             <Button
               size="lg"
               asChild
-              className="bg-maritime-gold hover:bg-maritime-gold-light text-maritime-navy font-semibold h-14 px-10 text-lg shadow-2xl shadow-maritime-gold/30 transition-all duration-300 hover:scale-105"
+              className="bg-brand-blue hover:bg-brand-blue-light text-maritime-navy font-semibold h-14 px-10 text-lg shadow-2xl shadow-brand-blue/30 transition-all duration-200 hover:scale-105"
             >
               <Link href="/posts/new">
                 <MessageSquare className="mr-2 h-5 w-5" />
@@ -70,7 +70,7 @@ export function FAQCTA() {
               size="lg"
               variant="outline"
               asChild
-              className="h-14 px-10 text-lg border-maritime-gold/50 text-maritime-gold hover:bg-maritime-gold/10 transition-all"
+              className="h-14 px-10 text-lg border-brand-blue/50 text-brand-blue hover:bg-brand-blue/10 transition-all"
             >
               <Link href="/posts">
                 <Search className="mr-2 h-5 w-5" />
@@ -84,19 +84,19 @@ export function FAQCTA() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="mt-12 flex flex-wrap items-center justify-center gap-8 text-xs text-maritime-cream/50"
+            transition={{ duration: 0.2, delay: 0.3 }}
+            className="mt-12 flex flex-wrap items-center justify-center gap-8 text-xs text-gray-900/50"
           >
             <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-maritime-gold/50" />
+              <div className="w-2 h-2 rounded-full bg-brand-blue/50" />
               <span>10,000+ answered questions</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-maritime-gold/50" />
+              <div className="w-2 h-2 rounded-full bg-brand-blue/50" />
               <span>89 verified experts</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-maritime-gold/50" />
+              <div className="w-2 h-2 rounded-full bg-brand-blue/50" />
               <span>24h response time</span>
             </div>
           </motion.div>

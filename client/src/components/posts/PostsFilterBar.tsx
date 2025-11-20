@@ -32,14 +32,14 @@ export function PostsFilterBar() {
             <button
               key={filter.id}
               onClick={() => handleFilterChange(filter.id)}
-              className="relative px-4 py-2 rounded-full transition-all duration-300 group"
+              className="relative px-4 py-2 rounded-full transition-all duration-200 group"
             >
               {/* Active Background */}
               {isActive && (
                 <motion.div
                   layoutId="activeFilter"
-                  className="absolute inset-0 bg-maritime-gold/20 border border-maritime-gold/50 rounded-full"
-                  transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
+                  className="absolute inset-0 bg-brand-blue/20 border border-brand-blue/50 rounded-full"
+                  transition={{ type: 'spring', bounce: 0.2, duration: 0.2 }}
                 />
               )}
 
@@ -47,12 +47,12 @@ export function PostsFilterBar() {
               <div className="relative flex items-center gap-2">
                 <filter.icon
                   className={`h-4 w-4 transition-colors ${
-                    isActive ? 'text-maritime-gold' : 'text-maritime-cream/60 group-hover:text-maritime-gold'
+                    isActive ? 'text-brand-blue' : 'text-gray-900/60 group-hover:text-brand-blue'
                   }`}
                 />
                 <span
                   className={`text-sm font-medium transition-colors ${
-                    isActive ? 'text-maritime-gold' : 'text-maritime-cream/70 group-hover:text-maritime-cream'
+                    isActive ? 'text-brand-blue' : 'text-gray-900/70 group-hover:text-gray-900'
                   }`}
                 >
                   {filter.label}
@@ -64,7 +64,7 @@ export function PostsFilterBar() {
       </div>
 
       {/* Decorative Underline */}
-      <div className="absolute -bottom-2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-maritime-gold/30 to-transparent" />
+      <div className="absolute -bottom-2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-blue/30 to-transparent" />
     </div>
   )
 }

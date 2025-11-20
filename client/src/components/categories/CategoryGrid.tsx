@@ -15,7 +15,7 @@ interface CategoryGridProps {
 
 export function CategoryGrid({ categories }: CategoryGridProps) {
   return (
-    <section className="py-16 md:py-24 bg-maritime-navy relative">
+    <section className="py-16 md:py-24 bg-white relative">
       {/* Subtle Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div

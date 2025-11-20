@@ -11,12 +11,12 @@ export function CategoryHero() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.2 }}
         >
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
             All <GradientText>Categories</GradientText>
           </h1>
-          <p className="text-xl md:text-2xl text-maritime-cream/70 max-w-3xl mx-auto leading-relaxed mb-8">
+          <p className="text-xl md:text-2xl text-gray-900/70 max-w-3xl mx-auto leading-relaxed mb-8">
             Explore every domain in yacht insurance, engineering, maintenance and claims.
           </p>
 
@@ -26,7 +26,7 @@ export function CategoryHero() {
               initial={{ width: 0 }}
               animate={{ width: '120px' }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="h-1 bg-gradient-to-r from-transparent via-maritime-gold to-transparent"
+              className="h-1 bg-gradient-to-r from-transparent via-brand-blue to-transparent"
             />
           </div>
         </motion.div>

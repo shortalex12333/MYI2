@@ -41,7 +41,7 @@ export function CategoryStatsBar({
   ]
 
   return (
-    <section className="border-t border-maritime-gold/10 bg-maritime-navy-light/30 backdrop-blur-sm">
+    <section className="border-t border-brand-blue/10 bg-white-light/30 backdrop-blur-sm">
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {stats.map((stat, idx) => (
@@ -50,14 +50,14 @@ export function CategoryStatsBar({
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: idx * 0.1 }}
+              transition={{ duration: 0.2, delay: idx * 0.1 }}
               className="group"
             >
-              <stat.icon className="h-5 w-5 text-maritime-gold mx-auto mb-3 group-hover:scale-110 transition-transform" />
-              <div className="text-2xl md:text-3xl font-bold text-maritime-gold mb-1">
+              <stat.icon className="h-5 w-5 text-brand-blue mx-auto mb-3 group-hover:scale-110 transition-transform" />
+              <div className="text-2xl md:text-3xl font-bold text-brand-blue mb-1">
                 {stat.value}
               </div>
-              <div className="text-xs text-maritime-cream/60">{stat.label}</div>
+              <div className="text-xs text-gray-900/60">{stat.label}</div>
             </motion.div>
           ))}
         </div>

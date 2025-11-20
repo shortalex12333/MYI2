@@ -22,12 +22,12 @@ export const PremiumCard = ({
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, ease: 'easeOut' }}
+      transition={{ duration: 0.2, ease: 'easeOut' }}
       whileHover={hover ? { y: -4, scale: 1.01 } : {}}
       className={cn(
-        'rounded-xl border transition-all duration-300',
+        'rounded-xl border transition-all duration-200',
         glassmorphism && 'bg-white/5 backdrop-blur-sm border-white/10',
-        hover && 'hover:border-maritime-gold/50 hover:shadow-lg hover:shadow-maritime-gold/10',
+        hover && 'hover:border-brand-blue/50 hover:shadow-lg hover:shadow-brand-blue/10',
         className
       )}
     >

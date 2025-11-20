@@ -14,7 +14,7 @@ export const GradientText = ({
   children,
   className,
   from = 'from-maritime-cream',
-  to = 'to-maritime-gold'
+  to = 'to-brand-blue'
 }: GradientTextProps) => {
   return (
     <span className={cn(

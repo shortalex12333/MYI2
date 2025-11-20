@@ -34,7 +34,7 @@ export function PostsCategorySidebar({ categories }: PostsCategorySidebarProps) 
         <h2 className="text-2xl font-bold mb-2">
           <GradientText>Categories</GradientText>
         </h2>
-        <p className="text-sm text-maritime-cream/60">
+        <p className="text-sm text-gray-900/60">
           Browse by topic
         </p>
       </div>
@@ -49,9 +49,9 @@ export function PostsCategorySidebar({ categories }: PostsCategorySidebarProps) 
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: idx * 0.05 }}
+                transition={{ duration: 0.2, delay: idx * 0.05 }}
                 whileHover={{ x: 4, scale: 1.02 }}
-                className="group p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-maritime-gold/50 transition-all duration-300 hover:shadow-lg hover:shadow-maritime-gold/10"
+                className="group p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-brand-blue/50 transition-all duration-200 hover:shadow-lg hover:shadow-brand-blue/10"
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
@@ -59,17 +59,17 @@ export function PostsCategorySidebar({ categories }: PostsCategorySidebarProps) 
                       {emoji}
                     </span>
                     <div>
-                      <h3 className="text-sm font-semibold text-maritime-cream group-hover:text-maritime-gold transition-colors">
+                      <h3 className="text-sm font-semibold text-gray-900 group-hover:text-brand-blue transition-colors">
                         {category.name}
                       </h3>
                       {category.description && (
-                        <p className="text-xs text-maritime-cream/50 line-clamp-1 mt-0.5">
+                        <p className="text-xs text-gray-900/50 line-clamp-1 mt-0.5">
                           {category.description}
                         </p>
                       )}
                     </div>
                   </div>
-                  <ArrowRight className="h-4 w-4 text-maritime-gold/50 group-hover:text-maritime-gold group-hover:translate-x-1 transition-all" />
+                  <ArrowRight className="h-4 w-4 text-brand-blue/50 group-hover:text-brand-blue group-hover:translate-x-1 transition-all" />
                 </div>
               </motion.div>
             </Link>
@@ -79,25 +79,25 @@ export function PostsCategorySidebar({ categories }: PostsCategorySidebarProps) 
 
       {/* Helpful Resources */}
       <div className="mt-8 p-6 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10">
-        <h3 className="text-sm font-semibold text-maritime-gold mb-4">
+        <h3 className="text-sm font-semibold text-brand-blue mb-4">
           Helpful Resources
         </h3>
         <div className="space-y-3 text-sm">
           <Link
             href="/faq"
-            className="block text-maritime-cream/70 hover:text-maritime-gold transition-colors"
+            className="block text-gray-900/70 hover:text-brand-blue transition-colors"
           >
             → FAQ & Guides
           </Link>
           <Link
             href="/companies"
-            className="block text-maritime-cream/70 hover:text-maritime-gold transition-colors"
+            className="block text-gray-900/70 hover:text-brand-blue transition-colors"
           >
             → Verified Companies
           </Link>
           <Link
             href="/contact"
-            className="block text-maritime-cream/70 hover:text-maritime-gold transition-colors"
+            className="block text-gray-900/70 hover:text-brand-blue transition-colors"
           >
             → Contact Support
           </Link>

@@ -31,7 +31,7 @@ export function PostActions({ postId, authorId, currentUserId }: PostActionsProp
         variant="ghost"
         size="sm"
         onClick={handleShare}
-        className="text-maritime-cream/60 hover:text-maritime-gold hover:bg-maritime-gold/10"
+        className="text-gray-900/60 hover:text-brand-blue hover:bg-brand-blue/10"
       >
         <Share2 className="h-4 w-4 mr-2" />
         Share
@@ -41,7 +41,7 @@ export function PostActions({ postId, authorId, currentUserId }: PostActionsProp
       <Button
         variant="ghost"
         size="sm"
-        className="text-maritime-cream/60 hover:text-maritime-gold hover:bg-maritime-gold/10"
+        className="text-gray-900/60 hover:text-brand-blue hover:bg-brand-blue/10"
       >
         <Bookmark className="h-4 w-4 mr-2" />
         Save
@@ -52,7 +52,7 @@ export function PostActions({ postId, authorId, currentUserId }: PostActionsProp
         <Button
           variant="ghost"
           size="sm"
-          className="text-maritime-cream/60 hover:text-red-400 hover:bg-red-400/10"
+          className="text-gray-900/60 hover:text-red-400 hover:bg-red-400/10"
         >
           <Flag className="h-4 w-4 mr-2" />
           Report

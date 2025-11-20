@@ -12,9 +12,9 @@ interface CompanyDetailCTAProps {
 
 export function CompanyDetailCTA({ companyName }: CompanyDetailCTAProps) {
   return (
-    <section className="py-20 md:py-28 bg-maritime-navy-light relative overflow-hidden">
+    <section className="py-20 md:py-28 bg-white-light relative overflow-hidden">
       {/* Decorative Gradient Orbs */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-maritime-gold/20 rounded-full blur-3xl opacity-30" />
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-brand-blue/20 rounded-full blur-3xl opacity-30" />
       <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-maritime-teal/20 rounded-full blur-3xl opacity-30" />
 
       {/* Wave Pattern */}
@@ -38,7 +38,7 @@ export function CompanyDetailCTA({ companyName }: CompanyDetailCTAProps) {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.2 }}
           className="max-w-3xl mx-auto"
         >
           {/* Icon */}
@@ -46,11 +46,11 @@ export function CompanyDetailCTA({ companyName }: CompanyDetailCTAProps) {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.4 }}
+            transition={{ duration: 0.2 }}
             className="mb-6"
           >
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-maritime-gold/10 border border-maritime-gold/30">
-              <HelpCircle className="h-8 w-8 text-maritime-gold" />
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-brand-blue/10 border border-brand-blue/30">
+              <HelpCircle className="h-8 w-8 text-brand-blue" />
             </div>
           </motion.div>
 
@@ -61,12 +61,12 @@ export function CompanyDetailCTA({ companyName }: CompanyDetailCTAProps) {
           </h2>
 
           {/* Description */}
-          <p className="text-lg md:text-xl text-maritime-cream/70 mb-4 leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-900/70 mb-4 leading-relaxed">
             Get insights from yacht owners who have worked with this provider.
             Ask questions or share your experience.
           </p>
 
-          <p className="text-sm text-maritime-cream/50 mb-10">
+          <p className="text-sm text-gray-900/50 mb-10">
             Our community has firsthand experience with insurance providers worldwide
           </p>
 
@@ -75,7 +75,7 @@ export function CompanyDetailCTA({ companyName }: CompanyDetailCTAProps) {
             <Button
               size="lg"
               asChild
-              className="bg-maritime-gold hover:bg-maritime-gold-light text-maritime-navy font-semibold h-14 px-10 text-lg shadow-2xl shadow-maritime-gold/30 transition-all duration-300 hover:scale-105"
+              className="bg-brand-blue hover:bg-brand-blue-light text-maritime-navy font-semibold h-14 px-10 text-lg shadow-2xl shadow-brand-blue/30 transition-all duration-200 hover:scale-105"
             >
               <Link href="/posts/new?category=claims">
                 <MessageSquare className="mr-2 h-5 w-5" />
@@ -87,7 +87,7 @@ export function CompanyDetailCTA({ companyName }: CompanyDetailCTAProps) {
               size="lg"
               variant="outline"
               asChild
-              className="h-14 px-10 text-lg border-maritime-gold/50 text-maritime-gold hover:bg-maritime-gold/10 transition-all"
+              className="h-14 px-10 text-lg border-brand-blue/50 text-brand-blue hover:bg-brand-blue/10 transition-all"
             >
               <Link href="/companies">
                 Browse All Providers
