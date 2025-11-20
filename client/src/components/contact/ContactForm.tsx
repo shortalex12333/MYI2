@@ -1,7 +1,6 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { GradientText } from '@/components/ui/gradient-text'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
@@ -20,8 +19,8 @@ export function ContactForm() {
             transition={{ duration: 0.2 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <GradientText>Send Us a Message</GradientText>
+            <h2 className="text-3xl md:text-4xl font-display font-semibold mb-4">
+              <span className="text-brand-blue">Send Us a Message</span>
             </h2>
             <p className="text-gray-900/70">
               Fill out the form below and we'll get back to you as soon as possible
@@ -33,7 +32,7 @@ export function ContactForm() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.2, delay: 0.1 }}
-            className="rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 p-8"
+            className="rounded-2xl bg-gray-100  border border-gray-200 p-8"
           >
             <form className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
@@ -45,7 +44,7 @@ export function ContactForm() {
                     id="name"
                     placeholder="Your name"
                     required
-                    className="bg-white border-white/10 text-gray-900 placeholder:text-gray-900/40 focus:border-brand-blue/50"
+                    className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-900/40 focus:border-brand-blue/50"
                   />
                 </div>
                 <div className="space-y-2">
@@ -57,7 +56,7 @@ export function ContactForm() {
                     type="email"
                     placeholder="your@email.com"
                     required
-                    className="bg-white border-white/10 text-gray-900 placeholder:text-gray-900/40 focus:border-brand-blue/50"
+                    className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-900/40 focus:border-brand-blue/50"
                   />
                 </div>
               </div>
@@ -70,7 +69,7 @@ export function ContactForm() {
                   id="subject"
                   placeholder="What is this about?"
                   required
-                  className="bg-white border-white/10 text-gray-900 placeholder:text-gray-900/40 focus:border-brand-blue/50"
+                  className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-900/40 focus:border-brand-blue/50"
                 />
               </div>
 
@@ -83,7 +82,7 @@ export function ContactForm() {
                   placeholder="Tell us more..."
                   rows={8}
                   required
-                  className="bg-white border-white/10 text-gray-900 placeholder:text-gray-900/40 focus:border-brand-blue/50 resize-none"
+                  className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-900/40 focus:border-brand-blue/50 resize-none"
                 />
               </div>
 

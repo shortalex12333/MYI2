@@ -3,7 +3,6 @@
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
-import { GradientText } from '@/components/ui/gradient-text'
 import { Plus, MessageSquare } from 'lucide-react'
 
 interface CategoryDetailCTAProps {
@@ -56,9 +55,9 @@ export function CategoryDetailCTA({ categoryName, categorySlug }: CategoryDetail
           </motion.div>
 
           {/* Heading */}
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">
+          <h2 className="text-3xl md:text-5xl font-display font-semibold mb-6">
             Have a question about{' '}
-            <GradientText>{categoryName}?</GradientText>
+            <span className="text-brand-blue">{categoryName}?</span>
           </h2>
 
           {/* Description */}

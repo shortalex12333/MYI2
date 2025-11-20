@@ -1,7 +1,6 @@
 'use client'
 
 import { CompanyCard } from './CompanyCard'
-import { GradientText } from '@/components/ui/gradient-text'
 import { Company } from '@/types/database.types'
 
 interface CompaniesGridProps {
@@ -31,8 +30,8 @@ export function CompaniesGrid({
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-            <GradientText>{title}</GradientText>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold mb-4">
+            <span className="text-brand-blue">{title}</span>
           </h2>
           <p className="text-lg text-gray-900/70 max-w-2xl mx-auto">
             {description}
@@ -42,7 +41,7 @@ export function CompaniesGrid({
         {/* Companies Grid */}
         {companies.length === 0 ? (
           <div className="py-16 text-center">
-            <div className="inline-block p-12 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
+            <div className="inline-block p-12 rounded-2xl bg-gray-100  border border-gray-200">
               <p className="text-lg text-gray-900/70 mb-2">
                 No companies listed yet.
               </p>

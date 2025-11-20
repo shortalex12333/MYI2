@@ -3,7 +3,6 @@
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
-import { GradientText } from '@/components/ui/gradient-text'
 import { Plus } from 'lucide-react'
 
 export function CategoryCTA() {
@@ -37,8 +36,8 @@ export function CategoryCTA() {
           transition={{ duration: 0.2 }}
           className="max-w-2xl mx-auto"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            Not sure where your <GradientText>issue belongs?</GradientText>
+          <h2 className="text-3xl md:text-5xl font-display font-semibold mb-6">
+            Not sure where your <span className="text-brand-blue">issue belongs?</span>
           </h2>
           <p className="text-lg md:text-xl text-gray-900/70 mb-8 leading-relaxed">
             Ask your question and our community of yacht owners, captains, and insurance experts will help you find the right answer.

@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { GradientText } from '@/components/ui/gradient-text'
 import { ShieldCheck, ExternalLink, Building2 } from 'lucide-react'
 import { Company } from '@/types/database.types'
 import Image from 'next/image'
@@ -37,7 +36,7 @@ export function CompanyCard({ company, index = 0 }: CompanyCardProps) {
       className="group h-full"
     >
       <Link href={`/companies/${company.id}`}>
-        <div className="relative h-full rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-brand-blue/50 transition-all duration-200 hover:shadow-lg hover:shadow-brand-blue/10 p-6 flex flex-col">
+        <div className="relative h-full rounded-xl bg-gray-100  border border-gray-200 hover:border-brand-blue/50 transition-all duration-200 hover:shadow-lg hover:shadow-brand-blue/10 p-6 flex flex-col">
           {/* Company Logo & Header */}
           <div className="flex items-start gap-4 mb-4">
             {/* Logo */}
@@ -45,7 +44,7 @@ export function CompanyCard({ company, index = 0 }: CompanyCardProps) {
               {/* Gold glow effect behind logo */}
               <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-brand-blue/30 to-brand-blue-light/20 opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-200" />
 
-              <div className="relative w-16 h-16 rounded-lg bg-white-light border border-white/10 flex items-center justify-center overflow-hidden">
+              <div className="relative w-16 h-16 rounded-lg bg-white-light border border-gray-200 flex items-center justify-center overflow-hidden">
                 {company.logo_url ? (
                   <Image
                     src={company.logo_url}
@@ -63,7 +62,7 @@ export function CompanyCard({ company, index = 0 }: CompanyCardProps) {
             {/* Name & Verified Badge */}
             <div className="flex-1 min-w-0">
               <h3 className="text-lg md:text-xl font-semibold mb-2 group-hover:text-brand-blue transition-colors line-clamp-2">
-                <GradientText>{company.name}</GradientText>
+                <span className="text-brand-blue">{company.name}</span>
               </h3>
 
               {company.verified && (
@@ -92,7 +91,7 @@ export function CompanyCard({ company, index = 0 }: CompanyCardProps) {
           )}
 
           {/* Footer - Website Link */}
-          <div className="flex items-center justify-between pt-4 border-t border-white/10 mt-auto">
+          <div className="flex items-center justify-between pt-4 border-t border-gray-200 mt-auto">
             {company.website ? (
               <div className="flex items-center gap-2 text-xs text-brand-blue group-hover:text-brand-blue-light transition-colors">
                 <ExternalLink className="h-3.5 w-3.5" />

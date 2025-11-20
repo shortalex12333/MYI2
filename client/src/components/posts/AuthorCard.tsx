@@ -30,7 +30,7 @@ export function AuthorCard({ author, timestamp, label = 'asked', size = 'md' }: 
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.2 }}
-      className="p-4 md:p-6 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-brand-blue/30 transition-all duration-200"
+      className="p-4 md:p-6 rounded-xl bg-gray-100  border border-gray-200 hover:border-brand-blue/30 transition-all duration-200"
     >
       <div className="text-xs text-gray-900/50 mb-3">
         {label} {formatDate(timestamp)}

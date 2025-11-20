@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion'
 import { AuroraBackground } from '@/components/ui/aurora-background'
-import { GradientText } from '@/components/ui/gradient-text'
 import { HelpCircle, BookOpen, Compass } from 'lucide-react'
 
 export function FAQHero() {
@@ -23,7 +22,7 @@ export function FAQHero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.2, delay: idx * 0.1 }}
-                className="p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10"
+                className="p-4 rounded-xl bg-gray-100  border border-gray-200"
               >
                 <Icon className="h-8 w-8 text-brand-blue" />
               </motion.div>
@@ -35,9 +34,9 @@ export function FAQHero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.2, delay: 0.2 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6"
+            className="text-4xl md:text-6xl lg:text-7xl font-display font-semibold mb-6"
           >
-            <GradientText>Frequently Asked Questions</GradientText>
+            <span className="text-brand-blue">Frequently Asked Questions</span>
           </motion.h1>
 
           {/* Subtitle */}

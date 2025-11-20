@@ -41,7 +41,7 @@ export function CategoryStatsBar({
   ]
 
   return (
-    <section className="border-t border-brand-blue/10 bg-white-light/30 backdrop-blur-sm">
+    <section className="border-t border-brand-blue/10 bg-white-light/30 ">
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {stats.map((stat, idx) => (
@@ -54,7 +54,7 @@ export function CategoryStatsBar({
               className="group"
             >
               <stat.icon className="h-5 w-5 text-brand-blue mx-auto mb-3 group-hover:scale-110 transition-transform" />
-              <div className="text-2xl md:text-3xl font-bold text-brand-blue mb-1">
+              <div className="text-2xl md:text-3xl font-display font-semibold text-brand-blue mb-1">
                 {stat.value}
               </div>
               <div className="text-xs text-gray-900/60">{stat.label}</div>

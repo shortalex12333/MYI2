@@ -38,7 +38,7 @@ export function FAQAccordion({ faqs, index = 0 }: FAQAccordionProps) {
           >
             <button
               onClick={() => toggleFAQ(idx)}
-              className="w-full text-left rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-brand-blue/50 transition-all p-6"
+              className="w-full text-left rounded-xl bg-gray-100  border border-gray-200 hover:border-brand-blue/50 transition-all p-6"
             >
               <div className="flex items-start justify-between gap-4">
                 <h3 className="text-lg md:text-xl font-semibold text-gray-900 group-hover:text-brand-blue transition-colors flex-1">
@@ -62,7 +62,7 @@ export function FAQAccordion({ faqs, index = 0 }: FAQAccordionProps) {
                     transition={{ duration: 0.2 }}
                     className="overflow-hidden"
                   >
-                    <div className="pt-4 mt-4 border-t border-white/10">
+                    <div className="pt-4 mt-4 border-t border-gray-200">
                       <div className="prose prose-invert prose-sm max-w-none">
                         <ReactMarkdown
                           components={{

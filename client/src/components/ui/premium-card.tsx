@@ -26,7 +26,7 @@ export const PremiumCard = ({
       whileHover={hover ? { y: -4, scale: 1.01 } : {}}
       className={cn(
         'rounded-xl border transition-all duration-200',
-        glassmorphism && 'bg-white/5 backdrop-blur-sm border-white/10',
+        glassmorphism && 'bg-gray-100  border-gray-200',
         hover && 'hover:border-brand-blue/50 hover:shadow-lg hover:shadow-brand-blue/10',
         className
       )}

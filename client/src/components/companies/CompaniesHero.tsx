@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion'
 import { AuroraBackground } from '@/components/ui/aurora-background'
-import { GradientText } from '@/components/ui/gradient-text'
 import { Shield, Anchor, Award, Briefcase } from 'lucide-react'
 
 export function CompaniesHero() {
@@ -42,9 +41,9 @@ export function CompaniesHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.2, delay: 0.2 }}
-          className="text-4xl md:text-6xl lg:text-7xl font-bold text-center mb-6 leading-tight"
+          className="text-4xl md:text-6xl lg:text-7xl font-display font-semibold text-center mb-6 leading-tight"
         >
-          <GradientText>Trusted Yacht Insurers & Experts</GradientText>
+          <span className="text-brand-blue">Trusted Yacht Insurers & Experts</span>
         </motion.h1>
 
         {/* Subtitle */}
@@ -73,7 +72,7 @@ export function CompaniesHero() {
               transition={{ duration: 0.2, delay: 0.5 + idx * 0.1 }}
               className="flex flex-col items-center gap-2 group"
             >
-              <div className="p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 group-hover:border-brand-blue/50 transition-all">
+              <div className="p-4 rounded-xl bg-gray-100  border border-gray-200 group-hover:border-brand-blue/50 transition-all">
                 <item.Icon className="h-6 w-6 text-brand-blue group-hover:scale-110 transition-transform" />
               </div>
               <span className="text-xs text-gray-900/60 group-hover:text-brand-blue transition-colors">

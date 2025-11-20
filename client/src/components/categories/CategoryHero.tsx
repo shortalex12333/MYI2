@@ -1,7 +1,6 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { GradientText } from '@/components/ui/gradient-text'
 import { AuroraBackground } from '@/components/ui/aurora-background'
 
 export function CategoryHero() {
@@ -13,8 +12,8 @@ export function CategoryHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.2 }}
         >
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
-            All <GradientText>Categories</GradientText>
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-semibold mb-6">
+            All <span className="text-brand-blue">Categories</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-900/70 max-w-3xl mx-auto leading-relaxed mb-8">
             Explore every domain in yacht insurance, engineering, maintenance and claims.

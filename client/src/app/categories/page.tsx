@@ -39,7 +39,7 @@ export default async function CategoriesPage() {
       {!categories || categories.length === 0 ? (
         <section className="py-20">
           <div className="container mx-auto px-4 text-center">
-            <div className="inline-block p-8 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
+            <div className="inline-block p-8 rounded-2xl bg-gray-100  border border-gray-200">
               <p className="text-xl text-gray-900/70">
                 No categories available yet.
               </p>

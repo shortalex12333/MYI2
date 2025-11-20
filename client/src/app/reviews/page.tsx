@@ -2,7 +2,7 @@ export default function ReviewsPage() {
   return (
     <div className="container mx-auto px-4 py-16">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-4">Provider Reviews</h1>
+        <h1 className="text-4xl font-display font-semibold mb-4">Provider Reviews</h1>
         <p className="text-xl text-muted-foreground mb-8">
           Read honest reviews from yacht owners about their insurance experiences
         </p>

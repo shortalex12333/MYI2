@@ -27,10 +27,10 @@ export function AnswerCard({ answer, index = 0, currentUserId, isAccepted = fals
         <div className="absolute -left-2 top-0 bottom-0 w-1 bg-brand-blue rounded-full" />
       )}
 
-      <div className={`p-6 md:p-8 rounded-xl bg-white/5 backdrop-blur-sm border transition-all duration-200 ${
+      <div className={`p-6 md:p-8 rounded-xl bg-gray-100  border transition-all duration-200 ${
         isAccepted
           ? 'border-brand-blue/50 shadow-lg shadow-brand-blue/10'
-          : 'border-white/10 hover:border-brand-blue/30'
+          : 'border-gray-200 hover:border-brand-blue/30'
       }`}>
         <div className="flex gap-6">
           {/* Voting Column */}
@@ -74,7 +74,7 @@ export function AnswerCard({ answer, index = 0, currentUserId, isAccepted = fals
             </div>
 
             {/* Actions & Author Row */}
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pt-4 border-t border-white/10">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pt-4 border-t border-gray-200">
               {/* Actions */}
               <PostActions
                 postId={answer.id}

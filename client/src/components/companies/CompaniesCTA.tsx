@@ -3,7 +3,6 @@
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
-import { GradientText } from '@/components/ui/gradient-text'
 import { HelpCircle, MessageSquare } from 'lucide-react'
 
 export function CompaniesCTA() {
@@ -51,9 +50,9 @@ export function CompaniesCTA() {
           </motion.div>
 
           {/* Heading */}
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">
+          <h2 className="text-3xl md:text-5xl font-display font-semibold mb-6">
             Need help choosing{' '}
-            <GradientText>the right insurer?</GradientText>
+            <span className="text-brand-blue">the right insurer?</span>
           </h2>
 
           {/* Description */}

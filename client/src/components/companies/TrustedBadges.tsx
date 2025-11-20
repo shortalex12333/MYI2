@@ -38,7 +38,7 @@ export function TrustedBadges() {
                 transition={{ duration: 0.2, delay: idx * 0.1 }}
                 className="group"
               >
-                <div className="flex items-center gap-3 px-6 py-3 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 hover:border-brand-blue/40 transition-all hover:bg-white/10">
+                <div className="flex items-center gap-3 px-6 py-3 rounded-full bg-gray-100  border border-gray-200 hover:border-brand-blue/40 transition-all hover:bg-gray-100">
                   <badge.icon className={`h-5 w-5 ${badge.color} group-hover:scale-110 transition-transform`} />
                   <span className="text-sm text-gray-900/80 group-hover:text-brand-blue transition-colors whitespace-nowrap">
                     {badge.label}
@@ -66,7 +66,7 @@ export function TrustedBadges() {
             { value: '$2B+', label: 'Coverage Issued' },
           ].map((stat, idx) => (
             <div key={idx} className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-brand-blue mb-1">
+              <div className="text-2xl md:text-3xl font-display font-semibold text-brand-blue mb-1">
                 {stat.value}
               </div>
               <div className="text-xs md:text-sm text-gray-900/60">

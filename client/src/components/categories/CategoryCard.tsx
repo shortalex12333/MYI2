@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { GradientText } from '@/components/ui/gradient-text'
 import { ArrowRight } from 'lucide-react'
 
 interface CategoryCardProps {
@@ -51,7 +50,7 @@ export function CategoryCard({ category, index = 0 }: CategoryCardProps) {
         className="group relative h-full"
       >
         {/* Glassmorphism Card */}
-        <div className="h-full p-6 md:p-8 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-brand-blue/50 transition-all duration-200 hover:shadow-lg hover:shadow-brand-blue/10">
+        <div className="h-full p-6 md:p-8 rounded-xl bg-gray-100  border border-gray-200 hover:border-brand-blue/50 transition-all duration-200 hover:shadow-lg hover:shadow-brand-blue/10">
           {/* Animated Gold Bar on Hover */}
           <div className="absolute top-0 left-0 right-0 h-1 bg-brand-blue rounded-t-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
 
@@ -65,7 +64,7 @@ export function CategoryCard({ category, index = 0 }: CategoryCardProps) {
 
           {/* Category Name */}
           <h3 className="text-xl md:text-2xl font-semibold mb-3">
-            <GradientText>{category.name}</GradientText>
+            <span className="text-brand-blue">{category.name}</span>
           </h3>
 
           {/* Description */}
@@ -76,7 +75,7 @@ export function CategoryCard({ category, index = 0 }: CategoryCardProps) {
           )}
 
           {/* Post Count Badge */}
-          <div className="flex items-center gap-2 pt-4 border-t border-white/10">
+          <div className="flex items-center gap-2 pt-4 border-t border-gray-200">
             <div className="px-3 py-1 rounded-full bg-brand-blue/10 border border-brand-blue/30">
               <span className="text-sm font-medium text-brand-blue">
                 {postCount} {postCount === 1 ? 'post' : 'posts'}

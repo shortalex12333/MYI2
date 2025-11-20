@@ -1,7 +1,6 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { GradientText } from '@/components/ui/gradient-text'
 import { Building2, Mail, Phone, MapPin, ExternalLink } from 'lucide-react'
 import { Company } from '@/types/database.types'
 
@@ -39,17 +38,17 @@ export function CompanyDetailAbout({ company }: CompanyDetailAboutProps) {
             transition={{ duration: 0.2 }}
             className="mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              <GradientText>About {company.name}</GradientText>
+            <h2 className="text-3xl md:text-4xl font-display font-semibold mb-6">
+              <span className="text-brand-blue">About {company.name}</span>
             </h2>
 
-            <div className="rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 p-8">
+            <div className="rounded-2xl bg-gray-100  border border-gray-200 p-8">
               <p className="text-lg text-gray-900/80 leading-relaxed mb-6">
                 {company.description || typeDescriptions[company.type]}
               </p>
 
               {/* Company Details Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 pt-8 border-t border-white/10">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 pt-8 border-t border-gray-200">
                 <div className="flex items-start gap-3">
                   <Building2 className="h-5 w-5 text-brand-blue mt-1" />
                   <div>
@@ -85,8 +84,8 @@ export function CompanyDetailAbout({ company }: CompanyDetailAboutProps) {
             viewport={{ once: true }}
             transition={{ duration: 0.2, delay: 0.1 }}
           >
-            <h3 className="text-2xl md:text-3xl font-bold mb-6">
-              <GradientText>Services & Expertise</GradientText>
+            <h3 className="text-2xl md:text-3xl font-display font-semibold mb-6">
+              <span className="text-brand-blue">Services & Expertise</span>
             </h3>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -104,7 +103,7 @@ export function CompanyDetailAbout({ company }: CompanyDetailAboutProps) {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.2, delay: idx * 0.05 }}
-                  className="flex items-center gap-3 p-4 rounded-lg bg-white/5 border border-white/10 hover:border-brand-blue/30 transition-all group"
+                  className="flex items-center gap-3 p-4 rounded-lg bg-gray-100 border border-gray-200 hover:border-brand-blue/30 transition-all group"
                 >
                   <div className="w-2 h-2 rounded-full bg-brand-blue group-hover:scale-125 transition-transform" />
                   <span className="text-gray-900/80 group-hover:text-brand-blue transition-colors">

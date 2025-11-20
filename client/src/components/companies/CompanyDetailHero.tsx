@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion'
 import { AuroraBackground } from '@/components/ui/aurora-background'
-import { GradientText } from '@/components/ui/gradient-text'
 import { ShieldCheck, Building2, ExternalLink, ArrowLeft } from 'lucide-react'
 import { Company } from '@/types/database.types'
 import Image from 'next/image'
@@ -72,9 +71,9 @@ export function CompanyDetailHero({ company }: CompanyDetailHeroProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.2, delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4"
+            className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold mb-4"
           >
-            <GradientText>{company.name}</GradientText>
+            <span className="text-brand-blue">{company.name}</span>
           </motion.h1>
 
           {/* Type & Verified Badge */}

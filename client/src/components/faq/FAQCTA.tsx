@@ -3,7 +3,6 @@
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
-import { GradientText } from '@/components/ui/gradient-text'
 import { MessageSquare, Search } from 'lucide-react'
 
 export function FAQCTA() {
@@ -38,9 +37,9 @@ export function FAQCTA() {
           className="max-w-3xl mx-auto"
         >
           {/* Heading */}
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">
+          <h2 className="text-3xl md:text-5xl font-display font-semibold mb-6">
             Can't find what you're{' '}
-            <GradientText>looking for?</GradientText>
+            <span className="text-brand-blue">looking for?</span>
           </h2>
 
           {/* Description */}

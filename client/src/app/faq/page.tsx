@@ -2,7 +2,6 @@ import { createClient } from '@/lib/supabase/server'
 import { FAQHero } from '@/components/faq/FAQHero'
 import { FAQAccordion } from '@/components/faq/FAQAccordion'
 import { FAQCTA } from '@/components/faq/FAQCTA'
-import { GradientText } from '@/components/ui/gradient-text'
 
 export default async function FAQPage() {
   const supabase = await createClient()
@@ -48,7 +47,7 @@ export default async function FAQPage() {
           <div className="max-w-4xl mx-auto">
             {!faqs || faqs.length === 0 ? (
               <div className="text-center py-16">
-                <div className="inline-block p-12 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
+                <div className="inline-block p-12 rounded-2xl bg-gray-100  border border-gray-200">
                   <p className="text-lg text-gray-900/70 mb-2">
                     No FAQs available yet.
                   </p>
@@ -61,8 +60,8 @@ export default async function FAQPage() {
               <div className="space-y-12">
                 {faqsByCategory && Object.entries(faqsByCategory).map(([category, categoryFaqs]: [string, any], idx) => (
                   <div key={category}>
-                    <h2 className="text-2xl md:text-3xl font-bold mb-6">
-                      <GradientText>{category}</GradientText>
+                    <h2 className="text-2xl md:text-3xl font-display font-semibold mb-6">
+                      <span className="text-brand-blue">{category}</span>
                     </h2>
                     <FAQAccordion faqs={categoryFaqs} index={idx} />
                   </div>

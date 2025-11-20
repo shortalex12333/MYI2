@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { GradientText } from '@/components/ui/gradient-text'
 import { Info, Tag, Folder } from 'lucide-react'
 
 interface CategoryDetailSidebarProps {
@@ -55,12 +54,12 @@ export function CategoryDetailSidebar({
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.2 }}
-        className="rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 p-6"
+        className="rounded-xl bg-gray-100  border border-gray-200 p-6"
       >
         <div className="flex items-center gap-2 mb-4">
           <Info className="h-5 w-5 text-brand-blue" />
           <h3 className="text-lg font-semibold">
-            <GradientText>About This Category</GradientText>
+            <span className="text-brand-blue">About This Category</span>
           </h3>
         </div>
         <p className="text-sm text-gray-900/70 leading-relaxed">
@@ -74,12 +73,12 @@ export function CategoryDetailSidebar({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.2, delay: 0.1 }}
-          className="rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 p-6"
+          className="rounded-xl bg-gray-100  border border-gray-200 p-6"
         >
           <div className="flex items-center gap-2 mb-4">
             <Tag className="h-5 w-5 text-brand-blue" />
             <h3 className="text-lg font-semibold">
-              <GradientText>Popular Tags</GradientText>
+              <span className="text-brand-blue">Popular Tags</span>
             </h3>
           </div>
           <div className="flex flex-wrap gap-2">
@@ -109,12 +108,12 @@ export function CategoryDetailSidebar({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.2, delay: 0.2 }}
-          className="rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 p-6"
+          className="rounded-xl bg-gray-100  border border-gray-200 p-6"
         >
           <div className="flex items-center gap-2 mb-4">
             <Folder className="h-5 w-5 text-brand-blue" />
             <h3 className="text-lg font-semibold">
-              <GradientText>Related Categories</GradientText>
+              <span className="text-brand-blue">Related Categories</span>
             </h3>
           </div>
           <div className="space-y-2">
@@ -126,7 +125,7 @@ export function CategoryDetailSidebar({
                   href={`/category/${relatedCat.slug}`}
                   className="group block"
                 >
-                  <div className="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/10 hover:border-brand-blue/50 hover:bg-white/10 transition-all">
+                  <div className="flex items-center gap-3 p-3 rounded-lg bg-gray-100 border border-gray-200 hover:border-brand-blue/50 hover:bg-gray-100 transition-all">
                     <span className="text-2xl" role="img" aria-label={relatedCat.name}>
                       {emoji}
                     </span>

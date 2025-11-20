@@ -58,7 +58,7 @@ export default async function ProfilePage() {
               <div className="flex-1">
                 <div className="flex items-start justify-between">
                   <div>
-                    <h1 className="text-3xl font-bold mb-1">{profile?.username || 'User'}</h1>
+                    <h1 className="text-3xl font-display font-semibold mb-1">{profile?.username || 'User'}</h1>
                     <div className="flex items-center gap-2 text-muted-foreground mb-4">
                       <Mail className="h-4 w-4" />
                       <span className="text-sm">{user.email}</span>

@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion'
 import { AuroraBackground } from '@/components/ui/aurora-background'
-import { GradientText } from '@/components/ui/gradient-text'
 import { ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
 
@@ -73,9 +72,9 @@ export function CategoryDetailHero({ category }: CategoryDetailHeroProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.2, delay: 0.2 }}
-          className="text-4xl md:text-6xl lg:text-7xl font-bold text-center mb-6 leading-tight"
+          className="text-4xl md:text-6xl lg:text-7xl font-display font-semibold text-center mb-6 leading-tight"
         >
-          <GradientText>{category.name}</GradientText>
+          <span className="text-brand-blue">{category.name}</span>
         </motion.h1>
 
         {/* Category Description */}

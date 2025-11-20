@@ -1,7 +1,6 @@
 'use client'
 
 import { PostPreviewCard } from '@/components/posts/PostPreviewCard'
-import { GradientText } from '@/components/ui/gradient-text'
 import { Post } from '@/types/database.types'
 
 interface CategoryDetailPostsGridProps {
@@ -13,9 +12,9 @@ export function CategoryDetailPostsGrid({ posts, categoryName }: CategoryDetailP
   return (
     <div className="space-y-6">
       {/* Section Header */}
-      <div className="border-b border-white/10 pb-4">
+      <div className="border-b border-gray-200 pb-4">
         <h2 className="text-2xl md:text-3xl font-semibold">
-          <GradientText>Questions in {categoryName}</GradientText>
+          <span className="text-brand-blue">Questions in {categoryName}</span>
         </h2>
         <p className="text-sm text-gray-900/60 mt-2">
           {posts.length} {posts.length === 1 ? 'question' : 'questions'} in this category
@@ -25,7 +24,7 @@ export function CategoryDetailPostsGrid({ posts, categoryName }: CategoryDetailP
       {/* Posts Grid */}
       {posts.length === 0 ? (
         <div className="py-16 text-center">
-          <div className="inline-block p-8 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
+          <div className="inline-block p-8 rounded-2xl bg-gray-100  border border-gray-200">
             <p className="text-lg text-gray-900/70">
               No questions in this category yet.
             </p>

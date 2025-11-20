@@ -32,7 +32,7 @@ export function PostPreviewCard({ post, index = 0 }: PostPreviewCardProps) {
       className="group"
     >
       <Link href={`/posts/${post.id}`}>
-        <div className="relative rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-brand-blue/50 transition-all duration-200 hover:shadow-lg hover:shadow-brand-blue/10 p-6">
+        <div className="relative rounded-xl bg-gray-100  border border-gray-200 hover:border-brand-blue/50 transition-all duration-200 hover:shadow-lg hover:shadow-brand-blue/10 p-6">
           {/* Premium Header Bar */}
           <div className="flex items-center justify-between mb-4 text-xs text-gray-900/60">
             <div className="flex items-center gap-3">
@@ -85,7 +85,7 @@ export function PostPreviewCard({ post, index = 0 }: PostPreviewCardProps) {
           )}
 
           {/* Author Row - Premium */}
-          <div className="flex items-center justify-between pt-4 border-t border-white/10">
+          <div className="flex items-center justify-between pt-4 border-t border-gray-200">
             <div className="flex items-center gap-3">
               {/* Avatar with Gold Ring */}
               <div className="relative">

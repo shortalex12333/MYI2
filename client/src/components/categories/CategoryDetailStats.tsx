@@ -45,7 +45,7 @@ export function CategoryDetailStats({
   ]
 
   return (
-    <section className="border-y border-brand-blue/10 bg-white-light/30 backdrop-blur-sm">
+    <section className="border-y border-brand-blue/10 bg-white-light/30 ">
       <div className="container mx-auto px-4 py-8 md:py-12">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
           {stats.map((stat, idx) => (
@@ -58,7 +58,7 @@ export function CategoryDetailStats({
               className="group text-center"
             >
               <div className="flex flex-col items-center">
-                <div className="mb-3 p-3 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 group-hover:border-brand-blue/30 transition-all">
+                <div className="mb-3 p-3 rounded-xl bg-gray-100  border border-gray-200 group-hover:border-brand-blue/30 transition-all">
                   <stat.icon className={`h-6 w-6 ${stat.color} group-hover:scale-110 transition-transform`} />
                 </div>
                 <div className={`text-2xl md:text-3xl font-bold mb-1 ${stat.color}`}>

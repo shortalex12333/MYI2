@@ -1,7 +1,6 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { GradientText } from '@/components/ui/gradient-text'
 import { Badge } from '@/components/ui/badge'
 import { formatDate, formatNumber } from '@/lib/utils'
 import { Eye, Clock, MessageSquare, TrendingUp } from 'lucide-react'
@@ -33,7 +32,7 @@ export function PostDetailHeader({
       className="border-b border-brand-blue/10 bg-white-light/30 pb-8 mb-8"
     >
       {/* Title */}
-      <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight text-gray-900">
+      <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold mb-6 leading-tight text-gray-900">
         {title}
       </h1>
 

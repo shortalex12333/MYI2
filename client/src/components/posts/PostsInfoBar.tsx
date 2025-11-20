@@ -40,7 +40,7 @@ export function PostsInfoBar({
   ]
 
   return (
-    <div className="border-t border-brand-blue/10 bg-white-light/30 backdrop-blur-sm">
+    <div className="border-t border-brand-blue/10 bg-white-light/30 ">
       <div className="py-4 px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           {stats.map((stat, idx) => (

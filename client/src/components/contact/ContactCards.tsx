@@ -62,7 +62,7 @@ export function ContactCards() {
               transition={{ duration: 0.2, delay: idx * 0.1 }}
               className="group"
             >
-              <div className="h-full rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-brand-blue/50 transition-all p-6">
+              <div className="h-full rounded-xl bg-gray-100  border border-gray-200 hover:border-brand-blue/50 transition-all p-6">
                 <method.icon className={`h-10 w-10 ${method.color} mb-4 group-hover:scale-110 transition-transform`} />
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
                   {method.title}

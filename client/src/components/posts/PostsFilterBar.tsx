@@ -25,7 +25,7 @@ export function PostsFilterBar() {
   return (
     <div className="relative">
       {/* Glassmorphism Container */}
-      <div className="inline-flex items-center gap-2 p-1.5 rounded-full bg-white/5 backdrop-blur-sm border border-white/10">
+      <div className="inline-flex items-center gap-2 p-1.5 rounded-full bg-gray-100  border border-gray-200">
         {filters.map((filter) => {
           const isActive = currentSort === filter.id
           return (
