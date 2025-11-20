@@ -51,9 +51,9 @@ export default function LoginPage() {
       <Card className="w-full max-w-md">
         <CardHeader className="space-y-1">
           <div className="flex justify-center mb-4">
-            <Anchor className="h-12 w-12 text-primary" />
+            <Anchor className="h-12 w-12 text-brand-blue" />
           </div>
-          <CardTitle className="text-2xl text-center">Welcome back</CardTitle>
+          <CardTitle className="text-2xl text-center font-display font-semibold">Welcome back</CardTitle>
           <CardDescription className="text-center">
             Log in to your account to continue
           </CardDescription>
@@ -78,7 +78,7 @@ export default function LoginPage() {
                 <Label htmlFor="password">Password</Label>
                 <Link
                   href="/forgot-password"
-                  className="text-xs text-primary hover:underline"
+                  className="text-xs text-brand-blue hover:underline"
                 >
                   Forgot password?
                 </Link>
@@ -96,18 +96,22 @@ export default function LoginPage() {
             </div>
 
             {error && (
-              <div className="bg-destructive/10 text-destructive text-sm p-3 rounded-md">
+              <div className="bg-red-50 text-red-600 text-sm p-3 rounded-md">
                 {error}
               </div>
             )}
 
-            <Button type="submit" className="w-full" disabled={isLoading}>
+            <Button
+              type="submit"
+              className="w-full bg-brand-blue hover:bg-brand-blue/90 text-white transition-colors duration-200"
+              disabled={isLoading}
+            >
               {isLoading ? 'Logging in...' : 'Log In'}
             </Button>
 
-            <p className="text-sm text-center text-muted-foreground">
+            <p className="text-sm text-center text-gray-500">
               Don't have an account?{' '}
-              <Link href="/signup" className="text-primary hover:underline">
+              <Link href="/signup" className="text-brand-blue hover:underline">
                 Sign up
               </Link>
             </p>

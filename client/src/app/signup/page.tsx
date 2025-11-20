@@ -51,9 +51,9 @@ export default function SignUpPage() {
       <Card className="w-full max-w-md">
         <CardHeader className="space-y-1">
           <div className="flex justify-center mb-4">
-            <Anchor className="h-12 w-12 text-primary" />
+            <Anchor className="h-12 w-12 text-brand-blue" />
           </div>
-          <CardTitle className="text-2xl text-center">Create an account</CardTitle>
+          <CardTitle className="text-2xl text-center font-display font-semibold">Create an account</CardTitle>
           <CardDescription className="text-center">
             Join the yacht insurance community
           </CardDescription>
@@ -98,24 +98,28 @@ export default function SignUpPage() {
                 }
                 required
               />
-              <p className="text-xs text-muted-foreground">
+              <p className="text-xs text-gray-500">
                 Must be at least 8 characters
               </p>
             </div>
 
             {error && (
-              <div className="bg-destructive/10 text-destructive text-sm p-3 rounded-md">
+              <div className="bg-red-50 text-red-600 text-sm p-3 rounded-md">
                 {error}
               </div>
             )}
 
-            <Button type="submit" className="w-full" disabled={isLoading}>
+            <Button
+              type="submit"
+              className="w-full bg-brand-blue hover:bg-brand-blue/90 text-white transition-colors duration-200"
+              disabled={isLoading}
+            >
               {isLoading ? 'Creating account...' : 'Sign Up'}
             </Button>
 
-            <p className="text-sm text-center text-muted-foreground">
+            <p className="text-sm text-center text-gray-500">
               Already have an account?{' '}
-              <Link href="/login" className="text-primary hover:underline">
+              <Link href="/login" className="text-brand-blue hover:underline">
                 Log in
               </Link>
             </p>
