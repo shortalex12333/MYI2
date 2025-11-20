@@ -4,7 +4,6 @@ import { PostPreviewCard } from '@/components/posts/PostPreviewCard'
 import { PostsFilterBar } from '@/components/posts/PostsFilterBar'
 import { PostsInfoBar } from '@/components/posts/PostsInfoBar'
 import { PostsCategorySidebar } from '@/components/posts/PostsCategorySidebar'
-import { GradientText } from '@/components/ui/gradient-text'
 import { Button } from '@/components/ui/button'
 import { Plus } from 'lucide-react'
 
@@ -69,21 +68,21 @@ export default async function PostsPage({
     .order('display_order', { ascending: true })
 
   return (
-    <div className="min-h-screen bg-maritime-navy text-maritime-cream">
+    <div className="min-h-screen bg-white text-gray-900">
       {/* SECTION: Hero Header */}
-      <section className="border-b border-maritime-gold/10 bg-maritime-navy-light/30">
+      <section className="border-b border-gray-200 bg-white">
         <div className="container mx-auto px-4 py-12 md:py-16">
           <div className="max-w-4xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              All <GradientText>Questions</GradientText>
+            <h1 className="text-4xl md:text-5xl font-display font-semibold mb-4 text-gray-900">
+              All <span className="text-brand-blue">Questions</span>
             </h1>
-            <p className="text-lg md:text-xl text-maritime-cream/60 mb-6">
+            <p className="text-lg md:text-xl text-gray-600 mb-6">
               Expert answers from captains, engineers, surveyors, and insurers.
             </p>
             <Button
               size="lg"
               asChild
-              className="bg-maritime-gold hover:bg-maritime-gold-light text-maritime-navy font-semibold shadow-lg shadow-maritime-gold/20 transition-all duration-300 hover:scale-105"
+              className="bg-brand-blue hover:bg-brand-blue/90 text-white font-medium transition-colors duration-200"
             >
               <Link href="/posts/new">
                 <Plus className="mr-2 h-5 w-5" />
@@ -92,42 +91,26 @@ export default async function PostsPage({
             </Button>
           </div>
         </div>
-
-        {/* Decorative Gold Line */}
-        <div className="h-px bg-gradient-to-r from-transparent via-maritime-gold/50 to-transparent" />
       </section>
 
-      {/* SECTION: Premium Filter Bar */}
-      <section className="border-b border-maritime-gold/10 bg-maritime-navy">
+      {/* SECTION: Filter Bar */}
+      <section className="border-b border-gray-200 bg-gray-50">
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <PostsFilterBar />
-            <div className="text-sm text-maritime-cream/50">
+            <div className="text-sm text-gray-500">
               {posts.length} question{posts.length !== 1 ? 's' : ''}
             </div>
           </div>
         </div>
       </section>
 
-      {/* SECTION: Maritime InfoBar */}
+      {/* SECTION: InfoBar */}
       <PostsInfoBar totalQuestions={posts.length} />
 
       {/* SECTION: Main Content Grid */}
-      <section className="py-12 bg-maritime-navy relative">
-        {/* Subtle Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage: `linear-gradient(${
-                'to right, rgba(212, 175, 55, 0.1) 1px, transparent 1px'
-              }), linear-gradient(to bottom, rgba(212, 175, 55, 0.1) 1px, transparent 1px)`,
-              backgroundSize: '60px 60px',
-            }}
-          />
-        </div>
-
-        <div className="container mx-auto px-4 relative z-10">
+      <section className="py-12 bg-white">
+        <div className="container mx-auto px-4">
           <div className="flex gap-8">
             {/* LEFT: Categories Sidebar (25%) */}
             <PostsCategorySidebar categories={categories || []} />
@@ -136,14 +119,14 @@ export default async function PostsPage({
             <main className="flex-1 min-w-0">
               {posts.length === 0 ? (
                 <div className="text-center py-20">
-                  <div className="inline-block p-8 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
-                    <p className="text-xl text-maritime-cream/70 mb-6">
+                  <div className="inline-block p-8 rounded-lg border border-gray-200 bg-white">
+                    <p className="text-xl text-gray-600 mb-6">
                       No questions yet. Be the first to ask!
                     </p>
                     <Button
                       size="lg"
                       asChild
-                      className="bg-maritime-gold hover:bg-maritime-gold-light text-maritime-navy font-semibold"
+                      className="bg-brand-blue hover:bg-brand-blue/90 text-white font-medium"
                     >
                       <Link href="/posts/new">
                         <Plus className="mr-2 h-5 w-5" />
@@ -166,7 +149,7 @@ export default async function PostsPage({
                   <Button
                     variant="outline"
                     size="lg"
-                    className="border-maritime-gold/30 text-maritime-gold hover:bg-maritime-gold/10"
+                    className="border-gray-300 text-gray-900 hover:bg-gray-50"
                   >
                     Load More Questions
                   </Button>
