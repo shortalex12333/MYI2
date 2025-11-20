@@ -1,13 +1,22 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Poppins } from 'next/font/google'
 import './globals.css'
 import { Header } from '@/components/layout/Header'
 
-const inter = Inter({ subsets: ['latin'] })
+// NEW BRAND: Technical precision typography
+const poppins = Poppins({
+  weight: ['400', '500', '600', '700'],
+  subsets: ['latin'],
+  variable: '--font-poppins',
+})
+
+// Note: Eloquia Display would be added here when available from Google Fonts
+// For now, we'll use Poppins as the primary font and can add display font later
+// import { Manrope } from 'next/font/google' // Backup display font
 
 export const metadata: Metadata = {
-  title: 'MyYachtsInsurance - Yacht Insurance Community',
-  description: 'The first dedicated community and intelligence hub for yacht insurance',
+  title: 'MyYachtsInsurance - Yacht Insurance Intelligence',
+  description: 'Technical precision meets yacht insurance. Where knowledge meets urgency.',
 }
 
 export default function RootLayout({
@@ -17,7 +26,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={poppins.className}>
         <Header />
         <main className="min-h-screen">
           {children}
