@@ -1,18 +1,29 @@
 import type { Metadata } from 'next'
-import { Poppins } from 'next/font/google'
+import localFont from 'next/font/local'
 import './globals.css'
 import { Header } from '@/components/layout/Header'
 
-// NEW BRAND: Technical precision typography
-const poppins = Poppins({
-  weight: ['400', '500', '600', '700'],
-  subsets: ['latin'],
-  variable: '--font-poppins',
+// NEW BRAND: Technical precision typography - Eloquia Display (local)
+const eloquiaDisplay = localFont({
+  src: [
+    {
+      path: '../../public/fonts/eloquia-display-regular.ttf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/eloquia-display-semibold.ttf',
+      weight: '600',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/eloquia-display-bold.ttf',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-display',
 })
-
-// Note: Eloquia Display would be added here when available from Google Fonts
-// For now, we'll use Poppins as the primary font and can add display font later
-// import { Manrope } from 'next/font/google' // Backup display font
 
 export const metadata: Metadata = {
   title: 'MyYachtsInsurance - Yacht Insurance Intelligence',
@@ -26,7 +37,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={poppins.className}>
+      <body className={`${eloquiaDisplay.variable} font-sans antialiased`}>
         <Header />
         <main className="min-h-screen">
           {children}
