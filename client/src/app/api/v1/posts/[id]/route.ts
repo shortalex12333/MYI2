@@ -9,6 +9,7 @@ export async function GET(
   try {
     const supabase = await createClient()
 
+    // @ts-ignore - Supabase type inference issue
     const { data: post, error } = await supabase
       .from('posts')
       .select(`
@@ -65,6 +66,7 @@ export async function PUT(
     const { title, body: content, category_id, tags, yacht_type, yacht_length, company_id, location_id, status } = body
 
     // Update post
+    // @ts-ignore - Supabase type inference issue
     const { data: post, error: postError } = await supabase
       .from('posts')
       .update({

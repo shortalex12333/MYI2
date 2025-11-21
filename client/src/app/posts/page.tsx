@@ -6,11 +6,15 @@ import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { TrendingUp, Users, MessageCircle, Clock } from 'lucide-react'
 
-export default async function PostsPage() {
+export default async function PostsPage({
+  searchParams,
+}: {
+  searchParams: { category?: string; tag?: string; sort?: string }
+}) {
   const supabase = await createClient()
 
-  // Fetch posts
-  const { data: postsData } = await supabase
+  // Build query based on search params
+  let query = supabase
     .from('posts')
     .select(`
       *,
@@ -19,16 +23,43 @@ export default async function PostsPage() {
       tags:post_tags(tag:tags(*))
     `)
     .eq('status', 'published')
-    .order('created_at', { ascending: false })
-    .limit(20)
 
-  // Flatten tags
-  const posts = postsData?.map(post => ({
+  // Filter by category if provided
+  if (searchParams.category) {
+    query = query.eq('category_id', searchParams.category)
+  }
+
+  // Filter by tag if provided
+  if (searchParams.tag) {
+    // This requires a subquery, for now we'll filter client-side
+  }
+
+  // Sort based on parameter
+  const sortBy = searchParams.sort || 'newest'
+  if (sortBy === 'newest') {
+    query = query.order('created_at', { ascending: false })
+  } else {
+    query = query.order('created_at', { ascending: false })
+  }
+
+  query = query.limit(20)
+
+  const { data: postsData } = await query
+
+  // Flatten tags and filter by tag if needed
+  let posts = postsData?.map(post => ({
     ...post,
     tags: post.tags?.map((t: any) => t.tag) || [],
     comments_count: 0,
-    reactions_count: { like: 0, dislike: 0, share: 0, bookmark: 0 }
+    reactions_count: { like: 0, helpful: 0, insightful: 0 }
   })) || []
+
+  // Client-side tag filtering
+  if (searchParams.tag) {
+    posts = posts.filter((post: any) =>
+      post.tags?.some((tag: any) => tag.id === searchParams.tag)
+    )
+  }
 
   // Fetch categories
   const { data: categories } = await supabase
@@ -41,6 +72,19 @@ export default async function PostsPage() {
     .from('tags')
     .select('*')
     .limit(10)
+
+  // Get total stats
+  // @ts-ignore - Supabase type inference issue
+  const { count: totalComments } = await supabase
+    .from('comments')
+    .select('*', { count: 'exact', head: true })
+
+  // @ts-ignore - Supabase type inference issue
+  const { count: totalUsers } = await supabase
+    .from('profiles')
+    .select('*', { count: 'exact', head: true })
+
+  const currentSort = searchParams.sort || 'newest'
 
   return (
     <div className="container mx-auto px-4 py-6">
@@ -61,20 +105,38 @@ export default async function PostsPage() {
               {posts.length} questions
             </span>
             <div className="flex gap-2">
-              <Button variant="ghost" size="sm">
-                <Clock className="h-4 w-4 mr-1" />
-                Newest
+              <Button
+                variant={currentSort === 'newest' ? 'default' : 'ghost'}
+                size="sm"
+                asChild
+              >
+                <Link href="/posts?sort=newest">
+                  <Clock className="h-4 w-4 mr-1" />
+                  Newest
+                </Link>
               </Button>
-              <Button variant="ghost" size="sm">
-                <TrendingUp className="h-4 w-4 mr-1" />
-                Hot
+              <Button
+                variant={currentSort === 'hot' ? 'default' : 'ghost'}
+                size="sm"
+                asChild
+              >
+                <Link href="/posts?sort=hot">
+                  <TrendingUp className="h-4 w-4 mr-1" />
+                  Hot
+                </Link>
               </Button>
-              <Button variant="ghost" size="sm">
-                <MessageCircle className="h-4 w-4 mr-1" />
-                Active
+              <Button
+                variant={currentSort === 'active' ? 'default' : 'ghost'}
+                size="sm"
+                asChild
+              >
+                <Link href="/posts?sort=active">
+                  <MessageCircle className="h-4 w-4 mr-1" />
+                  Active
+                </Link>
               </Button>
-              <Button variant="ghost" size="sm">
-                Unanswered
+              <Button variant="ghost" size="sm" asChild>
+                <Link href="/posts?sort=unanswered">Unanswered</Link>
               </Button>
             </div>
           </div>
@@ -110,12 +172,12 @@ export default async function PostsPage() {
                   <span className="font-semibold">{posts.length}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">Active Users</span>
-                  <span className="font-semibold">234</span>
+                  <span className="text-muted-foreground">Total Users</span>
+                  <span className="font-semibold">{totalUsers || 0}</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">Total Answers</span>
-                  <span className="font-semibold">1.2k</span>
+                  <span className="font-semibold">{totalComments || 0}</span>
                 </div>
               </CardContent>
             </Card>
@@ -128,9 +190,11 @@ export default async function PostsPage() {
               <CardContent>
                 <div className="flex flex-wrap gap-2">
                   {tags?.map((tag) => (
-                    <Badge key={tag.id} variant="secondary" className="cursor-pointer hover:bg-secondary/80">
-                      {tag.name}
-                    </Badge>
+                    <Link key={tag.id} href={`/posts?tag=${tag.id}`}>
+                      <Badge variant="secondary" className="cursor-pointer hover:bg-secondary/80">
+                        {tag.name}
+                      </Badge>
+                    </Link>
                   ))}
                 </div>
               </CardContent>

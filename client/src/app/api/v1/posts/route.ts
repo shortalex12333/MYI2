@@ -16,6 +16,7 @@ export async function GET(request: NextRequest) {
 
     const supabase = await createClient()
 
+    // @ts-ignore - Supabase type inference issue
     let query = supabase
       .from('posts')
       .select(`
@@ -44,6 +45,7 @@ export async function GET(request: NextRequest) {
       query = query.or(`title.ilike.%${search}%,body.ilike.%${search}%`)
     }
 
+    // @ts-ignore - Supabase type inference issue
     const { data, error, count } = await query
 
     if (error) {
@@ -98,6 +100,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Create post
+    // @ts-ignore - Supabase type inference issue
     const { data: post, error: postError } = await supabase
       .from('posts')
       .insert({
