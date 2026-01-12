@@ -1,366 +1,111 @@
-# MyYachtsInsurance - Deployment Guide
+# Production Deployment Guide
 
-This guide provides step-by-step instructions for deploying the MyYachtsInsurance platform to production.
+## System Status
 
-## Prerequisites
+✅ **Deep Crawl Pipeline:** Fully operational and tested
+✅ **Orchestration System:** Running 3x daily via cron jobs
+✅ **Database:** 1,308+ Q&A entries
+✅ **Build:** Next.js project builds successfully
 
-Before deploying, ensure you have:
-- A GitHub account
-- A Vercel account (free tier works)
-- A Supabase account (free tier works)
-- Your codebase ready in a Git repository
+## Current Setup
 
-## Step 1: Set Up Supabase
+### Local Collection (Running Now)
+- **Script:** `orchestrate.py`
+- **Frequency:** 3x daily (8 AM, 2 PM, 8 PM)
+- **Process:**
+  1. Deep crawl all 16 domains (238 pages)
+  2. Extract Q&A pairs (1,000+ pairs)
+  3. Push to Supabase database via API
 
-### 1.1 Create a Supabase Project
-
-1. Go to [supabase.com](https://supabase.com) and sign in
-2. Click "New Project"
-3. Choose your organization (or create one)
-4. Fill in project details:
-   - **Name:** MyYachtsInsurance
-   - **Database Password:** Generate a strong password and save it
-   - **Region:** Choose closest to your users
-5. Click "Create new project"
-
-### 1.2 Run Database Migrations
-
-1. Once your project is created, go to the SQL Editor
-2. Open the file `supabase_schema.sql` from the repository root
-3. Copy the entire contents
-4. Paste into the SQL Editor
-5. Click "Run" to execute the migration
-6. Verify that all tables, indexes, and policies were created:
-   - Go to Table Editor to see your tables
-   - Check that seed data was inserted (categories, tags, locations, companies, FAQs)
-
-### 1.3 Get Supabase Credentials
-
-1. Go to Project Settings > API
-2. Copy the following values (you'll need them for Vercel):
-   - **Project URL:** `https://xxxxx.supabase.co`
-   - **anon/public key:** `eyJhbGc...`
-   - **service_role key:** `eyJhbGc...` (keep this secret!)
-
-### 1.4 Configure Auth (Optional)
-
-1. Go to Authentication > Providers
-2. Enable email authentication (enabled by default)
-3. Optional: Enable OAuth providers (Google, GitHub, etc.)
-4. Configure email templates under Authentication > Email Templates
-
-### 1.5 Configure Storage (Optional)
-
-1. Go to Storage
-2. Create a new bucket named `avatars` for user profile pictures
-3. Set the bucket to public if you want avatars to be publicly accessible
-4. Create a bucket named `attachments` for post media
-
-## Step 2: Deploy to Vercel
-
-### 2.1 Import Project to Vercel
-
-1. Go to [vercel.com](https://vercel.com) and sign in
-2. Click "Add New..." > "Project"
-3. Import your Git repository:
-   - If using GitHub, authorize Vercel to access your repos
-   - Select the `MYI2` repository
-4. Configure project settings:
-   - **Framework Preset:** Next.js (auto-detected)
-   - **Root Directory:** `client`
-   - **Build Command:** `npm run build` (auto-filled)
-   - **Output Directory:** `.next` (auto-filled)
-
-### 2.2 Configure Environment Variables
-
-In the "Environment Variables" section, add:
-
+### Cron Jobs Status
 ```
-NEXT_PUBLIC_SUPABASE_URL=https://xxxxx.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key_here
-SUPABASE_SERVICE_ROLE_KEY=your_service_role_key_here
-NEXT_PUBLIC_APP_URL=https://your-app.vercel.app
+0 8 * * * cd /Users/celeste7/MYI2 && python3 orchestrate.py >> /Users/celeste7/MYI2/logs/orchestrate_8am.log 2>&1
+0 14 * * * cd /Users/celeste7/MYI2 && python3 orchestrate.py >> /Users/celeste7/MYI2/logs/orchestrate_2pm.log 2>&1
+0 20 * * * cd /Users/celeste7/MYI2 && python3 orchestrate.py >> /Users/celeste7/MYI2/logs/orchestrate_8pm.log 2>&1
 ```
 
-**Important:** Replace the placeholder values with your actual Supabase credentials from Step 1.3.
+## Deployment Steps
 
-### 2.3 Deploy
+### 1. Verify Local Collection is Working
+```bash
+# Check recent logs
+tail -f /Users/celeste7/MYI2/logs/orchestrate_8am.log
+```
 
-1. Click "Deploy"
-2. Wait for the build to complete (usually 2-3 minutes)
-3. Once deployed, Vercel will provide you with a URL: `https://your-app.vercel.app`
-4. Click the URL to visit your live site
+### 2. Push Code to GitHub
+```bash
+cd /Users/celeste7/MYI2/client
+git add .
+git commit -m "Production ready: Deep crawler + 3x daily pipeline"
+git push origin main
+```
 
-### 2.4 Update App URL
+### 3. Deploy to Vercel
+```bash
+# Option A: Push to GitHub (auto-deploys if connected)
+# Option B: Use Vercel CLI
+npm i -g vercel
+cd /Users/celeste7/MYI2/client
+vercel --prod
+```
 
-After your first deployment:
-1. Copy your production URL from Vercel
-2. Go back to Vercel project settings
-3. Update the `NEXT_PUBLIC_APP_URL` environment variable with your actual URL
-4. Redeploy (or it will auto-deploy on next push)
+### 4. Verify Production
+- Frontend: https://myyachtsinsurance.com
+- Check /posts endpoint for Q&A entries
 
-## Step 3: Configure Custom Domain (Optional)
+## What Gets Deployed
 
-### 3.1 Add Domain in Vercel
+**Frontend (Vercel):**
+- Next.js React app
+- API routes for CRUD operations
+- Database connections (Supabase)
 
-1. Go to your Vercel project
-2. Click "Settings" > "Domains"
-3. Click "Add"
-4. Enter your domain (e.g., `myyachtsinsurance.com`)
-5. Follow the instructions to configure DNS
+**Backend (Local/Your Server):**
+- Python orchestration (`orchestrate.py`)
+- Deep crawler (`deep_crawler.py`)
+- Q&A extractor (`extract_from_deep_crawl.py`)
+- Cron jobs (3x daily)
 
-### 3.2 Update DNS Records
+## Database Growth Projection
 
-Add the following records at your domain registrar:
+- **Current:** 1,308 entries
+- **Per day:** ~100-150 new entries (3 crawls × 30-50 unique pairs)
+- **Per week:** ~700-1,050 entries
+- **Per month:** ~3,000-4,500 entries
 
-**For root domain:**
-- Type: `A`
-- Name: `@`
-- Value: `76.76.21.21`
+## Monitoring
 
-**For www subdomain:**
-- Type: `CNAME`
-- Name: `www`
-- Value: `cname.vercel-dns.com`
+### Check Collection Status
+```bash
+# View latest orchestration run
+tail -20 /Users/celeste7/MYI2/orchestration.log
 
-### 3.3 Update Environment Variables
+# Check stats
+cat /Users/celeste7/MYI2/orchestration_stats.json | jq .
+```
 
-1. Go back to Vercel project settings
-2. Update `NEXT_PUBLIC_APP_URL` to your custom domain
-3. Redeploy if necessary
-
-## Step 4: Configure Supabase for Production
-
-### 4.1 Update Auth URLs
-
-1. Go to Supabase project settings
-2. Navigate to Authentication > URL Configuration
-3. Update the following:
-   - **Site URL:** `https://your-domain.com`
-   - **Redirect URLs:** Add `https://your-domain.com/auth/callback`
-
-### 4.2 Configure Email Settings (Optional)
-
-1. Go to Authentication > Email Templates
-2. Customize confirmation and password reset emails
-3. Configure custom SMTP (recommended for production):
-   - Go to Settings > Auth > SMTP Settings
-   - Enter your SMTP credentials
-
-### 4.3 Review RLS Policies
-
-1. Go to Authentication > Policies
-2. Review all Row Level Security policies
-3. Ensure they match the documented permissions in `docs/permissions.md`
-
-## Step 5: Post-Deployment Verification
-
-### 5.1 Test Core Functionality
-
-Visit your deployed site and test:
-
-✅ **Homepage loads correctly**
-- All sections render
-- Navigation works
-- Links are functional
-
-✅ **Authentication**
-- Sign up with a new account
-- Verify email confirmation (if enabled)
-- Log in with credentials
-- Log out
-
-✅ **Onboarding**
-- Complete profile setup
-- Add vessel information
-
-✅ **Posts**
-- Create a new post
-- View post detail page
-- Edit your post
-- Delete your post
-
-✅ **Comments**
-- Add a comment to a post
-- Reply to a comment
-- View threaded comments
-
-✅ **Reactions**
-- Like/unlike a post
-- Like/unlike a comment
-
-✅ **Navigation**
-- Browse by category
-- View FAQ page
-- Check static pages (Terms, Privacy, Contact)
-
-### 5.2 Check Database
-
-1. Go to Supabase Table Editor
-2. Verify that data is being created:
-   - New profiles in `profiles` table
-   - New posts in `posts` table
-   - New comments in `comments` table
-
-### 5.3 Monitor Logs
-
-**Vercel Logs:**
-1. Go to your Vercel project
-2. Click "Deployments" > Latest deployment
-3. Click "Functions" to view logs
-4. Check for any errors
-
-**Supabase Logs:**
-1. Go to Supabase project
-2. Click "Logs"
-3. Review API and database logs for errors
-
-## Step 6: Set Up Continuous Deployment
-
-Vercel automatically deploys on git push. To configure:
-
-### 6.1 Production Branch
-
-1. Go to Vercel project settings
-2. Click "Git"
-3. Set production branch (e.g., `main` or `master`)
-4. Every push to this branch will deploy to production
-
-### 6.2 Preview Deployments
-
-- Every pull request gets its own preview URL
-- Test features before merging to production
-- Share preview URLs with team members
-
-## Step 7: Performance and Monitoring
-
-### 7.1 Enable Vercel Analytics (Optional)
-
-1. Go to your Vercel project
-2. Click "Analytics"
-3. Enable Web Analytics
-4. View performance metrics
-
-### 7.2 Set Up Error Monitoring (Optional)
-
-Consider integrating:
-- **Sentry** for error tracking
-- **LogRocket** for session replay
-- **PostHog** for product analytics
-
-### 7.3 Database Performance
-
-1. Monitor query performance in Supabase
-2. Review slow query log
-3. Add indexes if needed
-4. Set up database backups
-
-## Step 8: Security Checklist
-
-Before going live, verify:
-
-- [ ] All environment variables are set correctly
-- [ ] Service role key is kept secret (not exposed to client)
-- [ ] RLS policies are enabled on all tables
-- [ ] Auth redirect URLs are configured
-- [ ] CORS is properly configured
-- [ ] Rate limiting is in place (Supabase default)
-- [ ] Email confirmations are enabled (if desired)
-- [ ] Custom domain has SSL certificate (automatic with Vercel)
-
-## Step 9: Launch Checklist
-
-- [ ] Database migrations completed
-- [ ] Seed data loaded
-- [ ] Environment variables configured
-- [ ] Application deployed successfully
-- [ ] Custom domain configured (if applicable)
-- [ ] Auth flows tested
-- [ ] Core features verified
-- [ ] Error monitoring set up
-- [ ] Backup strategy in place
-- [ ] Team members have access
+### Monitor Cron Jobs
+```bash
+# View system logs for cron execution
+log stream --predicate 'eventMessage contains[cd] "orchestrate"' --level debug
+```
 
 ## Troubleshooting
 
-### Build Fails on Vercel
+### If collection stops:
+1. Check cron jobs: `crontab -l | grep orchestrate`
+2. Check Python environment: `python3 --version`
+3. Check logs: `/Users/celeste7/MYI2/logs/`
 
-**Problem:** Build fails with module not found errors
+### If imports fail:
+- Check database connection in API route
+- Verify Supabase credentials in `.env.local`
+- Check duplicate constraints (expected after multiple runs)
 
-**Solution:**
-1. Ensure all dependencies are in `package.json`
-2. Run `npm install` locally to verify
-3. Check that `client` is set as root directory in Vercel
+## Next Steps
 
-### Database Connection Errors
+1. Deploy frontend to Vercel (connects to production DB)
+2. Monitor cron jobs for 24 hours
+3. Verify database is growing daily
+4. Consider scaling to more domains if needed
 
-**Problem:** Can't connect to Supabase
-
-**Solution:**
-1. Verify environment variables are correct
-2. Check that Supabase project is active
-3. Ensure API keys are copied correctly (no extra spaces)
-
-### Authentication Not Working
-
-**Problem:** Users can't sign up or log in
-
-**Solution:**
-1. Check Supabase Auth settings
-2. Verify redirect URLs include your production domain
-3. Check browser console for errors
-4. Review Supabase auth logs
-
-### 404 on Dynamic Routes
-
-**Problem:** Post detail pages return 404
-
-**Solution:**
-1. Ensure `[id]` folder structure is correct
-2. Check that data is being fetched correctly
-3. Verify Supabase RLS policies allow reading posts
-
-## Maintenance
-
-### Regular Tasks
-
-**Weekly:**
-- Review error logs
-- Check database size and performance
-- Monitor API usage
-
-**Monthly:**
-- Update dependencies (`npm outdated`)
-- Review and optimize slow queries
-- Backup database (Supabase automatic)
-- Review security policies
-
-**As Needed:**
-- Scale database (Supabase dashboard)
-- Upgrade Vercel plan if hitting limits
-- Review and respond to user feedback
-
-## Scaling Considerations
-
-As your platform grows:
-
-1. **Database:** Upgrade Supabase plan for more connections
-2. **CDN:** Vercel automatically scales
-3. **Media Storage:** Consider CDN for images (Cloudinary, Imgix)
-4. **Search:** Implement Algolia for better search performance
-5. **Caching:** Add Redis for session caching
-6. **Email:** Use dedicated email service (SendGrid, Postmark)
-
-## Support
-
-If you encounter issues:
-- Check Vercel deployment logs
-- Review Supabase logs
-- Consult Next.js documentation
-- Reach out to the team
-
-## Congratulations!
-
-Your MyYachtsInsurance platform is now live! 🎉
-
-Monitor your application, gather user feedback, and iterate on features to build the best yacht insurance community platform.
