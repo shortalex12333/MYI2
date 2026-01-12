@@ -1,0 +1,28 @@
+name: Daily Yacht Insurance Scraping
+
+on:
+  schedule:
+    # Run at 2 AM UTC daily (adjust timezone as needed)
+    - cron: '0 2 * * *'
+  # Allow manual trigger
+  workflow_dispatch:
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    
+    steps:
+      - name: Trigger daily scraping job
+        run: |
+          curl -X GET "https://myyachtsinsurance.com/api/cron/daily-scrape" \
+            -H "Authorization: Bearer ${{ secrets.CRON_SECRET }}" \
+            -w "\nHTTP Status: %{http_code}\n"
+
+      - name: Log results
+        if: success()
+        run: echo "✅ Daily scraping job completed"
+
+      - name: Handle errors
+        if: failure()
+        run: echo "❌ Daily scraping job failed - check logs"
