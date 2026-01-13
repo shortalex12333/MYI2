@@ -333,3 +333,68 @@
 [2026-01-13 08:30:39] [INFO]   ⏱️  Total execution time: 321.0 seconds
 [2026-01-13 08:30:39] [INFO]   📊 Entries/minute: 0
 [2026-01-13 08:30:39] [INFO] 
+[2026-01-13 08:35:59] [INFO] 
+
+[2026-01-13 08:35:59] [INFO] ╔==============================================================================╗
+[2026-01-13 08:35:59] [INFO] ║                                                                              ║
+[2026-01-13 08:35:59] [INFO] ║              YACHT INSURANCE KNOWLEDGE BASE - AUTOMATED PIPELINE             ║
+[2026-01-13 08:35:59] [INFO] ║                                                                              ║
+[2026-01-13 08:35:59] [INFO] ╚==============================================================================╝
+[2026-01-13 08:35:59] [INFO] ================================================================================
+[2026-01-13 08:35:59] [START] STEP 1: DEEP CRAWLING WEB SOURCES
+[2026-01-13 08:35:59] [INFO] ================================================================================
+[2026-01-13 08:41:09] [INFO] ✅ Deep crawling completed successfully
+[2026-01-13 08:41:09] [INFO]    Pages crawled: 219
+[2026-01-13 08:41:09] [INFO] 
+[2026-01-13 08:41:09] [INFO] ================================================================================
+[2026-01-13 08:41:09] [START] STEP 2: EXTRACTING Q&A PAIRS FROM CRAWL
+[2026-01-13 08:41:09] [INFO] ================================================================================
+[2026-01-13 08:41:09] [INFO]    Initializing deep crawl Q&A extractor...
+[2026-01-13 08:41:09] [INFO]    Processing crawl results...
+[2026-01-13 08:41:10] [INFO] ✅ Q&A extraction completed successfully
+[2026-01-13 08:41:10] [INFO]    Q&A pairs extracted: 1128
+[2026-01-13 08:41:10] [INFO]    Saved to all_domains_qa.json
+[2026-01-13 08:41:10] [INFO] 
+[2026-01-13 08:41:10] [INFO] ================================================================================
+[2026-01-13 08:41:10] [START] STEP 3: IMPORTING TO DATABASE
+[2026-01-13 08:41:10] [INFO] ================================================================================
+[2026-01-13 08:41:10] [INFO]    Total entries to import: 1128
+[2026-01-13 08:41:12] [INFO]    [Batch 1] ❌ Status 500
+[2026-01-13 08:41:12] [INFO]        Error: duplicate key value violates unique constraint "qa_entries_source_url_question_hash_key"
+[2026-01-13 08:41:12] [INFO]    [Batch 2] ❌ Status 500
+[2026-01-13 08:41:12] [INFO]        Error: duplicate key value violates unique constraint "qa_entries_source_url_question_hash_key"
+[2026-01-13 08:41:13] [INFO]    [Batch 3] (201-300) ✅ 100 imported, 0 duplicates
+[2026-01-13 08:41:13] [INFO]    [Batch 4] ❌ Status 500
+[2026-01-13 08:41:13] [INFO]        Error: duplicate key value violates unique constraint "qa_entries_question_hash_answer_hash_key"
+[2026-01-13 08:41:14] [INFO]    [Batch 5] ❌ Status 500
+[2026-01-13 08:41:14] [INFO]        Error: duplicate key value violates unique constraint "qa_entries_question_hash_answer_hash_key"
+[2026-01-13 08:41:14] [INFO]    [Batch 6] ❌ Status 500
+[2026-01-13 08:41:14] [INFO]        Error: duplicate key value violates unique constraint "qa_entries_question_hash_answer_hash_key"
+[2026-01-13 08:41:14] [INFO]    [Batch 7] ❌ Status 500
+[2026-01-13 08:41:14] [INFO]        Error: duplicate key value violates unique constraint "qa_entries_source_url_question_hash_key"
+[2026-01-13 08:41:14] [INFO]    [Batch 8] ❌ Status 500
+[2026-01-13 08:41:14] [INFO]        Error: duplicate key value violates unique constraint "qa_entries_source_url_question_hash_key"
+[2026-01-13 08:41:15] [INFO]    [Batch 9] ❌ Status 500
+[2026-01-13 08:41:15] [INFO]        Error: duplicate key value violates unique constraint "qa_entries_question_hash_answer_hash_key"
+[2026-01-13 08:41:15] [INFO]    [Batch 10] ❌ Status 500
+[2026-01-13 08:41:15] [INFO]        Error: duplicate key value violates unique constraint "qa_entries_source_url_question_hash_key"
+[2026-01-13 08:41:15] [INFO]    [Batch 11] ❌ Status 500
+[2026-01-13 08:41:15] [INFO]        Error: duplicate key value violates unique constraint "qa_entries_source_url_question_hash_key"
+[2026-01-13 08:41:16] [INFO]    [Batch 12] ❌ Status 500
+[2026-01-13 08:41:16] [INFO]        Error: duplicate key value violates unique constraint "qa_entries_source_url_question_hash_key"
+[2026-01-13 08:41:16] [INFO] 
+✅ Import completed: 100 new entries imported
+[2026-01-13 08:41:16] [INFO] 
+[2026-01-13 08:41:16] [INFO] ╔==============================================================================╗
+[2026-01-13 08:41:16] [INFO] ║                                                                              ║
+[2026-01-13 08:41:16] [INFO] ║                       ✅ PIPELINE COMPLETED SUCCESSFULLY                      ║
+[2026-01-13 08:41:16] [INFO] ║                                                                              ║
+[2026-01-13 08:41:16] [INFO] ╚==============================================================================╝
+[2026-01-13 08:41:16] [INFO] 
+[2026-01-13 08:41:16] [INFO] SUMMARY:
+[2026-01-13 08:41:16] [INFO]   ✅ Sources scraped: 219
+[2026-01-13 08:41:16] [INFO]   ✅ Q&A pairs extracted: 1128
+[2026-01-13 08:41:16] [INFO]   ✅ Entries imported: 100
+[2026-01-13 08:41:16] [INFO]   ⏱️  Total execution time: 316.5 seconds
+[2026-01-13 08:41:16] [INFO]   📊 Entries/minute: 19
+[2026-01-13 08:41:16] [INFO] 

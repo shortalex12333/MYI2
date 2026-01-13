@@ -3,7 +3,6 @@
 
 import { NextRequest } from 'next/server';
 import { createHash } from 'crypto';
-import { createServerClient } from '@supabase/ssr';
 import { initSupabaseAdmin, verifyApiKey, log } from '../scraper/_utils/auth';
 
 export const runtime = 'nodejs';
@@ -60,14 +59,10 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const supabase = createServerClient(supabaseUrl, auth.key!, {
-      cookies: {
-        getAll() {
-          return [];
-        },
-        setAll() {},
-      },
-    });
+    // Use createClient from @supabase/supabase-js instead of createServerClient
+    // This avoids cookie management issues in API routes
+    const { createClient } = await import('@supabase/supabase-js');
+    const supabase = createClient(supabaseUrl, auth.key!);
 
     // Alternative: use initSupabaseAdmin if env vars are available
     // const supabase = initSupabaseAdmin();
