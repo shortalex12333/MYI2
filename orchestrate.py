@@ -24,7 +24,9 @@ class YachtInsuranceOrchestrator:
         if not self.api_key:
             raise ValueError("SUPABASE_SERVICE_ROLE_KEY not found in environment variables")
 
-        self.api_url = "http://localhost:3000/api/v1/bulk-import"
+        # Use production Vercel URL for imports (not localhost which may not be running)
+        # Production has correct environment variables configured
+        self.api_url = "https://www.myyachtsinsurance.com/api/v1/bulk-import"
         self.log_file = "orchestration.log"
         self.stats = {
             "scrape_sources": 0,
