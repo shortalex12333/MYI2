@@ -1,0 +1,354 @@
+[
+  {
+    "question": "What international waters coverage is needed for sailing across the Atlantic?",
+    "answer": "Transatlantic sailing requires insurance covering all international waters. Most policies offer worldwide coverage with geographic limits.",
+    "source_url": "https://www.morganscloud.com/2021/06/03/insurance-for-offshore-voyaging/",
+    "domain": "www.morganscloud.com",
+    "confidence": 0.85,
+    "tags": ["international", "transatlantic", "offshore"]
+  },
+  {
+    "question": "Do different countries have different insurance requirements?",
+    "answer": "Yes. Some countries (Canada, Australia) legally require insurance. Others don't but strongly recommend it. Always check local requirements.",
+    "source_url": "https://superyachtinsurancebrokers.com/news/",
+    "domain": "superyachtinsurancebrokers.com",
+    "confidence": 0.85,
+    "tags": ["international", "regulations", "requirements"]
+  },
+  {
+    "question": "What is pi coverage in the Caribbean?",
+    "answer": "PI (Protection & Indemnity) coverage in the Caribbean is specialized to cover tropical weather, piracy, and island-specific liability risks.",
+    "source_url": "https://marinebind.com/marine-insights/",
+    "domain": "marinebind.com",
+    "confidence": 0.8,
+    "tags": ["caribbean", "international", "regional"]
+  },
+  {
+    "question": "Do boats in European waters need different insurance?",
+    "answer": "EU boats may need special EU maritime compliance. Some policies include EU-specific endorsements. Check with insurers before cruising European waters.",
+    "source_url": "https://marineins.com/blog/",
+    "domain": "marineins.com",
+    "confidence": 0.8,
+    "tags": ["european-waters", "international", "compliance"]
+  },
+  {
+    "question": "What insurance covers boats in Arctic or polar waters?",
+    "answer": "Arctic operations need specialized coverage accounting for extreme conditions, ice damage, environmental liability, and rescue costs.",
+    "source_url": "https://marinebind.com/marine-insights/",
+    "domain": "marinebind.com",
+    "confidence": 0.85,
+    "tags": ["arctic", "polar", "extreme-conditions"]
+  },
+  {
+    "question": "Are there insurance restrictions in the Mediterranean?",
+    "answer": "Mediterranean cruising is generally well-covered by standard policies. Some insurers may exclude certain regions (e.g., conflict zones).",
+    "source_url": "https://superyachtinsurancebrokers.com/news/",
+    "domain": "superyachtinsurancebrokers.com",
+    "confidence": 0.8,
+    "tags": ["mediterranean", "international", "regional"]
+  },
+  {
+    "question": "What insurance applies in pirate-prone waters?",
+    "answer": "High-risk piracy zones (Somalia, Gulf of Guinea) require specialized coverage with increased premiums and security requirements.",
+    "source_url": "https://marineins.com/blog/",
+    "domain": "marineins.com",
+    "confidence": 0.85,
+    "tags": ["piracy", "security", "high-risk"]
+  },
+  {
+    "question": "Do boats need different insurance for tropical hurricane season?",
+    "answer": "Boats in hurricane zones may face higher premiums or require additional coverage. Some insurers restrict coverage during peak season.",
+    "source_url": "https://marinebind.com/marine-insights/",
+    "domain": "marinebind.com",
+    "confidence": 0.8,
+    "tags": ["hurricanes", "seasonal", "tropical"]
+  },
+  {
+    "question": "What insurance is required in the Panama Canal?",
+    "answer": "Canal transit insurance covers liability during transit. Some insurers require separate endorsements for canal passage.",
+    "source_url": "https://www.morganscloud.com/2021/06/03/insurance-for-offshore-voyaging/",
+    "domain": "www.morganscloud.com",
+    "confidence": 0.8,
+    "tags": ["panama-canal", "international", "specific-routes"]
+  },
+  {
+    "question": "Are there insurance implications for sailing in disputed territories?",
+    "answer": "Yes. Insurance may not cover boats in disputed waters or conflict zones. Always check policy geographic exclusions.",
+    "source_url": "https://marinebind.com/marine-insights/",
+    "domain": "marinebind.com",
+    "confidence": 0.85,
+    "tags": ["geopolitical", "territorial-waters", "exclusions"]
+  },
+  {
+    "question": "What is the UK maritime insurance standard?",
+    "answer": "UK vessels use standard yacht policies, though some follow Lloyd's of London standards. EU regulations apply for UK-registered boats.",
+    "source_url": "https://superyachtinsurancebrokers.com/news/",
+    "domain": "superyachtinsurancebrokers.com",
+    "confidence": 0.8,
+    "tags": ["uk", "lloyd's", "maritime-standards"]
+  },
+  {
+    "question": "Do boats need different insurance in Australian waters?",
+    "answer": "Australia requires comprehensive boat insurance by law. Standards differ slightly from US policies. Local insurers are recommended.",
+    "source_url": "https://marineins.com/blog/",
+    "domain": "marineins.com",
+    "confidence": 0.85,
+    "tags": ["australia", "international", "requirements"]
+  },
+  {
+    "question": "What insurance covers boats in Asian waters?",
+    "answer": "Asian waters vary widely. South China Sea requires different coverage than Singapore. Get region-specific policies.",
+    "source_url": "https://marinebind.com/marine-insights/",
+    "domain": "marinebind.com",
+    "confidence": 0.75,
+    "tags": ["asia", "international", "regional"]
+  },
+  {
+    "question": "Are there insurance requirements for Canadian maritime law?",
+    "answer": "Canadian vessels must carry liability insurance. Requirements vary by province. Federal maritime law applies for offshore.",
+    "source_url": "https://www.investopedia.com/terms/y/yacht-insurance.asp",
+    "domain": "www.investopedia.com",
+    "confidence": 0.8,
+    "tags": ["canada", "maritime-law", "requirements"]
+  },
+  {
+    "question": "What vessel registration documentation is required for insurance?",
+    "answer": "You need proof of ownership, registration certificate, and documented title. Mortgages and liens must be disclosed to insurers.",
+    "source_url": "https://marinebind.com/marine-insights/",
+    "domain": "marinebind.com",
+    "confidence": 0.85,
+    "tags": ["documentation", "registration", "underwriting"]
+  },
+  {
+    "question": "Do US Coast Guard safety inspection requirements affect insurance?",
+    "answer": "Yes. Boats failing inspections may face higher premiums or coverage denial. Maintaining safety standards is essential.",
+    "source_url": "https://marineins.com/blog/",
+    "domain": "marineins.com",
+    "confidence": 0.85,
+    "tags": ["coast-guard", "safety", "compliance"]
+  },
+  {
+    "question": "What is a Certificate of Documentation and how does it affect insurance?",
+    "answer": "A Certificate of Documentation (US) proves ownership and is often required by insurers. It's essential for boats over 5 tons.",
+    "source_url": "https://superyachtinsurancebrokers.com/news/",
+    "domain": "superyachtinsurancebrokers.com",
+    "confidence": 0.85,
+    "tags": ["documentation", "federal", "requirements"]
+  },
+  {
+    "question": "Are there insurance implications of vessel titling and lien laws?",
+    "answer": "Yes. Lienholders can claim insurance proceeds. Insurers require disclosure of all liens and mortgages.",
+    "source_url": "https://marinebind.com/marine-insights/",
+    "domain": "marinebind.com",
+    "confidence": 0.85,
+    "tags": ["liens", "mortgages", "legal"]
+  },
+  {
+    "question": "What safety equipment does insurance require?",
+    "answer": "Most insurers require life jackets, fire extinguishers, flares, first aid kits, and EPIRB for offshore boats.",
+    "source_url": "https://marineins.com/blog/",
+    "domain": "marineins.com",
+    "confidence": 0.85,
+    "tags": ["safety-equipment", "requirements", "compliance"]
+  },
+  {
+    "question": "Do vessel inspections from marine surveyors affect insurance rates?",
+    "answer": "Yes. Professional surveys often result in lower premiums and better coverage terms.",
+    "source_url": "https://marinebind.com/marine-insights/",
+    "domain": "marinebind.com",
+    "confidence": 0.85,
+    "tags": ["surveys", "inspections", "underwriting"]
+  },
+  {
+    "question": "What are SOLAS requirements and how do they affect insurance?",
+    "answer": "SOLAS (Safety of Life at Sea) are international maritime safety rules. Compliance is often required for offshore policies.",
+    "source_url": "https://superyachtinsurancebrokers.com/news/",
+    "domain": "superyachtinsurancebrokers.com",
+    "confidence": 0.85,
+    "tags": ["solas", "international-maritime", "compliance"]
+  },
+  {
+    "question": "Do MARPOL (pollution) regulations affect yacht insurance?",
+    "answer": "Yes. MARPOL violations can void insurance. Compliance with anti-pollution standards is required for ocean-going vessels.",
+    "source_url": "https://marinebind.com/marine-insights/",
+    "domain": "marinebind.com",
+    "confidence": 0.85,
+    "tags": ["marpol", "environmental", "compliance"]
+  },
+  {
+    "question": "What vessel security requirements (ISPS Code) apply to insurance?",
+    "answer": "ISPS Code security measures are recommended for commercial vessels and may affect insurance classification and rates.",
+    "source_url": "https://marineins.com/blog/",
+    "domain": "marineins.com",
+    "confidence": 0.8,
+    "tags": ["isps-code", "security", "compliance"]
+  },
+  {
+    "question": "Are there age limits on vessels for insurance under maritime law?",
+    "answer": "Different countries have different age limits. Generally, vessels over 25-30 years face tighter underwriting and higher premiums.",
+    "source_url": "https://marinebind.com/marine-insights/",
+    "domain": "marinebind.com",
+    "confidence": 0.8,
+    "tags": ["vessel-age", "regulations", "underwriting"]
+  },
+  {
+    "question": "What is the role of the International Maritime Organization (IMO) in insurance?",
+    "answer": "IMO sets international standards for vessel safety and operations. Compliance is expected by insurers for ocean-going vessels.",
+    "source_url": "https://superyachtinsurancebrokers.com/news/",
+    "domain": "superyachtinsurancebrokers.com",
+    "confidence": 0.85,
+    "tags": ["imo", "international", "standards"]
+  },
+  {
+    "question": "Do STCW maritime crew qualification standards affect insurance?",
+    "answer": "Yes. Professional crew certifications can lower premiums. Operating with unqualified crew may void coverage.",
+    "source_url": "https://marineins.com/blog/",
+    "domain": "marineins.com",
+    "confidence": 0.85,
+    "tags": ["crew-qualifications", "stcw", "compliance"]
+  },
+  {
+    "question": "What vessel stability regulations affect insurance underwriting?",
+    "answer": "Vessel stability tests are required for many boats. Insurers may require proof of stability compliance.",
+    "source_url": "https://marinebind.com/marine-insights/",
+    "domain": "marinebind.com",
+    "confidence": 0.8,
+    "tags": ["stability", "testing", "compliance"]
+  },
+  {
+    "question": "Are there insurance implications of antiquated vessel standards?",
+    "answer": "Yes. Older boats not meeting current standards may face exclusions or require specific safety endorsements.",
+    "source_url": "https://marineins.com/blog/",
+    "domain": "marineins.com",
+    "confidence": 0.8,
+    "tags": ["old-vessels", "standards", "compliance"]
+  },
+  {
+    "question": "Do pollution liability certificates (PLCs) relate to yacht insurance?",
+    "answer": "PLCs are required for commercial vessels but optional for yachts. Many insurers recommend them for offshore operations.",
+    "source_url": "https://marinebind.com/marine-insights/",
+    "domain": "marinebind.com",
+    "confidence": 0.8,
+    "tags": ["pollution", "certificates", "compliance"]
+  },
+  {
+    "question": "What is the UNCLOS impact on maritime insurance?",
+    "answer": "UNCLOS (United Nations Convention on the Law of the Sea) sets maritime boundaries. It affects insurance liability in territorial/international waters.",
+    "source_url": "https://superyachtinsurancebrokers.com/news/",
+    "domain": "superyachtinsurancebrokers.com",
+    "confidence": 0.75,
+    "tags": ["unclos", "maritime-law", "international"]
+  },
+  {
+    "question": "Are electronic chart system (ECS) certifications required for insurance?",
+    "answer": "Some offshore policies require properly certified and updated electronic navigation systems.",
+    "source_url": "https://marineins.com/blog/",
+    "domain": "marineins.com",
+    "confidence": 0.8,
+    "tags": ["electronics", "navigation", "certification"]
+  },
+  {
+    "question": "What vessel class certifications (ABS, Lloyd's, DNV) affect insurance?",
+    "answer": "Vessels with classification society certifications receive better underwriting terms and often lower premiums.",
+    "source_url": "https://marinebind.com/marine-insights/",
+    "domain": "marinebind.com",
+    "confidence": 0.85,
+    "tags": ["class-certification", "underwriting", "premium-reduction"]
+  },
+  {
+    "question": "Do bilge and ballast water management requirements affect yacht insurance?",
+    "answer": "International environmental standards (BWMC) are required for commercial vessels. Optional for yachts but recommended for offshore.",
+    "source_url": "https://marineins.com/blog/",
+    "domain": "marineins.com",
+    "confidence": 0.75,
+    "tags": ["environmental", "ballast", "compliance"]
+  },
+  {
+    "question": "What is the role of Classification Societies (ABS, Lloyd's) in underwriting?",
+    "answer": "Classification Societies inspect vessels and issue certifications. These certifications directly impact insurance rates and coverage terms.",
+    "source_url": "https://superyachtinsurancebrokers.com/news/",
+    "domain": "superyachtinsurancebrokers.com",
+    "confidence": 0.85,
+    "tags": ["classification-societies", "inspections", "ratings"]
+  },
+  {
+    "question": "Are there special insurance considerations for vessels with historical significance?",
+    "answer": "Historical vessels may need specialized coverage accounting for cultural value, restoration, and preservation requirements.",
+    "source_url": "https://marinebind.com/marine-insights/",
+    "domain": "marinebind.com",
+    "confidence": 0.8,
+    "tags": ["historical-vessels", "cultural-value", "specialty"]
+  },
+  {
+    "question": "What vessel towing regulations affect insurance?",
+    "answer": "Towing regulations vary by location. Some areas require specific towing insurance. Check local maritime authority requirements.",
+    "source_url": "https://marineins.com/blog/",
+    "domain": "marineins.com",
+    "confidence": 0.75,
+    "tags": ["towing", "regulations", "regional"]
+  },
+  {
+    "question": "Do maritime wage and hour regulations affect crew insurance requirements?",
+    "answer": "Yes. Crew insurance must cover statutory wage requirements and work-hour regulations by jurisdiction.",
+    "source_url": "https://marinebind.com/marine-insights/",
+    "domain": "marinebind.com",
+    "confidence": 0.75,
+    "tags": ["crew", "wages", "employment-law"]
+  },
+  {
+    "question": "What vessel discharge requirements affect pollution insurance?",
+    "answer": "MARPOL discharge regulations require proper certification. Violations can result in large fines and insurance denial.",
+    "source_url": "https://superyachtinsurancebrokers.com/news/",
+    "domain": "superyachtinsurancebrokers.com",
+    "confidence": 0.8,
+    "tags": ["marpol", "discharge", "environmental"]
+  },
+  {
+    "question": "Are there insurance restrictions in port state control inspections?",
+    "answer": "Vessels failing port state control (PSC) inspections may lose insurance. Maintaining compliance is essential.",
+    "source_url": "https://marineins.com/blog/",
+    "domain": "marineins.com",
+    "confidence": 0.85,
+    "tags": ["psc", "inspections", "compliance"]
+  },
+  {
+    "question": "Do flag state regulations affect insurance?",
+    "answer": "Yes. Your vessel's flag state imposes regulations that must be followed. Some insurers specialize in specific flag states.",
+    "source_url": "https://marinebind.com/marine-insights/",
+    "domain": "marinebind.com",
+    "confidence": 0.85,
+    "tags": ["flag-state", "regulations", "registration"]
+  },
+  {
+    "question": "What vessel quarantine procedures relate to insurance claims?",
+    "answer": "Health quarantines due to disease or contamination are covered under some policies as business interruption.",
+    "source_url": "https://marineins.com/blog/",
+    "domain": "marineins.com",
+    "confidence": 0.75,
+    "tags": ["quarantine", "health", "business-interruption"]
+  },
+  {
+    "question": "Are there insurance implications of vessel maritime liens?",
+    "answer": "Maritime liens can be placed on vessels for unpaid debts. Insurers require disclosure of potential maritime liens.",
+    "source_url": "https://superyachtinsurancebrokers.com/news/",
+    "domain": "superyachtinsurancebrokers.com",
+    "confidence": 0.8,
+    "tags": ["maritime-liens", "debts", "legal"]
+  },
+  {
+    "question": "Do salvage law procedures affect insurance claims?",
+    "answer": "Yes. Salvage rights and procedures are governed by maritime law and can affect insurance claim procedures.",
+    "source_url": "https://marinebind.com/marine-insights/",
+    "domain": "marinebind.com",
+    "confidence": 0.8,
+    "tags": ["salvage-law", "maritime-law", "claims"]
+  },
+  {
+    "question": "What role does marine insurance broker licensing play in coverage?",
+    "answer": "Licensed brokers ensure proper coverage. Some insurers only work through licensed brokers in specific jurisdictions.",
+    "source_url": "https://marineins.com/blog/",
+    "domain": "marineins.com",
+    "confidence": 0.75,
+    "tags": ["brokers", "licensing", "professional-standards"]
+  }
+]

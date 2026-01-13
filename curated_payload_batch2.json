@@ -1,0 +1,365 @@
+{
+  "entries": [
+    {
+      "question": "What size boat requires yacht insurance?",
+      "answer": "While any boat can be insured, yacht policies typically apply to boats 25 feet and longer. Smaller boats use standard boat insurance policies.",
+      "source_url": "https://www.investopedia.com/terms/y/yacht-insurance.asp",
+      "domain": "www.investopedia.com",
+      "confidence": 0.85,
+      "tags": [
+        "boat-size",
+        "requirements",
+        "policy-types"
+      ]
+    },
+    {
+      "question": "What is the difference between yacht and boat insurance?",
+      "answer": "Yacht insurance is specialized for larger vessels with higher values and more complex coverage needs. Boat insurance is for smaller recreational vessels.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.85,
+      "tags": [
+        "insurance-types",
+        "definitions",
+        "coverage-differences"
+      ]
+    },
+    {
+      "question": "Do I need a survey for yacht insurance?",
+      "answer": "Most insurers require a marine survey for boats over 10 years old or valued above $100,000. New boats may not need one.",
+      "source_url": "https://superyachtinsurancebrokers.com/news/",
+      "domain": "superyachtinsurancebrokers.com",
+      "confidence": 0.85,
+      "tags": [
+        "surveys",
+        "requirements",
+        "underwriting"
+      ]
+    },
+    {
+      "question": "What affects yacht insurance premiums?",
+      "answer": "Key factors include boat age, value, construction material, location, usage patterns, crew experience, and claims history.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.85,
+      "tags": [
+        "premiums",
+        "rating-factors",
+        "pricing"
+      ]
+    },
+    {
+      "question": "How often should I review my yacht insurance policy?",
+      "answer": "Review your policy annually or whenever there are significant changes to your boat, usage, or financial situation.",
+      "source_url": "https://www.boatus.com/expert-advice/",
+      "domain": "www.boatus.com",
+      "confidence": 0.8,
+      "tags": [
+        "policy-review",
+        "best-practices",
+        "maintenance"
+      ]
+    },
+    {
+      "question": "What is the claims process timeline for yacht insurance?",
+      "answer": "Most insurers require claims to be reported within 30-60 days. Settlement timelines typically range from 30-90 days depending on claim complexity.",
+      "source_url": "https://marineins.com/blog/",
+      "domain": "marineins.com",
+      "confidence": 0.8,
+      "tags": [
+        "claims",
+        "timeline",
+        "procedures"
+      ]
+    },
+    {
+      "question": "Are weather-related damages covered by yacht insurance?",
+      "answer": "Yes, most yacht insurance policies cover storm, hurricane, and tornado damage. Some may exclude damage from specific high-risk weather events.",
+      "source_url": "https://www.investopedia.com/terms/y/yacht-insurance.asp",
+      "domain": "www.investopedia.com",
+      "confidence": 0.85,
+      "tags": [
+        "weather",
+        "coverage",
+        "exclusions"
+      ]
+    },
+    {
+      "question": "What is salvage coverage in yacht insurance?",
+      "answer": "Salvage coverage helps pay for emergency repairs, towing, and wreck removal if your boat is damaged in an accident or sinks.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.8,
+      "tags": [
+        "salvage",
+        "emergency-protection",
+        "towing"
+      ]
+    },
+    {
+      "question": "Can I get coverage for theft of boat equipment?",
+      "answer": "Yes, most yacht policies include coverage for theft of navigational equipment, fishing gear, and other items onboard.",
+      "source_url": "https://superyachtinsurancebrokers.com/news/",
+      "domain": "superyachtinsurancebrokers.com",
+      "confidence": 0.8,
+      "tags": [
+        "theft",
+        "equipment",
+        "coverage"
+      ]
+    },
+    {
+      "question": "What is waiver of subrogation in marine insurance?",
+      "answer": "Waiver of subrogation prevents the insurance company from pursuing recovery from a third party at fault, protecting relationships with marinas or other parties.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.8,
+      "tags": [
+        "subrogation",
+        "legal-terms",
+        "policy-provisions"
+      ]
+    },
+    {
+      "question": "How do I calculate the correct coverage limit for my yacht?",
+      "answer": "Use the boat's replacement value, including engine, equipment, and improvements. Get a professional appraisal for accurate valuation.",
+      "source_url": "https://www.boatus.com/expert-advice/",
+      "domain": "www.boatus.com",
+      "confidence": 0.85,
+      "tags": [
+        "coverage-limits",
+        "valuation",
+        "underwriting"
+      ]
+    },
+    {
+      "question": "Is pollution liability covered by yacht insurance?",
+      "answer": "Most modern policies include pollution liability coverage for fuel or oil spills, though limits vary by insurer.",
+      "source_url": "https://marineins.com/blog/",
+      "domain": "marineins.com",
+      "confidence": 0.8,
+      "tags": [
+        "pollution",
+        "environmental",
+        "liability"
+      ]
+    },
+    {
+      "question": "What happens if I move my boat to a different location?",
+      "answer": "Notify your insurer immediately if you change your boat's home port or location, as it affects your premium and coverage.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.8,
+      "tags": [
+        "location-changes",
+        "coverage-adjustments",
+        "policy-updates"
+      ]
+    },
+    {
+      "question": "Are racing and regattas covered by standard yacht policies?",
+      "answer": "Most standard policies exclude racing. You'll need a specialized racing endorsement for competition coverage.",
+      "source_url": "https://superyachtinsurancebrokers.com/news/",
+      "domain": "superyachtinsurancebrokers.com",
+      "confidence": 0.85,
+      "tags": [
+        "racing",
+        "competition",
+        "exclusions"
+      ]
+    },
+    {
+      "question": "What is the difference between actual cash value and agreed value?",
+      "answer": "Actual cash value is determined at the time of loss after depreciation. Agreed value is set upfront and doesn't depreciate.",
+      "source_url": "https://www.investopedia.com/terms/y/yacht-insurance.asp",
+      "domain": "www.investopedia.com",
+      "confidence": 0.85,
+      "tags": [
+        "valuation",
+        "policy-types",
+        "settlement"
+      ]
+    },
+    {
+      "question": "Can I cancel my yacht insurance anytime?",
+      "answer": "You can cancel at any time, though you may need to pay a cancellation fee. Most insurers require 30 days notice.",
+      "source_url": "https://marineins.com/blog/",
+      "domain": "marineins.com",
+      "confidence": 0.8,
+      "tags": [
+        "cancellation",
+        "policy-changes",
+        "procedures"
+      ]
+    },
+    {
+      "question": "What is the maximum age for new yacht policies?",
+      "answer": "While age varies by insurer, most will insure boats up to 20-30 years old if they're in good condition and pass survey requirements.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.8,
+      "tags": [
+        "boat-age",
+        "eligibility",
+        "requirements"
+      ]
+    },
+    {
+      "question": "How do navigation history and experience affect my rate?",
+      "answer": "Insurers offer lower premiums for experienced boaters with clean claims records and proper certifications.",
+      "source_url": "https://www.boatus.com/expert-advice/",
+      "domain": "www.boatus.com",
+      "confidence": 0.85,
+      "tags": [
+        "experience",
+        "discounts",
+        "rating-factors"
+      ]
+    },
+    {
+      "question": "What is wreck removal coverage?",
+      "answer": "Wreck removal coverage pays for the cost of removing your boat if it becomes a total loss and sinks or is abandoned at sea.",
+      "source_url": "https://superyachtinsurancebrokers.com/news/",
+      "domain": "superyachtinsurancebrokers.com",
+      "confidence": 0.8,
+      "tags": [
+        "wreck-removal",
+        "total-loss",
+        "environmental"
+      ]
+    },
+    {
+      "question": "Do I need coverage if my boat is docked and not in use?",
+      "answer": "Yes, you should maintain coverage even when docked. Lay-up or seasonal policies offer lower rates for boats in storage.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.85,
+      "tags": [
+        "storage",
+        "lay-up",
+        "seasonal-coverage"
+      ]
+    },
+    {
+      "question": "What is crew member coverage?",
+      "answer": "Crew member coverage extends medical payment coverage to crew members hired to operate the vessel, beyond just family and guests.",
+      "source_url": "https://marineins.com/blog/",
+      "domain": "marineins.com",
+      "confidence": 0.8,
+      "tags": [
+        "crew",
+        "employees",
+        "coverage-types"
+      ]
+    },
+    {
+      "question": "Can I get a discount by having a long claims-free history?",
+      "answer": "Yes, most insurers reward claim-free history with discounts ranging from 5-25%, depending on the length of your clean record.",
+      "source_url": "https://www.investopedia.com/terms/y/yacht-insurance.asp",
+      "domain": "www.investopedia.com",
+      "confidence": 0.85,
+      "tags": [
+        "discounts",
+        "claims-history",
+        "loyalty"
+      ]
+    },
+    {
+      "question": "Is coverage available for boats with mortgages or liens?",
+      "answer": "Yes, insurers will insure financed boats. The lender is typically listed as a loss payee on the policy.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.85,
+      "tags": [
+        "mortgages",
+        "liens",
+        "financing"
+      ]
+    },
+    {
+      "question": "What is the benefit of a higher liability limit?",
+      "answer": "Higher liability limits protect your personal assets if you're found responsible for serious injuries or property damage.",
+      "source_url": "https://superyachtinsurancebrokers.com/news/",
+      "domain": "superyachtinsurancebrokers.com",
+      "confidence": 0.85,
+      "tags": [
+        "liability",
+        "limits",
+        "asset-protection"
+      ]
+    },
+    {
+      "question": "Are salvage and wreck removal mandatory coverage?",
+      "answer": "They're optional add-ons. Many insurers recommend them, especially for boats operating far from shore or in remote areas.",
+      "source_url": "https://marineins.com/blog/",
+      "domain": "marineins.com",
+      "confidence": 0.8,
+      "tags": [
+        "salvage",
+        "optional-coverage",
+        "recommendations"
+      ]
+    },
+    {
+      "question": "How do I compare yacht insurance quotes effectively?",
+      "answer": "Compare identical coverage limits, deductibles, and exclusions across multiple insurers. Factor in discounts and customer service ratings.",
+      "source_url": "https://www.boatus.com/expert-advice/",
+      "domain": "www.boatus.com",
+      "confidence": 0.8,
+      "tags": [
+        "shopping",
+        "comparison",
+        "best-practices"
+      ]
+    },
+    {
+      "question": "What is situs (location) in yacht insurance?",
+      "answer": "Situs refers to where your boat is kept. It affects your premium based on local risks, weather patterns, and theft rates.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.8,
+      "tags": [
+        "location",
+        "premium-factors",
+        "rating"
+      ]
+    },
+    {
+      "question": "Can I add customizations to my yacht policy?",
+      "answer": "Yes, many insurers offer optional endorsements for specialized equipment, high-value items, and unique coverage needs.",
+      "source_url": "https://superyachtinsurancebrokers.com/news/",
+      "domain": "superyachtinsurancebrokers.com",
+      "confidence": 0.8,
+      "tags": [
+        "customization",
+        "endorsements",
+        "options"
+      ]
+    },
+    {
+      "question": "What documentation do I need for a yacht insurance claim?",
+      "answer": "Keep photos, receipts, maintenance records, and incident documentation. For loss claims, you'll need proof of ownership and valuations.",
+      "source_url": "https://marineins.com/blog/",
+      "domain": "marineins.com",
+      "confidence": 0.85,
+      "tags": [
+        "claims",
+        "documentation",
+        "evidence"
+      ]
+    },
+    {
+      "question": "Is there a grace period if I miss a payment?",
+      "answer": "Most policies have a 10-30 day grace period for late payments before coverage lapses. Check your policy terms for specifics.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.8,
+      "tags": [
+        "payments",
+        "grace-period",
+        "policy-terms"
+      ]
+    }
+  ],
+  "dryRun": false
+}

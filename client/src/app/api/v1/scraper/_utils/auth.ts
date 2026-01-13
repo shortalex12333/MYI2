@@ -6,25 +6,33 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 
 /**
- * Verify x-api-key header
+ * Verify x-api-key header (supports both legacy SCRAPER_API_KEY and SERVICE_ROLE_KEY)
  */
 export function verifyApiKey(request: NextRequest): { valid: boolean; error?: string } {
   const apiKey = request.headers.get('x-api-key');
-  const expectedKey = process.env.SCRAPER_API_KEY;
-
-  if (!expectedKey) {
-    return { valid: false, error: 'Server misconfigured: SCRAPER_API_KEY not set' };
-  }
 
   if (!apiKey) {
     return { valid: false, error: 'Missing x-api-key header' };
   }
 
-  if (apiKey !== expectedKey) {
-    return { valid: false, error: 'Invalid x-api-key' };
+  // Check against SCRAPER_API_KEY if available (legacy)
+  const scraperKey = process.env.SCRAPER_API_KEY;
+  if (scraperKey && apiKey === scraperKey) {
+    return { valid: true };
   }
 
-  return { valid: true };
+  // Check against SERVICE_ROLE_KEY (primary auth method)
+  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  if (serviceRoleKey && apiKey === serviceRoleKey) {
+    return { valid: true };
+  }
+
+  // If neither key is set, that's a server config error
+  if (!scraperKey && !serviceRoleKey) {
+    return { valid: false, error: 'Server misconfigured: No authentication keys available' };
+  }
+
+  return { valid: false, error: 'Invalid x-api-key' };
 }
 
 /**

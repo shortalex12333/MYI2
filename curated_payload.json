@@ -1,0 +1,245 @@
+{
+  "entries": [
+    {
+      "question": "What does yacht insurance typically cover?",
+      "answer": "Yacht insurance typically covers the hull, liability, medical payments, uninsured boaters, and protection and indemnity. Coverage varies by policy.",
+      "source_url": "https://www.boatus.com/expert-advice/",
+      "domain": "www.boatus.com",
+      "confidence": 0.85,
+      "tags": [
+        "coverage",
+        "basics",
+        "insurance-types"
+      ]
+    },
+    {
+      "question": "How much does yacht insurance cost per year?",
+      "answer": "Yacht insurance costs typically range from 1-5% of the boat's declared value annually, depending on the boat's age, value, location, and usage.",
+      "source_url": "https://www.investopedia.com/terms/y/yacht-insurance.asp",
+      "domain": "www.investopedia.com",
+      "confidence": 0.8,
+      "tags": [
+        "cost",
+        "premiums",
+        "pricing"
+      ]
+    },
+    {
+      "question": "What is hull coverage in yacht insurance?",
+      "answer": "Hull coverage protects the physical structure of the boat against damage from accidents, storms, theft, and other covered perils. It's the foundation of most yacht insurance policies.",
+      "source_url": "https://www.boatus.com/expert-advice/",
+      "domain": "www.boatus.com",
+      "confidence": 0.85,
+      "tags": [
+        "coverage",
+        "hull",
+        "protection"
+      ]
+    },
+    {
+      "question": "Do I need liability coverage for my yacht?",
+      "answer": "Yes, liability coverage is essential for yacht owners. It protects you if you're found legally responsible for injuries to others or damage to their property while operating your boat.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.9,
+      "tags": [
+        "liability",
+        "requirements",
+        "legal"
+      ]
+    },
+    {
+      "question": "What are typical yacht insurance deductibles?",
+      "answer": "Common yacht insurance deductibles range from $500 to $2,500 for collision/comprehensive coverage, though higher deductibles may reduce premiums.",
+      "source_url": "https://www.morganscloud.com/2021/06/03/insurance-for-offshore-voyaging/",
+      "domain": "www.morganscloud.com",
+      "confidence": 0.8,
+      "tags": [
+        "deductibles",
+        "cost",
+        "coverage-options"
+      ]
+    },
+    {
+      "question": "What is agreed value coverage in yacht insurance?",
+      "answer": "Agreed value coverage means the insurance company agrees on the boat's value upfront, ensuring you receive that amount if the boat is declared a total loss.",
+      "source_url": "https://superyachtinsurancebrokers.com/news/",
+      "domain": "superyachtinsurancebrokers.com",
+      "confidence": 0.85,
+      "tags": [
+        "valuation",
+        "coverage-types",
+        "total-loss"
+      ]
+    },
+    {
+      "question": "How is yacht insurance underwritten?",
+      "answer": "Yacht insurance underwriting involves assessing the boat's age, condition, value, owner's experience, claims history, and intended use. Boats over 10 years old often require surveys.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.8,
+      "tags": [
+        "underwriting",
+        "assessment",
+        "requirements"
+      ]
+    },
+    {
+      "question": "What is protection and indemnity (P&I) coverage?",
+      "answer": "P&I coverage protects against third-party liability claims for bodily injury, property damage, and legal costs. It's essential for boats operating in international waters.",
+      "source_url": "https://superyachtinsurancebrokers.com/news/",
+      "domain": "superyachtinsurancebrokers.com",
+      "confidence": 0.85,
+      "tags": [
+        "liability",
+        "international",
+        "legal-protection"
+      ]
+    },
+    {
+      "question": "Are there seasonal discounts for yacht insurance?",
+      "answer": "Many insurers offer discounts for seasonal coverage when boats are laid up or stored. Winter storage can reduce premiums significantly.",
+      "source_url": "https://www.boatus.com/expert-advice/",
+      "domain": "www.boatus.com",
+      "confidence": 0.75,
+      "tags": [
+        "discounts",
+        "seasonal",
+        "savings"
+      ]
+    },
+    {
+      "question": "What voids a yacht insurance policy?",
+      "answer": "Common policy voidance triggers include using the boat for commercial purposes, racing, operating under the influence, or exceeding the specified geographic limits.",
+      "source_url": "https://marineins.com/blog/",
+      "domain": "marineins.com",
+      "confidence": 0.8,
+      "tags": [
+        "policy-conditions",
+        "restrictions",
+        "coverage-exclusions"
+      ]
+    },
+    {
+      "question": "Can I get yacht insurance for an older boat?",
+      "answer": "Yes, but older boats may face stricter underwriting requirements, higher premiums, or require a marine survey before coverage is approved.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.8,
+      "tags": [
+        "older-boats",
+        "aging-vessels",
+        "requirements"
+      ]
+    },
+    {
+      "question": "What is medical payments coverage on a yacht policy?",
+      "answer": "Medical payments coverage pays for reasonable medical expenses for injuries sustained by guests on your boat, up to the policy limit.",
+      "source_url": "https://www.investopedia.com/terms/y/yacht-insurance.asp",
+      "domain": "www.investopedia.com",
+      "confidence": 0.85,
+      "tags": [
+        "medical",
+        "guest-protection",
+        "coverage-types"
+      ]
+    },
+    {
+      "question": "Do I need insurance for a sailboat versus a motorboat?",
+      "answer": "Both sailboats and motorboats need insurance, though premiums may differ based on speed, power, and usage patterns. Coverage types are similar.",
+      "source_url": "https://www.morganscloud.com/2021/06/03/insurance-for-offshore-voyaging/",
+      "domain": "www.morganscloud.com",
+      "confidence": 0.8,
+      "tags": [
+        "boat-types",
+        "sailboats",
+        "motorboats"
+      ]
+    },
+    {
+      "question": "What should I do before renewing my yacht insurance?",
+      "answer": "Review your coverage limits, check for any changes in your boat's value or usage, update your claims history, and compare quotes from multiple insurers.",
+      "source_url": "https://www.investopedia.com/terms/y/yacht-insurance.asp",
+      "domain": "www.investopedia.com",
+      "confidence": 0.8,
+      "tags": [
+        "renewal",
+        "best-practices",
+        "shopping-tips"
+      ]
+    },
+    {
+      "question": "Is coverage available for boats used in international waters?",
+      "answer": "Yes, many insurers offer policies covering international waters, though coverage details and geographic limits vary. Specialized marine insurance often extends worldwide.",
+      "source_url": "https://superyachtinsurancebrokers.com/news/",
+      "domain": "superyachtinsurancebrokers.com",
+      "confidence": 0.85,
+      "tags": [
+        "international",
+        "waters",
+        "geographic-limits"
+      ]
+    },
+    {
+      "question": "What is the difference between all-risk and named-peril coverage?",
+      "answer": "All-risk coverage protects against any loss except those specifically excluded. Named-peril covers only the risks explicitly listed in the policy.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.85,
+      "tags": [
+        "coverage-types",
+        "all-risk",
+        "named-peril"
+      ]
+    },
+    {
+      "question": "How do I file a yacht insurance claim?",
+      "answer": "Contact your insurer immediately after an incident, provide documentation of the damage or loss, and work with their claims adjuster. Keep detailed records and receipts.",
+      "source_url": "https://marineins.com/blog/",
+      "domain": "marineins.com",
+      "confidence": 0.8,
+      "tags": [
+        "claims",
+        "procedures",
+        "documentation"
+      ]
+    },
+    {
+      "question": "Can I bundle yacht insurance with other policies?",
+      "answer": "Some insurers offer bundling discounts when you combine yacht insurance with homeowners, auto, or umbrella policies.",
+      "source_url": "https://www.boatus.com/expert-advice/",
+      "domain": "www.boatus.com",
+      "confidence": 0.75,
+      "tags": [
+        "bundling",
+        "discounts",
+        "multi-policy"
+      ]
+    },
+    {
+      "question": "What is uninsured boater coverage?",
+      "answer": "Uninsured boater coverage protects you if you're hit by another boat whose operator is uninsured or underinsured and is at fault.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.85,
+      "tags": [
+        "uninsured-boaters",
+        "protection",
+        "liability"
+      ]
+    },
+    {
+      "question": "Are there discounts for boating safety courses?",
+      "answer": "Yes, many insurers offer 5-15% discounts for completing recognized boating safety or navigation courses.",
+      "source_url": "https://www.investopedia.com/terms/y/yacht-insurance.asp",
+      "domain": "www.investopedia.com",
+      "confidence": 0.8,
+      "tags": [
+        "discounts",
+        "safety",
+        "training"
+      ]
+    }
+  ],
+  "dryRun": false
+}

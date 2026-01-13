@@ -1,0 +1,413 @@
+{
+  "entries": [
+    {
+      "question": "What is an endorsement in yacht insurance?",
+      "answer": "An endorsement is an addition or modification to a standard policy that extends or limits coverage for specific needs or circumstances.",
+      "source_url": "https://www.investopedia.com/terms/y/yacht-insurance.asp",
+      "domain": "www.investopedia.com",
+      "confidence": 0.85,
+      "tags": [
+        "policy-terms",
+        "coverage-options",
+        "customization"
+      ]
+    },
+    {
+      "question": "Can I get coverage for a boat I'm chartering?",
+      "answer": "Some insurers offer charterer's liability coverage or temporary insurance. The boat owner's policy may provide some coverage, but check specific terms.",
+      "source_url": "https://superyachtinsurancebrokers.com/news/",
+      "domain": "superyachtinsurancebrokers.com",
+      "confidence": 0.8,
+      "tags": [
+        "charterer",
+        "temporary-use",
+        "rental"
+      ]
+    },
+    {
+      "question": "What is the insurable interest requirement?",
+      "answer": "Insurable interest means you must have a legal or financial relationship with the boat. You can't insure a boat you don't own or have a stake in.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.85,
+      "tags": [
+        "legal-requirements",
+        "ownership",
+        "underwriting"
+      ]
+    },
+    {
+      "question": "Are electronic navigation systems covered by yacht insurance?",
+      "answer": "Yes, modern yacht policies typically cover GPS, radar, and other electronic navigation equipment as part of the overall coverage.",
+      "source_url": "https://marineins.com/blog/",
+      "domain": "marineins.com",
+      "confidence": 0.8,
+      "tags": [
+        "equipment",
+        "electronics",
+        "coverage"
+      ]
+    },
+    {
+      "question": "What is a marine survey and why is it important?",
+      "answer": "A marine survey is a professional inspection of the boat's condition. It's required by insurers for boats over 10 years old and helps verify the insurable value.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.85,
+      "tags": [
+        "survey",
+        "inspection",
+        "valuation"
+      ]
+    },
+    {
+      "question": "Do I need insurance if I keep my boat in a canal or basin?",
+      "answer": "Yes, boats in stationary locations still need coverage for theft, fire, sinking, and liability if someone is injured on the boat.",
+      "source_url": "https://www.boatus.com/expert-advice/",
+      "domain": "www.boatus.com",
+      "confidence": 0.8,
+      "tags": [
+        "storage-locations",
+        "stationary-boats",
+        "coverage-needs"
+      ]
+    },
+    {
+      "question": "What is a certificate of insurance for yacht insurance?",
+      "answer": "A certificate of insurance is proof that your yacht is insured. Marinas and boat dealers often require this before allowing you to dock or store your boat.",
+      "source_url": "https://superyachtinsurancebrokers.com/news/",
+      "domain": "superyachtinsurancebrokers.com",
+      "confidence": 0.8,
+      "tags": [
+        "certificate",
+        "documentation",
+        "proof-of-coverage"
+      ]
+    },
+    {
+      "question": "How are homemade improvements to a boat covered?",
+      "answer": "Custom modifications may require a separate endorsement. Inform your insurer about any upgrades to ensure proper coverage and valuation.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.8,
+      "tags": [
+        "modifications",
+        "improvements",
+        "coverage-adjustments"
+      ]
+    },
+    {
+      "question": "Is coverage available for boats with alternative fuel systems?",
+      "answer": "Yes, most policies cover alternative fuel boats, though some may require specific endorsements or have unique underwriting considerations.",
+      "source_url": "https://marineins.com/blog/",
+      "domain": "marineins.com",
+      "confidence": 0.75,
+      "tags": [
+        "alternative-fuel",
+        "electric-boats",
+        "technology"
+      ]
+    },
+    {
+      "question": "What is lay-up coverage and when should I use it?",
+      "answer": "Lay-up coverage applies when your boat is stored and not used, typically during winter. It provides reduced-cost coverage for stationary boats.",
+      "source_url": "https://www.investopedia.com/terms/y/yacht-insurance.asp",
+      "domain": "www.investopedia.com",
+      "confidence": 0.85,
+      "tags": [
+        "lay-up",
+        "seasonal",
+        "storage"
+      ]
+    },
+    {
+      "question": "Can I insure a boat that I'm planning to purchase?",
+      "answer": "You can arrange insurance before taking possession, though coverage typically starts when you take ownership. Work with your insurer on timing.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.8,
+      "tags": [
+        "new-purchase",
+        "coverage-start",
+        "timing"
+      ]
+    },
+    {
+      "question": "What is towing and assistance coverage?",
+      "answer": "Towing coverage pays for emergency towing of your disabled boat to the nearest repair facility or marina.",
+      "source_url": "https://superyachtinsurancebrokers.com/news/",
+      "domain": "superyachtinsurancebrokers.com",
+      "confidence": 0.8,
+      "tags": [
+        "towing",
+        "roadside-assistance",
+        "emergency-services"
+      ]
+    },
+    {
+      "question": "Are emergency repairs covered if my boat breaks down?",
+      "answer": "Some policies include coverage for emergency repairs needed to safely return your boat to port. Coverage terms vary by policy.",
+      "source_url": "https://marineins.com/blog/",
+      "domain": "marineins.com",
+      "confidence": 0.8,
+      "tags": [
+        "repairs",
+        "breakdowns",
+        "emergency-coverage"
+      ]
+    },
+    {
+      "question": "How does multi-boat ownership affect insurance?",
+      "answer": "If you own multiple boats, you may qualify for multi-vessel discounts. Each boat typically needs its own policy with specific coverage.",
+      "source_url": "https://www.boatus.com/expert-advice/",
+      "domain": "www.boatus.com",
+      "confidence": 0.8,
+      "tags": [
+        "multiple-boats",
+        "discounts",
+        "fleet-policies"
+      ]
+    },
+    {
+      "question": "What is the penalty for operating a boat without insurance?",
+      "answer": "Penalties vary by state but can include fines, license suspension, and personal liability for damages. Most marinas require proof of insurance.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.85,
+      "tags": [
+        "legal-requirements",
+        "penalties",
+        "regulations"
+      ]
+    },
+    {
+      "question": "Can I transfer my insurance if I sell my boat?",
+      "answer": "Insurance is specific to the boat and owner. You'll need to cancel coverage and the new owner should obtain their own policy.",
+      "source_url": "https://superyachtinsurancebrokers.com/news/",
+      "domain": "superyachtinsurancebrokers.com",
+      "confidence": 0.8,
+      "tags": [
+        "sale",
+        "transfer",
+        "policy-changes"
+      ]
+    },
+    {
+      "question": "What is the response time for insurance claim handling?",
+      "answer": "Most insurers acknowledge claims within 24-48 hours and begin investigation promptly. Settlement depends on claim complexity.",
+      "source_url": "https://marineins.com/blog/",
+      "domain": "marineins.com",
+      "confidence": 0.8,
+      "tags": [
+        "claims",
+        "response-time",
+        "procedures"
+      ]
+    },
+    {
+      "question": "Are water sports equipment rentals covered?",
+      "answer": "Coverage varies. Equipment you own is typically covered, but rented equipment may not be. Check your policy and consider additional coverage.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.75,
+      "tags": [
+        "water-sports",
+        "rentals",
+        "coverage-gaps"
+      ]
+    },
+    {
+      "question": "What is a loss payee and why does it matter?",
+      "answer": "A loss payee is typically your lender. They receive insurance proceeds for covered losses before you do, protecting their collateral.",
+      "source_url": "https://www.investopedia.com/terms/y/yacht-insurance.asp",
+      "domain": "www.investopedia.com",
+      "confidence": 0.85,
+      "tags": [
+        "loss-payee",
+        "lender",
+        "mortgages"
+      ]
+    },
+    {
+      "question": "Can I exclude certain items from coverage to lower premiums?",
+      "answer": "Yes, some insurers allow exclusions of specific high-risk items, though this requires careful consideration of potential financial impact.",
+      "source_url": "https://superyachtinsurancebrokers.com/news/",
+      "domain": "superyachtinsurancebrokers.com",
+      "confidence": 0.75,
+      "tags": [
+        "exclusions",
+        "customization",
+        "cost-reduction"
+      ]
+    },
+    {
+      "question": "How is a total loss determined in yacht insurance?",
+      "answer": "A boat is typically deemed a total loss when repair costs exceed 70-80% of its current value. Exact threshold varies by policy.",
+      "source_url": "https://marineins.com/blog/",
+      "domain": "marineins.com",
+      "confidence": 0.85,
+      "tags": [
+        "total-loss",
+        "valuation",
+        "settlement"
+      ]
+    },
+    {
+      "question": "What is general average in marine insurance?",
+      "answer": "General average is a maritime law principle where costs of saving a vessel and cargo in emergencies are shared proportionally among owners.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.8,
+      "tags": [
+        "maritime-law",
+        "emergency",
+        "shared-costs"
+      ]
+    },
+    {
+      "question": "Are guest injuries automatically covered by liability?",
+      "answer": "Liability covers injuries you're legally responsible for. Medical payments coverage is the better choice for guest injuries regardless of fault.",
+      "source_url": "https://www.boatus.com/expert-advice/",
+      "domain": "www.boatus.com",
+      "confidence": 0.85,
+      "tags": [
+        "liability",
+        "medical-payments",
+        "guest-protection"
+      ]
+    },
+    {
+      "question": "Can I get temporary coverage for a single trip?",
+      "answer": "Yes, many insurers offer trip or single-voyage coverage if you don't need year-round protection for a boat.",
+      "source_url": "https://superyachtinsurancebrokers.com/news/",
+      "domain": "superyachtinsurancebrokers.com",
+      "confidence": 0.8,
+      "tags": [
+        "temporary-coverage",
+        "single-trip",
+        "flexibility"
+      ]
+    },
+    {
+      "question": "What happens to coverage if my boat sinks?",
+      "answer": "If your boat is covered for sinking, the insurer typically declares it a total loss and pays according to the agreed value or actual cash value.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.85,
+      "tags": [
+        "total-loss",
+        "sinking",
+        "settlement"
+      ]
+    },
+    {
+      "question": "Are fishing boats treated differently from recreational yachts?",
+      "answer": "Yes, commercial or charter fishing boats require different policies than recreational vessels. Coverage and premiums differ significantly.",
+      "source_url": "https://marineins.com/blog/",
+      "domain": "marineins.com",
+      "confidence": 0.85,
+      "tags": [
+        "fishing-boats",
+        "commercial",
+        "specialized-policies"
+      ]
+    },
+    {
+      "question": "What is the underwriting process for expensive yachts?",
+      "answer": "High-value yachts undergo extensive underwriting including professional surveys, detailed valuation, and often multiple inspection requirements.",
+      "source_url": "https://superyachtinsurancebrokers.com/news/",
+      "domain": "superyachtinsurancebrokers.com",
+      "confidence": 0.85,
+      "tags": [
+        "high-value",
+        "underwriting",
+        "luxury-boats"
+      ]
+    },
+    {
+      "question": "Can cruise control or autopilot affect insurance rates?",
+      "answer": "Modern safety features may qualify for discounts. Advanced navigation and autopilot systems can sometimes reduce premiums.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.75,
+      "tags": [
+        "safety-features",
+        "technology",
+        "discounts"
+      ]
+    },
+    {
+      "question": "What is the definition of a yacht for insurance purposes?",
+      "answer": "Definitions vary but typically include vessels 25+ feet, with overnight capability, valued over $50,000, or used for pleasure cruising.",
+      "source_url": "https://www.investopedia.com/terms/y/yacht-insurance.asp",
+      "domain": "www.investopedia.com",
+      "confidence": 0.85,
+      "tags": [
+        "definitions",
+        "yacht-classification",
+        "eligibility"
+      ]
+    },
+    {
+      "question": "Are personal belongings on the boat covered?",
+      "answer": "Some policies include limited coverage for personal items. Valuable items may require a separate personal property endorsement.",
+      "source_url": "https://marineins.com/blog/",
+      "domain": "marineins.com",
+      "confidence": 0.8,
+      "tags": [
+        "personal-property",
+        "belongings",
+        "coverage-limits"
+      ]
+    },
+    {
+      "question": "How do I prove the value of my boat for insurance?",
+      "answer": "Use recent appraisals, professional surveys, purchase receipts, or industry valuation guides like NADA boats or MarketWatch.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.85,
+      "tags": [
+        "valuation",
+        "documentation",
+        "appraisals"
+      ]
+    },
+    {
+      "question": "Can insurance cover a boat used for commercial purposes?",
+      "answer": "Standard policies exclude commercial use. You need commercial marine insurance if you use the boat for charter, fishing, or transportation services.",
+      "source_url": "https://www.boatus.com/expert-advice/",
+      "domain": "www.boatus.com",
+      "confidence": 0.85,
+      "tags": [
+        "commercial-use",
+        "exclusions",
+        "policy-types"
+      ]
+    },
+    {
+      "question": "What should I do immediately after a boat accident?",
+      "answer": "Contact authorities if needed, document the scene with photos/videos, exchange information with other parties, notify your insurer within 24-48 hours.",
+      "source_url": "https://superyachtinsurancebrokers.com/news/",
+      "domain": "superyachtinsurancebrokers.com",
+      "confidence": 0.85,
+      "tags": [
+        "accidents",
+        "claims",
+        "procedures"
+      ]
+    },
+    {
+      "question": "Is insurance available for classic or vintage yachts?",
+      "answer": "Yes, specialized classic boat insurance is available. These policies account for the boat's historical value and often require detailed documentation.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.8,
+      "tags": [
+        "classic-boats",
+        "vintage",
+        "specialized-policies"
+      ]
+    }
+  ],
+  "dryRun": false
+}

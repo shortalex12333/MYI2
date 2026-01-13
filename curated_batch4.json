@@ -1,0 +1,314 @@
+[
+  {
+    "question": "What is breach of warranty in yacht insurance?",
+    "answer": "A breach of warranty occurs when you misrepresent the boat's condition or usage. This can void coverage if the insurer relied on the misstatement.",
+    "source_url": "https://www.investopedia.com/terms/y/yacht-insurance.asp",
+    "domain": "www.investopedia.com",
+    "confidence": 0.8,
+    "tags": ["legal-terms", "policy-conditions", "underwriting"]
+  },
+  {
+    "question": "What is a marine casualty?",
+    "answer": "A marine casualty is any accident, loss, or damage to a boat or marine property while at sea or in port.",
+    "source_url": "https://marinebind.com/marine-insights/",
+    "domain": "marinebind.com",
+    "confidence": 0.85,
+    "tags": ["claims", "definitions", "maritime-terms"]
+  },
+  {
+    "question": "How does the deductible work in a multi-claim year?",
+    "answer": "Typically, you pay the deductible per claim, not per year. So multiple claims in one year means multiple deductible payments.",
+    "source_url": "https://www.boatus.com/expert-advice/",
+    "domain": "www.boatus.com",
+    "confidence": 0.85,
+    "tags": ["deductibles", "claims", "costs"]
+  },
+  {
+    "question": "What is the insurance restoration value?",
+    "answer": "Insurance restoration value is the estimated cost to restore your boat to its condition before the loss occurred.",
+    "source_url": "https://marinebind.com/marine-insights/",
+    "domain": "marinebind.com",
+    "confidence": 0.8,
+    "tags": ["valuation", "claims", "settlement"]
+  },
+  {
+    "question": "Can I appeal an insurance claim denial?",
+    "answer": "Yes, you can appeal by providing additional documentation, getting independent assessments, or consulting your state insurance commissioner.",
+    "source_url": "https://marineins.com/blog/",
+    "domain": "marineins.com",
+    "confidence": 0.8,
+    "tags": ["claims", "disputes", "procedures"]
+  },
+  {
+    "question": "What is diminished value in yacht insurance?",
+    "answer": "Diminished value is when a repaired boat is worth less than before the damage. Some policies cover this; most don't.",
+    "source_url": "https://superyachtinsurancebrokers.com/news/",
+    "domain": "superyachtinsurancebrokers.com",
+    "confidence": 0.75,
+    "tags": ["damages", "valuation", "settlement"]
+  },
+  {
+    "question": "How long do I have to file a claim after a loss?",
+    "answer": "Most policies require claims to be reported within 30-60 days of the loss. Check your policy for the exact timeframe.",
+    "source_url": "https://marinebind.com/marine-insights/",
+    "domain": "marinebind.com",
+    "confidence": 0.85,
+    "tags": ["claims", "deadline", "procedures"]
+  },
+  {
+    "question": "What is a coverage modification form?",
+    "answer": "A coverage modification form allows you to change policy terms, coverage limits, or add endorsements without rewriting the entire policy.",
+    "source_url": "https://marineins.com/blog/",
+    "domain": "marineins.com",
+    "confidence": 0.8,
+    "tags": ["policy-changes", "modifications", "endorsements"]
+  },
+  {
+    "question": "Can I recover rental boat costs while mine is being repaired?",
+    "answer": "Some policies include coverage for reasonable rental expenses while your boat is being repaired from a covered loss.",
+    "source_url": "https://www.investopedia.com/terms/y/yacht-insurance.asp",
+    "domain": "www.investopedia.com",
+    "confidence": 0.75,
+    "tags": ["coverage", "claims", "rental"]
+  },
+  {
+    "question": "What is a proof of loss?",
+    "answer": "Proof of loss is formal documentation showing the details of the loss, including how it occurred, what was damaged, and the claimed amount.",
+    "source_url": "https://marinebind.com/marine-insights/",
+    "domain": "marinebind.com",
+    "confidence": 0.85,
+    "tags": ["claims", "documentation", "procedures"]
+  },
+  {
+    "question": "How is depreciation calculated in yacht insurance claims?",
+    "answer": "Depreciation is calculated based on the boat's age, condition, and market value. Rates vary but typically range from 5-15% per year.",
+    "source_url": "https://marineins.com/blog/",
+    "domain": "marineins.com",
+    "confidence": 0.8,
+    "tags": ["valuation", "depreciation", "claims"]
+  },
+  {
+    "question": "What is the insurable interest rule in marine insurance?",
+    "answer": "This rule states you can only insure property you own or have a financial interest in. You cannot profit from someone else's loss.",
+    "source_url": "https://superyachtinsurancebrokers.com/news/",
+    "domain": "superyachtinsurancebrokers.com",
+    "confidence": 0.85,
+    "tags": ["legal-concepts", "underwriting", "eligibility"]
+  },
+  {
+    "question": "Can my claim be denied for non-disclosure?",
+    "answer": "Yes, if you deliberately misrepresent facts during underwriting, insurers can deny claims. However, unintentional errors are handled more leniently.",
+    "source_url": "https://marinebind.com/marine-insights/",
+    "domain": "marinebind.com",
+    "confidence": 0.85,
+    "tags": ["claims", "legal", "underwriting"]
+  },
+  {
+    "question": "What is a salvage agreement?",
+    "answer": "A salvage agreement outlines how the insurer can recover value from damaged or lost property through repair, sale, or scrapping.",
+    "source_url": "https://marineins.com/blog/",
+    "domain": "marineins.com",
+    "confidence": 0.8,
+    "tags": ["salvage", "recovery", "claims"]
+  },
+  {
+    "question": "How are joint losses handled in yacht insurance?",
+    "answer": "When multiple parties have insured interests in a boat, claims are split based on each party's insurable interest percentage.",
+    "source_url": "https://www.boatus.com/expert-advice/",
+    "domain": "www.boatus.com",
+    "confidence": 0.8,
+    "tags": ["joint-ownership", "claims", "settlement"]
+  },
+  {
+    "question": "What is the subrogation period?",
+    "answer": "The subrogation period is the timeframe during which an insurance company can pursue recovery from third parties responsible for a loss.",
+    "source_url": "https://marinebind.com/marine-insights/",
+    "domain": "marinebind.com",
+    "confidence": 0.8,
+    "tags": ["subrogation", "legal-terms", "recovery"]
+  },
+  {
+    "question": "Can I receive payment for both a claim and depreciation?",
+    "answer": "No. Insurance pays the actual cash value (depreciated) or agreed value. You don't receive both the loss and depreciation.",
+    "source_url": "https://superyachtinsurancebrokers.com/news/",
+    "domain": "superyachtinsurancebrokers.com",
+    "confidence": 0.85,
+    "tags": ["valuation", "settlement", "legal"]
+  },
+  {
+    "question": "What triggers a coverage dispute?",
+    "answer": "Coverage disputes arise when the insurer denies a claim because it falls outside policy terms or due to exclusions.",
+    "source_url": "https://marineins.com/blog/",
+    "domain": "marineins.com",
+    "confidence": 0.8,
+    "tags": ["disputes", "coverage", "claims"]
+  },
+  {
+    "question": "How long does it take to settle a major yacht claim?",
+    "answer": "Complex claims can take 90-180+ days. Simple claims settle within 30-60 days. Settlement time depends on claim complexity and cooperation.",
+    "source_url": "https://marinebind.com/marine-insights/",
+    "domain": "marinebind.com",
+    "confidence": 0.8,
+    "tags": ["claims", "timeline", "settlement"]
+  },
+  {
+    "question": "What is a manufacturer's defect claim?",
+    "answer": "A claim for defects in construction that cause damage. These may be covered or excluded depending on policy language.",
+    "source_url": "https://www.investopedia.com/terms/y/yacht-insurance.asp",
+    "domain": "www.investopedia.com",
+    "confidence": 0.75,
+    "tags": ["defects", "claims", "coverage"]
+  },
+  {
+    "question": "Can weather damage be claimed as a deductible reduction?",
+    "answer": "No. The deductible applies to each claim. Weather-related claims don't reduce the deductible amount.",
+    "source_url": "https://marineins.com/blog/",
+    "domain": "marineins.com",
+    "confidence": 0.8,
+    "tags": ["deductibles", "weather", "claims"]
+  },
+  {
+    "question": "What is the reasonable repair cost threshold?",
+    "answer": "Insurers only pay for reasonable and necessary repairs. Costs exceeding typical market rates for the repair may not be fully covered.",
+    "source_url": "https://marinebind.com/marine-insights/",
+    "domain": "marinebind.com",
+    "confidence": 0.8,
+    "tags": ["repairs", "reasonable-cost", "claims"]
+  },
+  {
+    "question": "How is a total loss boat typically handled?",
+    "answer": "The insurer pays the agreed value or actual cash value and takes possession of the boat. The boat is then scrapped or sold for salvage.",
+    "source_url": "https://superyachtinsurancebrokers.com/news/",
+    "domain": "superyachtinsurancebrokers.com",
+    "confidence": 0.85,
+    "tags": ["total-loss", "settlement", "procedures"]
+  },
+  {
+    "question": "What triggers a claim investigation?",
+    "answer": "Large claims, suspicious circumstances, unspecified causes, or discrepancies in your story trigger formal investigations.",
+    "source_url": "https://marineins.com/blog/",
+    "domain": "marineins.com",
+    "confidence": 0.8,
+    "tags": ["claims", "investigation", "procedures"]
+  },
+  {
+    "question": "Can I claim for pre-existing damage?",
+    "answer": "No. Insurance only covers losses that occur after the policy begins. Pre-existing damage is excluded.",
+    "source_url": "https://marinebind.com/marine-insights/",
+    "domain": "marinebind.com",
+    "confidence": 0.85,
+    "tags": ["exclusions", "pre-existing", "eligibility"]
+  },
+  {
+    "question": "What is medical payment fraud in yacht insurance?",
+    "answer": "Fraudulently claiming medical payments for injuries that didn't occur or exaggerating injuries. This is a serious crime.",
+    "source_url": "https://www.boatus.com/expert-advice/",
+    "domain": "www.boatus.com",
+    "confidence": 0.8,
+    "tags": ["fraud", "claims", "legal"]
+  },
+  {
+    "question": "How do appraisals work in yacht insurance disputes?",
+    "answer": "In disputes over claim amounts, either party can request an independent appraisal. The appraiser's valuation is binding.",
+    "source_url": "https://marineins.com/blog/",
+    "domain": "marineins.com",
+    "confidence": 0.85,
+    "tags": ["disputes", "appraisals", "valuation"]
+  },
+  {
+    "question": "What is a first-dollar coverage?",
+    "answer": "First-dollar coverage means the insurance pays from the first dollar of loss with no deductible. This is rare and expensive.",
+    "source_url": "https://marinebind.com/marine-insights/",
+    "domain": "marinebind.com",
+    "confidence": 0.8,
+    "tags": ["deductibles", "coverage-types", "premiums"]
+  },
+  {
+    "question": "Can I claim depreciation on equipment?",
+    "answer": "No. Marine insurers don't typically allow depreciation claims on equipment. Depreciation applies only to the hull.",
+    "source_url": "https://superyachtinsurancebrokers.com/news/",
+    "domain": "superyachtinsurancebrokers.com",
+    "confidence": 0.75,
+    "tags": ["depreciation", "equipment", "valuation"]
+  },
+  {
+    "question": "What is loss of use coverage?",
+    "answer": "Loss of use coverage reimburses you for reasonable expenses incurred while your boat is being repaired from a covered loss.",
+    "source_url": "https://marineins.com/blog/",
+    "domain": "marineins.com",
+    "confidence": 0.8,
+    "tags": ["coverage", "claims", "expenses"]
+  },
+  {
+    "question": "How are expert witnesses used in yacht insurance claims?",
+    "answer": "In disputes over significant claims, both parties may hire marine experts to assess damage, causation, and value.",
+    "source_url": "https://marinebind.com/marine-insights/",
+    "domain": "marinebind.com",
+    "confidence": 0.8,
+    "tags": ["disputes", "expert-witnesses", "claims"]
+  },
+  {
+    "question": "What is the recovery clause in yacht insurance?",
+    "answer": "The recovery clause allows the insurer to recover its payout from a third party found responsible for the loss.",
+    "source_url": "https://www.investopedia.com/terms/y/yacht-insurance.asp",
+    "domain": "www.investopedia.com",
+    "confidence": 0.8,
+    "tags": ["recovery", "subrogation", "legal-terms"]
+  },
+  {
+    "question": "Can I claim business interruption for a charter yacht?",
+    "answer": "Yes, if you operate a charter business, business interruption coverage can reimburse lost revenue while repairs occur.",
+    "source_url": "https://marineins.com/blog/",
+    "domain": "marineins.com",
+    "confidence": 0.8,
+    "tags": ["business", "charter", "coverage"]
+  },
+  {
+    "question": "What is the policy limit per claim?",
+    "answer": "The policy limit is the maximum the insurer will pay per claim. Claims exceeding this are the owner's responsibility.",
+    "source_url": "https://marinebind.com/marine-insights/",
+    "domain": "marinebind.com",
+    "confidence": 0.85,
+    "tags": ["policy-limits", "coverage", "claims"]
+  },
+  {
+    "question": "How are stolen engine parts handled in claims?",
+    "answer": "Stolen parts are typically covered under yacht policies if the theft is reported and documented promptly.",
+    "source_url": "https://superyachtinsurancebrokers.com/news/",
+    "domain": "superyachtinsurancebrokers.com",
+    "confidence": 0.8,
+    "tags": ["theft", "coverage", "parts"]
+  },
+  {
+    "question": "What is consequential damage in yacht insurance?",
+    "answer": "Consequential damage is indirect damage resulting from the original loss (e.g., mold from water damage). Coverage varies by policy.",
+    "source_url": "https://marineins.com/blog/",
+    "domain": "marineins.com",
+    "confidence": 0.8,
+    "tags": ["damage-types", "coverage", "exclusions"]
+  },
+  {
+    "question": "Can I recover attorney fees in a yacht insurance dispute?",
+    "answer": "This depends on your policy and state law. Some policies include coverage for legal expenses; others don't.",
+    "source_url": "https://marinebind.com/marine-insights/",
+    "domain": "marinebind.com",
+    "confidence": 0.75,
+    "tags": ["disputes", "legal", "coverage"]
+  },
+  {
+    "question": "What is the replacement cost principle?",
+    "answer": "This principle states that insurance should pay enough to replace the damaged or lost property, not depreciate it.",
+    "source_url": "https://www.investopedia.com/terms/y/yacht-insurance.asp",
+    "domain": "www.investopedia.com",
+    "confidence": 0.85,
+    "tags": ["valuation", "settlement", "legal-concepts"]
+  },
+  {
+    "question": "How are eco-damage claims handled?",
+    "answer": "Pollution or environmental damage claims are handled under environmental liability endorsements. Standard policies often exclude these.",
+    "source_url": "https://marineins.com/blog/",
+    "domain": "marineins.com",
+    "confidence": 0.8,
+    "tags": ["environmental", "pollution", "specialized-coverage"]
+  }
+]

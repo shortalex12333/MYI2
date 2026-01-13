@@ -1,0 +1,258 @@
+[
+  {
+    "question": "What happens if my boat sinks in shallow water?",
+    "answer": "Sinking is covered by insurance. Recovery and salvage costs are covered up to policy limits.",
+    "source_url": "https://marinebind.com/marine-insights/",
+    "domain": "marinebind.com",
+    "confidence": 0.85,
+    "tags": ["sinking", "salvage", "coverage"]
+  },
+  {
+    "question": "Can insurance cover a boat damaged by another boat?",
+    "answer": "Yes. The other boat's liability insurance should cover it. If not, your collision coverage applies.",
+    "source_url": "https://marineins.com/blog/",
+    "domain": "marineins.com",
+    "confidence": 0.85,
+    "tags": ["collision", "third-party", "claims"]
+  },
+  {
+    "question": "What if my boat is damaged while being serviced?",
+    "answer": "The service provider's liability insurance should cover it. Ensure they carry proper coverage.",
+    "source_url": "https://marinebind.com/marine-insights/",
+    "domain": "marinebind.com",
+    "confidence": 0.8,
+    "tags": ["service-damage", "liability", "vendor"]
+  },
+  {
+    "question": "Is pollution from a sunken boat covered?",
+    "answer": "Pollution liability is optional. If included, environmental cleanup is covered up to limits.",
+    "source_url": "https://superyachtinsurancebrokers.com/news/",
+    "domain": "superyachtinsurancebrokers.com",
+    "confidence": 0.8,
+    "tags": ["pollution", "environmental", "cleanup"]
+  },
+  {
+    "question": "Can I claim if my boat is damaged by fireworks?",
+    "answer": "Yes, if you didn't cause it. Damage from fireworks is covered under comprehensive coverage.",
+    "source_url": "https://marineins.com/blog/",
+    "domain": "marineins.com",
+    "confidence": 0.75,
+    "tags": ["fireworks", "third-party", "coverage"]
+  },
+  {
+    "question": "What if a dock collapses and damages my boat?",
+    "answer": "The dock owner's liability insurance should cover it. Get their insurance info immediately.",
+    "source_url": "https://marinebind.com/marine-insights/",
+    "domain": "marinebind.com",
+    "confidence": 0.85,
+    "tags": ["dock", "third-party-liability", "claims"]
+  },
+  {
+    "question": "Is coverage available if my boat catches disease (marine life infestation)?",
+    "answer": "Biological damage is typically excluded. Prevention and treatment are the owner's responsibility.",
+    "source_url": "https://marineins.com/blog/",
+    "domain": "marineins.com",
+    "confidence": 0.75,
+    "tags": ["biological", "infestation", "exclusions"]
+  },
+  {
+    "question": "What if my boat is damaged by volcanic ash or lava?",
+    "answer": "Volcanic damage is typically covered under comprehensive/all-risk policies.",
+    "source_url": "https://marinebind.com/marine-insights/",
+    "domain": "marinebind.com",
+    "confidence": 0.75,
+    "tags": ["volcanic", "natural-disaster", "coverage"]
+  },
+  {
+    "question": "Can insurance cover a boat damaged by debris from storms?",
+    "answer": "Yes. Storm debris damage is covered under comprehensive coverage.",
+    "source_url": "https://superyachtinsurancebrokers.com/news/",
+    "domain": "superyachtinsurancebrokers.com",
+    "confidence": 0.85,
+    "tags": ["storm-debris", "weather", "coverage"]
+  },
+  {
+    "question": "What if wildlife damages my boat (moose, sharks, etc.)?",
+    "answer": "Animal damage is typically covered under comprehensive coverage.",
+    "source_url": "https://marineins.com/blog/",
+    "domain": "marineins.com",
+    "confidence": 0.75,
+    "tags": ["wildlife", "animal-damage", "coverage"]
+  },
+  {
+    "question": "Is coverage available if my boat is damaged by a drone?",
+    "answer": "Drone damage falls under third-party liability if the drone owner is at fault. Their liability should cover it.",
+    "source_url": "https://marinebind.com/marine-insights/",
+    "domain": "marinebind.com",
+    "confidence": 0.7,
+    "tags": ["drone", "technology", "liability"]
+  },
+  {
+    "question": "Can I claim if my boat is damaged by a rogue wave?",
+    "answer": "Yes. Rogue waves and unusual weather are covered under comprehensive/all-risk policies.",
+    "source_url": "https://marineins.com/blog/",
+    "domain": "marineins.com",
+    "confidence": 0.8,
+    "tags": ["rogue-waves", "weather", "coverage"]
+  },
+  {
+    "question": "What if someone trespasses on my boat and damages it?",
+    "answer": "Vandalism/trespassing damage is covered. Report to police and file an insurance claim.",
+    "source_url": "https://marinebind.com/marine-insights/",
+    "domain": "marinebind.com",
+    "confidence": 0.85,
+    "tags": ["vandalism", "trespassing", "coverage"]
+  },
+  {
+    "question": "Is coverage available if my boat is damaged by a fallen tree?",
+    "answer": "Yes. Falling tree damage is covered under comprehensive coverage.",
+    "source_url": "https://superyachtinsurancebrokers.com/news/",
+    "domain": "superyachtinsurancebrokers.com",
+    "confidence": 0.85,
+    "tags": ["falling-tree", "natural-disaster", "coverage"]
+  },
+  {
+    "question": "What if my boat is damaged during towing?",
+    "answer": "The towing company's liability should cover improper towing. Document everything and get their insurance info.",
+    "source_url": "https://marineins.com/blog/",
+    "domain": "marineins.com",
+    "confidence": 0.8,
+    "tags": ["towing", "third-party", "liability"]
+  },
+  {
+    "question": "Can I claim if my boat is damaged by a fishing net or trap?",
+    "answer": "Yes, if it damages your boat. The fisher's liability or your own coverage applies.",
+    "source_url": "https://marinebind.com/marine-insights/",
+    "domain": "marinebind.com",
+    "confidence": 0.7,
+    "tags": ["fishing", "entanglement", "coverage"]
+  },
+  {
+    "question": "What if my boat is damaged by an aircraft?",
+    "answer": "The aircraft operator's liability should cover it. This is a rare but serious claim.",
+    "source_url": "https://marineins.com/blog/",
+    "domain": "marineins.com",
+    "confidence": 0.7,
+    "tags": ["aircraft", "third-party", "rare"]
+  },
+  {
+    "question": "Is coverage available if my boat is damaged by construction/dredging?",
+    "answer": "Yes. Document all details and get the construction company's liability insurance information.",
+    "source_url": "https://marinebind.com/marine-insights/",
+    "domain": "marinebind.com",
+    "confidence": 0.75,
+    "tags": ["construction", "third-party", "coverage"]
+  },
+  {
+    "question": "What if my boat is damaged by another boater under the influence?",
+    "answer": "Their liability insurance should cover it. If they're uninsured, your uninsured boater coverage applies.",
+    "source_url": "https://superyachtinsurancebrokers.com/news/",
+    "domain": "superyachtinsurancebrokers.com",
+    "confidence": 0.85,
+    "tags": ["dui", "intoxicated", "liability"]
+  },
+  {
+    "question": "Can I claim if my boat is damaged by a shipping vessel?",
+    "answer": "Yes. Commercial shipping lines carry maritime liability insurance. Their insurer should cover the damage.",
+    "source_url": "https://marineins.com/blog/",
+    "domain": "marineins.com",
+    "confidence": 0.8,
+    "tags": ["shipping", "commercial-vessel", "liability"]
+  },
+  {
+    "question": "What if my boat is damaged in international waters by a foreign vessel?",
+    "answer": "This is complex. Maritime law and the other vessel's flag state determine liability and jurisdiction.",
+    "source_url": "https://marinebind.com/marine-insights/",
+    "domain": "marinebind.com",
+    "confidence": 0.75,
+    "tags": ["international-waters", "maritime-law", "complex"]
+  },
+  {
+    "question": "Is coverage available if my boat hits a submerged object?",
+    "answer": "Yes. Striking submerged objects is covered under collision coverage.",
+    "source_url": "https://marineins.com/blog/",
+    "domain": "marineins.com",
+    "confidence": 0.85,
+    "tags": ["collision", "submerged", "coverage"]
+  },
+  {
+    "question": "What if my boat is damaged by wave surge in a marina?",
+    "answer": "Surge damage is typically covered under comprehensive/all-risk policies.",
+    "source_url": "https://marinebind.com/marine-insights/",
+    "domain": "marinebind.com",
+    "confidence": 0.8,
+    "tags": ["surge", "marina", "coverage"]
+  },
+  {
+    "question": "Can I claim if my boat is damaged by a failed repair job?",
+    "answer": "No. Your insurance doesn't cover poor workmanship. Sue the repair company or use dispute resolution.",
+    "source_url": "https://superyachtinsurancebrokers.com/news/",
+    "domain": "superyachtinsurancebrokers.com",
+    "confidence": 0.8,
+    "tags": ["repairs", "workmanship", "exclusions"]
+  },
+  {
+    "question": "What if my boat is damaged by a defective part that failed?",
+    "answer": "Manufacturer defects are typically covered. You may need to sue the manufacturer or parts supplier.",
+    "source_url": "https://marineins.com/blog/",
+    "domain": "marineins.com",
+    "confidence": 0.75,
+    "tags": ["defects", "product-liability", "coverage"]
+  },
+  {
+    "question": "Is coverage available if my boat is damaged by cyber attack (GPS spoofing)?",
+    "answer": "Cyber damage is not standard coverage. Specialized cyber marine insurance is emerging but uncommon.",
+    "source_url": "https://marinebind.com/marine-insights/",
+    "domain": "marinebind.com",
+    "confidence": 0.7,
+    "tags": ["cyber", "technology", "emerging"]
+  },
+  {
+    "question": "What if my boat is damaged by a ghost ship or derelict?",
+    "answer": "Collision with another vessel is covered. Report to authorities and your insurer immediately.",
+    "source_url": "https://marineins.com/blog/",
+    "domain": "marineins.com",
+    "confidence": 0.75,
+    "tags": ["collision", "derelict", "rare"]
+  },
+  {
+    "question": "Can I claim if my boat is damaged by nuclear radiation?",
+    "answer": "Nuclear/radiation damage is excluded from standard policies. Specialized coverage would be needed.",
+    "source_url": "https://marinebind.com/marine-insights/",
+    "domain": "marinebind.com",
+    "confidence": 0.7,
+    "tags": ["nuclear", "radiation", "exclusions"]
+  },
+  {
+    "question": "What if my boat is damaged by a meteor strike?",
+    "answer": "Meteor strikes are so rare they're not specifically addressed. Likely covered under all-risk/mysterious disappearance.",
+    "source_url": "https://superyachtinsurancebrokers.com/news/",
+    "domain": "superyachtinsurancebrokers.com",
+    "confidence": 0.65,
+    "tags": ["meteor", "rare", "mysterious-disappearance"]
+  },
+  {
+    "question": "Is coverage available if my boat is damaged by black mold?",
+    "answer": "Mold from weather/water damage is covered. Mold from neglect is excluded.",
+    "source_url": "https://marineins.com/blog/",
+    "domain": "marineins.com",
+    "confidence": 0.8,
+    "tags": ["mold", "damage", "coverage"]
+  },
+  {
+    "question": "What if my boat is damaged by invasive aquatic species?",
+    "answer": "Damage from zebra mussels, sea urchins, etc. is typically covered under comprehensive policies.",
+    "source_url": "https://marinebind.com/marine-insights/",
+    "domain": "marinebind.com",
+    "confidence": 0.75,
+    "tags": ["invasive-species", "environmental", "coverage"]
+  },
+  {
+    "question": "Can I claim if my boat is damaged by a spontaneous fire?",
+    "answer": "Yes. Fire damage (regardless of cause) is covered unless caused by owner negligence.",
+    "source_url": "https://marineins.com/blog/",
+    "domain": "marineins.com",
+    "confidence": 0.85,
+    "tags": ["fire", "spontaneous", "coverage"]
+  }
+]

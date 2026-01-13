@@ -1,0 +1,533 @@
+{
+  "entries": [
+    {
+      "question": "What insurance requirements exist for sailboats under 25 feet?",
+      "answer": "Boats under 25 feet typically use standard boat insurance, though yacht insurance is available for high-value vessels.",
+      "source_url": "https://www.boatus.com/expert-advice/",
+      "domain": "www.boatus.com",
+      "confidence": 0.8,
+      "tags": [
+        "sailboats",
+        "boat-size",
+        "requirements"
+      ]
+    },
+    {
+      "question": "Are catamarans more expensive to insure than monohulls?",
+      "answer": "Catamarans are often slightly more expensive due to higher value and broader beam, but not dramatically different from monohulls.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.8,
+      "tags": [
+        "boat-types",
+        "premiums",
+        "pricing"
+      ]
+    },
+    {
+      "question": "What insurance covers fishing charter boats?",
+      "answer": "Commercial fishing boats require commercial marine insurance, not standard yacht policies. Liability and crew coverage are essential.",
+      "source_url": "https://superyachtinsurancebrokers.com/news/",
+      "domain": "superyachtinsurancebrokers.com",
+      "confidence": 0.85,
+      "tags": [
+        "commercial",
+        "fishing",
+        "specialized-policies"
+      ]
+    },
+    {
+      "question": "Do houseboats need special insurance?",
+      "answer": "Yes, houseboats require specialized insurance covering permanent residential features and different liability exposures.",
+      "source_url": "https://marineins.com/blog/",
+      "domain": "marineins.com",
+      "confidence": 0.85,
+      "tags": [
+        "houseboats",
+        "specialized-policies",
+        "residential"
+      ]
+    },
+    {
+      "question": "What insurance applies to jet skis and personal watercraft?",
+      "answer": "Personal watercraft typically require separate PWC insurance with higher liability limits due to speed and accident risk.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.85,
+      "tags": [
+        "personal-watercraft",
+        "jet-skis",
+        "specialized-policies"
+      ]
+    },
+    {
+      "question": "Are pontoon boats cheaper to insure than speedboats?",
+      "answer": "Yes, pontoon boats typically cost less to insure due to lower speed, lower horsepower, and reduced accident risk.",
+      "source_url": "https://www.investopedia.com/terms/y/yacht-insurance.asp",
+      "domain": "www.investopedia.com",
+      "confidence": 0.8,
+      "tags": [
+        "boat-types",
+        "premiums",
+        "pricing"
+      ]
+    },
+    {
+      "question": "What insurance covers inflatable boats and rafts?",
+      "answer": "Inflatables are often excluded from standard yacht insurance. Specialized small boat or PWC policies are needed.",
+      "source_url": "https://marineins.com/blog/",
+      "domain": "marineins.com",
+      "confidence": 0.8,
+      "tags": [
+        "inflatable-boats",
+        "coverage-gaps",
+        "specialized-policies"
+      ]
+    },
+    {
+      "question": "Do trawlers require different insurance than cruising sailboats?",
+      "answer": "Trawlers may require different coverage due to their value, speed, and usage. Cruising sailboats have different risk profiles.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.8,
+      "tags": [
+        "boat-types",
+        "trawlers",
+        "coverage-differences"
+      ]
+    },
+    {
+      "question": "What insurance covers boats with overnight capacity?",
+      "answer": "Overnight-capable boats (25+ feet with sleeping quarters) typically need full yacht insurance for adequate coverage.",
+      "source_url": "https://superyachtinsurancebrokers.com/news/",
+      "domain": "superyachtinsurancebrokers.com",
+      "confidence": 0.85,
+      "tags": [
+        "boat-types",
+        "overnight-boats",
+        "requirements"
+      ]
+    },
+    {
+      "question": "Are racing sailboats covered by standard yacht policies?",
+      "answer": "No. Racing boats require racing endorsements or specialized racing insurance. Standard policies exclude racing.",
+      "source_url": "https://marineins.com/blog/",
+      "domain": "marineins.com",
+      "confidence": 0.85,
+      "tags": [
+        "racing",
+        "sailboats",
+        "exclusions"
+      ]
+    },
+    {
+      "question": "What insurance covers boats used in commercial tourism?",
+      "answer": "Commercial tour boats require specialized commercial marine insurance with public liability, crew coverage, and passenger protection.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.85,
+      "tags": [
+        "commercial",
+        "tourism",
+        "specialized-policies"
+      ]
+    },
+    {
+      "question": "Do vintage wooden boats need special insurance?",
+      "answer": "Yes. Vintage and wooden boats need specialized classic boat insurance accounting for restoration value and historical significance.",
+      "source_url": "https://www.investopedia.com/terms/y/yacht-insurance.asp",
+      "domain": "www.investopedia.com",
+      "confidence": 0.85,
+      "tags": [
+        "classic-boats",
+        "wooden-boats",
+        "specialized-policies"
+      ]
+    },
+    {
+      "question": "What insurance applies to boats with live-aboard status?",
+      "answer": "Live-aboard boats need standard yacht insurance but may have higher liability limits due to residential status.",
+      "source_url": "https://marineins.com/blog/",
+      "domain": "marineins.com",
+      "confidence": 0.8,
+      "tags": [
+        "live-aboard",
+        "residential",
+        "coverage-needs"
+      ]
+    },
+    {
+      "question": "Are boats over 100 feet more expensive to insure?",
+      "answer": "Yes. Superyachts over 100 feet have exponentially higher premiums due to value, complexity, and specialist crew requirements.",
+      "source_url": "https://superyachtinsurancebrokers.com/news/",
+      "domain": "superyachtinsurancebrokers.com",
+      "confidence": 0.85,
+      "tags": [
+        "superyachts",
+        "large-boats",
+        "premiums"
+      ]
+    },
+    {
+      "question": "What insurance covers RVs that convert to boats?",
+      "answer": "Amphibious vehicles need both RV and marine insurance. Check if either policy will cover dual-purpose vehicles.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.75,
+      "tags": [
+        "specialized-vehicles",
+        "coverage-gaps",
+        "combined-use"
+      ]
+    },
+    {
+      "question": "Do submarines or submersibles need insurance?",
+      "answer": "Yes, if privately owned. They're typically covered under specialized marine insurance for experimental or exotic vessels.",
+      "source_url": "https://marineins.com/blog/",
+      "domain": "marineins.com",
+      "confidence": 0.7,
+      "tags": [
+        "exotic-vessels",
+        "specialized-policies",
+        "rare"
+      ]
+    },
+    {
+      "question": "What insurance covers boats used for scientific research?",
+      "answer": "Research vessels need specialized coverage accounting for crew expertise, equipment value, and specific research activities.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.8,
+      "tags": [
+        "research",
+        "scientific",
+        "specialized-policies"
+      ]
+    },
+    {
+      "question": "Are luxury mega-yachts covered the same as standard yachts?",
+      "answer": "No. Mega-yachts need specialized insurance for unique value, crew size, and operational complexity. Different underwriting applies.",
+      "source_url": "https://superyachtinsurancebrokers.com/news/",
+      "domain": "superyachtinsurancebrokers.com",
+      "confidence": 0.85,
+      "tags": [
+        "mega-yachts",
+        "luxury-boats",
+        "specialized-policies"
+      ]
+    },
+    {
+      "question": "What insurance covers ice-breaker style boats?",
+      "answer": "Specialized vessels like icebreakers need custom insurance reflecting their unique construction and operational risks.",
+      "source_url": "https://marineins.com/blog/",
+      "domain": "marineins.com",
+      "confidence": 0.7,
+      "tags": [
+        "specialized-vessels",
+        "arctic-boats",
+        "custom-policies"
+      ]
+    },
+    {
+      "question": "Do hydrofoil boats have different insurance needs?",
+      "answer": "Yes. Hydrofoil boats are high-speed craft with unique mechanics. They require specialized high-performance boat insurance.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.75,
+      "tags": [
+        "high-performance",
+        "hydrofoils",
+        "specialized-policies"
+      ]
+    },
+    {
+      "question": "What insurance covers electric or solar boats?",
+      "answer": "Modern electric boats can use standard yacht insurance, though some policies may require special endorsements for novel technology.",
+      "source_url": "https://www.investopedia.com/terms/y/yacht-insurance.asp",
+      "domain": "www.investopedia.com",
+      "confidence": 0.75,
+      "tags": [
+        "electric-boats",
+        "technology",
+        "modern-vessels"
+      ]
+    },
+    {
+      "question": "Are wingsail boats more expensive to insure than conventional boats?",
+      "answer": "Potentially, due to experimental technology and potential damage. Standard underwriting may not apply.",
+      "source_url": "https://marineins.com/blog/",
+      "domain": "marineins.com",
+      "confidence": 0.7,
+      "tags": [
+        "experimental-technology",
+        "wingsails",
+        "specialty"
+      ]
+    },
+    {
+      "question": "What insurance covers boats with unusual propulsion systems?",
+      "answer": "Uncommon propulsion (exotic engines, experimental systems) may require specialist underwriting and custom coverage.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.75,
+      "tags": [
+        "propulsion",
+        "experimental",
+        "specialty"
+      ]
+    },
+    {
+      "question": "Do floating homes anchored permanently need yacht insurance?",
+      "answer": "Fixed floating homes typically need homeowners insurance, not yacht insurance, unless they can be moved.",
+      "source_url": "https://superyachtinsurancebrokers.com/news/",
+      "domain": "superyachtinsurancebrokers.com",
+      "confidence": 0.8,
+      "tags": [
+        "floating-homes",
+        "fixed-structures",
+        "insurance-types"
+      ]
+    },
+    {
+      "question": "Are replica or kit-built boats covered by standard policies?",
+      "answer": "Kit-built boats may require special underwriting. Some insurers will cover them; others require documentation of quality/safety.",
+      "source_url": "https://marineins.com/blog/",
+      "domain": "marineins.com",
+      "confidence": 0.8,
+      "tags": [
+        "kit-boats",
+        "custom-builds",
+        "underwriting"
+      ]
+    },
+    {
+      "question": "What insurance applies to boats actively being renovated?",
+      "answer": "Boats under renovation typically need builder's risk insurance or specialized renovation coverage. Standard policies may not apply.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.8,
+      "tags": [
+        "renovation",
+        "refit",
+        "specialized-coverage"
+      ]
+    },
+    {
+      "question": "Do bareboat charter boats have different insurance?",
+      "answer": "Yes. Bareboat charters need coverage for crew injuries, vessel liability, and damage from operators unfamiliar with the boat.",
+      "source_url": "https://marineins.com/blog/",
+      "domain": "marineins.com",
+      "confidence": 0.85,
+      "tags": [
+        "charter",
+        "bareboat",
+        "specialized-policies"
+      ]
+    },
+    {
+      "question": "What insurance covers boats used for liveaboard marina homes?",
+      "answer": "Live-aboard marina boats need yacht insurance with residential endorsements covering both floating and residential risks.",
+      "source_url": "https://superyachtinsurancebrokers.com/news/",
+      "domain": "superyachtinsurancebrokers.com",
+      "confidence": 0.8,
+      "tags": [
+        "live-aboard",
+        "marina",
+        "residential"
+      ]
+    },
+    {
+      "question": "Do boats in desert salt lakes need different insurance?",
+      "answer": "Boats in unusual environments (salt lakes, shallow rivers) may face different risk profiles requiring specialized coverage.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.7,
+      "tags": [
+        "location-specific",
+        "unusual-waters",
+        "specialty"
+      ]
+    },
+    {
+      "question": "Are boats permanently in dry dock covered by yacht insurance?",
+      "answer": "Yes, but with modified coverage. Boats in storage need lay-up endorsements, not full active-use policies.",
+      "source_url": "https://marineins.com/blog/",
+      "domain": "marineins.com",
+      "confidence": 0.85,
+      "tags": [
+        "dry-dock",
+        "storage",
+        "lay-up"
+      ]
+    },
+    {
+      "question": "What insurance covers boats towed behind RVs as towable vessels?",
+      "answer": "Towable boat trailers are typically covered under RV or boat insurance but NOT yacht insurance.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.85,
+      "tags": [
+        "trailers",
+        "towable-boats",
+        "boat-insurance"
+      ]
+    },
+    {
+      "question": "Do private military or security boats need special insurance?",
+      "answer": "Yes. Security and patrol boats require specialized coverage accounting for armed crew, operational risks, and liability.",
+      "source_url": "https://superyachtinsurancebrokers.com/news/",
+      "domain": "superyachtinsurancebrokers.com",
+      "confidence": 0.75,
+      "tags": [
+        "security",
+        "military-style",
+        "specialized"
+      ]
+    },
+    {
+      "question": "Are boats with swimming pools or hot tubs more expensive to insure?",
+      "answer": "Yes. Added amenities increase liability risk and replacement value, leading to higher premiums.",
+      "source_url": "https://marineins.com/blog/",
+      "domain": "marineins.com",
+      "confidence": 0.8,
+      "tags": [
+        "amenities",
+        "pools",
+        "premiums"
+      ]
+    },
+    {
+      "question": "What insurance covers boats with helicopter landing pads?",
+      "answer": "Superyachts with helipads need specialized insurance covering aircraft liability and unique safety requirements.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.75,
+      "tags": [
+        "superyachts",
+        "aircraft",
+        "specialized-coverage"
+      ]
+    },
+    {
+      "question": "Do boats used for underwater exploration need special insurance?",
+      "answer": "Diving and exploration vessels need specialized coverage accounting for decompression chambers and deep-water operations.",
+      "source_url": "https://marineins.com/blog/",
+      "domain": "marineins.com",
+      "confidence": 0.75,
+      "tags": [
+        "diving",
+        "underwater",
+        "specialized-policies"
+      ]
+    },
+    {
+      "question": "Are boats converted from commercial vessels treated differently?",
+      "answer": "Yes. Converted vessels require detailed inspection and specialized underwriting due to structural modifications.",
+      "source_url": "https://superyachtinsurancebrokers.com/news/",
+      "domain": "superyachtinsurancebrokers.com",
+      "confidence": 0.8,
+      "tags": [
+        "converted-vessels",
+        "commercial-conversion",
+        "underwriting"
+      ]
+    },
+    {
+      "question": "What insurance covers boats with extensive armament or defensive systems?",
+      "answer": "Militarized vessels require specialized security and military insurance covering unique liability and safety concerns.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.7,
+      "tags": [
+        "security",
+        "military",
+        "specialized"
+      ]
+    },
+    {
+      "question": "Do floating art installations or sculptures need yacht insurance?",
+      "answer": "Large floating art projects need specialized insurance combining maritime and fine art coverage.",
+      "source_url": "https://marineins.com/blog/",
+      "domain": "marineins.com",
+      "confidence": 0.65,
+      "tags": [
+        "art",
+        "floating-structures",
+        "specialty"
+      ]
+    },
+    {
+      "question": "What insurance covers whale or marine research expedition boats?",
+      "answer": "Research expedition boats need specialized coverage for crew safety, scientific equipment, and remote location operations.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.75,
+      "tags": [
+        "research",
+        "expedition",
+        "specialized"
+      ]
+    },
+    {
+      "question": "Are boats used for underwater mining or extraction covered?",
+      "answer": "Industrial extraction vessels need specialized commercial marine insurance for industrial operations and environmental liability.",
+      "source_url": "https://superyachtinsurancebrokers.com/news/",
+      "domain": "superyachtinsurancebrokers.com",
+      "confidence": 0.7,
+      "tags": [
+        "industrial",
+        "extraction",
+        "commercial"
+      ]
+    },
+    {
+      "question": "Do boats designed for extreme weather (polar, tropical storms) need different coverage?",
+      "answer": "Yes. Extreme-environment vessels need specialized underwriting accounting for harsh conditions and operational challenges.",
+      "source_url": "https://marineins.com/blog/",
+      "domain": "marineins.com",
+      "confidence": 0.8,
+      "tags": [
+        "extreme-weather",
+        "polar",
+        "specialty"
+      ]
+    },
+    {
+      "question": "Are movie or TV production boats covered by standard yacht policies?",
+      "answer": "No. Production vessels need specialized film insurance covering crew, equipment, and liability during productions.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.75,
+      "tags": [
+        "production",
+        "film",
+        "specialized"
+      ]
+    },
+    {
+      "question": "What insurance covers boats with nuclear or advanced propulsion systems?",
+      "answer": "Nuclear or advanced propulsion requires custom insurance with specialized underwriting for unique safety and regulatory concerns.",
+      "source_url": "https://superyachtinsurancebrokers.com/news/",
+      "domain": "superyachtinsurancebrokers.com",
+      "confidence": 0.7,
+      "tags": [
+        "advanced-technology",
+        "nuclear",
+        "specialty"
+      ]
+    },
+    {
+      "question": "Do boats used for luxury floating hotels need special insurance?",
+      "answer": "Yes. Floating hotel operations need commercial liability, guest protection, and hospitality-specific endorsements.",
+      "source_url": "https://marineins.com/blog/",
+      "domain": "marineins.com",
+      "confidence": 0.8,
+      "tags": [
+        "hospitality",
+        "floating-hotels",
+        "commercial"
+      ]
+    }
+  ],
+  "dryRun": false
+}

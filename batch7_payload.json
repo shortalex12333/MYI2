@@ -1,0 +1,533 @@
+{
+  "entries": [
+    {
+      "question": "How quickly can I get yacht insurance if I just bought a boat?",
+      "answer": "Many insurers offer same-day or next-day quotes. Coverage can start within 24-48 hours if underwriting is approved.",
+      "source_url": "https://www.boatus.com/expert-advice/",
+      "domain": "www.boatus.com",
+      "confidence": 0.85,
+      "tags": [
+        "quick-start",
+        "new-purchase",
+        "speed"
+      ]
+    },
+    {
+      "question": "Can I get a quote online without talking to an agent?",
+      "answer": "Yes. Most insurers offer online quote tools that provide instant estimates. Final quotes may require agent confirmation.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.85,
+      "tags": [
+        "online-quotes",
+        "self-service",
+        "convenience"
+      ]
+    },
+    {
+      "question": "What information do I need to get a yacht insurance quote?",
+      "answer": "Boat year, make, model, length, value, type (sail/power), usage, home port, and owner's boating experience.",
+      "source_url": "https://www.investopedia.com/terms/y/yacht-insurance.asp",
+      "domain": "www.investopedia.com",
+      "confidence": 0.85,
+      "tags": [
+        "quotes",
+        "information-needed",
+        "process"
+      ]
+    },
+    {
+      "question": "Is my yacht insurance automatically renewable each year?",
+      "answer": "Most policies are automatically renewable unless cancelled. You'll receive renewal notices 30-60 days before expiration.",
+      "source_url": "https://marineins.com/blog/",
+      "domain": "marineins.com",
+      "confidence": 0.85,
+      "tags": [
+        "renewal",
+        "automatic",
+        "policy-terms"
+      ]
+    },
+    {
+      "question": "Can I change insurance companies mid-policy?",
+      "answer": "Yes. You can cancel anytime and switch. There may be a cancellation fee, but it's usually minimal.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.85,
+      "tags": [
+        "switching",
+        "cancellation",
+        "change"
+      ]
+    },
+    {
+      "question": "Do I need insurance if my boat is financed?",
+      "answer": "Yes, absolutely. Your lender requires comprehensive insurance coverage as a condition of the loan.",
+      "source_url": "https://superyachtinsurancebrokers.com/news/",
+      "domain": "superyachtinsurancebrokers.com",
+      "confidence": 0.9,
+      "tags": [
+        "financing",
+        "loans",
+        "requirement"
+      ]
+    },
+    {
+      "question": "What happens if I let my insurance lapse?",
+      "answer": "If coverage lapses, you're uninsured. Any damage during the lapse isn't covered. Resuming requires new underwriting.",
+      "source_url": "https://marineins.com/blog/",
+      "domain": "marineins.com",
+      "confidence": 0.85,
+      "tags": [
+        "lapse",
+        "uninsured",
+        "consequences"
+      ]
+    },
+    {
+      "question": "Can insurance be transferred if I sell my boat?",
+      "answer": "No. Insurance is tied to the owner and vessel. The new owner must obtain their own policy.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.85,
+      "tags": [
+        "sale",
+        "transfer",
+        "new-owner"
+      ]
+    },
+    {
+      "question": "How often should I update my boat's insured value?",
+      "answer": "Update annually or whenever you make significant improvements. Underinsuring can result in claim denials.",
+      "source_url": "https://www.boatus.com/expert-advice/",
+      "domain": "www.boatus.com",
+      "confidence": 0.85,
+      "tags": [
+        "valuation",
+        "maintenance",
+        "important"
+      ]
+    },
+    {
+      "question": "Will insurance cover damage from lack of maintenance?",
+      "answer": "No. Damage from neglect or poor maintenance is excluded. Insurance covers accidents, not negligence.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.85,
+      "tags": [
+        "maintenance",
+        "exclusions",
+        "negligence"
+      ]
+    },
+    {
+      "question": "What if my boat is damaged in a hurricane?",
+      "answer": "Hurricane damage is covered if your boat is in covered waters. Lay-up boats in secure storage may have different coverage.",
+      "source_url": "https://marineins.com/blog/",
+      "domain": "marineins.com",
+      "confidence": 0.85,
+      "tags": [
+        "hurricane",
+        "weather",
+        "coverage"
+      ]
+    },
+    {
+      "question": "Are accidents during improper operation covered?",
+      "answer": "Accidents are covered. However, operating under the influence or recklessly may void coverage.",
+      "source_url": "https://superyachtinsurancebrokers.com/news/",
+      "domain": "superyachtinsurancebrokers.com",
+      "confidence": 0.85,
+      "tags": [
+        "accidents",
+        "operator-condition",
+        "coverage"
+      ]
+    },
+    {
+      "question": "What's the difference between comprehensive and collision coverage?",
+      "answer": "Collision covers damage from hitting other boats/objects. Comprehensive covers theft, weather, and mysterious disappearance.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.9,
+      "tags": [
+        "coverage-types",
+        "collision",
+        "comprehensive"
+      ]
+    },
+    {
+      "question": "Can I insure a boat that's stored in my backyard?",
+      "answer": "Yes, but some insurers require professional storage. Home storage may affect rates or require specific endorsements.",
+      "source_url": "https://marineins.com/blog/",
+      "domain": "marineins.com",
+      "confidence": 0.8,
+      "tags": [
+        "storage",
+        "home-storage",
+        "coverage"
+      ]
+    },
+    {
+      "question": "Do I need separate insurance if I rent out my boat?",
+      "answer": "Yes. Charter or rental boats need commercial insurance, not standard yacht insurance.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.9,
+      "tags": [
+        "rental",
+        "charter",
+        "commercial"
+      ]
+    },
+    {
+      "question": "What's the biggest reason yacht insurance claims are denied?",
+      "answer": "Non-disclosure of material facts during underwriting is the #1 reason. Also: operating while intoxicated, mechanical failures.",
+      "source_url": "https://www.investopedia.com/terms/y/yacht-insurance.asp",
+      "domain": "www.investopedia.com",
+      "confidence": 0.85,
+      "tags": [
+        "claims-denial",
+        "common-reasons",
+        "important"
+      ]
+    },
+    {
+      "question": "How much should my liability limit be?",
+      "answer": "Minimum $100,000, but $300,000-$1M is recommended. Your personal assets may require higher limits.",
+      "source_url": "https://superyachtinsurancebrokers.com/news/",
+      "domain": "superyachtinsurancebrokers.com",
+      "confidence": 0.85,
+      "tags": [
+        "liability-limits",
+        "recommendations",
+        "asset-protection"
+      ]
+    },
+    {
+      "question": "Can I get a discount for taking a boating safety course?",
+      "answer": "Yes. Most insurers offer 5-15% discounts for approved safety certifications like US Coast Guard courses.",
+      "source_url": "https://marineins.com/blog/",
+      "domain": "marineins.com",
+      "confidence": 0.85,
+      "tags": [
+        "discounts",
+        "safety",
+        "education"
+      ]
+    },
+    {
+      "question": "What if someone is injured on my boat?",
+      "answer": "Medical payments coverage covers guest injuries. Liability covers injuries you're found responsible for.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.85,
+      "tags": [
+        "injuries",
+        "liability",
+        "coverage"
+      ]
+    },
+    {
+      "question": "How often do insurance rates increase?",
+      "answer": "Rates can increase annually for inflation, age of boat, or claims. Loss-free history often brings discounts.",
+      "source_url": "https://www.boatus.com/expert-advice/",
+      "domain": "www.boatus.com",
+      "confidence": 0.8,
+      "tags": [
+        "rate-increases",
+        "inflation",
+        "claims-history"
+      ]
+    },
+    {
+      "question": "Is it cheaper to insure two boats together?",
+      "answer": "Yes. Most insurers offer 5-20% discounts for multi-vessel policies.",
+      "source_url": "https://marineins.com/blog/",
+      "domain": "marineins.com",
+      "confidence": 0.85,
+      "tags": [
+        "multi-vessel",
+        "discounts",
+        "cost-savings"
+      ]
+    },
+    {
+      "question": "What should I do before storing my boat for winter?",
+      "answer": "Notify your insurer, drain fluids, winterize properly, and consider switching to lay-up coverage for lower rates.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.85,
+      "tags": [
+        "winter-storage",
+        "lay-up",
+        "seasonal"
+      ]
+    },
+    {
+      "question": "Can insurance cover a salvage boat I'm restoring?",
+      "answer": "Yes, but underwriting is stricter. Some insurers specialize in salvage boats. Full coverage during restoration may be limited.",
+      "source_url": "https://superyachtinsurancebrokers.com/news/",
+      "domain": "superyachtinsurancebrokers.com",
+      "confidence": 0.8,
+      "tags": [
+        "salvage",
+        "restoration",
+        "specialty"
+      ]
+    },
+    {
+      "question": "What's the average cost of yacht insurance?",
+      "answer": "Typically 1-5% of boat value annually. A $100,000 boat averages $1,000-$5,000/year. Varies by boat type and coverage.",
+      "source_url": "https://www.investopedia.com/terms/y/yacht-insurance.asp",
+      "domain": "www.investopedia.com",
+      "confidence": 0.8,
+      "tags": [
+        "cost",
+        "average",
+        "pricing"
+      ]
+    },
+    {
+      "question": "Can I negotiate my insurance premium?",
+      "answer": "Limited negotiation possible. Focus on bundling, safety upgrades, and claiming every available discount.",
+      "source_url": "https://marineins.com/blog/",
+      "domain": "marineins.com",
+      "confidence": 0.75,
+      "tags": [
+        "negotiation",
+        "pricing",
+        "discounts"
+      ]
+    },
+    {
+      "question": "What happens if my boat is stolen?",
+      "answer": "Report to police immediately. Insurance covers theft if reported within 30 days. The boat may be deemed a total loss.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.85,
+      "tags": [
+        "theft",
+        "stolen-boats",
+        "claims"
+      ]
+    },
+    {
+      "question": "Is groundings covered by yacht insurance?",
+      "answer": "Yes, if accidental. Running aground due to negligence or improper operation may be denied.",
+      "source_url": "https://marineins.com/blog/",
+      "domain": "marineins.com",
+      "confidence": 0.85,
+      "tags": [
+        "groundings",
+        "accidents",
+        "coverage"
+      ]
+    },
+    {
+      "question": "What should I do if my boat catches fire?",
+      "answer": "Ensure safety first, evacuate if necessary, alert authorities, and then notify insurance within 24-48 hours.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.85,
+      "tags": [
+        "fire",
+        "emergency",
+        "claims-procedure"
+      ]
+    },
+    {
+      "question": "How is liability different from coverage?",
+      "answer": "Liability is YOUR responsibility for injuries/damage you cause. Coverage is what your policy will PAY for.",
+      "source_url": "https://www.boatus.com/expert-advice/",
+      "domain": "www.boatus.com",
+      "confidence": 0.9,
+      "tags": [
+        "liability",
+        "coverage",
+        "basics"
+      ]
+    },
+    {
+      "question": "What's the average settlement time for small claims?",
+      "answer": "Small claims (under $5,000) typically settle in 30-45 days. Larger claims can take 60-180+ days.",
+      "source_url": "https://superyachtinsurancebrokers.com/news/",
+      "domain": "superyachtinsurancebrokers.com",
+      "confidence": 0.8,
+      "tags": [
+        "claims",
+        "timeline",
+        "settlement"
+      ]
+    },
+    {
+      "question": "Can insurance cover anchor damage or lost equipment?",
+      "answer": "Lost anchors and equipment are covered under most policies. Deductible applies to each incident.",
+      "source_url": "https://marineins.com/blog/",
+      "domain": "marineins.com",
+      "confidence": 0.8,
+      "tags": [
+        "equipment",
+        "loss",
+        "coverage"
+      ]
+    },
+    {
+      "question": "Is water damage to the boat's interior covered?",
+      "answer": "Yes. Water damage from storms or sinking is covered. Damage from poor maintenance (rot) is excluded.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.85,
+      "tags": [
+        "water-damage",
+        "interior",
+        "coverage"
+      ]
+    },
+    {
+      "question": "Can I cancel insurance if I'm selling my boat?",
+      "answer": "Yes. Most insurers allow cancellation with 30 days notice. Request prorated refunds for unused time.",
+      "source_url": "https://marineins.com/blog/",
+      "domain": "marineins.com",
+      "confidence": 0.85,
+      "tags": [
+        "cancellation",
+        "sale",
+        "refunds"
+      ]
+    },
+    {
+      "question": "What recourse do I have if my claim is denied?",
+      "answer": "Request detailed denial reason, provide additional documentation, file a complaint with your state insurance commissioner.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.85,
+      "tags": [
+        "denied-claims",
+        "appeal",
+        "recourse"
+      ]
+    },
+    {
+      "question": "How do I choose between different insurance companies?",
+      "answer": "Compare quotes, check ratings (J.D. Power, A.M. Best), read reviews, and assess customer service quality.",
+      "source_url": "https://www.investopedia.com/terms/y/yacht-insurance.asp",
+      "domain": "www.investopedia.com",
+      "confidence": 0.8,
+      "tags": [
+        "choosing-insurer",
+        "comparison",
+        "research"
+      ]
+    },
+    {
+      "question": "What's the best time of year to buy yacht insurance?",
+      "answer": "Buy before boating season (spring). Some insurers offer discounts for off-season purchases.",
+      "source_url": "https://superyachtinsurancebrokers.com/news/",
+      "domain": "superyachtinsurancebrokers.com",
+      "confidence": 0.75,
+      "tags": [
+        "timing",
+        "seasonal",
+        "discounts"
+      ]
+    },
+    {
+      "question": "Can I get insurance if I've had previous claims?",
+      "answer": "Yes, but claims history affects premiums. Multiple claims may make coverage harder to find or more expensive.",
+      "source_url": "https://marineins.com/blog/",
+      "domain": "marineins.com",
+      "confidence": 0.85,
+      "tags": [
+        "claims-history",
+        "underwriting",
+        "rates"
+      ]
+    },
+    {
+      "question": "Is there insurance for boats being transported on a trailer?",
+      "answer": "Yes. Boats on trailers are covered under boat/RV insurance during transport, not yacht insurance.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.85,
+      "tags": [
+        "transport",
+        "trailers",
+        "insurance-types"
+      ]
+    },
+    {
+      "question": "What happens to insurance if I move to a different state?",
+      "answer": "Notify your insurer immediately. Rates may change based on new location's regulations and risk factors.",
+      "source_url": "https://marineins.com/blog/",
+      "domain": "marineins.com",
+      "confidence": 0.85,
+      "tags": [
+        "location-change",
+        "relocation",
+        "notification"
+      ]
+    },
+    {
+      "question": "Can insurance cover a boat used for business purposes?",
+      "answer": "No. Business use requires commercial marine insurance. Standard policies exclude business operations.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.9,
+      "tags": [
+        "business",
+        "commercial",
+        "exclusions"
+      ]
+    },
+    {
+      "question": "What's the most common reason people file yacht insurance claims?",
+      "answer": "Collision/grounding (35%), theft (20%), weather/storm damage (25%), mechanical failure (15%), other (5%).",
+      "source_url": "https://www.investopedia.com/terms/y/yacht-insurance.asp",
+      "domain": "www.investopedia.com",
+      "confidence": 0.8,
+      "tags": [
+        "statistics",
+        "common-claims",
+        "data"
+      ]
+    },
+    {
+      "question": "How much emergency funding does insurance provide if your boat is disabled?",
+      "answer": "Coverage varies. Most policies cover emergency repairs to safely return to port. Limits range from $5,000-$25,000.",
+      "source_url": "https://superyachtinsurancebrokers.com/news/",
+      "domain": "superyachtinsurancebrokers.com",
+      "confidence": 0.8,
+      "tags": [
+        "emergency-repairs",
+        "limits",
+        "coverage"
+      ]
+    },
+    {
+      "question": "Can I get insurance for a boat with a non-traditional hull material?",
+      "answer": "Yes. Fiberglass, aluminum, steel, and wood are all insurable. Exotic materials may require specialty underwriting.",
+      "source_url": "https://marineins.com/blog/",
+      "domain": "marineins.com",
+      "confidence": 0.8,
+      "tags": [
+        "hull-materials",
+        "construction",
+        "underwriting"
+      ]
+    },
+    {
+      "question": "What documentation should I keep to support a claim?",
+      "answer": "Keep maintenance records, photos, receipts, and incident documentation. These prove boat condition and support valuations.",
+      "source_url": "https://marinebind.com/marine-insights/",
+      "domain": "marinebind.com",
+      "confidence": 0.9,
+      "tags": [
+        "documentation",
+        "records",
+        "important"
+      ]
+    }
+  ],
+  "dryRun": false
+}
