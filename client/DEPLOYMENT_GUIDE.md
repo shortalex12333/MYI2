@@ -17,7 +17,7 @@ This guide walks you through deploying the MyYachtsInsurance platform to Vercel 
 1. Go to https://vercel.com/dashboard
 2. Click on your **client** project
 3. Go to **Settings** → **Environment Variables**
-4. Add these variables (copy from below):
+4. Add these 3 variables (copy from below):
 
 ```
 NEXT_PUBLIC_SUPABASE_URL
@@ -28,10 +28,9 @@ Value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdl
 
 SUPABASE_SERVICE_ROLE_KEY
 Value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdlbGFpa3Z5ZHRsa3Rwc3J5dWNjIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2Mjk5MDk3NCwiZXhwIjoyMDc4NTY2OTc0fQ.Yni4c8vfWMaGTgDJ6WU9RELyo-SceREahZUFg8OLr8w
-
-SCRAPER_API_KEY
-Value: ca82a76c02a947dc1761448f2b5d99874eab6278f5a450e3feae7044885bf6cb
 ```
+
+**Note:** SCRAPER_API_KEY is NOT needed - local Python scrapers handle content collection without external API costs.
 
 5. **Important:** Set each variable to apply to:
    - ☑️ Production
@@ -55,9 +54,6 @@ vercel env add NEXT_PUBLIC_SUPABASE_ANON_KEY
 
 vercel env add SUPABASE_SERVICE_ROLE_KEY
 # Enter the service role key value
-
-vercel env add SCRAPER_API_KEY
-# Enter: ca82a76c02a947dc1761448f2b5d99874eab6278f5a450e3feae7044885bf6cb
 ```
 
 ## Step 2: Trigger Deployment
