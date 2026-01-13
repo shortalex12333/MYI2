@@ -2,9 +2,6 @@
   "buildCommand": "next build",
   "devCommand": "next dev",
   "installCommand": "npm install",
-  "env": {
-    "CRON_SECRET": "@cron_secret"
-  },
   "crons": [
     {
       "path": "/api/cron/daily-scrape",
