@@ -167,6 +167,12 @@ class YachtInsuranceOrchestrator:
                         self.log(f"   [Batch {batch_num}] ({i+1}-{min(i+batch_size, len(qa_entries))}) ✅ {imported} imported, {duplicates} duplicates")
                     else:
                         self.log(f"   [Batch {batch_num}] ❌ Status {response.status_code}")
+                        # Print error response for debugging
+                        try:
+                            error_detail = response.json()
+                            self.log(f"       Error: {error_detail.get('error', response.text[:100])}")
+                        except:
+                            self.log(f"       Response: {response.text[:100]}")
                         if "duplicate key" not in response.text:
                             self.stats["failed"] += len(batch)
 
