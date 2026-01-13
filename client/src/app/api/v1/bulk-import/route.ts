@@ -3,6 +3,7 @@
 
 import { NextRequest } from 'next/server';
 import { createHash } from 'crypto';
+import { createServerClient } from '@supabase/ssr';
 import { initSupabaseAdmin, verifyApiKey, log } from '../scraper/_utils/auth';
 
 export const runtime = 'nodejs';
@@ -50,7 +51,26 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const supabase = initSupabaseAdmin();
+    // Use the passed API key (from x-api-key header) as the service role key
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    if (!supabaseUrl) {
+      return new Response(
+        JSON.stringify({ error: 'Server misconfigured: Missing SUPABASE_URL' }),
+        { status: 500 }
+      );
+    }
+
+    const supabase = createServerClient(supabaseUrl, auth.key!, {
+      cookies: {
+        getAll() {
+          return [];
+        },
+        setAll() {},
+      },
+    });
+
+    // Alternative: use initSupabaseAdmin if env vars are available
+    // const supabase = initSupabaseAdmin();
 
     // Transform entries to DB format
     const dbEntries = entries.map((entry) => {

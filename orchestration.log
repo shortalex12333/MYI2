@@ -215,3 +215,121 @@
 [2026-01-13 08:15:26] [INFO]   ⏱️  Total execution time: 320.5 seconds
 [2026-01-13 08:15:26] [INFO]   📊 Entries/minute: 0
 [2026-01-13 08:15:26] [INFO] 
+[2026-01-13 08:19:20] [INFO] 
+
+[2026-01-13 08:19:20] [INFO] ╔==============================================================================╗
+[2026-01-13 08:19:20] [INFO] ║                                                                              ║
+[2026-01-13 08:19:20] [INFO] ║              YACHT INSURANCE KNOWLEDGE BASE - AUTOMATED PIPELINE             ║
+[2026-01-13 08:19:20] [INFO] ║                                                                              ║
+[2026-01-13 08:19:20] [INFO] ╚==============================================================================╝
+[2026-01-13 08:19:20] [INFO] ================================================================================
+[2026-01-13 08:19:20] [START] STEP 1: DEEP CRAWLING WEB SOURCES
+[2026-01-13 08:19:20] [INFO] ================================================================================
+[2026-01-13 08:24:32] [INFO] ✅ Deep crawling completed successfully
+[2026-01-13 08:24:32] [INFO]    Pages crawled: 219
+[2026-01-13 08:24:32] [INFO] 
+[2026-01-13 08:24:32] [INFO] ================================================================================
+[2026-01-13 08:24:32] [START] STEP 2: EXTRACTING Q&A PAIRS FROM CRAWL
+[2026-01-13 08:24:32] [INFO] ================================================================================
+[2026-01-13 08:24:32] [INFO]    Initializing deep crawl Q&A extractor...
+[2026-01-13 08:24:32] [INFO]    Processing crawl results...
+[2026-01-13 08:24:33] [INFO] ✅ Q&A extraction completed successfully
+[2026-01-13 08:24:33] [INFO]    Q&A pairs extracted: 1138
+[2026-01-13 08:24:33] [INFO]    Saved to all_domains_qa.json
+[2026-01-13 08:24:33] [INFO] 
+[2026-01-13 08:24:33] [INFO] ================================================================================
+[2026-01-13 08:24:33] [START] STEP 3: IMPORTING TO DATABASE
+[2026-01-13 08:24:33] [INFO] ================================================================================
+[2026-01-13 08:24:33] [INFO]    Total entries to import: 1138
+[2026-01-13 08:24:34] [INFO]    [Batch 1] ❌ Status 500
+[2026-01-13 08:24:34] [INFO]    [Batch 2] ❌ Status 500
+[2026-01-13 08:24:35] [INFO]    [Batch 3] ❌ Status 500
+[2026-01-13 08:24:35] [INFO]    [Batch 4] ❌ Status 500
+[2026-01-13 08:24:35] [INFO]    [Batch 5] ❌ Status 500
+[2026-01-13 08:24:35] [INFO]    [Batch 6] ❌ Status 500
+[2026-01-13 08:24:35] [INFO]    [Batch 7] ❌ Status 500
+[2026-01-13 08:24:35] [INFO]    [Batch 8] ❌ Status 500
+[2026-01-13 08:24:35] [INFO]    [Batch 9] ❌ Status 500
+[2026-01-13 08:24:35] [INFO]    [Batch 10] ❌ Status 500
+[2026-01-13 08:24:35] [INFO]    [Batch 11] ❌ Status 500
+[2026-01-13 08:24:36] [INFO]    [Batch 12] ❌ Status 500
+[2026-01-13 08:24:36] [INFO] 
+✅ Import completed: 0 new entries imported
+[2026-01-13 08:24:36] [INFO] 
+[2026-01-13 08:24:36] [INFO] ╔==============================================================================╗
+[2026-01-13 08:24:36] [INFO] ║                                                                              ║
+[2026-01-13 08:24:36] [INFO] ║                       ✅ PIPELINE COMPLETED SUCCESSFULLY                      ║
+[2026-01-13 08:24:36] [INFO] ║                                                                              ║
+[2026-01-13 08:24:36] [INFO] ╚==============================================================================╝
+[2026-01-13 08:24:36] [INFO] 
+[2026-01-13 08:24:36] [INFO] SUMMARY:
+[2026-01-13 08:24:36] [INFO]   ✅ Sources scraped: 219
+[2026-01-13 08:24:36] [INFO]   ✅ Q&A pairs extracted: 1138
+[2026-01-13 08:24:36] [INFO]   ✅ Entries imported: 0
+[2026-01-13 08:24:36] [INFO]   ⏱️  Total execution time: 315.7 seconds
+[2026-01-13 08:24:36] [INFO]   📊 Entries/minute: 0
+[2026-01-13 08:24:36] [INFO] 
+[2026-01-13 08:25:18] [INFO] 
+
+[2026-01-13 08:25:18] [INFO] ╔==============================================================================╗
+[2026-01-13 08:25:18] [INFO] ║                                                                              ║
+[2026-01-13 08:25:18] [INFO] ║              YACHT INSURANCE KNOWLEDGE BASE - AUTOMATED PIPELINE             ║
+[2026-01-13 08:25:18] [INFO] ║                                                                              ║
+[2026-01-13 08:25:18] [INFO] ╚==============================================================================╝
+[2026-01-13 08:25:18] [INFO] ================================================================================
+[2026-01-13 08:25:18] [START] STEP 1: DEEP CRAWLING WEB SOURCES
+[2026-01-13 08:25:18] [INFO] ================================================================================
+[2026-01-13 08:30:35] [INFO] ✅ Deep crawling completed successfully
+[2026-01-13 08:30:35] [INFO]    Pages crawled: 219
+[2026-01-13 08:30:35] [INFO] 
+[2026-01-13 08:30:35] [INFO] ================================================================================
+[2026-01-13 08:30:35] [START] STEP 2: EXTRACTING Q&A PAIRS FROM CRAWL
+[2026-01-13 08:30:35] [INFO] ================================================================================
+[2026-01-13 08:30:35] [INFO]    Initializing deep crawl Q&A extractor...
+[2026-01-13 08:30:35] [INFO]    Processing crawl results...
+[2026-01-13 08:30:36] [INFO] ✅ Q&A extraction completed successfully
+[2026-01-13 08:30:36] [INFO]    Q&A pairs extracted: 1071
+[2026-01-13 08:30:36] [INFO]    Saved to all_domains_qa.json
+[2026-01-13 08:30:36] [INFO] 
+[2026-01-13 08:30:36] [INFO] ================================================================================
+[2026-01-13 08:30:36] [START] STEP 3: IMPORTING TO DATABASE
+[2026-01-13 08:30:36] [INFO] ================================================================================
+[2026-01-13 08:30:36] [INFO]    Total entries to import: 1071
+[2026-01-13 08:30:37] [INFO]    [Batch 1] ❌ Status 401
+[2026-01-13 08:30:37] [INFO]        Error: Server misconfigured: No authentication keys available
+[2026-01-13 08:30:37] [INFO]    [Batch 2] ❌ Status 401
+[2026-01-13 08:30:37] [INFO]        Error: Server misconfigured: No authentication keys available
+[2026-01-13 08:30:37] [INFO]    [Batch 3] ❌ Status 401
+[2026-01-13 08:30:37] [INFO]        Error: Server misconfigured: No authentication keys available
+[2026-01-13 08:30:38] [INFO]    [Batch 4] ❌ Status 401
+[2026-01-13 08:30:38] [INFO]        Error: Server misconfigured: No authentication keys available
+[2026-01-13 08:30:38] [INFO]    [Batch 5] ❌ Status 401
+[2026-01-13 08:30:38] [INFO]        Error: Server misconfigured: No authentication keys available
+[2026-01-13 08:30:38] [INFO]    [Batch 6] ❌ Status 401
+[2026-01-13 08:30:38] [INFO]        Error: Server misconfigured: No authentication keys available
+[2026-01-13 08:30:38] [INFO]    [Batch 7] ❌ Status 401
+[2026-01-13 08:30:38] [INFO]        Error: Server misconfigured: No authentication keys available
+[2026-01-13 08:30:39] [INFO]    [Batch 8] ❌ Status 401
+[2026-01-13 08:30:39] [INFO]        Error: Server misconfigured: No authentication keys available
+[2026-01-13 08:30:39] [INFO]    [Batch 9] ❌ Status 401
+[2026-01-13 08:30:39] [INFO]        Error: Server misconfigured: No authentication keys available
+[2026-01-13 08:30:39] [INFO]    [Batch 10] ❌ Status 401
+[2026-01-13 08:30:39] [INFO]        Error: Server misconfigured: No authentication keys available
+[2026-01-13 08:30:39] [INFO]    [Batch 11] ❌ Status 401
+[2026-01-13 08:30:39] [INFO]        Error: Server misconfigured: No authentication keys available
+[2026-01-13 08:30:39] [INFO] 
+✅ Import completed: 0 new entries imported
+[2026-01-13 08:30:39] [INFO] 
+[2026-01-13 08:30:39] [INFO] ╔==============================================================================╗
+[2026-01-13 08:30:39] [INFO] ║                                                                              ║
+[2026-01-13 08:30:39] [INFO] ║                       ✅ PIPELINE COMPLETED SUCCESSFULLY                      ║
+[2026-01-13 08:30:39] [INFO] ║                                                                              ║
+[2026-01-13 08:30:39] [INFO] ╚==============================================================================╝
+[2026-01-13 08:30:39] [INFO] 
+[2026-01-13 08:30:39] [INFO] SUMMARY:
+[2026-01-13 08:30:39] [INFO]   ✅ Sources scraped: 219
+[2026-01-13 08:30:39] [INFO]   ✅ Q&A pairs extracted: 1071
+[2026-01-13 08:30:39] [INFO]   ✅ Entries imported: 0
+[2026-01-13 08:30:39] [INFO]   ⏱️  Total execution time: 321.0 seconds
+[2026-01-13 08:30:39] [INFO]   📊 Entries/minute: 0
+[2026-01-13 08:30:39] [INFO] 
