@@ -48,9 +48,12 @@ export default function NamedStormDeductiblePage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <Link href="/tools/named-storm-deductible-calculator">
-            <Button className="w-full sm:w-auto">Try the Calculator →</Button>
+          <Link href="/tools/named-storm-deductible-calculator?value=300000&deductible=5&standard=1000">
+            <Button className="w-full sm:w-auto">Calculate Your Deductible →</Button>
           </Link>
+          <p className="text-sm text-muted-foreground mt-2">
+            Pre-filled with $300k example • Customize for your yacht
+          </p>
         </CardContent>
       </Card>
 
@@ -74,7 +77,7 @@ export default function NamedStormDeductiblePage() {
               Key Point:
             </p>
             <p>
-              For a $300,000 yacht with a 5% named storm deductible, you pay the first <strong>$15,000</strong> of any hurricane damage before insurance kicks in. This can be significantly higher than your standard deductible.
+              For a $300,000 yacht with a 5% named storm deductible, you pay the first <strong>$15,000</strong> of any hurricane damage before insurance kicks in. This can be significantly higher than your standard deductible. <Link href="/tools/named-storm-deductible-calculator?value=300000&deductible=5" className="text-primary hover:underline font-semibold">Calculate yours →</Link>
             </p>
           </div>
         </section>
@@ -113,6 +116,11 @@ export default function NamedStormDeductiblePage() {
                 <span className="text-muted-foreground">Your Deductible Amount:</span>
                 <span className="font-bold text-lg">$25,000</span>
               </div>
+            </div>
+            <div className="mt-4">
+              <Link href="/tools/named-storm-deductible-calculator?value=500000&deductible=5&standard=2500" className="text-sm text-primary hover:underline">
+                Try this scenario in the calculator →
+              </Link>
             </div>
           </div>
 

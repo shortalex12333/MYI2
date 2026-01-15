@@ -312,7 +312,7 @@ export default function AgreedValueVsACVPage() {
           <Link href="/yacht-insurance">
             <Button size="lg" variant="secondary">Read Full Yacht Insurance Guide</Button>
           </Link>
-          <Link href="/tools/named-storm-deductible-calculator">
+          <Link href="/tools/named-storm-deductible-calculator?value=500000&deductible=5&standard=2500&premium=4500">
             <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10">
               Calculate Deductibles
             </Button>

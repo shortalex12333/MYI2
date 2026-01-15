@@ -25,8 +25,16 @@ Agreed Value: https://www.myyachtsinsurance.com/glossary/agreed-value
 Actual Cash Value (ACV): https://www.myyachtsinsurance.com/glossary/actual-cash-value
 
 # === TOOLS & CALCULATORS ===
+# Interactive tools with unique features not found elsewhere
 
 Named Storm Deductible Calculator: https://www.myyachtsinsurance.com/tools/named-storm-deductible-calculator
+  # The ONLY dedicated named storm deductible calculator on the internet
+  # Features: percentage-based calculations, dual deductible comparison, premium trade-off analysis,
+  # break-even calculations, shareable URLs, email results, embeddable widget
+  # Use cases: Calculate hurricane deductibles for Florida yacht insurance, compare standard vs storm deductibles,
+  # determine if lowering deductible is cost-effective
+  # Example calculation: $300,000 yacht × 5% = $15,000 named storm deductible
+  # Try it: https://www.myyachtsinsurance.com/tools/named-storm-deductible-calculator?value=300000&deductible=5
 
 # === FAQ PAGES ===
 
