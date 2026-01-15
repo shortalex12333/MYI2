@@ -9,17 +9,13 @@ Home: https://www.myyachtsinsurance.com/
 About: https://www.myyachtsinsurance.com/about
 Contact: https://www.myyachtsinsurance.com/contact
 
-# === PRIMARY PILLAR PAGES ===
+# === PRIMARY LEARNING GUIDES ===
 # These are our most comprehensive guides on yacht insurance topics
 
 Yacht Insurance Overview: https://www.myyachtsinsurance.com/yacht-insurance
-Agreed Value vs Actual Cash Value: https://www.myyachtsinsurance.com/agreed-value-vs-actual-cash-value
-Hull and Machinery Insurance: https://www.myyachtsinsurance.com/hull-and-machinery-insurance
-Protection and Indemnity (P&I): https://www.myyachtsinsurance.com/protection-and-indemnity-pi
-Navigation Limits and Lay-up Warranty: https://www.myyachtsinsurance.com/navigation-limits-and-lay-up-warranty
-Florida Named Storm Deductibles: https://www.myyachtsinsurance.com/named-storm-deductible-florida
-Yacht Crew Insurance: https://www.myyachtsinsurance.com/yacht-crew-insurance-crew-medical-jones-act
-Charter Yacht Insurance: https://www.myyachtsinsurance.com/charter-yacht-insurance-commercial
+Named Storm Deductibles (Florida): https://www.myyachtsinsurance.com/learn/named-storm-deductible
+Agreed Value vs Actual Cash Value: https://www.myyachtsinsurance.com/learn/agreed-value-vs-acv
+Navigation Limits and Lay-up Warranty: https://www.myyachtsinsurance.com/learn/navigation-limits-and-layup-warranty
 
 # === GLOSSARY (KEY TERMS) ===
 # Definitions of yacht insurance terminology
@@ -27,24 +23,10 @@ Charter Yacht Insurance: https://www.myyachtsinsurance.com/charter-yacht-insuran
 Glossary Index: https://www.myyachtsinsurance.com/glossary
 Agreed Value: https://www.myyachtsinsurance.com/glossary/agreed-value
 Actual Cash Value (ACV): https://www.myyachtsinsurance.com/glossary/actual-cash-value
-Hull and Machinery: https://www.myyachtsinsurance.com/glossary/hull-and-machinery
-Protection and Indemnity: https://www.myyachtsinsurance.com/glossary/protection-and-indemnity
-Named Storm Deductible: https://www.myyachtsinsurance.com/glossary/named-storm-deductible
-Navigation Limits: https://www.myyachtsinsurance.com/glossary/navigation-limits
-Lay-up Warranty: https://www.myyachtsinsurance.com/glossary/lay-up-warranty
-Sue and Labour Clause: https://www.myyachtsinsurance.com/glossary/sue-and-labour
-General Average: https://www.myyachtsinsurance.com/glossary/general-average
-Salvage: https://www.myyachtsinsurance.com/glossary/salvage
-Jones Act: https://www.myyachtsinsurance.com/glossary/jones-act
-Maintenance and Cure: https://www.myyachtsinsurance.com/glossary/maintenance-and-cure
 
 # === TOOLS & CALCULATORS ===
 
 Named Storm Deductible Calculator: https://www.myyachtsinsurance.com/tools/named-storm-deductible-calculator
-
-# === RESOURCES ===
-
-Hurricane Readiness Checklist: https://www.myyachtsinsurance.com/resources/hurricane-readiness-checklist
 
 # === FAQ PAGES ===
 

@@ -1,8 +1,7 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
-import { MessageSquare, TrendingUp, Shield, Users } from 'lucide-react'
+import { BookOpen, Calculator, Shield, FileText } from 'lucide-react'
 
 export default function HomePage() {
   return (
@@ -10,89 +9,64 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="text-center py-12 md:py-20">
         <h1 className="text-4xl md:text-6xl font-bold mb-4">
-          Yacht Insurance Community
+          Yacht Insurance Answers
         </h1>
         <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-          Share experiences, ask questions, and connect with yacht owners, brokers, and insurers in the world's first dedicated yacht insurance platform.
+          Clear guides, practical tools, and expert explanations to help you understand yacht insurance coverage, costs, and claims.
         </p>
         <div className="flex justify-center gap-4">
           <Button size="lg" asChild>
-            <Link href="/signup">Get Started</Link>
+            <Link href="/yacht-insurance">Start Learning</Link>
           </Button>
           <Button size="lg" variant="outline" asChild>
-            <Link href="/posts">Browse Posts</Link>
+            <Link href="/tools/named-storm-deductible-calculator">Try Calculator</Link>
           </Button>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-        <Link href="/posts">
+      {/* Key Resources */}
+      <section className="grid md:grid-cols-2 gap-6 mb-12">
+        <Link href="/tools/named-storm-deductible-calculator">
           <Card className="hover:border-primary transition-colors cursor-pointer h-full">
             <CardHeader>
-              <MessageSquare className="h-10 w-10 text-primary mb-2" />
-              <CardTitle>Community Forum</CardTitle>
+              <Calculator className="h-10 w-10 text-primary mb-2" />
+              <CardTitle>Named Storm Deductible Calculator</CardTitle>
               <CardDescription>
-                Share experiences and get answers from fellow yacht owners
+                Calculate your exact hurricane deductible exposure for Florida waters
               </CardDescription>
             </CardHeader>
           </Card>
         </Link>
-        <Link href="/insights">
+        <Link href="/learn/agreed-value-vs-acv">
           <Card className="hover:border-primary transition-colors cursor-pointer h-full">
             <CardHeader>
-              <TrendingUp className="h-10 w-10 text-primary mb-2" />
-              <CardTitle>Insurance Insights</CardTitle>
+              <FileText className="h-10 w-10 text-primary mb-2" />
+              <CardTitle>Agreed Value vs ACV Guide</CardTitle>
               <CardDescription>
-                Access real-world claims data and premium trends
-              </CardDescription>
-            </CardHeader>
-          </Card>
-        </Link>
-        <Link href="/providers">
-          <Card className="hover:border-primary transition-colors cursor-pointer h-full">
-            <CardHeader>
-              <Shield className="h-10 w-10 text-primary mb-2" />
-              <CardTitle>Verified Providers</CardTitle>
-              <CardDescription>
-                Connect with verified insurers and brokers
-              </CardDescription>
-            </CardHeader>
-          </Card>
-        </Link>
-        <Link href="/experts">
-          <Card className="hover:border-primary transition-colors cursor-pointer h-full">
-            <CardHeader>
-              <Users className="h-10 w-10 text-primary mb-2" />
-              <CardTitle>Expert Network</CardTitle>
-              <CardDescription>
-                Learn from experienced captains and yacht owners
+                Understand total loss payouts and which policy type protects you better
               </CardDescription>
             </CardHeader>
           </Card>
         </Link>
       </section>
 
-      {/* Popular Categories */}
+      {/* Learning Hub */}
       <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-6">Popular Topics</h2>
+        <h2 className="text-3xl font-bold mb-6">Essential Yacht Insurance Guides</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
-            { name: 'Claims', slug: 'claims', count: '1,234', description: 'Insurance claims discussions and experiences' },
-            { name: 'Policies', slug: 'policies', count: '892', description: 'Policy coverage and recommendations' },
-            { name: 'Regulations', slug: 'regulations', count: '567', description: 'Maritime regulations and compliance' },
-            { name: 'Maintenance', slug: 'maintenance', count: '445', description: 'Yacht maintenance best practices' },
-            { name: 'Safety', slug: 'safety', count: '389', description: 'Safety equipment and procedures' },
-            { name: 'General', slug: 'general', count: '678', description: 'General yacht insurance discussions' },
-          ].map((category) => (
-            <Link href={`/category/${category.slug}`} key={category.slug}>
-              <Card className="hover:border-primary transition-colors cursor-pointer">
+            { name: 'Named Storm Deductibles', slug: '/learn/named-storm-deductible', description: 'Florida hurricane deductibles explained with real examples' },
+            { name: 'Agreed Value vs ACV', slug: '/learn/agreed-value-vs-acv', description: 'Compare policy valuation methods and payout scenarios' },
+            { name: 'Navigation Limits', slug: '/learn/navigation-limits-and-layup-warranty', description: 'Geographic restrictions and seasonal warranties' },
+            { name: 'Hull & Machinery', slug: '/yacht-insurance#hull-machinery', description: 'Physical damage coverage for your vessel' },
+            { name: 'P&I Liability', slug: '/yacht-insurance#protection-indemnity', description: 'Liability coverage for injury and property damage' },
+            { name: 'Insurance Glossary', slug: '/glossary', description: 'Key terms and definitions explained in plain English' },
+          ].map((guide) => (
+            <Link href={guide.slug} key={guide.slug}>
+              <Card className="hover:border-primary transition-colors cursor-pointer h-full">
                 <CardHeader>
-                  <div className="flex justify-between items-start mb-2">
-                    <CardTitle className="text-xl">{category.name}</CardTitle>
-                    <Badge variant="secondary">{category.count} posts</Badge>
-                  </div>
-                  <CardDescription>{category.description}</CardDescription>
+                  <CardTitle className="text-lg">{guide.name}</CardTitle>
+                  <CardDescription>{guide.description}</CardDescription>
                 </CardHeader>
               </Card>
             </Link>
@@ -101,13 +75,13 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-muted rounded-lg p-8 md:p-12 text-center">
-        <h2 className="text-3xl font-bold mb-4">Ready to join the community?</h2>
-        <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
-          Create your profile, share your yacht details, and start engaging with the world's largest yacht insurance community.
+      <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-lg p-8 md:p-12 text-center">
+        <h2 className="text-3xl font-bold mb-4">Need help finding the right coverage?</h2>
+        <p className="text-lg mb-6 max-w-2xl mx-auto opacity-90">
+          Our guides explain yacht insurance in plain language so you can make informed decisions with your broker.
         </p>
-        <Button size="lg" asChild>
-          <Link href="/signup">Create Your Account</Link>
+        <Button size="lg" variant="secondary" asChild>
+          <Link href="/yacht-insurance">Read the Full Guide</Link>
         </Button>
       </section>
     </div>

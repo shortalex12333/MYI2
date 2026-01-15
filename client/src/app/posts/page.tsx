@@ -6,6 +6,13 @@ import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { TrendingUp, Users, MessageCircle, Clock } from 'lucide-react'
 
+export const metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
+}
+
 export default async function PostsPage() {
   const supabase = await createClient()
 
@@ -99,24 +106,24 @@ export default async function PostsPage() {
         {/* Sidebar */}
         <aside className="hidden lg:block w-80 shrink-0">
           <div className="sticky top-20 space-y-4">
-            {/* Community Stats */}
+            {/* Helpful Resources */}
             <Card>
               <CardHeader>
-                <CardTitle className="text-sm">Community Stats</CardTitle>
+                <CardTitle className="text-sm">Learning Resources</CardTitle>
               </CardHeader>
               <CardContent className="space-y-2 text-sm">
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Total Questions</span>
-                  <span className="font-semibold">{posts.length}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Active Users</span>
-                  <span className="font-semibold">234</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Total Answers</span>
-                  <span className="font-semibold">1.2k</span>
-                </div>
+                <Link href="/yacht-insurance" className="block text-primary hover:underline">
+                  Yacht Insurance Guide
+                </Link>
+                <Link href="/learn/named-storm-deductible" className="block text-primary hover:underline">
+                  Named Storm Deductibles
+                </Link>
+                <Link href="/tools/named-storm-deductible-calculator" className="block text-primary hover:underline">
+                  Deductible Calculator
+                </Link>
+                <Link href="/glossary" className="block text-primary hover:underline">
+                  Insurance Glossary
+                </Link>
               </CardContent>
             </Card>
 
