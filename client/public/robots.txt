@@ -1,0 +1,96 @@
+# Robots.txt for MyYachtsInsurance.com
+# Last updated: January 15, 2026
+# Purpose: Allow search engines and AI crawlers while protecting admin areas
+
+# USER-AGENT: *
+# Default rules for all crawlers
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/v1/scraper/
+Disallow: /api/v1/bulk-import
+Disallow: /_next/static/
+Crawl-delay: 1
+
+# OpenAI GPTBot - Training crawlers
+# Decision: BLOCK training bot, but allow ChatGPT Search (OAI-SearchBot)
+# Rationale: We want our content cited in ChatGPT Search results,
+# but we reserve the right to opt out of LLM training data
+User-agent: GPTBot
+Disallow: /
+
+# OAI-SearchBot - ChatGPT Search
+# Decision: ALLOW - we want to appear in ChatGPT Search results
+# Our content is optimized for AI citation via clean structure + llms.txt
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /admin/
+Disallow: /api/v1/scraper/
+Crawl-delay: 2
+
+# Google bots - Full access
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+Crawl-delay: 1
+
+User-agent: Googlebot-Image
+Allow: /
+
+# Bing bot
+User-agent: Bingbot
+Allow: /
+Disallow: /admin/
+Crawl-delay: 1
+
+# Claude (Anthropic) bot
+User-agent: anthropic-ai
+Allow: /
+Disallow: /admin/
+Crawl-delay: 2
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+Disallow: /admin/
+Crawl-delay: 2
+
+# Common AI crawlers
+User-agent: CCBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Bad bots and scrapers
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Sitemap location
+Sitemap: https://www.myyachtsinsurance.com/sitemap.xml
+
+# DOCUMENTATION FOR FUTURE EDITORS:
+# =================================
+#
+# CRITICAL DECISION LOG:
+# - GPTBot: BLOCKED - We opt out of LLM training datasets
+# - OAI-SearchBot: ALLOWED - We want ChatGPT Search citations
+# - anthropic-ai: ALLOWED - We want Claude citations
+# - PerplexityBot: ALLOWED - We want Perplexity citations
+#
+# If you change these rules, update this comment with:
+# - Date of change
+# - Reason for change
+# - Who approved it
+#
+# DO NOT accidentally block OAI-SearchBot if we want ChatGPT visibility.
+# DO NOT accidentally allow GPTBot if we want to maintain training opt-out.
