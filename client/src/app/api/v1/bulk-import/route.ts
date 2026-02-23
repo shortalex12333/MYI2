@@ -13,11 +13,24 @@ interface ImportPayload {
     question: string;
     answer: string;
     source_url: string;
-    domain: string;
+    source_type?: string;
     confidence: number;
     tags: string[];
+    entities?: Record<string, unknown>;
   }>;
   dryRun?: boolean;
+}
+
+/**
+ * Extract domain (hostname) from a URL
+ */
+function extractDomain(url: string): string | null {
+  try {
+    const parsed = new URL(url);
+    return parsed.hostname;
+  } catch {
+    return null;
+  }
 }
 
 export async function POST(request: NextRequest) {
@@ -71,23 +84,30 @@ export async function POST(request: NextRequest) {
     const dbEntries = entries.map((entry) => {
       const qHash = createHash('sha256').update(entry.question).digest('hex');
       const aHash = createHash('sha256').update(entry.answer).digest('hex');
+      const domain = extractDomain(entry.source_url);
       return {
         question: entry.question,
         answer: entry.answer,
         question_hash: qHash,
         answer_hash: aHash,
         source_url: entry.source_url,
+        source_type: entry.source_type || 'guide',
+        domain,
         confidence: entry.confidence,
         tags: entry.tags,
+        entities: entry.entities || null,
         active: entry.confidence >= 0.7,
         published_at: new Date().toISOString(),
       };
     });
 
-    // Bulk insert
+    // Bulk upsert - update on question_hash conflict
     const { data, error } = await supabase
       .from('qa_entries')
-      .insert(dbEntries)
+      .upsert(dbEntries, {
+        onConflict: 'question_hash',
+        ignoreDuplicates: false,
+      })
       .select('id');
 
     if (error) {

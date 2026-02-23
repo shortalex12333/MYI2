@@ -1,6 +1,7 @@
 import Link from 'next/link'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { BookOpen } from 'lucide-react'
+import { createClient } from '@/lib/supabase/server'
 
 export const metadata = {
   title: 'Yacht Insurance Glossary - Key Terms & Definitions',
@@ -12,47 +13,35 @@ export const metadata = {
   },
 }
 
-export default function GlossaryPage() {
-  const terms = [
-    {
-      term: 'Agreed Value',
-      slug: 'agreed-value',
-      definition: 'Policy valuation method where you and insurer agree on your yacht\'s value upfront',
-      category: 'Policy Structure'
-    },
-    {
-      term: 'Actual Cash Value (ACV)',
-      slug: 'actual-cash-value',
-      definition: 'Policy that pays depreciated market value at time of loss',
-      category: 'Policy Structure'
-    },
-    {
-      term: 'Hull and Machinery',
-      slug: 'hull-and-machinery',
-      definition: 'Physical damage coverage for your yacht\'s structure and equipment',
-      category: 'Coverage Types'
-    },
-    {
-      term: 'Protection and Indemnity (P&I)',
-      slug: 'protection-and-indemnity',
-      definition: 'Liability coverage for injury to others and property damage',
-      category: 'Coverage Types'
-    },
-    {
-      term: 'Navigation Limits',
-      slug: 'navigation-limits',
-      definition: 'Geographic boundaries where your policy provides coverage',
-      category: 'Policy Terms'
-    },
-    {
-      term: 'Lay-Up Warranty',
-      slug: 'lay-up-warranty',
-      definition: 'Requirement to haul out during specific months (winter or hurricane season)',
-      category: 'Policy Terms'
-    },
-  ]
+interface GlossaryTerm {
+  id: string
+  term: string
+  slug: string
+  definition: string
+  category: string
+}
 
-  const categories = [...new Set(terms.map(t => t.category))]
+async function getGlossaryTerms(): Promise<GlossaryTerm[]> {
+  const supabase = await createClient()
+
+  const { data, error } = await supabase
+    .from('glossary_terms')
+    .select('id, term, slug, definition, category')
+    .eq('active', true)
+    .order('display_order', { ascending: true })
+    .order('term', { ascending: true })
+
+  if (error || !data) {
+    console.error('Error fetching glossary terms:', error)
+    return []
+  }
+
+  return data as GlossaryTerm[]
+}
+
+export default async function GlossaryPage() {
+  const terms = await getGlossaryTerms()
+  const categories = [...new Set(terms.map(t => t.category))].sort()
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-6xl">

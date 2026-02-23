@@ -156,6 +156,19 @@ export interface Notification {
   created_at: string
 }
 
+export interface ContentPage {
+  id: string
+  slug: string
+  title: string
+  subtitle?: string
+  body: string
+  meta_title?: string
+  meta_description?: string
+  related_pages?: string[]
+  created_at: string
+  updated_at: string
+}
+
 export interface Database {
   public: {
     Tables: {
@@ -213,6 +226,11 @@ export interface Database {
         Row: Notification
         Insert: Omit<Notification, 'id' | 'created_at'>
         Update: Partial<Omit<Notification, 'id' | 'created_at'>>
+      }
+      content_pages: {
+        Row: ContentPage
+        Insert: Omit<ContentPage, 'id' | 'created_at' | 'updated_at'>
+        Update: Partial<Omit<ContentPage, 'id' | 'created_at'>>
       }
     }
   }
