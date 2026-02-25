@@ -43,6 +43,29 @@ const config: Config = {
           foreground: 'hsl(var(--card-foreground))',
         },
       },
+      typography: (theme: any) => ({
+        DEFAULT: {
+          css: {
+            color: 'hsl(var(--foreground))',
+            a: { color: 'hsl(var(--foreground))', textDecorationColor: 'hsl(var(--ring))' },
+            h1: { color: 'hsl(var(--foreground))' },
+            h2: { color: 'hsl(var(--foreground))' },
+            h3: { color: 'hsl(var(--foreground))' },
+            h4: { color: 'hsl(var(--foreground))' },
+            strong: { color: 'hsl(var(--foreground))' },
+            code: { color: 'hsl(var(--foreground))' },
+            blockquote: { color: 'hsl(var(--foreground))' },
+            hr: { borderColor: 'hsl(var(--border))' },
+          },
+        },
+        invert: {
+          css: {
+            color: 'hsl(var(--foreground))',
+            a: { color: 'hsl(var(--foreground))', textDecorationColor: 'hsl(var(--ring))' },
+            hr: { borderColor: 'hsl(var(--border))' },
+          },
+        },
+      }),
       borderRadius: {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',

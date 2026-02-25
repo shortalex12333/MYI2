@@ -69,6 +69,120 @@
   }
 }
 
+@layer utilities {
+  /* Neutralize any Tailwind palette color utilities to tokenized grayscale */
+  /* Text colors → foreground or muted-foreground */
+  [class*="text-red-"],
+  [class*="text-green-"],
+  [class*="text-blue-"],
+  [class*="text-yellow-"],
+  [class*="text-orange-"],
+  [class*="text-amber-"],
+  [class*="text-lime-"],
+  [class*="text-emerald-"],
+  [class*="text-teal-"],
+  [class*="text-cyan-"],
+  [class*="text-sky-"],
+  [class*="text-indigo-"],
+  [class*="text-violet-"],
+  [class*="text-purple-"],
+  [class*="text-fuchsia-"],
+  [class*="text-pink-"],
+  [class*="text-rose-"],
+  [class*="text-gray-"],
+  [class*="text-slate-"],
+  [class*="text-zinc-"],
+  [class*="text-neutral-"],
+  [class*="text-stone-"],
+  [class*="text-black"],
+  [class*="text-white"] {
+    color: hsl(var(--foreground)) !important;
+  }
+
+  /* Backgrounds → muted/accent surfaces */
+  [class*="bg-red-"],
+  [class*="bg-green-"],
+  [class*="bg-blue-"],
+  [class*="bg-yellow-"],
+  [class*="bg-orange-"],
+  [class*="bg-amber-"],
+  [class*="bg-lime-"],
+  [class*="bg-emerald-"],
+  [class*="bg-teal-"],
+  [class*="bg-cyan-"],
+  [class*="bg-sky-"],
+  [class*="bg-indigo-"],
+  [class*="bg-violet-"],
+  [class*="bg-purple-"],
+  [class*="bg-fuchsia-"],
+  [class*="bg-pink-"],
+  [class*="bg-rose-"],
+  [class*="bg-gray-"],
+  [class*="bg-slate-"],
+  [class*="bg-zinc-"],
+  [class*="bg-neutral-"],
+  [class*="bg-stone-"] {
+    background-color: hsl(var(--muted)) !important;
+  }
+
+  /* Borders → border token */
+  [class*="border-red-"],
+  [class*="border-green-"],
+  [class*="border-blue-"],
+  [class*="border-yellow-"],
+  [class*="border-orange-"],
+  [class*="border-amber-"],
+  [class*="border-lime-"],
+  [class*="border-emerald-"],
+  [class*="border-teal-"],
+  [class*="border-cyan-"],
+  [class*="border-sky-"],
+  [class*="border-indigo-"],
+  [class*="border-violet-"],
+  [class*="border-purple-"],
+  [class*="border-fuchsia-"],
+  [class*="border-pink-"],
+  [class*="border-rose-"],
+  [class*="border-gray-"],
+  [class*="border-slate-"],
+  [class*="border-zinc-"],
+  [class*="border-neutral-"],
+  [class*="border-stone-"] {
+    border-color: hsl(var(--border)) !important;
+  }
+
+  /* Rings → ring token */
+  [class*="ring-red-"],
+  [class*="ring-green-"],
+  [class*="ring-blue-"],
+  [class*="ring-yellow-"],
+  [class*="ring-orange-"],
+  [class*="ring-amber-"],
+  [class*="ring-lime-"],
+  [class*="ring-emerald-"],
+  [class*="ring-teal-"],
+  [class*="ring-cyan-"],
+  [class*="ring-sky-"],
+  [class*="ring-indigo-"],
+  [class*="ring-violet-"],
+  [class*="ring-purple-"],
+  [class*="ring-fuchsia-"],
+  [class*="ring-pink-"],
+  [class*="ring-rose-"] {
+    --tw-ring-color: hsl(var(--ring)) !important;
+  }
+
+  /* Gradients → neutralized to accent surface */
+  [class*="from-"],
+  [class*="via-"],
+  [class*="to-"] {
+    --tw-gradient-from: hsl(var(--accent)) !important;
+    --tw-gradient-to: hsl(var(--accent)) !important;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+    background-image: none !important;
+    background-color: hsl(var(--accent)) !important;
+  }
+}
 @layer base {
   * {
     @apply border-border;
