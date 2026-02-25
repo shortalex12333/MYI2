@@ -37,6 +37,11 @@ export function Header() {
                 Categories
               </Button>
             </Link>
+            <Link href="/papers">
+              <Button variant="ghost" size="sm">
+                Papers
+              </Button>
+            </Link>
             <Link href="/companies">
               <Button variant="ghost" size="sm">
                 Companies

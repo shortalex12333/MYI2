@@ -247,6 +247,39 @@ function formatReferencesSection(refs: RegistryRef[]): string {
   return lines.join('\n');
 }
 
+// ─── EXTRACT INLINE CITATIONS ───────────────────────────────
+
+function extractInlineCitations(body: string): string[] {
+  // Match [REF-ID] patterns - uppercase letters, numbers, hyphens
+  const matches = body.match(/\[([A-Z][A-Z0-9-]+)\]/g) || [];
+  const refIds = matches.map(m => m.slice(1, -1)); // Remove brackets
+  return [...new Set(refIds)]; // Dedupe
+}
+
+// ─── LOOKUP CITED REFS ──────────────────────────────────────
+
+async function lookupCitedRefs(refIds: string[]): Promise<RegistryRef[]> {
+  if (refIds.length === 0) return [];
+
+  const { data: refs, error } = await db
+    .from('reference_registry')
+    .select('ref_id, short_title, url, citation_category, cluster_tags')
+    .in('ref_id', refIds)
+    .not('short_title', 'is', null)
+    .not('url', 'is', null);
+
+  if (error || !refs) {
+    console.warn('Failed to lookup refs:', error?.message);
+    return [];
+  }
+
+  // Sort to match order of appearance in body
+  const refOrder = new Map(refIds.map((id, idx) => [id, idx]));
+  refs.sort((a, b) => (refOrder.get(a.ref_id) ?? 999) - (refOrder.get(b.ref_id) ?? 999));
+
+  return refs;
+}
+
 // ─── MAIN INJECTOR ──────────────────────────────────────────
 
 export interface InjectionResult {
@@ -255,19 +288,29 @@ export interface InjectionResult {
   signals: ExtractedSignals;
   refs_matched: number;
   refs: RegistryRef[];
+  cited_ids: string[];
+  missing_ids: string[];
 }
 
 export async function injectReferences(body: string): Promise<InjectionResult> {
-  // 1. Extract signals from body
-  const signals = extractSignals(body);
+  // 1. Extract actual [REF-ID] citations from body
+  const citedIds = extractInlineCitations(body);
 
-  // 2. Match to registry
-  const refs = await matchReferences(signals);
+  // 2. Lookup those specific refs in registry
+  const refs = await lookupCitedRefs(citedIds);
 
-  // 3. Format references section
+  // 3. Identify any cited IDs not found in registry
+  const foundIds = new Set(refs.map(r => r.ref_id));
+  const missingIds = citedIds.filter(id => !foundIds.has(id));
+
+  if (missingIds.length > 0) {
+    console.warn(`  ⚠ Missing from registry: ${missingIds.join(', ')}`);
+  }
+
+  // 4. Format references section from actual citations
   const refsSection = formatReferencesSection(refs);
 
-  // 4. Remove any existing empty References section and append new one
+  // 5. Remove any existing References section and append new one
   let cleanBody = body.replace(/## References\s*\n*[\s\S]*?(?=\n## |$)/, '').trim();
 
   // If there's a Disclosure section, insert refs before it
@@ -281,12 +324,17 @@ export async function injectReferences(body: string): Promise<InjectionResult> {
     cleanBody = `${cleanBody}\n\n---\n\n${refsSection}`;
   }
 
+  // Also extract signals for diagnostics (but don't use for refs)
+  const signals = extractSignals(body);
+
   return {
     original_body: body,
     injected_body: cleanBody,
     signals,
     refs_matched: refs.length,
     refs,
+    cited_ids: citedIds,
+    missing_ids: missingIds,
   };
 }
 
