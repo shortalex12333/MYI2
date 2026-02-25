@@ -82,20 +82,28 @@ const SECTIONS: SectionDef[] = [
     header: '**TL;DR**',
     minWords: 80,
     maxWords: 120,
-    prompt: (ctx) => `Write a TL;DR section for an intelligence brief about: "${ctx.title}"
+    prompt: (ctx) => `Write a TL;DR for: "${ctx.title}"
 
-Primary query: ${ctx.primary_query}
-Target persona: ${ctx.persona}
+Query: ${ctx.primary_query}
+Persona: ${ctx.persona}
 ${buildCitationInstructions(ctx.availableRefs)}
-Requirements:
-- 80-120 words exactly
-- 4-5 declarative sentences
-- Cite at least 2 frameworks/regulations from the available references using [ref_id] format
-- Include 1 specific numerical threshold or timeframe
-- No hedging or filler phrases
-- Directly answer the primary query
 
-Output ONLY the TL;DR content, no headers. Do not output any thinking or reasoning.`,
+MANDATORY STRUCTURE (all 3 must appear):
+1. Policy type statement - name the specific coverage type (hull & machinery, P&I, yacht policy, etc.)
+2. Exclusion mechanism - name specific clause types that limit coverage (e.g., "contractors' exclusion", "faulty workmanship clause", "care custody and control")
+3. Trigger condition - what operational event activates or voids coverage
+
+BAD example: "Coverage depends on policy wording."
+GOOD example: "Interior water damage during refit is typically covered under hull and machinery policies if the loss is accidental and not excluded by the contractors' liability carve-out, faulty workmanship clause, or failure to comply with refit notification conditions under [IHC-2003]."
+
+Requirements:
+- 80-120 words
+- State a conditional boundary, not a vague "it depends"
+- Cite 2-3 references using [ref_id] format
+- No hedging phrases like "may", "could", "might"
+- Direct answer to the query
+
+Output ONLY the TL;DR content. No headers. No thinking.`,
   },
   {
     name: 'trigger_conditions',
@@ -104,20 +112,31 @@ Output ONLY the TL;DR content, no headers. Do not output any thinking or reasoni
     maxWords: 250,
     prompt: (ctx) => `Write a Trigger Conditions table for: "${ctx.title}"
 
-Context from TL;DR:
+Context:
 ${ctx.previousSections}
 ${buildCitationInstructions(ctx.availableRefs)}
-Create a markdown table with columns: Condition | Escalation Mechanism | Liability Shift
+
+Create a markdown table: Trigger | Policy Impact | Consequence
+
+This must be MECHANICAL, not narrative. Think like an underwriter's decision tree.
+
+Include triggers like:
+- Material change not disclosed
+- Class suspended or withdrawn
+- Refit/lay-up not notified within X days
+- Navigation limits breached
+- Hot work without approval
+- Contractor assumes custody
+- Survey overdue
 
 Requirements:
-- 5-6 rows minimum
-- Each cell should have 15-25 words of specific operational detail
-- Real operational scenarios only
-- Include specific timeframes, dollar amounts, or percentages where applicable
-- Cite relevant regulations using [ref_id] format where applicable
-- No generic statements
+- 5-6 rows
+- Each trigger must be a specific operational event
+- Policy impact must name the clause or condition affected
+- Consequence must state coverage outcome (void, reduced, excluded, etc.)
+- Cite [ref_id] where a regulation defines the trigger
 
-Output ONLY the table (starting with |), no headers or explanations. Do not output any thinking or reasoning.`,
+Output ONLY the table starting with |. No headers. No thinking.`,
   },
   {
     name: 'checklist',
@@ -126,34 +145,58 @@ Output ONLY the table (starting with |), no headers or explanations. Do not outp
     maxWords: 200,
     prompt: (ctx) => `Write an Underwriter's Checklist for: "${ctx.title}"
 ${buildCitationInstructions(ctx.availableRefs)}
-Requirements:
-- 8-10 bullet points
-- Each item: "[Document/certification type]: [Why it matters and what underwriters verify]"
-- 15-25 words per item
-- Specific documents: surveys, certificates, logs, endorsements, compliance records
-- Cite relevant regulatory requirements using [ref_id] format where applicable
-- No generic items
 
-Output ONLY the bullet list (starting with -), no headers. Do not output any thinking or reasoning.`,
+Format: "- [Document type]: [What underwriters verify and why it matters]"
+
+Include documents like:
+- Survey reports (condition, valuation, pre-purchase)
+- Class certificates and status
+- Maintenance logs
+- Refit/modification records
+- Crew qualifications
+- Navigation area endorsements
+- Loss history declarations
+
+Requirements:
+- 8-10 items
+- Each item must name a specific document type
+- Explain what the underwriter looks for
+- Cite [ref_id] for regulatory requirements
+- No generic items like "insurance documents"
+
+Output ONLY the bullet list starting with -. No headers. No thinking.`,
   },
   {
     name: 'wording_traps',
-    header: '## Common Wording Traps',
+    header: '## Policy Wording Traps',
     minWords: 180,
     maxWords: 280,
-    prompt: (ctx) => `Write a Common Wording Traps table for: "${ctx.title}"
+    prompt: (ctx) => `Write a Policy Wording Traps table for: "${ctx.title}"
 ${buildCitationInstructions(ctx.availableRefs)}
-Create a markdown table with columns: Clause Type | Failure Trigger | Practical Scenario | Coverage Consequence
+
+Create a markdown table: Clause Type | Trap Mechanism | Scenario | Coverage Result
+
+USE CLAUSE-LEVEL VOCABULARY. Include terms like:
+- "care, custody, and control"
+- "contractors' exclusion"
+- "consequential damage"
+- "latent defect carve-out"
+- "faulty workmanship exclusion"
+- "wear and tear"
+- "gradual deterioration"
+- "inherent vice"
+- "wilful misconduct"
+- "material change warranty"
 
 Requirements:
-- 5-6 rows minimum
-- Each cell should have 12-20 words
-- Real policy clause types (not invented)
-- Specific failure scenarios from maritime operations
-- Cite relevant regulations using [ref_id] format where applicable
-- Clear coverage consequences
+- 5-6 rows
+- Clause Type must be real policy terminology
+- Trap Mechanism explains how the clause catches owners
+- Scenario is a concrete operational example
+- Coverage Result states the claim outcome
+- Cite [ref_id] for specific clause references
 
-Output ONLY the table (starting with |), no headers or explanations. Do not output any thinking or reasoning.`,
+Output ONLY the table starting with |. No headers. No thinking.`,
   },
   {
     name: 'operational_reality',
@@ -161,54 +204,75 @@ Output ONLY the table (starting with |), no headers or explanations. Do not outp
     minWords: 200,
     maxWords: 280,
     prompt: (ctx) => `Write an Operational Reality section for: "${ctx.title}"
-
-This section describes ONE specific operational friction point in detail.
 ${buildCitationInstructions(ctx.availableRefs)}
+
+Describe ONE specific operational friction point. Include:
+
+1. YARD/OPERATOR BEHAVIOR - what actually happens on the ground
+2. DOCUMENTATION REQUIREMENTS - what paperwork is needed and when
+3. SURVEYOR INTERACTION - when surveyors get involved
+4. TIMING/NOTICE - deadlines that matter
+
+CRITICAL: Only include specific numbers (days, percentages, dollar amounts) if they come from the available references. Do not invent timeframes or thresholds. If unsure, use ranges like "typically within the policy notification period" rather than fabricating "within 7 days".
+
 Requirements:
 - 200-280 words
-- Describe specific procedures or certifications involved
-- Include timeline requirements (days, weeks, months)
-- Include cost implications with dollar figures
-- Name which parties are involved (surveyor, underwriter, broker, owner, classification society)
-- Explain what documentation is required
-- Cite relevant regulations and standards using [ref_id] format (aim for 2-4 citations)
+- Name the parties involved (owner, surveyor, yard, underwriter, class society)
 - Describe common mistakes and their consequences
-- Be mechanical and specific, no storytelling
+- Cite 2-4 references using [ref_id] format
+- Mechanical tone, no storytelling
+- No invented statistics or timeframes
 
-Output ONLY the paragraph content, no headers. Do not output any thinking or reasoning.`,
+Output ONLY the paragraph. No headers. No thinking.`,
   },
   {
     name: 'related_risks',
     header: '## Related Risks',
     minWords: 40,
     maxWords: 80,
-    prompt: (ctx) => `Write 4 Related Risks bullet points for: "${ctx.title}"
+    prompt: (ctx) => `Write 4 Related Risks for: "${ctx.title}"
 ${buildCitationInstructions(ctx.availableRefs)}
-Format: "- [Technical risk topic] → [related coverage area or implication]"
+
+Format: "- [Technical risk] → [Coverage implication with ref if applicable]"
+
+These should link to adjacent coverage areas in the same cluster:
+- Related exclusions
+- Adjacent policy sections
+- Interacting warranties
+- Cascading liability scenarios
 
 Requirements:
 - 4 bullet points
-- Technical terminology
-- Real risk categories from maritime insurance
-- Cite relevant regulations using [ref_id] format where applicable
+- Technical insurance terminology
+- Each connects to a related coverage concern
+- Cite [ref_id] where relevant
 
-Output ONLY the bullet list (starting with -), no headers. Do not output any thinking or reasoning.`,
+Output ONLY the bullet list starting with -. No headers. No thinking.`,
   },
   {
     name: 'broker_questions',
-    header: '## Questions to Clarify With Your Broker',
+    header: '## Questions for Your Broker',
     minWords: 60,
     maxWords: 100,
-    prompt: (ctx) => `Write 6 Questions to Clarify With Your Broker for: "${ctx.title}"
+    prompt: (ctx) => `Write 6 broker questions for: "${ctx.title}"
 ${buildCitationInstructions(ctx.availableRefs)}
-Requirements:
-- 6 specific, actionable questions
-- About policy terms, coverage limits, exclusions, documentation, claims process
-- May reference specific regulations using [ref_id] format where relevant
-- No rhetorical questions
-- No firm names
 
-Output ONLY the bullet list (starting with - and ending with ?), no headers. Do not output any thinking or reasoning.`,
+These must be ACTIONABLE questions that surface policy gaps:
+- Coverage limits and sub-limits
+- Specific exclusion applicability
+- Notification requirements
+- Documentation for claims
+- Deductible triggers
+- Warranty compliance
+
+Requirements:
+- 6 questions ending with ?
+- Each must be answerable with policy specifics
+- Reference [ref_id] clauses where relevant
+- No rhetorical questions
+- No questions about "the best" or "recommended"
+
+Output ONLY the bullet list starting with -. No headers. No thinking.`,
   },
 ];
 
