@@ -81,8 +81,8 @@ export default function BulkImportPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-8">
-      <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-lg p-8">
+    <div className="min-h-screen bg-background p-8">
+      <div className="max-w-2xl mx-auto bg-card rounded-lg p-8 border border-border">
         <h1 className="text-3xl font-bold mb-6">Bulk Import Q&A</h1>
 
         <div className="space-y-6">
@@ -94,7 +94,7 @@ export default function BulkImportPage() {
               value={apiKey}
               onChange={(e) => setApiKey(e.target.value)}
               placeholder="Enter SCRAPER_API_KEY"
-              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2 border border-border rounded-lg focus:ring-2 focus:ring-[hsl(var(--ring))] bg-background text-foreground"
             />
           </div>
 
@@ -105,9 +105,9 @@ export default function BulkImportPage() {
               type="file"
               accept=".csv"
               onChange={handleFileChange}
-              className="w-full px-4 py-2 border rounded-lg"
+              className="w-full px-4 py-2 border border-border rounded-lg bg-background text-foreground"
             />
-            <p className="text-xs text-gray-500 mt-2">
+            <p className="text-xs text-muted-foreground mt-2">
               Expected columns: question, answer, source_url, domain, confidence, tags
             </p>
           </div>
@@ -130,20 +130,14 @@ export default function BulkImportPage() {
           <button
             onClick={handleImport}
             disabled={loading || !file}
-            className="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 disabled:opacity-50"
+            className="w-full bg-primary text-primary-foreground py-3 rounded-lg font-medium hover:opacity-90 disabled:opacity-50"
           >
             {loading ? 'Importing...' : 'Import'}
           </button>
 
           {/* Results */}
           {result && (
-            <div
-              className={`p-4 rounded-lg ${
-                result.error
-                  ? 'bg-red-50 border border-red-200'
-                  : 'bg-green-50 border border-green-200'
-              }`}
-            >
+            <div className={`p-4 rounded-lg bg-accent border border-border`}>
               <h2 className="font-bold mb-2">
                 {result.error ? '❌ Error' : '✅ ' + result.status}
               </h2>
@@ -152,14 +146,14 @@ export default function BulkImportPage() {
               {result.preview && (
                 <div className="mt-4 text-xs">
                   <p className="font-bold mb-2">Preview (first 3 entries):</p>
-                  <pre className="bg-white p-2 rounded overflow-auto max-h-40">
+                  <pre className="bg-card p-2 rounded overflow-auto max-h-40 border border-border">
                     {JSON.stringify(result.preview, null, 2)}
                   </pre>
                 </div>
               )}
 
               {result.imported && (
-                <p className="text-sm font-bold text-green-700">
+                <p className="text-sm font-bold text-foreground">
                   Imported: {result.imported}/{result.total}
                 </p>
               )}
@@ -168,9 +162,9 @@ export default function BulkImportPage() {
         </div>
 
         {/* Instructions */}
-        <div className="mt-8 p-4 bg-blue-50 rounded-lg text-sm">
+        <div className="mt-8 p-4 bg-accent rounded-lg text-sm border border-border">
           <h3 className="font-bold mb-2">How to use:</h3>
-          <ol className="list-decimal list-inside space-y-1 text-gray-700">
+          <ol className="list-decimal list-inside space-y-1 text-muted-foreground">
             <li>Run Python scraper: python3 scraper.py</li>
             <li>Extract Q&A: python3 extract_qa.py</li>
             <li>Upload the generated qa_import.csv file here</li>

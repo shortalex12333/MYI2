@@ -46,7 +46,7 @@ export default function EditorialPolicyPage() {
         <div className="grid md:grid-cols-3 gap-6 not-prose mb-12">
           <Card>
             <CardHeader>
-              <CheckCircle className="h-8 w-8 text-green-600 mb-2" />
+              <CheckCircle className="h-8 w-8 text-foreground mb-2" />
               <CardTitle>Accuracy First</CardTitle>
             </CardHeader>
             <CardContent>
@@ -58,7 +58,7 @@ export default function EditorialPolicyPage() {
 
           <Card>
             <CardHeader>
-              <RefreshCw className="h-8 w-8 text-blue-600 mb-2" />
+              <RefreshCw className="h-8 w-8 text-foreground mb-2" />
               <CardTitle>Regular Updates</CardTitle>
             </CardHeader>
             <CardContent>
@@ -70,7 +70,7 @@ export default function EditorialPolicyPage() {
 
           <Card>
             <CardHeader>
-              <AlertTriangle className="h-8 w-8 text-yellow-600 mb-2" />
+              <AlertTriangle className="h-8 w-8 text-foreground mb-2" />
               <CardTitle>Clear Disclaimers</CardTitle>
             </CardHeader>
             <CardContent>

@@ -39,26 +39,26 @@ export default function AgreedValueVsActualCashValuePage() {
       </header>
 
       {/* Quick TL;DR */}
-      <Card className="mb-8 bg-blue-50 dark:bg-blue-950 border-blue-200 dark:border-blue-800">
+      <Card className="mb-8 bg-accent border border-border">
         <CardHeader>
           <CardTitle className="text-lg">TL;DR - Which Policy Type Pays More?</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="grid md:grid-cols-2 gap-4">
-            <div className="bg-white dark:bg-slate-900 p-4 rounded-lg border-2 border-green-500">
+            <div className="bg-card p-4 rounded-lg border-2 border-border">
               <div className="flex items-start gap-2 mb-2">
-                <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
+                <CheckCircle2 className="h-5 w-5 text-foreground mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className="font-semibold text-green-900 dark:text-green-100">Agreed Value</p>
+                  <p className="font-semibold text-foreground">Agreed Value</p>
                   <p className="text-sm text-muted-foreground">You and insurer agree on value upfront. Total loss = that amount (minus deductible).</p>
                 </div>
               </div>
             </div>
-            <div className="bg-white dark:bg-slate-900 p-4 rounded-lg border-2 border-red-500">
+            <div className="bg-card p-4 rounded-lg border-2 border-border">
               <div className="flex items-start gap-2 mb-2">
-                <XCircle className="h-5 w-5 text-red-600 mt-0.5 flex-shrink-0" />
+                <XCircle className="h-5 w-5 text-foreground mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className="font-semibold text-red-900 dark:text-red-100">Actual Cash Value (ACV)</p>
+                  <p className="font-semibold text-foreground">Actual Cash Value (ACV)</p>
                   <p className="text-sm text-muted-foreground">Pays current market value after depreciation. Often 15-30% less than you thought.</p>
                 </div>
               </div>
@@ -77,9 +77,9 @@ export default function AgreedValueVsActualCashValuePage() {
           <h2 className="text-3xl font-bold mb-6">What These Policy Types Actually Mean</h2>
 
           <div className="grid md:grid-cols-2 gap-6 not-prose mb-6">
-            <Card className="border-2 border-green-200 dark:border-green-800">
+            <Card className="border-2 border-border">
               <CardHeader>
-                <Shield className="h-8 w-8 text-green-600 mb-2" />
+                <Shield className="h-8 w-8 text-foreground mb-2" />
                 <CardTitle>Agreed Value</CardTitle>
                 <CardDescription>Value locked in at policy inception</CardDescription>
               </CardHeader>
@@ -149,79 +149,79 @@ export default function AgreedValueVsActualCashValuePage() {
           <h2 className="text-3xl font-bold mb-6">Side-by-Side Comparison</h2>
 
           <div className="overflow-x-auto">
-            <table className="w-full border-collapse bg-white dark:bg-slate-900 rounded-lg overflow-hidden shadow-sm">
+            <table className="w-full border-collapse bg-card rounded-lg overflow-hidden border border-border">
               <thead>
-                <tr className="bg-slate-100 dark:bg-slate-800">
-                  <th className="p-4 text-left font-semibold border-b">Feature</th>
-                  <th className="p-4 text-left font-semibold border-b bg-green-50 dark:bg-green-950">Agreed Value</th>
-                  <th className="p-4 text-left font-semibold border-b bg-orange-50 dark:bg-orange-950">Actual Cash Value (ACV)</th>
+                <tr className="bg-accent">
+                  <th className="p-4 text-left font-semibold border-b border-border">Feature</th>
+                  <th className="p-4 text-left font-semibold border-b border-border bg-accent">Agreed Value</th>
+                  <th className="p-4 text-left font-semibold border-b border-border bg-accent">Actual Cash Value (ACV)</th>
                 </tr>
               </thead>
               <tbody>
                 <tr className="border-b">
                   <td className="p-4 font-medium">How value is determined</td>
-                  <td className="p-4 bg-green-50 dark:bg-green-950/30">Agreed upon when policy is written, based on survey/appraisal</td>
-                  <td className="p-4 bg-orange-50 dark:bg-orange-950/30">Calculated at time of loss based on market comparables</td>
+                  <td className="p-4 bg-accent">Agreed upon when policy is written, based on survey/appraisal</td>
+                  <td className="p-4 bg-accent">Calculated at time of loss based on market comparables</td>
                 </tr>
                 <tr className="border-b">
                   <td className="p-4 font-medium">Depreciation applied?</td>
-                  <td className="p-4 bg-green-50 dark:bg-green-950/30">
+                  <td className="p-4 bg-accent">
                     <div className="flex items-center gap-2">
-                      <XCircle className="h-4 w-4 text-green-600" />
+                      <XCircle className="h-4 w-4 text-foreground" />
                       <span>No</span>
                     </div>
                   </td>
-                  <td className="p-4 bg-orange-50 dark:bg-orange-950/30">
+                  <td className="p-4 bg-accent">
                     <div className="flex items-center gap-2">
-                      <CheckCircle2 className="h-4 w-4 text-orange-600" />
+                      <CheckCircle2 className="h-4 w-4 text-foreground" />
                       <span>Yes - can reduce payout 15-30%+</span>
                     </div>
                   </td>
                 </tr>
                 <tr className="border-b">
                   <td className="p-4 font-medium">Total loss payout certainty</td>
-                  <td className="p-4 bg-green-50 dark:bg-green-950/30">
+                  <td className="p-4 bg-accent">
                     <div className="flex items-center gap-2">
-                      <CheckCircle2 className="h-4 w-4 text-green-600" />
+                      <CheckCircle2 className="h-4 w-4 text-foreground" />
                       <span>100% certain (stated in policy)</span>
                     </div>
                   </td>
-                  <td className="p-4 bg-orange-50 dark:bg-orange-950/30">
+                  <td className="p-4 bg-accent">
                     <div className="flex items-center gap-2">
-                      <XCircle className="h-4 w-4 text-orange-600" />
+                      <XCircle className="h-4 w-4 text-foreground" />
                       <span>Unknown until claim is settled</span>
                     </div>
                   </td>
                 </tr>
                 <tr className="border-b">
                   <td className="p-4 font-medium">Premium cost</td>
-                  <td className="p-4 bg-green-50 dark:bg-green-950/30">Higher (10-25% more than ACV)</td>
-                  <td className="p-4 bg-orange-50 dark:bg-orange-950/30">Lower</td>
+                  <td className="p-4 bg-accent">Higher (10-25% more than ACV)</td>
+                  <td className="p-4 bg-accent">Lower</td>
                 </tr>
                 <tr className="border-b">
                   <td className="p-4 font-medium">Required by lenders?</td>
-                  <td className="p-4 bg-green-50 dark:bg-green-950/30">
+                  <td className="p-4 bg-accent">
                     <div className="flex items-center gap-2">
-                      <CheckCircle2 className="h-4 w-4 text-green-600" />
+                      <CheckCircle2 className="h-4 w-4 text-foreground" />
                       <span>Usually required</span>
                     </div>
                   </td>
-                  <td className="p-4 bg-orange-50 dark:bg-orange-950/30">Rarely accepted by lenders</td>
+                  <td className="p-4 bg-accent">Rarely accepted by lenders</td>
                 </tr>
                 <tr className="border-b">
                   <td className="p-4 font-medium">Partial loss claims</td>
-                  <td className="p-4 bg-green-50 dark:bg-green-950/30">Repair cost paid (minus deductible)</td>
-                  <td className="p-4 bg-orange-50 dark:bg-orange-950/30">Repair cost paid, but depreciation may apply to replaced parts</td>
+                  <td className="p-4 bg-accent">Repair cost paid (minus deductible)</td>
+                  <td className="p-4 bg-accent">Repair cost paid, but depreciation may apply to replaced parts</td>
                 </tr>
                 <tr className="border-b">
                   <td className="p-4 font-medium">Best for</td>
-                  <td className="p-4 bg-green-50 dark:bg-green-950/30">Financed yachts, newer vessels, owners who want certainty</td>
-                  <td className="p-4 bg-orange-50 dark:bg-orange-950/30">Older vessels, owners comfortable with market risk</td>
+                  <td className="p-4 bg-accent">Financed yachts, newer vessels, owners who want certainty</td>
+                  <td className="p-4 bg-accent">Older vessels, owners comfortable with market risk</td>
                 </tr>
                 <tr>
                   <td className="p-4 font-medium">Renewal considerations</td>
-                  <td className="p-4 bg-green-50 dark:bg-green-950/30">Value can be adjusted up or down at renewal based on new survey</td>
-                  <td className="p-4 bg-orange-50 dark:bg-orange-950/30">Coverage limit may decrease over time as yacht ages</td>
+                  <td className="p-4 bg-accent">Value can be adjusted up or down at renewal based on new survey</td>
+                  <td className="p-4 bg-accent">Coverage limit may decrease over time as yacht ages</td>
                 </tr>
               </tbody>
             </table>
@@ -239,7 +239,7 @@ export default function AgreedValueVsActualCashValuePage() {
                 Example 1: Total Loss - Hurricane Sinks Your Yacht
               </h3>
 
-              <div className="bg-slate-50 dark:bg-slate-900 p-6 rounded-lg mb-4">
+              <div className="bg-muted p-6 rounded-lg mb-4 border border-border">
                 <p className="font-semibold mb-3">Scenario:</p>
                 <ul className="list-disc pl-6 space-y-1 text-sm">
                   <li>2019 Sunseeker 68 Sport Yacht</li>
@@ -252,10 +252,10 @@ export default function AgreedValueVsActualCashValuePage() {
               </div>
 
               <div className="grid md:grid-cols-2 gap-6 not-prose">
-                <Card className="border-2 border-green-200 dark:border-green-800">
-                  <CardHeader className="bg-green-50 dark:bg-green-950">
+                <Card className="border-2 border-border">
+                  <CardHeader className="bg-accent">
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <CheckCircle2 className="h-5 w-5 text-green-600" />
+                      <CheckCircle2 className="h-5 w-5 text-foreground" />
                       Agreed Value Policy
                     </CardTitle>
                   </CardHeader>
@@ -281,7 +281,7 @@ export default function AgreedValueVsActualCashValuePage() {
                 </Card>
 
                 <Card className="border-2 border-orange-200 dark:border-orange-800">
-                  <CardHeader className="bg-orange-50 dark:bg-orange-950">
+                  <CardHeader className="bg-accent">
                     <CardTitle className="text-lg flex items-center gap-2">
                       <TrendingDown className="h-5 w-5 text-orange-600" />
                       Actual Cash Value Policy
@@ -313,7 +313,7 @@ export default function AgreedValueVsActualCashValuePage() {
                 </Card>
               </div>
 
-              <div className="bg-red-50 dark:bg-red-950 border-l-4 border-red-500 p-4 mt-6">
+              <div className="bg-accent border-l-4 border-border p-4 mt-6">
                 <p className="font-semibold mb-2 flex items-center gap-2">
                   <DollarSign className="h-5 w-5" />
                   The Difference:
@@ -334,7 +334,7 @@ export default function AgreedValueVsActualCashValuePage() {
                 Example 2: Partial Loss - Grounding Damage
               </h3>
 
-              <div className="bg-slate-50 dark:bg-slate-900 p-6 rounded-lg mb-4">
+              <div className="bg-muted p-6 rounded-lg mb-4 border border-border">
                 <p className="font-semibold mb-3">Scenario:</p>
                 <ul className="list-disc pl-6 space-y-1 text-sm">
                   <li>2021 Princess 60 Motor Yacht</li>
@@ -346,10 +346,10 @@ export default function AgreedValueVsActualCashValuePage() {
               </div>
 
               <div className="grid md:grid-cols-2 gap-6 not-prose">
-                <Card className="border-2 border-green-200 dark:border-green-800">
-                  <CardHeader className="bg-green-50 dark:bg-green-950">
+                <Card className="border-2 border-border">
+                  <CardHeader className="bg-accent">
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <CheckCircle2 className="h-5 w-5 text-green-600" />
+                      <CheckCircle2 className="h-5 w-5 text-foreground" />
                       Agreed Value Policy
                     </CardTitle>
                   </CardHeader>
@@ -375,7 +375,7 @@ export default function AgreedValueVsActualCashValuePage() {
                 </Card>
 
                 <Card className="border-2 border-orange-200 dark:border-orange-800">
-                  <CardHeader className="bg-orange-50 dark:bg-orange-950">
+                  <CardHeader className="bg-accent">
                     <CardTitle className="text-lg flex items-center gap-2">
                       <TrendingDown className="h-5 w-5 text-orange-600" />
                       Actual Cash Value Policy
@@ -407,7 +407,7 @@ export default function AgreedValueVsActualCashValuePage() {
                 </Card>
               </div>
 
-              <div className="bg-yellow-50 dark:bg-yellow-950 border-l-4 border-yellow-500 p-4 mt-6">
+              <div className="bg-accent border-l-4 border-border p-4 mt-6">
                 <p className="font-semibold mb-2">Important Note on Partial Losses:</p>
                 <p className="text-sm">
                   How ACV applies to partial losses varies by policy. Some ACV policies cover full repair costs but depreciate your total insured amount over time. Others apply depreciation to individual replaced parts. <strong>Always read your policy's "Basis of Recovery" or "Valuation" clause.</strong>
@@ -511,7 +511,7 @@ export default function AgreedValueVsActualCashValuePage() {
             </Card>
           </div>
 
-          <div className="bg-blue-50 dark:bg-blue-950 border-l-4 border-blue-500 p-4 mt-6">
+          <div className="bg-accent border-l-4 border-border p-4 mt-6">
             <p className="font-semibold mb-2">Bottom Line:</p>
             <p className="text-sm">
               ACV policies shift the risk of depreciation and market fluctuations onto you. In exchange, you save 10-25% on premiums. For most yacht owners, especially those with financed vessels or yachts under 15 years old, Agreed Value is worth the extra cost.
@@ -524,7 +524,7 @@ export default function AgreedValueVsActualCashValuePage() {
 
           <div className="grid md:grid-cols-2 gap-6 not-prose mb-6">
             <Card className="border-2 border-green-200 dark:border-green-800">
-              <CardHeader className="bg-green-50 dark:bg-green-950">
+              <CardHeader className="bg-accent">
                 <CardTitle className="text-lg">Choose Agreed Value If:</CardTitle>
               </CardHeader>
               <CardContent className="pt-6">
@@ -562,7 +562,7 @@ export default function AgreedValueVsActualCashValuePage() {
             </Card>
 
             <Card className="border-2 border-orange-200 dark:border-orange-800">
-              <CardHeader className="bg-orange-50 dark:bg-orange-950">
+              <CardHeader className="bg-accent">
                 <CardTitle className="text-lg">Consider ACV If:</CardTitle>
               </CardHeader>
               <CardContent className="pt-6">
@@ -596,7 +596,7 @@ export default function AgreedValueVsActualCashValuePage() {
             </Card>
           </div>
 
-          <div className="bg-slate-50 dark:bg-slate-900 p-6 rounded-lg">
+          <div className="bg-muted p-6 rounded-lg border border-border">
             <p className="font-semibold mb-3">Industry Recommendation:</p>
             <p className="text-sm mb-3">
               Most yacht brokers and insurance professionals recommend Agreed Value policies for yachts under $2,000,000 in value that are less than 20 years old. The premium difference is typically small compared to the potential payout gap in a claim.
@@ -769,7 +769,7 @@ export default function AgreedValueVsActualCashValuePage() {
       </section>
 
       {/* Glossary Links */}
-      <section className="mt-8 p-6 bg-slate-50 dark:bg-slate-900 rounded-lg">
+      <section className="mt-8 p-6 bg-muted rounded-lg border border-border">
         <h3 className="font-semibold mb-3">Key Terms:</h3>
         <div className="flex flex-wrap gap-3 text-sm">
           <Link href="/glossary/agreed-value" className="text-primary hover:underline">
