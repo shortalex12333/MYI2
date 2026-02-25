@@ -35,8 +35,37 @@ export default async function PaperDetailPage({ params }: { params: { slug: stri
   const titlePattern = new RegExp(`^## ${p.title.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*\\n+`, 'm')
   bodyContent = bodyContent.replace(titlePattern, '')
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: p.title,
+    description: p.tldr || undefined,
+    datePublished: p.last_updated || undefined,
+    dateModified: p.last_updated || undefined,
+    author: {
+      '@type': 'Person',
+      name: 'Alex Short',
+      url: 'https://alex-short.com/experience',
+    },
+    reviewedBy: {
+      '@type': 'Person',
+      name: 'Alex Short',
+      jobTitle: 'Independent Yacht Insurance Risk Analyst',
+      url: 'https://alex-short.com/experience',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'MyYachtsInsurance',
+      url: 'https://www.myyachtsinsurance.com',
+    },
+  }
+
   return (
     <div className="container mx-auto px-4 py-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <article className="max-w-3xl mx-auto">
         <header className="mb-6">
           {p.last_updated && (
