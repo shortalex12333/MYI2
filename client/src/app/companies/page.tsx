@@ -1,5 +1,6 @@
 import { createClient } from '@/lib/supabase/server'
 import Link from 'next/link'
+import { getCompanyContact } from '@/lib/companyContacts'
 
 export default async function CompaniesPage() {
   const supabase = await createClient()
@@ -41,6 +42,25 @@ export default async function CompaniesPage() {
                   {company.description}
                 </p>
               )}
+              {(() => {
+                const c = getCompanyContact(company.name)
+                if (!c) return null
+                return (
+                  <div className="mt-4 text-sm text-muted-foreground space-y-1">
+                    {c.website && (
+                      <div>
+                        Website: <a href={c.website} className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">{c.website}</a>
+                      </div>
+                    )}
+                    {c.phone && <div>Phone: <span className="text-foreground">{c.phone}</span></div>}
+                    {c.email && (
+                      <div>
+                        Email: <a href={`mailto:${c.email}`} className="text-primary hover:underline">{c.email}</a>
+                      </div>
+                    )}
+                  </div>
+                )
+              })()}
             </Link>
           ))}
         </div>

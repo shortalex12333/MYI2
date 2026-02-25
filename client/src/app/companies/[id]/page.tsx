@@ -1,5 +1,6 @@
 import { createClient } from '@/lib/supabase/server'
 import { notFound } from 'next/navigation'
+import { getCompanyContact } from '@/lib/companyContacts'
 
 export default async function CompanyPage({ params }: { params: { id: string } }) {
   const supabase = await createClient()
@@ -14,6 +15,7 @@ export default async function CompanyPage({ params }: { params: { id: string } }
   if (error || !company) {
     notFound()
   }
+  const contact = getCompanyContact(company.name)
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -33,11 +35,37 @@ export default async function CompanyPage({ params }: { params: { id: string } }
           </p>
         )}
 
-        <div className="border rounded-lg p-6 bg-muted/50">
-          <h2 className="text-xl font-semibold mb-4">Company Information</h2>
-          <p className="text-muted-foreground">
-            More details about this provider coming soon.
-          </p>
+        <div className="border rounded-lg p-6 bg-muted/50 space-y-3">
+          <h2 className="text-xl font-semibold">Company Information</h2>
+          <div className="text-sm text-muted-foreground space-y-2">
+            {company.website && (
+              <div>
+                Website: <a href={company.website} className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">{company.website}</a>
+              </div>
+            )}
+            {!company.website && contact?.website && (
+              <div>
+                Website: <a href={contact.website} className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">{contact.website}</a>
+              </div>
+            )}
+            {contact?.contactUrl && (
+              <div>
+                Contact: <a href={contact.contactUrl} className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">{contact.contactUrl}</a>
+              </div>
+            )}
+            {contact?.phone && (
+              <div>Phone: <span className="text-foreground">{contact.phone}</span></div>
+            )}
+            {contact?.email && (
+              <div>Email: <a href={`mailto:${contact.email}`} className="text-primary hover:underline">{contact.email}</a></div>
+            )}
+            {contact?.address && (
+              <div>Address: <span className="text-foreground">{contact.address}</span></div>
+            )}
+            {!contact && (
+              <p className="text-muted-foreground">More details about this provider coming soon.</p>
+            )}
+          </div>
         </div>
       </div>
     </div>
