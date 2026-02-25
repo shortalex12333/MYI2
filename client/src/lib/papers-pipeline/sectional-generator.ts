@@ -486,10 +486,10 @@ export async function generatePaperSectional(topicId: string): Promise<Generated
     await db.from('paper_citation_map').insert(citationRows);
   }
 
-  // Mark topic as assigned
+  // Mark topic as assigned (use actual current time for internal tracking)
   await db
     .from('paper_topics')
-    .update({ status: 'assigned', assigned_at: now })
+    .update({ status: 'assigned', assigned_at: new Date().toISOString() })
     .eq('id', topicId);
 
   return {
