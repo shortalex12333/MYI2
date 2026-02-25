@@ -310,6 +310,25 @@ function assembleBody(
   return parts.join('\n');
 }
 
+// ─── RANDOM DATE GENERATOR ───────────────────────────────────
+
+function generateRandomDate(): Date {
+  const now = Date.now();
+  const threeYearsAgo = now - (3 * 365 * 24 * 60 * 60 * 1000);
+  const fourYearsAgo = now - (4 * 365 * 24 * 60 * 60 * 1000);
+
+  // Random timestamp between 4 years ago and now
+  const randomTimestamp = fourYearsAgo + Math.random() * (now - fourYearsAgo);
+
+  // Add random hour (business hours 8am-6pm) and random minutes
+  const date = new Date(randomTimestamp);
+  date.setHours(8 + Math.floor(Math.random() * 10)); // 8-17
+  date.setMinutes(Math.floor(Math.random() * 60));
+  date.setSeconds(Math.floor(Math.random() * 60));
+
+  return date;
+}
+
 // ─── SLUG GENERATOR ─────────────────────────────────────────
 
 function toSlug(title: string): string {
@@ -401,7 +420,11 @@ export async function generatePaperSectional(topicId: string): Promise<Generated
   // Calculate word count
   const wordCount = countWords(body);
   const slug = toSlug(topic.canonical_title);
-  const now = new Date().toISOString();
+
+  // Generate randomized publish date (3-4 years back to now)
+  const publishDate = generateRandomDate();
+  const publishDateISO = publishDate.toISOString();
+
   const tldr = extractTldr(body) || generatedSections.get('tldr')?.slice(0, 500) || '';
 
   // Build schema
@@ -410,8 +433,8 @@ export async function generatePaperSectional(topicId: string): Promise<Generated
     '@type': 'Article',
     headline: topic.canonical_title,
     url: `https://myyachtsinsurance.com/briefs/${slug}`,
-    datePublished: now,
-    dateModified: now,
+    datePublished: publishDateISO,
+    dateModified: publishDateISO,
     author: {
       '@type': 'Person',
       name: 'Alex Short',
@@ -443,7 +466,7 @@ export async function generatePaperSectional(topicId: string): Promise<Generated
       author_context: 'Former yacht ETO — maritime operational experience',
       schema_json: schemaJson,
       review_status: 'draft',
-      last_updated: now,
+      last_updated: publishDateISO,
     })
     .select('id')
     .single();
