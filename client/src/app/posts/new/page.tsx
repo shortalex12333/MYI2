@@ -10,6 +10,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
 export default function NewPostPage() {
   const router = useRouter()
+  const { user, loading } = useAuth()
   const [isLoading, setIsLoading] = useState(false)
   const [categories, setCategories] = useState<any[]>([])
   const [formData, setFormData] = useState({
@@ -19,12 +20,16 @@ export default function NewPostPage() {
   })
 
   useEffect(() => {
+    if (!loading && !user) {
+      router.push('/login')
+      return
+    }
     // Fetch categories
     fetch('/api/v1/categories')
       .then(res => res.json())
       .then(data => setCategories(data.categories || []))
       .catch(console.error)
-  }, [])
+  }, [loading, user])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -52,6 +57,8 @@ export default function NewPostPage() {
     }
   }
 
+  if (loading) return null
+  if (!user) return null
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="max-w-3xl mx-auto">
@@ -129,3 +136,4 @@ export default function NewPostPage() {
     </div>
   )
 }
+import { useAuth } from '@/contexts/AuthContext'

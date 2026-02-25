@@ -5,10 +5,12 @@ import { Anchor, Search, Bell, Menu, Award } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { useState } from 'react'
+import { useAuth } from '@/contexts/AuthContext'
 
 export function Header() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false)
-  const userReputation = 1247 // This would come from auth context
+  const { user, loading, signOut } = useAuth()
+  const isAuthenticated = !!user
+  const userReputation = 1247
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -72,16 +74,17 @@ export function Header() {
                 </Button>
                 <Link href="/profile" className="flex items-center gap-2 hover:bg-accent p-1.5 rounded">
                   <div className="h-8 w-8 rounded-full bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center text-primary-foreground font-semibold text-sm">
-                    JD
+                    {user?.email?.[0]?.toUpperCase() || 'U'}
                   </div>
                   <div className="hidden lg:flex flex-col items-start">
-                    <span className="text-sm font-medium leading-none">John Doe</span>
+                    <span className="text-sm font-medium leading-none">{user?.username || user?.email}</span>
                     <div className="flex items-center gap-1 text-xs text-muted-foreground">
                       <Award className="h-3 w-3" />
                       <span>{userReputation.toLocaleString()}</span>
                     </div>
                   </div>
                 </Link>
+                <Button variant="outline" size="sm" onClick={() => signOut()}>Sign out</Button>
               </>
             ) : (
               <>
