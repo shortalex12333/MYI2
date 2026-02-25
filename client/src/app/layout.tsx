@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { Header } from '@/components/layout/Header'
+import { AuthProvider } from '@/contexts/AuthContext'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -27,7 +28,12 @@ export default function RootLayout({
       "contactType": "Customer Service",
       "url": "https://www.myyachtsinsurance.com/contact"
     },
-    "sameAs": []
+    "sameAs": ["https://alex-short.com"],
+    "founder": {
+      "@type": "Person",
+      "name": "Alex Short",
+      "url": "https://alex-short.com"
+    }
   }
 
   const websiteSchema = {
@@ -49,6 +55,26 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        {/* Person schema for Alex Short */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Alex Short",
+              "url": "https://alex-short.com",
+              "jobTitle": "Independent Yacht Insurance Risk Analyst",
+              "worksFor": {
+                "@type": "Organization",
+                "name": "MyYachtsInsurance"
+              },
+              "sameAs": [
+                "https://alex-short.com"
+              ]
+            })
+          }}
+        />
         {/* Schema.org structured data */}
         <script
           type="application/ld+json"
@@ -63,10 +89,12 @@ export default function RootLayout({
           }}
         />
 
-        <Header />
-        <main className="min-h-screen">
-          {children}
-        </main>
+        <AuthProvider>
+          <Header />
+          <main className="min-h-screen">
+            {children}
+          </main>
+        </AuthProvider>
         <footer className="border-t py-6 md:py-8">
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">

@@ -1,0 +1,12 @@
+Question: {{QUESTION}}
+Risk Topic: {{RISK_TOPIC}}
+Jurisdiction: {{JURISDICTION}}
+Persona: {{PERSONA}}
+Scenario Stage: {{SCENARIO_STAGE}}
+
+Answer must include:
+- Named policy clause or regulatory reference relevant to {{RISK_TOPIC}}
+- At least one numerical anchor (deductible %, date, threshold, range)
+- Condition boundary: when coverage applies and when it does not
+
+Answer:

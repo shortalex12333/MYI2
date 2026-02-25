@@ -890,10 +890,14 @@ export default function AgreedValueVsActualCashValuePage() {
             "description": "Understand the critical difference between Agreed Value and Actual Cash Value yacht insurance. Real examples, total loss scenarios, and why ACV can leave you tens of thousands short.",
             "datePublished": "2026-01-15",
             "dateModified": "2026-01-15",
-            "author": {
-              "@type": "Organization",
-              "name": "Yacht Insurance Guide"
-            }
+            "author": { "@type": "Organization", "name": "MyYachtsInsurance" },
+            "publisher": { "@type": "Organization", "name": "MyYachtsInsurance" },
+            "reviewedBy": {
+              "@type": "Person",
+              "name": "Alex Short",
+              "url": "https://alex-short.com"
+            },
+            "about": { "@type": "Thing", "name": "Yacht Insurance" }
           })
         }}
       />

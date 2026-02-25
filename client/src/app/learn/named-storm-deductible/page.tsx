@@ -387,6 +387,22 @@ export default function NamedStormDeductiblePage() {
           })
         }}
       />
+
+      {/* Schema.org Article markup with reviewer */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "Named Storm Deductibles for Yachts",
+            "author": { "@type": "Organization", "name": "MyYachtsInsurance" },
+            "publisher": { "@type": "Organization", "name": "MyYachtsInsurance" },
+            "reviewedBy": { "@type": "Person", "name": "Alex Short", "url": "https://alex-short.com" },
+            "about": { "@type": "Thing", "name": "Yacht Insurance" }
+          })
+        }}
+      />
     </div>
   )
 }

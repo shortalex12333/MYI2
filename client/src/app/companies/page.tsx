@@ -49,6 +49,24 @@ export default async function CompaniesPage() {
           ))}
         </div>
       )}
+      {/* Industry Contributors & Analysts */}
+      <section className="mt-12">
+        <h2 className="text-2xl font-bold mb-4">Industry Contributors & Analysts</h2>
+        <div className="border rounded-lg p-6 bg-muted/50">
+          <div className="flex items-center justify-between">
+            <div>
+              <div className="text-lg font-semibold">Alex Short — Maritime Risk & Insurance Analyst</div>
+              <p className="text-sm text-muted-foreground mt-1 max-w-2xl">
+                Independent analyst covering yacht risk frameworks, valuation methodologies, and retrieval‑based evidence reviews across the marine insurance ecosystem.
+              </p>
+            </div>
+            <div className="flex gap-3 shrink-0">
+              <a href="/experts/alex-short" className="text-primary hover:underline">Profile</a>
+              <a href="https://alex-short.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">alex-short.com</a>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   )
 }
