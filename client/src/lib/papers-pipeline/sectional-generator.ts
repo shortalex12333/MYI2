@@ -311,13 +311,42 @@ async function callQwen(prompt: string): Promise<string> {
   return content;
 }
 
+// ─── FETCH RELATED PAPERS ────────────────────────────────────
+
+interface RelatedPaper {
+  title: string;
+  slug: string;
+  tldr: string | null;
+}
+
+async function fetchRelatedPapers(clusterId: string, excludeSlug?: string): Promise<RelatedPaper[]> {
+  const { data, error } = await db
+    .from('papers')
+    .select('title, slug, tldr')
+    .eq('cluster_id', clusterId)
+    .neq('slug', excludeSlug || '')
+    .order('last_updated', { ascending: false })
+    .limit(5);
+
+  if (error || !data) return [];
+  return data;
+}
+
 // ─── ASSEMBLE PAPER ─────────────────────────────────────────
 
 function assembleBody(
   title: string,
-  sections: Map<string, string>
+  sections: Map<string, string>,
+  relatedPapers: RelatedPaper[] = []
 ): string {
   const authorBlock = `*Reviewed by [Alex Short](https://alex-short.com/experience), Independent Yacht Insurance Risk Analyst*`;
+
+  // Build related papers section
+  let relatedPapersSection = '';
+  if (relatedPapers.length > 0) {
+    const links = relatedPapers.map(p => `- [${p.title}](/papers/${p.slug})`).join('\n');
+    relatedPapersSection = `## Related Papers\n\n${links}\n\n---\n\n`;
+  }
 
   const parts = [
     `## ${title}`,
@@ -342,7 +371,7 @@ function assembleBody(
     '',
     '---',
     '',
-    '## Common Wording Traps',
+    '## Policy Wording Traps',
     '',
     sections.get('wording_traps') ?? '',
     '',
@@ -360,12 +389,13 @@ function assembleBody(
     '',
     '---',
     '',
-    '## Questions to Clarify With Your Broker',
+    '## Questions for Your Broker',
     '',
     sections.get('broker_questions') ?? '',
     '',
     '---',
     '',
+    relatedPapersSection,
     '## Disclosure',
     '',
     'This content is provided for informational purposes only and does not constitute insurance advice. Coverage terms vary by policy, jurisdiction, and underwriter. Consult a licensed marine insurance broker for guidance specific to your vessel and operations.',
@@ -474,8 +504,14 @@ export async function generatePaperSectional(topicId: string): Promise<Generated
     ctx.previousSections = (ctx.previousSections || '') + '\n' + content;
   }
 
-  // Assemble body
-  let body = assembleBody(topic.canonical_title, generatedSections);
+  // Generate slug first (needed for related papers exclusion)
+  const slug = toSlug(topic.canonical_title);
+
+  // Fetch related papers from same cluster (for internal linking)
+  const relatedPapers = await fetchRelatedPapers(topic.cluster_id, slug);
+
+  // Assemble body with related papers
+  let body = assembleBody(topic.canonical_title, generatedSections, relatedPapers);
 
   // Inject references
   const injectionResult = await injectReferences(body);
@@ -483,7 +519,6 @@ export async function generatePaperSectional(topicId: string): Promise<Generated
 
   // Calculate word count
   const wordCount = countWords(body);
-  const slug = toSlug(topic.canonical_title);
 
   // Generate randomized publish date (3-4 years back to now)
   const publishDate = generateRandomDate();
