@@ -253,7 +253,7 @@ function assembleBody(
   title: string,
   sections: Map<string, string>
 ): string {
-  const authorBlock = `*Maintained by [Alex Short](https://alex-short.com/experience) — maritime operational experience*`;
+  const authorBlock = `*Reviewed by [Alex Short](https://alex-short.com/experience), Independent Yacht Insurance Risk Analyst*`;
 
   const parts = [
     `## ${title}`,

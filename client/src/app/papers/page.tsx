@@ -5,9 +5,7 @@ type Paper = {
   title: string
   slug: string
   tldr: string | null
-  cluster_id: string | null
   last_updated: string | null
-  word_count: number | null
 }
 
 export const metadata = {
@@ -24,7 +22,7 @@ export default async function PapersIndexPage() {
 
   const { data, error } = await supabase
     .from('papers')
-    .select('title,slug,tldr,cluster_id,last_updated,word_count')
+    .select('title,slug,tldr,last_updated')
     .order('last_updated', { ascending: false })
     .limit(50)
 
@@ -48,11 +46,9 @@ export default async function PapersIndexPage() {
                 {p.tldr && (
                   <p className="text-sm text-muted-foreground line-clamp-3 mt-1">{p.tldr}</p>
                 )}
-                <div className="text-xs text-muted-foreground mt-3 flex gap-3">
-                  {p.cluster_id && <span>Cluster: {p.cluster_id}</span>}
-                  {p.word_count && <span>{p.word_count} words</span>}
-                  {p.last_updated && <span>{new Date(p.last_updated).toLocaleDateString()}</span>}
-                </div>
+                {p.last_updated && (
+                  <p className="text-xs text-muted-foreground mt-3">{new Date(p.last_updated).toLocaleDateString()}</p>
+                )}
               </div>
             </Link>
           ))}

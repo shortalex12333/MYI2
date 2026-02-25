@@ -30,20 +30,24 @@ export default async function PaperDetailPage({ params }: { params: { slug: stri
   }
   const p = data as Paper
 
+  // Strip duplicate title line from body if it starts with "## Title"
+  let bodyContent = p.body_markdown || ''
+  const titlePattern = new RegExp(`^## ${p.title.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*\\n+`, 'm')
+  bodyContent = bodyContent.replace(titlePattern, '')
+
   return (
     <div className="container mx-auto px-4 py-8">
       <article className="max-w-3xl mx-auto">
         <header className="mb-6">
-          <h1 className="text-3xl font-bold mb-2">{p.title}</h1>
-          {p.tldr && <p className="text-muted-foreground">{p.tldr}</p>}
           {p.last_updated && (
-            <p className="text-xs text-muted-foreground mt-2">{new Date(p.last_updated).toLocaleDateString()}</p>
+            <p className="text-xs text-muted-foreground mb-2">{new Date(p.last_updated).toLocaleDateString()}</p>
           )}
+          <h1 className="text-3xl font-bold">{p.title}</h1>
         </header>
 
-        {p.body_markdown ? (
+        {bodyContent ? (
           <div className="prose prose-slate dark:prose-invert max-w-none">
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>{p.body_markdown}</ReactMarkdown>
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>{bodyContent}</ReactMarkdown>
           </div>
         ) : (
           <p className="text-muted-foreground">This paper is not yet available.</p>
