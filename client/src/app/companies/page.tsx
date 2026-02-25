@@ -1,19 +1,9 @@
-import { createClient } from '@/lib/supabase/server'
 import Link from 'next/link'
-import { getCompanyContact } from '@/lib/companyContacts'
 
 export default async function CompaniesPage() {
-  const supabase = await createClient()
-
-  // @ts-ignore - Supabase type inference issue
-  const { data: companies, error } = await supabase
-    .from('companies')
-    .select('*')
-    .order('name', { ascending: true })
-
-  if (error) {
-    console.error('Error fetching companies:', error)
-  }
+  const res = await fetch(`${process.env.NEXT_PUBLIC_APP_URL || ''}/api/v1/companies`, { cache: 'no-store' })
+  const json = res.ok ? await res.json() : { companies: [] }
+  const companies = json.companies || []
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -42,25 +32,19 @@ export default async function CompaniesPage() {
                   {company.description}
                 </p>
               )}
-              {(() => {
-                const c = getCompanyContact(company.name)
-                if (!c) return null
-                return (
-                  <div className="mt-4 text-sm text-muted-foreground space-y-1">
-                    {c.website && (
-                      <div>
-                        Website: <a href={c.website} className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">{c.website}</a>
-                      </div>
-                    )}
-                    {c.phone && <div>Phone: <span className="text-foreground">{c.phone}</span></div>}
-                    {c.email && (
-                      <div>
-                        Email: <a href={`mailto:${c.email}`} className="text-primary hover:underline">{c.email}</a>
-                      </div>
-                    )}
+              <div className="mt-4 text-sm text-muted-foreground space-y-1">
+                {company.website && (
+                  <div>
+                    Website: <a href={company.website} className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">{company.website}</a>
                   </div>
-                )
-              })()}
+                )}
+                {company.phone && <div>Phone: <span className="text-foreground">{company.phone}</span></div>}
+                {company.email && (
+                  <div>
+                    Email: <a href={`mailto:${company.email}`} className="text-primary hover:underline">{company.email}</a>
+                  </div>
+                )}
+              </div>
             </Link>
           ))}
         </div>

@@ -1,21 +1,17 @@
-import { createClient } from '@/lib/supabase/server'
 import { notFound } from 'next/navigation'
-import { getCompanyContact } from '@/lib/companyContacts'
 
 export default async function CompanyPage({ params }: { params: { id: string } }) {
-  const supabase = await createClient()
-
-  // @ts-ignore - Supabase type inference issue
-  const { data: company, error } = await supabase
-    .from('companies')
-    .select('*')
-    .eq('id', params.id)
-    .single()
-
-  if (error || !company) {
-    notFound()
+  const res = await fetch(`${process.env.NEXT_PUBLIC_APP_URL || ''}/api/v1/companies/${params.id}`, { cache: 'no-store' })
+  if (!res.ok) notFound()
+  const { company } = await res.json()
+  if (!company) notFound()
+  const contact = {
+    website: company.website,
+    contactUrl: company.contact_url,
+    phone: company.phone,
+    email: company.email,
+    address: company.address,
   }
-  const contact = getCompanyContact(company.name)
 
   return (
     <div className="container mx-auto px-4 py-8">

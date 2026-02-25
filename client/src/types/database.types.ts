@@ -130,6 +130,10 @@ export interface Company {
   description?: string
   website?: string
   logo_url?: string
+  contact_url?: string
+  phone?: string
+  email?: string
+  address?: string
   verified: boolean
   created_at: string
 }
