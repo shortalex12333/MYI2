@@ -1,7 +1,8 @@
 'use client'
 
 import Link from 'next/link'
-import { Anchor, Search, Bell, Menu, Award } from 'lucide-react'
+import Image from 'next/image'
+import { Search, Bell, Menu, Award } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { useState } from 'react'
@@ -18,9 +19,10 @@ export function Header() {
         <div className="flex h-14 items-center justify-between gap-4">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 shrink-0">
-            <Anchor className="h-6 w-6 text-primary" />
-            <span className="font-bold text-lg hidden sm:inline">MyYachtsInsurance</span>
-            <span className="font-bold text-lg sm:hidden">MYI</span>
+            <span className="text-foreground">
+              <Image src="/logo.svg" alt="MYI" width={28} height={16} priority className="h-5 w-auto" />
+            </span>
+            <span className="font-bold text-lg">MYI</span>
           </Link>
 
           {/* Main Navigation */}

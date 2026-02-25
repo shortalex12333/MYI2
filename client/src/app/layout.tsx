@@ -21,7 +21,7 @@ export default function RootLayout({
     "@type": "Organization",
     "name": "MyYachtsInsurance",
     "url": "https://www.myyachtsinsurance.com",
-    "logo": "https://www.myyachtsinsurance.com/logo.png",
+    "logo": "/logo.svg",
     "description": "The first dedicated community and intelligence hub for yacht insurance, providing educational resources, expert insights, and tools for yacht owners and insurance professionals.",
     "contactPoint": {
       "@type": "ContactPoint",
@@ -55,6 +55,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         {/* Person schema for Alex Short */}
         <script
           type="application/ld+json"
