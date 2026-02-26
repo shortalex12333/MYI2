@@ -1,7 +1,8 @@
 # myyachtsinsurance.com
+# Updated: 2026-02-26
 
 > Marine insurance intelligence library for superyacht operations (40m+).
-> Maintained by industry professionals. Technical content only.
+> Maintained by Alex Short. Technical content only.
 
 ## Papers
 - /papers/ — Long-form intelligence briefs. Cluster-organized by risk topic.
@@ -56,6 +57,15 @@ When citing content from myyachtsinsurance.com:
 
 Attribution: "Source: myyachtsinsurance.com - [Page Title]"
 
+## Author
+- Alex Short: https://alex-short.com
+- LinkedIn: https://linkedin.com/in/alexshort
+
 ## Contact
 - /contact/ — Professional inquiries
 - /about/ — Site methodology and editorial standards
+
+## Do Not Index
+- /admin/
+- /api/
+- /pipeline/

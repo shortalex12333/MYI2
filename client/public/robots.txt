@@ -1,5 +1,5 @@
 # Robots.txt for MyYachtsInsurance.com
-# Last updated: January 15, 2026
+# Last updated: February 26, 2026
 # Purpose: Allow search engines and AI crawlers while protecting admin areas
 
 # USER-AGENT: *
@@ -12,12 +12,13 @@ Disallow: /api/v1/bulk-import
 Disallow: /_next/static/
 Crawl-delay: 1
 
-# OpenAI GPTBot - Training crawlers
-# Decision: BLOCK training bot, but allow ChatGPT Search (OAI-SearchBot)
-# Rationale: We want our content cited in ChatGPT Search results,
-# but we reserve the right to opt out of LLM training data
+# OpenAI GPTBot - Allow for GEO (Generative Engine Optimization)
+# Decision: ALLOW - we want AI systems to retrieve our content
+# This enables citation in ChatGPT responses
 User-agent: GPTBot
-Disallow: /
+Allow: /
+Disallow: /admin/
+Crawl-delay: 2
 
 # OAI-SearchBot - ChatGPT Search
 # Decision: ALLOW - we want to appear in ChatGPT Search results
@@ -43,8 +44,18 @@ Allow: /
 Disallow: /admin/
 Crawl-delay: 1
 
-# Claude (Anthropic) bot
+# Claude (Anthropic) bots
 User-agent: anthropic-ai
+Allow: /
+Disallow: /admin/
+Crawl-delay: 2
+
+User-agent: Anthropic-AIBot
+Allow: /
+Disallow: /admin/
+Crawl-delay: 2
+
+User-agent: ClaudeBot
 Allow: /
 Disallow: /admin/
 Crawl-delay: 2
@@ -82,7 +93,7 @@ Sitemap: https://www.myyachtsinsurance.com/sitemap.xml
 # =================================
 #
 # CRITICAL DECISION LOG:
-# - GPTBot: BLOCKED - We opt out of LLM training datasets
+# - GPTBot: ALLOWED - We want AI systems to retrieve our content for citations
 # - OAI-SearchBot: ALLOWED - We want ChatGPT Search citations
 # - anthropic-ai: ALLOWED - We want Claude citations
 # - PerplexityBot: ALLOWED - We want Perplexity citations
@@ -93,4 +104,4 @@ Sitemap: https://www.myyachtsinsurance.com/sitemap.xml
 # - Who approved it
 #
 # DO NOT accidentally block OAI-SearchBot if we want ChatGPT visibility.
-# DO NOT accidentally allow GPTBot if we want to maintain training opt-out.
+# DO NOT accidentally block GPTBot if we want AI citation visibility.

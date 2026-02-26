@@ -1,8 +1,53 @@
 import { MetadataRoute } from 'next'
 
-export default function sitemap(): MetadataRoute.Sitemap {
+// Fetch papers from Supabase
+async function fetchPapers(): Promise<{ slug: string; updated: string | null }[]> {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+  if (!url || !key) return []
+
+  try {
+    const res = await fetch(
+      `${url}/rest/v1/papers?select=slug,last_updated&review_status=eq.reviewed`,
+      {
+        headers: { apikey: key, Authorization: `Bearer ${key}` },
+        next: { revalidate: 3600 }
+      }
+    )
+    if (!res.ok) return []
+    return res.json()
+  } catch {
+    return []
+  }
+}
+
+// Fetch topics from Supabase
+async function fetchTopics(): Promise<{ slug: string; last_updated: string | null }[]> {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+  if (!url || !key) return []
+
+  try {
+    const res = await fetch(
+      `${url}/rest/v1/consumer_topics?select=slug,last_updated&status=eq.published`,
+      {
+        headers: { apikey: key, Authorization: `Bearer ${key}` },
+        next: { revalidate: 3600 }
+      }
+    )
+    if (!res.ok) return []
+    return res.json()
+  } catch {
+    return []
+  }
+}
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://www.myyachtsinsurance.com'
   const lastModified = new Date()
+
+  // Fetch dynamic content
+  const [papers, topics] = await Promise.all([fetchPapers(), fetchTopics()])
 
   // Static core pages (only indexable pages)
   const corePages: MetadataRoute.Sitemap = [
@@ -98,11 +143,46 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
+  // Papers - intelligence briefs (priority 0.9)
+  const paperPages: MetadataRoute.Sitemap = papers.map(p => ({
+    url: `${baseUrl}/papers/${p.slug}`,
+    lastModified: p.updated ? new Date(p.updated) : lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.9,
+  }))
+
+  // Topics - consumer guides (priority 0.8)
+  const topicPages: MetadataRoute.Sitemap = topics.map(t => ({
+    url: `${baseUrl}/topics/${t.slug}`,
+    lastModified: t.last_updated ? new Date(t.last_updated) : lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }))
+
+  // Index pages for papers and topics
+  const indexPages: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/papers`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/topics`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+  ]
+
   // Combine only indexable pages (excludes noindex community pages)
   return [
     ...corePages,
     ...learningPages,
     ...glossaryPages,
     ...toolsAndResources,
+    ...indexPages,
+    ...paperPages,
+    ...topicPages,
   ]
 }
