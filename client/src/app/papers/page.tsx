@@ -16,17 +16,32 @@ export const metadata = {
 }
 
 export default async function PapersIndexPage() {
-  const supabase = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    { auth: { persistSession: false, autoRefreshToken: false } }
-  )
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+
+  if (!url || !key) {
+    console.error('Missing Supabase env vars:', { url: !!url, key: !!key })
+    return (
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-2">Intelligence Papers</h1>
+        <p className="text-red-500">Configuration error - missing database connection.</p>
+      </div>
+    )
+  }
+
+  const supabase = createClient(url, key, {
+    auth: { persistSession: false, autoRefreshToken: false }
+  })
 
   const { data, error } = await supabase
     .from('papers')
     .select('title,slug,tldr,last_updated')
     .order('last_updated', { ascending: false })
     .limit(50)
+
+  if (error) {
+    console.error('Supabase query error:', error)
+  }
 
   const papers: Paper[] = data || []
 
