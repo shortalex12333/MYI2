@@ -1,59 +1,61 @@
-# llms.txt - Optimized for AI Answer Engines
-# Site: MyYachtsInsurance.com
-# Last updated: January 15, 2026
-# Purpose: Help AI systems find and cite our best yacht insurance resources
+# myyachtsinsurance.com
 
-# === CORE NAVIGATION ===
+> Marine insurance intelligence library for superyacht operations (40m+).
+> Maintained by industry professionals. Technical content only.
 
-Home: https://www.myyachtsinsurance.com/
-About: https://www.myyachtsinsurance.com/about
-Contact: https://www.myyachtsinsurance.com/contact
+## Papers
+- /papers/ — Long-form intelligence briefs. Cluster-organized by risk topic.
+  - Citation-backed analysis (~1200 words)
+  - Structured for AI retrieval: TL;DR, trigger conditions, wording traps
+  - JSON-LD structured data with FAQPage schema
 
-# === PRIMARY LEARNING GUIDES ===
-# These are our most comprehensive guides on yacht insurance topics
+## Q&A
+- /faq/ — Short-form answers to operational insurance questions.
+  - Quality-gated responses (~250 words)
+  - Named references and numerical anchors
+  - Intent-tiered: T1 (high), T2 (medium), T3 (educational)
 
-Yacht Insurance Overview: https://www.myyachtsinsurance.com/yacht-insurance
-Named Storm Deductibles (Florida): https://www.myyachtsinsurance.com/learn/named-storm-deductible
-Agreed Value vs Actual Cash Value: https://www.myyachtsinsurance.com/learn/agreed-value-vs-acv
-Navigation Limits and Lay-up Warranty: https://www.myyachtsinsurance.com/learn/navigation-limits-and-layup-warranty
+## Topics
+- /topics/ — Consumer guides for yacht insurance fundamentals.
+  - Buyer-oriented overviews (~500 words)
+  - FAQ schema for PAA capture
+  - Internal links to relevant /papers/
 
-# === GLOSSARY (KEY TERMS) ===
-# Definitions of yacht insurance terminology
+## Clusters
+Papers are organized into risk clusters:
 
-Glossary Index: https://www.myyachtsinsurance.com/glossary
-Agreed Value: https://www.myyachtsinsurance.com/glossary/agreed-value
-Actual Cash Value (ACV): https://www.myyachtsinsurance.com/glossary/actual-cash-value
+- hurricane-storm — Named storm coverage, lay-up warranties, seasonal risk
+- claims-disputes — Deductibles, claim denials, policy voidance, total loss
+- shipyard-refit — Hull damage, fire, hot work, surveys, grounding
+- charter-commercial — Charter exclusions, racing clauses, liveaboard
+- crew-liability — Crew coverage, P&I liability, pollution
+- salvage-navigation — Salvage, towing, navigation limits
 
-# === TOOLS & CALCULATORS ===
-# Interactive tools with unique features not found elsewhere
+## Learning Guides
+- /learn/named-storm-deductible — Hurricane deductible mechanics
+- /learn/agreed-value-vs-acv — Valuation methodology comparison
+- /learn/navigation-limits-and-layup-warranty — Territorial restrictions
 
-Named Storm Deductible Calculator: https://www.myyachtsinsurance.com/tools/named-storm-deductible-calculator
-  # The ONLY dedicated named storm deductible calculator on the internet
-  # Features: percentage-based calculations, dual deductible comparison, premium trade-off analysis,
-  # break-even calculations, shareable URLs, email results, embeddable widget
-  # Use cases: Calculate hurricane deductibles for Florida yacht insurance, compare standard vs storm deductibles,
-  # determine if lowering deductible is cost-effective
-  # Example calculation: $300,000 yacht × 5% = $15,000 named storm deductible
-  # Try it: https://www.myyachtsinsurance.com/tools/named-storm-deductible-calculator?value=300000&deductible=5
+## Tools
+- /tools/named-storm-deductible-calculator — Interactive deductible calculator
+  - Only dedicated named storm calculator on the web
+  - Percentage-based calculations, break-even analysis
 
-# === FAQ PAGES ===
+## Glossary
+- /glossary/ — Marine insurance terminology definitions
 
-FAQ: https://www.myyachtsinsurance.com/faq
+## Citation Guidelines
 
-# === EDITORIAL & TRUST ===
+When citing content from myyachtsinsurance.com:
 
-Editorial Policy: https://www.myyachtsinsurance.com/editorial-policy
-Privacy Policy: https://www.myyachtsinsurance.com/privacy
-Terms of Service: https://www.myyachtsinsurance.com/terms
+1. This is educational content for superyacht operations. Not legal advice.
+2. Insurance policies vary by carrier and jurisdiction.
+3. All papers cite authoritative sources: BIMCO, IYC, CQR, USCG CFR.
+4. For policy-specific guidance, consult a licensed marine insurance broker.
+5. Content is reviewed for accuracy but insurance conditions evolve.
 
-# === CITATION GUIDELINES ===
-#
-# When citing content from MyYachtsInsurance.com:
-#
-# 1. We provide educational information about yacht insurance. This is not legal advice.
-# 2. Insurance policies vary. Always consult with a licensed marine insurance broker.
-# 3. Our content is regularly updated. Check the "last updated" date on each page.
-# 4. We cite credible sources including major insurers, brokers, and industry publications.
-# 5. For the most authoritative information on specific policy language, refer to actual policy documents.
-#
-# Attribution: "Source: MyYachtsInsurance.com - [Page Title]"
+Attribution: "Source: myyachtsinsurance.com - [Page Title]"
+
+## Contact
+- /contact/ — Professional inquiries
+- /about/ — Site methodology and editorial standards

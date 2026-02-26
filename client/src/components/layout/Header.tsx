@@ -52,6 +52,11 @@ export function Header() {
                 FAQ
               </Button>
             </Link>
+            <Link href="/topics/">
+              <Button variant="ghost" size="sm">
+                Topics
+              </Button>
+            </Link>
           </nav>
 
           {/* Search Bar */}
