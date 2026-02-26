@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { createClient } from '@supabase/supabase-js'
 
 type Paper = {
   title: string
@@ -20,7 +19,6 @@ export default async function PapersIndexPage() {
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 
   if (!url || !key) {
-    console.error('Missing Supabase env vars:', { url: !!url, key: !!key })
     return (
       <div className="container mx-auto px-4 py-8">
         <h1 className="text-3xl font-bold mb-2">Intelligence Papers</h1>
@@ -29,21 +27,27 @@ export default async function PapersIndexPage() {
     )
   }
 
-  const supabase = createClient(url, key, {
-    auth: { persistSession: false, autoRefreshToken: false }
-  })
-
-  const { data, error } = await supabase
-    .from('papers')
-    .select('title,slug,tldr,last_updated')
-    .order('last_updated', { ascending: false })
-    .limit(50)
-
-  if (error) {
-    console.error('Supabase query error:', error)
+  // Use direct REST API to avoid supabase-js client issues
+  let papers: Paper[] = []
+  try {
+    const res = await fetch(
+      `${url}/rest/v1/papers?select=title,slug,tldr,last_updated&order=last_updated.desc&limit=50`,
+      {
+        headers: {
+          apikey: key,
+          Authorization: `Bearer ${key}`,
+        },
+        cache: 'no-store',
+      }
+    )
+    if (res.ok) {
+      papers = await res.json()
+    } else {
+      console.error('Papers fetch failed:', res.status, await res.text())
+    }
+  } catch (e) {
+    console.error('Papers fetch error:', e)
   }
-
-  const papers: Paper[] = data || []
 
   return (
     <div className="container mx-auto px-4 py-8">
