@@ -8,6 +8,8 @@ type Paper = {
   last_updated: string | null
 }
 
+export const dynamic = 'force-dynamic'
+
 export const metadata = {
   title: 'Papers — Marine Insurance Intelligence',
   description: 'Long‑form, citation‑bound papers on yacht insurance topics. Neutral, framework‑first, reviewed for structure and evidence.'
