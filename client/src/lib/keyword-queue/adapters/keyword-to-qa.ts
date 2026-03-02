@@ -57,6 +57,7 @@ export async function generateQAFromKeyword(
     console.log(`[ADAPTER:QA] Created qa_candidates ${qaRecord.id} for keyword: ${input.keyword}`);
 
     // Step 2: Generate answer using existing pipeline
+    // Note: db client type mismatch is expected - generateAnswer accepts optional supabase client
     const answer = await generateAnswer({
       id: qaRecord.id,
       question: input.keyword,
@@ -65,7 +66,7 @@ export async function generateQAFromKeyword(
       persona: 'yacht_owner',
       scenario_stage: 'pre-purchase',
       intent_tier: 'T2',
-    }, db);
+    }, db as any); // Type cast to handle client type differences
 
     if (!answer || answer.trim().length === 0) {
       throw new Error('Answer generation returned empty result');

@@ -10,6 +10,11 @@
 
 import { db } from './db';
 import { routeKeyword, PipelineType } from './intent-router';
+import {
+  generatePaperFromKeyword,
+  generateQAFromKeyword,
+  generateTopicFromKeyword,
+} from './adapters';
 
 export interface KeywordQueueItem {
   id: string;
@@ -261,16 +266,95 @@ export async function processNextKeyword(): Promise<ProcessResult> {
     // Step 3: Route to appropriate pipeline
     const pipeline = routeKeyword(keyword.keyword);
 
+    console.log(
+      `[QUEUE] Locked ${keyword.keyword} for ${pipeline} pipeline (priority: ${keyword.priority_score})`
+    );
+
+    // Step 4: Execute pipeline via adapter
+    let result;
+    let contentId: string | undefined;
+
+    try {
+      switch (pipeline) {
+        case 'papers':
+          result = await generatePaperFromKeyword({
+            keyword_queue_id: keyword.id,
+            keyword: keyword.keyword,
+            cluster_id: keyword.cluster_id || '',
+            risk_topic: undefined, // Could be enriched from keyword metadata
+          });
+
+          if (result.success) {
+            await completeKeyword(keyword.id, result.paperId, 'paper');
+            contentId = result.paperId;
+          } else {
+            await failKeyword(keyword.id, result.error || 'Paper generation failed');
+          }
+          break;
+
+        case 'qa':
+          result = await generateQAFromKeyword({
+            keyword_queue_id: keyword.id,
+            keyword: keyword.keyword,
+            risk_topic: 'other', // Could be enriched from keyword metadata
+          });
+
+          if (result.success) {
+            await completeKeyword(keyword.id, result.qaId, 'qa');
+            contentId = result.qaId;
+          } else {
+            await failKeyword(keyword.id, result.error || 'Q&A generation failed');
+          }
+          break;
+
+        case 'topics':
+          result = await generateTopicFromKeyword({
+            keyword_queue_id: keyword.id,
+            keyword: keyword.keyword,
+            cluster_id: keyword.cluster_id || undefined,
+          });
+
+          if (result.success) {
+            await completeKeyword(keyword.id, result.topicId, 'topic');
+            contentId = result.topicId;
+          } else {
+            await failKeyword(keyword.id, result.error || 'Topic generation failed');
+          }
+          break;
+
+        default:
+          await failKeyword(keyword.id, `Unknown pipeline type: ${pipeline}`);
+          return {
+            success: false,
+            keyword: keyword.keyword,
+            keywordId: keyword.id,
+            pipeline,
+            error: `Unknown pipeline type: ${pipeline}`,
+          };
+      }
+    } catch (error) {
+      const errorMessage = error instanceof Error ? error.message : String(error);
+      await failKeyword(keyword.id, errorMessage);
+      return {
+        success: false,
+        keyword: keyword.keyword,
+        keywordId: keyword.id,
+        pipeline,
+        error: errorMessage,
+      };
+    }
+
     const duration = Date.now() - startTime;
     console.log(
-      `[QUEUE] Locked ${keyword.keyword} for ${pipeline} pipeline (${duration}ms, priority: ${keyword.priority_score})`
+      `[QUEUE] Completed ${keyword.keyword} via ${pipeline} pipeline (${duration}ms)`
     );
 
     return {
-      success: true,
+      success: result?.success || false,
       keyword: keyword.keyword,
       keywordId: keyword.id,
-      pipeline
+      pipeline,
+      contentId,
     };
   } catch (error) {
     console.error('[QUEUE] processNextKeyword error:', error);
