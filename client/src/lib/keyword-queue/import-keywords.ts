@@ -15,14 +15,14 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
-import * as dotenv from 'dotenv';
+import { config } from 'dotenv';
 
-// Load environment variables from .env.local
-dotenv.config({ path: path.resolve(__dirname, '../../../.env.local') });
+// Load environment variables BEFORE importing other modules
+config({ path: path.resolve(process.cwd(), '.env.local') });
 
-import { importFromTsv } from './keyword-importer';
-
+// Dynamic import to ensure env vars are loaded first
 async function main() {
+  const { importFromTsv } = await import('./keyword-importer');
   const args = process.argv.slice(2);
   const dryRun = args.includes('--dry-run');
 

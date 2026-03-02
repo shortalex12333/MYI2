@@ -7,8 +7,17 @@
  * Phase 02-03: Keyword Import
  */
 
-import { db } from './db';
 import { calculatePriorityScore, type KeywordQueueRow } from './priority-scorer';
+
+// Lazy-load db to allow environment variables to be set first
+let _db: any = null;
+function getDb() {
+  if (!_db) {
+    const { db } = require('./db');
+    _db = db;
+  }
+  return _db;
+}
 
 /**
  * Mapping from tier (T1, T2, T3) to pipeline_type
@@ -127,7 +136,7 @@ export async function importKeyword(
   }
 
   // Check if keyword already exists
-  const { data: existing, error: checkError } = await db
+  const { data: existing, error: checkError } = await getDb()
     .from('keyword_queue')
     .select('id')
     .eq('keyword', kw.query)
@@ -139,7 +148,7 @@ export async function importKeyword(
   }
 
   // Insert into keyword_queue
-  const { error } = await db
+  const { error } = await getDb()
     .from('keyword_queue')
     .insert({
       keyword: kw.query,
