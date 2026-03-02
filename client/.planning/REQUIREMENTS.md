@@ -173,14 +173,44 @@ Transform myyachtsinsurance.com's random content generation into a strategic key
 
 ---
 
-## Phase Recommendations
+## Traceability
 
-Based on research synthesis, recommend **4 phases**:
-
-1. **Phase 1: Foundation** — keyword_queue table, priority scoring, quality gates, Schema.org markup
-2. **Phase 2: Pipeline Integration** — Connect queue to papers/Q&A/topics, import keywords, first 20-page batch
-3. **Phase 3: Monitoring** — Dashboard, tracking, feedback loop, scale to 50/week
-4. **Phase 4: Maintenance** — Ongoing audits, pruning, freshness updates
+| Requirement | Phase | Status |
+|-------------|-------|--------|
+| FR-1.1 | Phase 1 | Pending |
+| FR-1.2 | Phase 1 | Pending |
+| FR-1.3 | Phase 2 | Pending |
+| FR-1.4 | Phase 1 | Pending |
+| FR-2.1 | Phase 1 | Pending |
+| FR-2.2 | Phase 1 | Pending |
+| FR-2.3 | Phase 1 | Pending |
+| FR-2.4 | Phase 1 | Pending |
+| FR-3.1 | Phase 2 | Pending |
+| FR-3.2 | Phase 2 | Pending |
+| FR-3.3 | Phase 2 | Pending |
+| FR-3.4 | Phase 2 | Pending |
+| FR-3.5 | Phase 2 | Pending |
+| FR-3.6 | Phase 2 | Pending |
+| FR-3.7 | Phase 2 | Pending |
+| FR-3.8 | Phase 2 | Pending |
+| FR-4.1 | Phase 1 | Pending |
+| FR-4.2 | Phase 1 | Pending |
+| FR-4.3 | Phase 1 | Pending |
+| FR-4.4 | Phase 1 | Pending |
+| FR-4.5 | Phase 1 | Pending |
+| FR-4.6 | Phase 1 | Pending |
+| FR-4.7 | Phase 1 | Pending |
+| FR-5.1 | Phase 1 | Pending |
+| FR-5.2 | Phase 1 | Pending |
+| FR-5.3 | Phase 1 | Pending |
+| FR-5.4 | Phase 1 | Pending |
+| FR-6.1 | Phase 2 | Pending |
+| FR-6.2 | Phase 2 | Pending |
+| FR-6.3 | Phase 3 | Pending |
+| FR-6.4 | Phase 3 | Pending |
+| FR-7.1 | Phase 3 | Pending |
+| FR-7.2 | Phase 3 | Pending |
+| FR-7.3 | Phase 3 | Pending |
 
 ---
 
