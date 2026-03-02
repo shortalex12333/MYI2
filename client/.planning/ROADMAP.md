@@ -20,20 +20,20 @@ Transform myyachtsinsurance.com's random content generation into a strategic key
 ### Phase 1: Foundation
 **Goal**: Establish the keyword orchestration layer and quality infrastructure that sits above existing content pipelines
 **Depends on**: Nothing (first phase)
-**Requirements**: FR-1.1, FR-1.2, FR-1.3, FR-1.4, FR-2.1, FR-2.2, FR-2.3, FR-2.4, FR-4.1, FR-4.2, FR-4.3, FR-4.4, FR-4.5, FR-4.6, FR-4.7, FR-5.1, FR-5.2, FR-5.3, FR-5.4
+**Requirements**: FR-1.1, FR-1.2, FR-1.4, FR-2.1, FR-2.2, FR-2.3, FR-2.4, FR-4.1, FR-4.2, FR-4.3, FR-4.4, FR-4.5, FR-4.6, FR-4.7, FR-5.1, FR-5.2, FR-5.3, FR-5.4
 **Success Criteria** (what must be TRUE):
   1. keyword_queue table exists in Supabase with all required fields (id, keyword, priority_score, status, pipeline_type, cluster_id, search_volume, keyword_difficulty, retry_count, generated_paper_id, created_at)
   2. Existing papers, qa_entries, and consumer_topics tables have keyword_queue_id foreign key
   3. Priority scoring function calculates score using volume x (100 - difficulty) formula
   4. Quality gate functions validate word count, keyword density (<3%), and readability (>60 Flesch)
   5. FAQPage and Article Schema.org markup renders on new content pages
-**Plans**: TBD
+**Plans**: 4 plans
 
 Plans:
-- [ ] 01-01: Database schema for keyword_queue and foreign keys
-- [ ] 01-02: Priority scoring module
-- [ ] 01-03: Quality gates implementation
-- [ ] 01-04: Schema.org markup integration
+- [ ] 01-01-PLAN.md — Database schema for keyword_queue table and foreign keys to content tables
+- [ ] 01-02-PLAN.md — Priority scoring module with TDD (base score, seasonal multiplier, decay factor, VIEW)
+- [ ] 01-03-PLAN.md — Quality gates implementation with TDD (readability, keyword density, spot-check)
+- [ ] 01-04-PLAN.md — Schema.org markup (FAQPage, BreadcrumbList) integration
 
 ### Phase 2: Pipeline Integration
 **Goal**: Connect the keyword queue to existing content generation pipelines and publish first batch of keyword-driven content
@@ -95,7 +95,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 0/4 | Not started | - |
+| 1. Foundation | 0/4 | Planned | - |
 | 2. Pipeline Integration | 0/4 | Not started | - |
 | 3. Monitoring | 0/3 | Not started | - |
 | 4. Maintenance | 0/2 | Not started | - |
@@ -104,7 +104,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 
 | Requirement Category | Requirements | Phase | Mapped |
 |---------------------|--------------|-------|--------|
-| FR-1: Keyword Queue | FR-1.1, FR-1.2, FR-1.3, FR-1.4 | Phase 1 | Yes |
+| FR-1: Keyword Queue | FR-1.1, FR-1.2, FR-1.4 | Phase 1 | Yes |
 | FR-2: Priority Scoring | FR-2.1, FR-2.2, FR-2.3, FR-2.4 | Phase 1 | Yes |
 | FR-3: Content Generation | FR-3.1 to FR-3.8 | Phase 2 | Yes |
 | FR-4: Quality Gates | FR-4.1 to FR-4.7 | Phase 1 | Yes |
@@ -112,7 +112,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 | FR-6: Publishing | FR-6.1, FR-6.2 (Phase 2), FR-6.3, FR-6.4 (Phase 3) | Phase 2/3 | Yes |
 | FR-7: Performance Tracking | FR-7.1 to FR-7.3 | Phase 3 | Yes |
 
-**Coverage:** 34/34 functional requirements mapped
+**Coverage:** 33/33 functional requirements mapped (FR-1.3 not in scope for Phase 1)
 
 ## Dependencies
 
