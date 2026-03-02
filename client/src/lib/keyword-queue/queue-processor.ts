@@ -229,6 +229,149 @@ export async function failKeyword(keywordId: string, errorMessage: string): Prom
 }
 
 /**
+ * Process a specific keyword by ID (for batch processing)
+ *
+ * Similar to processNextKeyword but processes a specific keyword ID.
+ * Used for batch execution where keywords are pre-selected.
+ */
+export async function processKeyword(keywordId: string): Promise<ProcessResult & { contentType?: string }> {
+  const startTime = Date.now();
+
+  try {
+    // Step 1: Fetch the specific keyword
+    const { data: keyword, error: fetchError } = await db
+      .from('keyword_queue')
+      .select('*')
+      .eq('id', keywordId)
+      .single();
+
+    if (fetchError || !keyword) {
+      return {
+        success: false,
+        error: `Failed to fetch keyword: ${fetchError?.message || 'Not found'}`
+      };
+    }
+
+    // Step 2: Lock keyword atomically
+    const locked = await lockKeyword(keyword.id);
+
+    if (!locked) {
+      return {
+        success: false,
+        keyword: keyword.keyword,
+        keywordId: keyword.id,
+        error: 'Failed to acquire lock (already being processed)'
+      };
+    }
+
+    // Step 3: Route to appropriate pipeline
+    const pipeline = routeKeyword(keyword.keyword);
+
+    console.log(
+      `[QUEUE] Processing ${keyword.keyword} via ${pipeline} pipeline`
+    );
+
+    // Step 4: Execute pipeline via adapter
+    let result;
+    let contentId: string | undefined;
+    let contentType: string | undefined;
+
+    try {
+      switch (pipeline) {
+        case 'papers':
+          result = await generatePaperFromKeyword({
+            keyword_queue_id: keyword.id,
+            keyword: keyword.keyword,
+            cluster_id: keyword.cluster_id || '',
+            risk_topic: undefined,
+          });
+
+          if (result.success) {
+            await completeKeyword(keyword.id, result.paperId, 'paper');
+            contentId = result.paperId;
+            contentType = 'paper';
+          } else {
+            await failKeyword(keyword.id, result.error || 'Paper generation failed');
+          }
+          break;
+
+        case 'qa':
+          result = await generateQAFromKeyword({
+            keyword_queue_id: keyword.id,
+            keyword: keyword.keyword,
+            risk_topic: 'other',
+          });
+
+          if (result.success) {
+            await completeKeyword(keyword.id, result.qaId, 'qa');
+            contentId = result.qaId;
+            contentType = 'qa';
+          } else {
+            await failKeyword(keyword.id, result.error || 'Q&A generation failed');
+          }
+          break;
+
+        case 'topics':
+          result = await generateTopicFromKeyword({
+            keyword_queue_id: keyword.id,
+            keyword: keyword.keyword,
+            cluster_id: keyword.cluster_id || undefined,
+          });
+
+          if (result.success) {
+            await completeKeyword(keyword.id, result.topicId, 'topic');
+            contentId = result.topicId;
+            contentType = 'topic';
+          } else {
+            await failKeyword(keyword.id, result.error || 'Topic generation failed');
+          }
+          break;
+
+        default:
+          await failKeyword(keyword.id, `Unknown pipeline type: ${pipeline}`);
+          return {
+            success: false,
+            keyword: keyword.keyword,
+            keywordId: keyword.id,
+            pipeline,
+            error: `Unknown pipeline type: ${pipeline}`,
+          };
+      }
+    } catch (error) {
+      const errorMessage = error instanceof Error ? error.message : String(error);
+      await failKeyword(keyword.id, errorMessage);
+      return {
+        success: false,
+        keyword: keyword.keyword,
+        keywordId: keyword.id,
+        pipeline,
+        error: errorMessage,
+      };
+    }
+
+    const duration = Date.now() - startTime;
+    console.log(
+      `[QUEUE] Completed ${keyword.keyword} via ${pipeline} pipeline (${duration}ms)`
+    );
+
+    return {
+      success: result?.success || false,
+      keyword: keyword.keyword,
+      keywordId: keyword.id,
+      pipeline,
+      contentId,
+      contentType,
+    };
+  } catch (error) {
+    console.error('[QUEUE] processKeyword error:', error);
+    return {
+      success: false,
+      error: String(error)
+    };
+  }
+}
+
+/**
  * Main orchestrator function
  *
  * Coordinates the entire process:
