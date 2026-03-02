@@ -12,23 +12,23 @@ See: .planning/PROJECT.md (updated 2026-03-02)
 Phase: 2 of 4 (Pipeline Integration)
 Plan: 3 of 4
 Status: In Progress
-Last activity: 2026-03-02 - Completed 02-03-PLAN.md (Keyword Import System)
+Last activity: 2026-03-02 - Completed 02-02-PLAN.md (Pipeline Adapters) - backfilled
 
-Progress: [████▌░░░░░] 38%
+Progress: [████▌░░░░░] 46%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 5
-- Average duration: 274 seconds
-- Total execution time: 0.38 hours
+- Total plans completed: 6
+- Average duration: 278 seconds
+- Total execution time: 0.46 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 1. Foundation | 4/4 | 660s | 165s |
-| 2. Pipeline Integration | 1/4 | 548s | 274s |
+| 2. Pipeline Integration | 3/4 | 1138s | 285s |
 | 3. Monitoring | 0/3 | - | - |
 | 4. Maintenance | 0/2 | - | - |
 
@@ -36,14 +36,14 @@ Progress: [████▌░░░░░] 38%
 
 | Plan | Duration | Tasks | Files | Completed |
 |------|----------|-------|-------|-----------|
+| Phase 02 P02 | 295s | 3 tasks | 5 files | 2026-03-02 |
 | Phase 02 P03 | 339s | 3 tasks | 3 files | 2026-03-02 |
 | Phase 02 P01 | 209s | 3 tasks | 4 files | 2026-03-02 |
 | Phase 01 P03 | 439s | 3 tasks | 6 files | 2026-03-02 |
-| Phase 01 P02 | 83s | 3 tasks | 3 files | 2026-03-02 |
 
 **Recent Trend:**
-- Last 5 plans: 01-02 (83s), 01-03 (439s), 01-04 (51s), 02-01 (209s), 02-03 (339s)
-- Trend: Phase 2 in progress
+- Last 5 plans: 01-03 (439s), 01-04 (51s), 02-01 (209s), 02-02 (295s), 02-03 (339s)
+- Trend: Phase 2 progressing steadily, 3 of 4 complete
 
 *Updated after each plan completion*
 
@@ -73,6 +73,9 @@ Recent decisions affecting current work:
 - [Phase 02-01]: Pure function design for intent detection (testable, composable)
 - [Phase 02-01]: Retry logic capped at 3 attempts per keyword
 - [Phase 02-01]: Hourly cron schedule (0 * * * *) for gradual content rollout
+- [Phase 02-02]: Thin adapter pattern to preserve existing generator code unchanged
+- [Phase 02-02]: Adapters create prerequisite records (paper_topic, qa_candidates) before calling generators
+- [Phase 02-02]: FK linking happens after generation (non-fatal if update fails)
 
 ### Pending Todos
 
@@ -86,9 +89,13 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-02
-Stopped at: Completed 02-03-PLAN.md (Keyword Import System)
+Stopped at: Completed 02-02-PLAN.md (Pipeline Adapters) - backfilled after 02-03
 Resume file: None
 
 ## Next Action
 
 Continue Phase 2: Execute 02-04-PLAN.md (Keyword Queue Consumer)
+
+## Note
+
+Plan 02-02 was executed out of order (after 02-03) to fix dependency violation. Pipeline adapters are now in place for 02-04 to use.
