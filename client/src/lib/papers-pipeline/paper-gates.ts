@@ -211,7 +211,7 @@ export async function validatePaper(paperId: string): Promise<ValidationResult> 
       gate_references:     gates[4].passed,
       gate_citations:      gates[5].passed,  // Gate 6: Citation Requirements
       gates_passed_at:     allPassed ? new Date().toISOString() : null,
-      review_status:       verdict === 'publish' ? 'reviewed' : 'draft',
+      review_status:       verdict === 'publish' ? 'published' : 'draft',
     })
     .eq('id', paperId);
 

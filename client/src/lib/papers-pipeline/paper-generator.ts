@@ -378,7 +378,8 @@ export async function generatePaper(topicId: string): Promise<GeneratedPaper> {
       author_url:      'https://alex-short.com/experience',
       author_context:  'Former yacht ETO — maritime operational experience',
       schema_json:     schemaJson,
-      review_status:   'draft',
+      review_status:   'published',
+      published_at:    now,
       last_updated:    now,
     })
     .select('id')
