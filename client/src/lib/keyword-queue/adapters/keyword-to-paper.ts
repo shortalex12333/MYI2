@@ -7,6 +7,7 @@
 
 import { db } from '../db';
 import { generatePaper } from '../../papers-pipeline/paper-generator';
+import { embedPaper } from '../../embeddings/auto-embed';
 
 export interface KeywordPaperInput {
   keyword_queue_id: string;
@@ -79,6 +80,9 @@ export async function generatePaperFromKeyword(
     console.log(
       `[ADAPTER:PAPER] Generated paper ${generatedPaper.paperId} (${generatedPaper.wordCount} words) for keyword: ${input.keyword}`
     );
+
+    // Auto-embed the new paper
+    await embedPaper(generatedPaper.paperId, generatedPaper.title, generatedPaper.body || "", generatedPaper.tldr || "", input.keyword).catch(() => {});
 
     return {
       paperId: generatedPaper.paperId,

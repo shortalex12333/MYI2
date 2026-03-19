@@ -7,6 +7,7 @@
 
 import { db } from '../db';
 import { generateTopic, saveTopic } from '../../topics-pipeline/topic-generator';
+import { embedTopic } from '../../embeddings/auto-embed';
 
 export interface KeywordTopicInput {
   keyword_queue_id: string;
@@ -78,6 +79,10 @@ export async function generateTopicFromKeyword(
       `[ADAPTER:TOPIC] Linked topic ${topicId} for keyword: ${input.keyword}`
     );
 
+    // Auto-embed the new topic
+    const topicData = existing || generatedTopic;
+    await embedTopic(topicId, topicData.title, topicData.content || "", topicData.summary || "", topicData.category || "").catch(() => {});
+
     return {
       topicId: topicId,
       title: existing?.title || generatedTopic.title,
@@ -87,6 +92,7 @@ export async function generateTopicFromKeyword(
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : String(error);
     console.error(`[ADAPTER:TOPIC] Error:`, errorMessage);
+
 
     return {
       topicId: '',
