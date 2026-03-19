@@ -33,7 +33,7 @@ export interface BatchKeyword {
  */
 export async function selectFirstBatch(
   limit: number = 20,
-  maxPerCluster: number = 3
+  maxPerCluster: number = 10
 ): Promise<BatchKeyword[]> {
   try {
     // Fetch all pending keywords ordered by priority
