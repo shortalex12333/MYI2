@@ -160,12 +160,12 @@ export async function completeKeyword(
   contentType: 'paper' | 'qa' | 'topic'
 ): Promise<boolean> {
   try {
+    // Note: generated_content_type column doesn't exist in schema, pipeline_type already captures this
     const { error } = await db
       .from('keyword_queue')
       .update({
         status: 'generated',
         generated_content_id: contentId,
-        generated_content_type: contentType,
         updated_at: new Date().toISOString()
       })
       .eq('id', keywordId);
@@ -203,12 +203,14 @@ export async function failKeyword(keywordId: string, errorMessage: string): Prom
     const newRetryCount = current.retry_count + 1;
     const shouldFail = newRetryCount >= 3;
 
+    // Note: error_message column doesn't exist in schema, just log it
+    console.log(`[QUEUE] Error for ${keywordId}: ${errorMessage}`);
+
     const { error } = await db
       .from('keyword_queue')
       .update({
         status: shouldFail ? 'failed' : 'pending',
         retry_count: newRetryCount,
-        error_message: errorMessage,
         updated_at: new Date().toISOString()
       })
       .eq('id', keywordId);
@@ -264,8 +266,8 @@ export async function processKeyword(keywordId: string): Promise<ProcessResult &
       };
     }
 
-    // Step 3: Route to appropriate pipeline
-    const pipeline = routeKeyword(keyword.keyword);
+    // Step 3: Use pipeline_type from queue (set during import), fallback to router
+    const pipeline = keyword.pipeline_type || routeKeyword(keyword.keyword);
 
     console.log(
       `[QUEUE] Processing ${keyword.keyword} via ${pipeline} pipeline`
@@ -278,7 +280,7 @@ export async function processKeyword(keywordId: string): Promise<ProcessResult &
 
     try {
       switch (pipeline) {
-        case 'papers':
+        case 'paper':
           result = await generatePaperFromKeyword({
             keyword_queue_id: keyword.id,
             keyword: keyword.keyword,
@@ -311,7 +313,7 @@ export async function processKeyword(keywordId: string): Promise<ProcessResult &
           }
           break;
 
-        case 'topics':
+        case 'topic':
           result = await generateTopicFromKeyword({
             keyword_queue_id: keyword.id,
             keyword: keyword.keyword,
@@ -419,7 +421,7 @@ export async function processNextKeyword(): Promise<ProcessResult> {
 
     try {
       switch (pipeline) {
-        case 'papers':
+        case 'paper':
           result = await generatePaperFromKeyword({
             keyword_queue_id: keyword.id,
             keyword: keyword.keyword,
@@ -450,7 +452,7 @@ export async function processNextKeyword(): Promise<ProcessResult> {
           }
           break;
 
-        case 'topics':
+        case 'topic':
           result = await generateTopicFromKeyword({
             keyword_queue_id: keyword.id,
             keyword: keyword.keyword,

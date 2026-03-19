@@ -35,17 +35,20 @@ export async function generateQAFromKeyword(
   input: KeywordQAInput
 ): Promise<KeywordQAResult> {
   try {
-    // Step 1: Create qa_candidates record
+    // Create question hash for deduplication
+    const crypto = require('crypto');
+    const questionHash = crypto.createHash('sha256').update(input.keyword).digest('hex');
+
+    // Step 1: Create qa_candidates record with minimal required fields
     const { data: qaRecord, error: qaError } = await db
       .from('qa_candidates')
       .insert({
         question: input.keyword,
-        risk_topic: input.risk_topic,
-        jurisdiction: input.jurisdiction || 'US',
-        persona: 'yacht_owner',
-        scenario_stage: 'pre-purchase',
-        intent_tier: 'T2',
-        publish_status: 'pending',
+        answer: '[PENDING]',
+        source_url: 'keyword_queue',
+        question_hash: questionHash,
+        answer_hash: crypto.createHash('sha256').update('[PENDING]').digest('hex'),
+        publish_status: 'raw',
       })
       .select('id')
       .single();
@@ -57,32 +60,31 @@ export async function generateQAFromKeyword(
     console.log(`[ADAPTER:QA] Created qa_candidates ${qaRecord.id} for keyword: ${input.keyword}`);
 
     // Step 2: Generate answer using existing pipeline
-    // Note: db client type mismatch is expected - generateAnswer accepts optional supabase client
     const answer = await generateAnswer({
       id: qaRecord.id,
       question: input.keyword,
-      risk_topic: input.risk_topic,
+      risk_topic: input.risk_topic || 'other',
       jurisdiction: input.jurisdiction || 'US',
       persona: 'yacht_owner',
       scenario_stage: 'pre-purchase',
       intent_tier: 'T2',
-    }, db as any); // Type cast to handle client type differences
+    }, db as any);
 
     if (!answer || answer.trim().length === 0) {
       throw new Error('Answer generation returned empty result');
     }
 
     const wordCount = answer.split(/\s+/).filter(Boolean).length;
+    const answerHash = crypto.createHash('sha256').update(answer).digest('hex');
 
     // Step 3: Update qa_candidates with answer and keyword_queue_id link
     const { error: updateError } = await db
       .from('qa_candidates')
       .update({
         answer: answer,
-        word_count: wordCount,
+        answer_hash: answerHash,
         keyword_queue_id: input.keyword_queue_id,
         publish_status: 'drafted',
-        generated_at: new Date().toISOString(),
       })
       .eq('id', qaRecord.id);
 

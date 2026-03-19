@@ -93,37 +93,50 @@ function toSlug(title: string): string {
 
 // ─── CALL QWEN ──────────────────────────────────────────────
 
-async function callQwen(prompt: string, maxTokens = 2000): Promise<string> {
-  const response = await fetch(`${OLLAMA_URL}/api/chat`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      model: MODEL,
-      messages: [
-        {
-          role: 'system',
-          content: `You are a helpful consumer guide writer for yacht and boat insurance. Write in plain, friendly language that everyday boat owners can understand. Avoid technical jargon - explain concepts simply. Be direct and practical.`,
-        },
-        { role: 'user', content: prompt },
-      ],
-      stream: false,
-      options: {
-        temperature: 0.3,
-        top_p: 0.9,
-        num_predict: maxTokens,
-        repeat_penalty: 1.05,
-      },
-    }),
-  });
+async function callQwen(prompt: string, maxTokens = 2000, retries = 2): Promise<string> {
+  for (let attempt = 0; attempt <= retries; attempt++) {
+    try {
+      const response = await fetch(`${OLLAMA_URL}/api/chat`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          model: MODEL,
+          messages: [
+            {
+              role: 'system',
+              content: `You are a helpful consumer guide writer for yacht and boat insurance. Write in plain, friendly language that everyday boat owners can understand. Avoid technical jargon - explain concepts simply. Be direct and practical.`,
+            },
+            { role: 'user', content: prompt },
+          ],
+          stream: false,
+          options: {
+            temperature: 0.3,
+            top_p: 0.9,
+            num_predict: maxTokens,
+            repeat_penalty: 1.05,
+          },
+        }),
+      });
 
-  if (!response.ok) throw new Error(`Ollama error: ${response.status}`);
-  const data = await response.json();
-  let content = data.message?.content?.trim() ?? '';
+      if (!response.ok) throw new Error(`Ollama error: ${response.status}`);
+      const data = await response.json();
+      let content = data.message?.content?.trim() ?? '';
 
-  // Strip thinking tags if present (Qwen3 thinking mode)
-  content = content.replace(/<think>[\s\S]*?<\/think>/g, '').trim();
+      // Strip thinking tags if present (Qwen3 thinking mode)
+      content = content.replace(/<think>[\s\S]*?<\/think>/g, '').trim();
 
-  return content;
+      if (!content) throw new Error('Empty response from Ollama');
+      return content;
+    } catch (err) {
+      if (attempt < retries) {
+        console.log(`  [Retry ${attempt + 1}/${retries}] Ollama call failed, retrying in 3s...`);
+        await new Promise(r => setTimeout(r, 3000));
+      } else {
+        throw err;
+      }
+    }
+  }
+  throw new Error('callQwen exhausted retries');
 }
 
 // ─── PARSE JSON ─────────────────────────────────────────────
@@ -267,14 +280,19 @@ export async function generateTopic(seedQuery: string): Promise<GeneratedTopic> 
   const category = classifyCategory(seedQuery);
   console.log(`  Category: ${category}`);
 
-  // Step 2: Generate title and summary
+  // Step 2: Generate title and summary (with parse retry)
   console.log('  Generating title and summary...');
   const titlePrompt = buildTitleAndSummaryPrompt(seedQuery, category);
-  const titleRaw = await callQwen(titlePrompt, 500);
-  const titleParsed = parseJson<{ title: string; summary: string }>(titleRaw);
+  let titleParsed: { title: string; summary: string } | null = null;
+  for (let parseAttempt = 0; parseAttempt < 2; parseAttempt++) {
+    const titleRaw = await callQwen(titlePrompt, 500);
+    titleParsed = parseJson<{ title: string; summary: string }>(titleRaw);
+    if (titleParsed?.title && titleParsed?.summary) break;
+    console.log(`  [Parse retry] Got unparseable response, retrying...`);
+  }
 
   if (!titleParsed?.title || !titleParsed?.summary) {
-    throw new Error('Failed to generate title/summary');
+    throw new Error('Failed to generate title/summary after retries');
   }
 
   const title = titleParsed.title;

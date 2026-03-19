@@ -40,6 +40,7 @@ export async function generatePaperFromKeyword(
     const { data: topic, error: topicError } = await db
       .from('paper_topics')
       .insert({
+        topic_signal: input.keyword,  // Required: raw keyword/phrase
         canonical_title: input.keyword,
         primary_query: input.keyword,
         cluster_id: input.cluster_id,

@@ -44,10 +44,24 @@ export async function generateTopicFromKeyword(
       `[ADAPTER:TOPIC] Generated topic: ${generatedTopic.title} (${generatedTopic.content.split(/\s+/).filter(Boolean).length} words)`
     );
 
-    // Step 2: Save to database
-    const topicId = await saveTopic(generatedTopic);
+    // Step 2: Check if topic with this slug already exists
+    const { data: existing } = await db
+      .from('consumer_topics')
+      .select('id, title, slug')
+      .eq('slug', generatedTopic.slug)
+      .single();
 
-    console.log(`[ADAPTER:TOPIC] Saved topic ${topicId} to database`);
+    let topicId: string;
+
+    if (existing) {
+      // Topic already exists - link keyword to existing topic
+      console.log(`[ADAPTER:TOPIC] Topic already exists: ${existing.slug} (${existing.id})`);
+      topicId = existing.id;
+    } else {
+      // Save new topic
+      topicId = await saveTopic(generatedTopic);
+      console.log(`[ADAPTER:TOPIC] Saved new topic ${topicId} to database`);
+    }
 
     // Step 3: Link topic back to keyword_queue
     const { error: updateError } = await db
@@ -57,17 +71,17 @@ export async function generateTopicFromKeyword(
 
     if (updateError) {
       console.error(`[ADAPTER:TOPIC] Failed to link topic to keyword_queue:`, updateError.message);
-      // Non-fatal: topic was generated, just FK link failed
+      // Non-fatal: topic exists, just FK link failed
     }
 
     console.log(
-      `[ADAPTER:TOPIC] Generated topic ${topicId} for keyword: ${input.keyword}`
+      `[ADAPTER:TOPIC] Linked topic ${topicId} for keyword: ${input.keyword}`
     );
 
     return {
       topicId: topicId,
-      title: generatedTopic.title,
-      slug: generatedTopic.slug,
+      title: existing?.title || generatedTopic.title,
+      slug: existing?.slug || generatedTopic.slug,
       success: true,
     };
   } catch (error) {

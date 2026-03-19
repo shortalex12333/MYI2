@@ -15,7 +15,7 @@
  */
 
 export type IntentType = 'question' | 'commercial' | 'informational';
-export type PipelineType = 'papers' | 'qa' | 'topics';
+export type PipelineType = 'paper' | 'qa' | 'topic';
 
 // Question patterns: interrogative words and question marks
 const QUESTION_PATTERN = /^(how|what|why|when|where|does|can|is|are|should|do)\b/i;
@@ -57,9 +57,9 @@ export function routeToPipeline(intent: IntentType): PipelineType {
     case 'question':
       return 'qa';
     case 'commercial':
-      return 'topics';
+      return 'topic';
     case 'informational':
-      return 'papers';
+      return 'paper';
   }
 }
 
