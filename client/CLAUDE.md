@@ -1,6 +1,6 @@
 # MYI2 — MyYachtsInsurance.com Content Pipeline
 
-> Last verified: 2026-03-13 by live DB queries and filesystem inspection
+> Last verified: 2026-03-19 by live DB queries, site checks, and cron fix
 
 ## What This Is
 
@@ -33,14 +33,14 @@ Vercel only serves the website and two crons (daily-scrape, paper-publish) that 
 - Ollama URL: `process.env.OLLAMA_URL || 'http://localhost:11434'`
 - Binary: `/opt/homebrew/bin/ollama`
 
-## Database State (verified 2026-03-13 post-fix)
+## Database State (verified 2026-03-19)
 
 | Table | Count | Breakdown |
 |-------|-------|-----------|
-| keyword_queue | 300 | 284 pending, 16 generated |
-| papers | 51 | 44 published, 7 draft |
-| consumer_topics | 48 | 39 published, 9 draft (8 new from keyword queue) |
-| qa_entries | 199 | published Q&A on site |
+| keyword_queue | 300 | 284 pending, 16 generated, 0 generating |
+| papers | 52 | 44 published, 8 draft |
+| consumer_topics | 48 | 48 published (all live) |
+| qa_entries | 201 | 201 active on site |
 | qa_candidates | 1000 | 445 raw, 307 published, 168 tagged, 80 drafted |
 
 ## Supabase
@@ -111,7 +111,7 @@ npx tsx src/lib/keyword-queue/keyword-importer.ts --file=keywords.tsv
 - `daily-scrape` — HTTP scraping + pattern-based Q&A extraction
 - `paper-publish` — moves papers from reviewed → published (hourly, business hours)
 
-## Known Issues (verified 2026-03-13)
+## Known Issues (verified 2026-03-19)
 
 ### Fixed this session:
 1. ~~Ollama not running~~ — started, both models loaded (qwen3:32b, ministral-3:8b)
@@ -122,9 +122,10 @@ npx tsx src/lib/keyword-queue/keyword-importer.ts --file=keywords.tsv
 6. ~~Topic generator intermittent failures~~ — added retry to callQwen + parse-level retry
 
 ### Remaining:
-- 7 draft papers need review before publishing
+- 8 draft papers need review before publishing
 - 284 pending keywords in queue (run `npx tsx src/lib/keyword-queue/run-first-batch.ts --limit=20`)
 - Ollama must be manually started after reboot (`/opt/homebrew/bin/ollama serve`)
+- Cron logs write to /tmp/myi2-logs/ (macOS TCC blocks ~/Documents from cron)
 
 ## Import Pattern
 
@@ -143,3 +144,10 @@ import { createClient } from '@/lib/supabase/server';
 - Don't trust "tests pass" without running them — previous Claude got burned on this
 - Don't batch 30 things at once — do one, verify, then scale
 - Don't skip verification — evidence before claims, always
+
+### Fixed 2026-03-19:
+7. ~~Cron broken since Feb 23~~ — macOS TCC blocked writes to ~/Documents; fixed logs to /tmp/myi2-logs/
+8. ~~8am crontab missing `cd` prefix~~ — fixed, all 3 entries now correct
+9. ~~9 draft topics unpublished~~ — published all 9, 48/48 topics now live
+10. ~~2 keywords stuck in `generating`~~ — reset to pending
+11. ~~UPSERT fix not deployed~~ — committed and pushed to Vercel (51 commits)
