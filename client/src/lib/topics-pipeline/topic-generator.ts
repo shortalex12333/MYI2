@@ -371,7 +371,7 @@ export async function saveTopic(topic: GeneratedTopic): Promise<string> {
       faqs: topic.faqs,
       related_papers: topic.related_papers,
       related_cluster: topic.related_cluster,
-      status: 'draft',
+      status: 'published',
     })
     .select('id')
     .single();
