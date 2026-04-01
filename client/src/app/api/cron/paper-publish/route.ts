@@ -70,18 +70,10 @@ export async function GET(request: NextRequest) {
 
     if (!scheduled || scheduled.length === 0) {
       console.log('[PAPER-CRON] No papers scheduled for today');
-      return new Response(
-        JSON.stringify({
-          status: 'ok',
-          message: 'No papers to publish today',
-          date: todayStr,
-          currentHour
-        }),
-        { status: 200, headers: { 'Content-Type': 'application/json' } }
-      );
+      // Don't return early — still need to check topics and QA below
     }
 
-    console.log(`[PAPER-CRON] Found ${scheduled.length} paper(s) scheduled for ${todayStr}`);
+    console.log(`[PAPER-CRON] Found ${scheduled?.length || 0} paper(s) scheduled for ${todayStr}`);
 
     // 2. Check each paper's publish hour
     const results: Array<{
@@ -91,7 +83,7 @@ export async function GET(request: NextRequest) {
       action: string;
     }> = [];
 
-    for (const entry of scheduled) {
+    for (const entry of (scheduled || [])) {
       const paper = entry.papers;
       if (!paper) {
         console.warn(`[PAPER-CRON] No paper found for calendar entry ${entry.id}`);
@@ -174,7 +166,58 @@ export async function GET(request: NextRequest) {
     const published = results.filter(r => r.action === 'published').length;
     const waiting = results.filter(r => r.action.startsWith('waiting')).length;
 
-    console.log(`[PAPER-CRON] Complete: ${published} published, ${waiting} waiting`);
+    console.log(`[PAPER-CRON] Papers: ${published} published, ${waiting} waiting`);
+
+    // ─── TOPICS + QA SCHEDULED PUBLISHING ──────────────────────
+    // Calendar entries with paper_id = null use notes field:
+    //   notes = "topic:{uuid}" or "qa:{id}"
+    const { data: contentScheduled } = await supabase
+      .from('paper_calendar')
+      .select('id, notes, publish_date')
+      .eq('publish_date', todayStr)
+      .eq('status', 'scheduled')
+      .is('paper_id', null);
+
+    let topicsPublished = 0;
+    let qaPublished = 0;
+
+    for (const entry of (contentScheduled || [])) {
+      const notes = entry.notes || '';
+
+      if (notes.startsWith('topic:')) {
+        const topicId = notes.slice(6);
+        const { error: topicErr } = await supabase
+          .from('consumer_topics')
+          .update({ status: 'published', last_updated: now.toISOString() })
+          .eq('id', topicId)
+          .eq('status', 'draft');
+
+        if (!topicErr) {
+          await supabase.from('paper_calendar')
+            .update({ status: 'published', published_at: now.toISOString() })
+            .eq('id', entry.id);
+          topicsPublished++;
+          console.log(`[CRON] Published topic ${topicId}`);
+        }
+      } else if (notes.startsWith('qa:')) {
+        const qaId = notes.slice(3);
+        const { error: qaErr } = await supabase
+          .from('qa_candidates')
+          .update({ publish_status: 'published' })
+          .eq('id', qaId)
+          .eq('publish_status', 'drafted');
+
+        if (!qaErr) {
+          await supabase.from('paper_calendar')
+            .update({ status: 'published', published_at: now.toISOString() })
+            .eq('id', entry.id);
+          qaPublished++;
+          console.log(`[CRON] Published QA ${qaId}`);
+        }
+      }
+    }
+
+    console.log(`[CRON] Complete: ${published} papers, ${topicsPublished} topics, ${qaPublished} QA published`);
 
     return new Response(
       JSON.stringify({
@@ -182,8 +225,10 @@ export async function GET(request: NextRequest) {
         date: todayStr,
         currentHour,
         summary: {
-          total: scheduled.length,
-          published,
+          total: (scheduled?.length || 0) + (contentScheduled?.length || 0),
+          papers: published,
+          topics: topicsPublished,
+          qa: qaPublished,
           waiting
         },
         papers: results
