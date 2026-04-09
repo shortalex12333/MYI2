@@ -8,7 +8,7 @@ async function fetchPapers(): Promise<{ slug: string; updated: string | null }[]
 
   try {
     const res = await fetch(
-      `${url}/rest/v1/papers?select=slug,last_updated&review_status=eq.reviewed`,
+      `${url}/rest/v1/papers?select=slug,last_updated&review_status=eq.published`,
       {
         headers: { apikey: key, Authorization: `Bearer ${key}` },
         next: { revalidate: 3600 }
@@ -144,9 +144,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ]
 
   // Papers - intelligence briefs (priority 0.9)
-  const paperPages: MetadataRoute.Sitemap = papers.map(p => ({
+  const paperPages: MetadataRoute.Sitemap = papers.map((p: any) => ({
     url: `${baseUrl}/papers/${p.slug}`,
-    lastModified: p.updated ? new Date(p.updated) : lastModified,
+    lastModified: p.last_updated ? new Date(p.last_updated) : lastModified,
     changeFrequency: 'monthly' as const,
     priority: 0.9,
   }))
