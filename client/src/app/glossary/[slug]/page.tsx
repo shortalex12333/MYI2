@@ -79,14 +79,23 @@ export async function generateMetadata({ params }: GlossaryTermPageProps): Promi
 
   const title = term.meta_title || `${term.term} - Yacht Insurance Glossary`
   const description = term.meta_description || term.definition
+  const url = `https://www.myyachtsinsurance.com/glossary/${term.slug}`
 
   return {
     title,
     description,
+    alternates: { canonical: url },
     openGraph: {
       title,
       description,
+      url,
       type: 'article',
+      siteName: 'MyYachtsInsurance',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
     },
   }
 }

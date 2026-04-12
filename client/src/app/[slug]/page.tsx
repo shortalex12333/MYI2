@@ -82,14 +82,18 @@ export async function generateMetadata({ params }: ContentPageProps): Promise<Me
 
   const title = page.meta_title || page.title
   const description = page.meta_description || page.subtitle || `Learn about ${page.title} in our comprehensive yacht insurance guide.`
+  const url = `https://www.myyachtsinsurance.com/${slug}`
 
   return {
     title: `${title} | Yacht Insurance Guide`,
     description,
+    alternates: { canonical: url },
     openGraph: {
       title,
       description,
+      url,
       type: 'article',
+      siteName: 'MyYachtsInsurance',
     },
     twitter: {
       card: 'summary_large_image',
