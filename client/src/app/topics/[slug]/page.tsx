@@ -52,9 +52,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: 'Topic Not Found' }
   }
 
+  const description = topic.summary || `Learn about ${topic.title.toLowerCase()} for yacht and boat insurance.`
+  const url = `https://www.myyachtsinsurance.com/topics/${topic.slug}`
+
   return {
     title: `${topic.title} — Yacht Insurance Guide`,
-    description: topic.summary || `Learn about ${topic.title.toLowerCase()} for yacht and boat insurance.`,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      title: topic.title,
+      description,
+      url,
+      type: 'article',
+      siteName: 'MyYachtsInsurance',
+      publishedTime: topic.last_updated || undefined,
+      modifiedTime: topic.last_updated || undefined,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: topic.title,
+      description,
+    },
   }
 }
 

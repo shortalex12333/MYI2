@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation'
+import { Metadata } from 'next'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { createClient } from '@supabase/supabase-js'
@@ -10,6 +11,48 @@ type Paper = {
   body_markdown: string | null
   tldr: string | null
   last_updated: string | null
+}
+
+async function fetchPaper(slug: string): Promise<Paper | null> {
+  const supabase = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    { auth: { persistSession: false, autoRefreshToken: false } }
+  )
+  const { data } = await supabase
+    .from('papers')
+    .select('id,title,slug,body_markdown,tldr,last_updated')
+    .eq('slug', slug)
+    .single()
+  return (data as Paper) || null
+}
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const p = await fetchPaper(params.slug)
+  if (!p) {
+    return { title: 'Paper not found — MyYachtsInsurance' }
+  }
+  const description = p.tldr || `${p.title} — yacht insurance intelligence brief.`
+  const url = `https://www.myyachtsinsurance.com/papers/${p.slug}`
+  return {
+    title: `${p.title} — MyYachtsInsurance`,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      title: p.title,
+      description,
+      url,
+      type: 'article',
+      siteName: 'MyYachtsInsurance',
+      publishedTime: p.last_updated || undefined,
+      modifiedTime: p.last_updated || undefined,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: p.title,
+      description,
+    },
+  }
 }
 
 export default async function PaperDetailPage({ params }: { params: { slug: string } }) {
